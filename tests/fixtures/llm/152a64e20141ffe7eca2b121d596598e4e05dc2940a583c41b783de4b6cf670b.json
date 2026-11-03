@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "C5-C6 disc herniation with mild canal narrowing. No prior imaging available for comparison. MRI charge: $2,350.",
+  "summary": "Cervical MRI showed C5-C6 disc herniation with mild canal narrowing; no prior imaging available for comparison; MRI charge $2,350."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:36Z"
+ }
+}

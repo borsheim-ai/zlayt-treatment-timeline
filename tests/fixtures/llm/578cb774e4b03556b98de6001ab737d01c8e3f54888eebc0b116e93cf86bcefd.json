@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Removal of hardware, left tibial plateau. Subchondral cyst repaired. Total knee replacement may be needed in the future. Surgeon fee: $6,150.",
+  "summary": "Removal of hardware from the left tibial plateau; subchondral cyst repaired; total knee replacement may be needed in the future; surgeon fee $6,150."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:22Z"
+ }
+}

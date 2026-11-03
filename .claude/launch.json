@@ -1,0 +1,8 @@
+{
+  "version": "0.0.1",
+  "autoVerify": false,
+  "configurations": [
+    { "name": "board", "url": "http://localhost:7777" },
+    { "name": "app",   "url": "http://localhost:7860" }
+  ]
+}

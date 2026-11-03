@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "speculative_language",
+    "excerpt": "Surgeon cannot state to a reasonable degree of medical probability whether the fall aggravated the low back condition.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:48Z"
+ }
+}

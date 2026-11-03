@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Strength 4/5. Pain 5/10.",
+  "summary": "Strength 4/5; pain 5/10."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:07Z"
+ }
+}

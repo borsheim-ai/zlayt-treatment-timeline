@@ -1,0 +1,18 @@
+- [T-043 panels conventions](project_t043_panels.md) — plug-in hooks, testid pitfalls, dev harness
+- [Office 3D phone conventions](project_office3d_phone.md) — touch ownership, fit-to-box camera, kanban sheet, pitfalls
+- [Stepper and AI-check panel](project_stepper_panels.md) — T-081/T-082 hooks, data-item-id pitfall, own-instance recipe
+- [Side-by-side viewer](project_sidebyside.md) — T-046 pane hooks, sticky offset, test-id choices
+- [Code-check refusals](project_code_check_refusals.md) — T-104 hooks: Change the quote, inline edit refusal, Why lead, picker pitfall
+- [Suggestions and confidence](project_suggestions.md) — T-096 ZL.sg hooks, null-append pitfall, test recipe
+- [T-060 enterprise polish](project_t060_polish.md) — tokens, keyboard scope, compact rows, one open-item definition and same-list focus advance (r5), test recipe, pitfalls
+- [T-136 edit_to_check](project_t136_edit_to_check.md) — server flag, a-key prompt, Dismissed groups, ZLAYT_DB test recipe, open F1 residuals
+- [Multi-case UI, conflicts skipped, held quote](project_multicase.md) — T-149/T-151/T-136 r3 hooks, routing, test recipe, pitfalls
+- [Uncovered sentences list](project_uncovered.md) — T-144 hooks, refresh rule, lib09 test pitfalls
+- [Verify from git archive](feedback_verify_from_archive.md) — temp-index commit recipe, no-console-errors test, confirm-dialog Escape race
+- [T-166 MVP polish](project_t166_mvp_polish.md) — one-row header, More actions, dismiss ghost, a/n/x keys, discard confirm, reveal() in tests
+- [T-174 MVP finish](project_t174_finish.md) — one first item, one count, section nav + --head-h, Back to review, preview discard, error actions, ghost focus
+- [T-181 guided shell](project_t181_guided_shell.md) — / is guided (real paths, SPA fallback), /classic old, G.pages contract, SERVER vs BASE, pitfalls
+- [T-177 provenance](project_t177_provenance.md) — D-065 leak points for model names on prepared items, models_for helper, whole-DOM test, dirty-tree commit recipe
+- [Guided UI (D-068)](project_guided_ui.md) — T-180 spec + generated mockup, API facts, layout-stability checks, pitfalls
+- [T-181 Builder A: Home/Step 1/Step 4](project_t181_builder_a.md) — G.sbar, G.cases, trace-before-export, demo-mode tiles, pitfalls
+- [T-181 round 2](project_t181_round2.md) — local_mode/healthNow, outside-word underline, droppedText, phone rules, focus pitfall

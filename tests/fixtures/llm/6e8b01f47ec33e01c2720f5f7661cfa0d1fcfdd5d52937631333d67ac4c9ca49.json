@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Discharged after 3 days of observation. Dx: left knee contusion. Follow up with orthopedics.",
+  "summary": "Discharged after 3 days of observation; diagnosis left knee contusion; follow up with orthopedics."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:16:22Z"
+ }
+}

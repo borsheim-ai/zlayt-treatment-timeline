@@ -1,0 +1,36 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-04-06
+Source: Okmarrow EMS run report
+Excerpt: "Passenger car struck from behind by a tractor-trailer. Restrained driver. C/O low back pain and neck pain. Transported to Redhaven Regional ED."
+
+=== Record 2 ===
+Date: 2026-04-06
+Source: Redhaven Regional ED
+Excerpt: "Dx: lumbar and cervical sprain. CT cervical spine negative. Rx naproxen. Refer to chiropractic or primary care. ED charge: $5,260."
+
+=== Record 3 ===
+Date: 2026-04-09
+Source: Thimbleby Chiropractic, initial exam
+Excerpt: "Cervical and lumbar spasm. Plan: 3 visits per week for 12 weeks. Charge per visit $120."
+
+=== Record 4 ===
+Date: 2026-05-07
+Source: Thimbleby Chiropractic, visit 14
+Excerpt: "Pain 5/10, unchanged from visit 1. Continue plan."
+
+=== Record 5 ===
+Date: 2026-05-27
+Source: Thimbleby Chiropractic, visit 22
+Excerpt: "Pain 4/10. Home exercises reviewed."
+
+=== Record 6 ===
+Date: 2026-06-15
+Source: Thimbleby Chiropractic, discharge
+Excerpt: "Discharged at maximum chiropractic benefit after 31 visits. Pain 3/10."
+
+=== Record 7 ===
+Date: 2026-07-20
+Source: Redhaven Imaging, lumbar MRI
+Excerpt: "L4-L5 disc bulge without nerve root compression. Mild disc desiccation. Radiology: findings likely chronic. MRI charge: $2,240."

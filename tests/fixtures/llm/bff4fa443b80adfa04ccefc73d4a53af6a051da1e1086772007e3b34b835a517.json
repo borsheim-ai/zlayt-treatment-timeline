@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Cast removed. Wrist range of motion improving. Low back pain 5/10; lumbar MRI ordered.",
+  "summary": "Cast removed. Wrist range of motion improving. Low back pain 5/10; lumbar MRI ordered."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:19Z"
+ }
+}

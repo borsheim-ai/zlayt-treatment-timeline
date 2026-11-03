@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On February 2, 2026, Hobbleton Family Clinic documented left wrist pain 4/10, a splint applied, and a return in 2 weeks."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On March 12, 2026, Hobbleton Family Clinic documented that the patient called to request a work note and that a work note was provided."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On March 30, 2026, Hobbleton Family Clinic documented left wrist pain 3/10 and that the splint was removed."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On April 13, 2026, Hobbleton Family Clinic documented pain 1/10 and that the patient was released from care."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:55:05Z"
+ }
+}

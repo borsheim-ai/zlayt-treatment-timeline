@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Seen for lab review. Plan: continue current medications.",
+  "summary": "Seen for lab review; plan is to continue current medications."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:07Z"
+ }
+}

@@ -1,0 +1,459 @@
+{
+ "backend": "claude-cli",
+ "case": "case_01_date_formats",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-02-03",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Quillfeather Urgent Care",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "a68591665c524b69"
+  },
+  {
+   "date": "2026-02-17",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Orla Pennywhistle, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "ad905a7f49ae0fc4"
+  },
+  {
+   "date": "2026-02-24",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Pemberwick Physical Therapy, visit 1",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "b25259caabb3a9cf"
+  },
+  {
+   "date": "2026-03-03",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Pemberwick Physical Therapy, visit 2",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "92deec675d49428b"
+  },
+  {
+   "date": "2026-03-10",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Pemberwick Physical Therapy, visit 3",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "c5cfdee2eecbf82b"
+  },
+  {
+   "date": "2026-03-17",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e6",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Pemberwick Physical Therapy, visit 4",
+   "reasons": [],
+   "record_ids": [
+    "r6"
+   ],
+   "state": "verified",
+   "summary_sha": "604c6e9f96334851"
+  },
+  {
+   "date": "2026-03-25",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e7",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Orla Pennywhistle, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r7"
+   ],
+   "state": "verified",
+   "summary_sha": "28cdb9dde51b6dc0"
+  },
+  {
+   "date": null,
+   "date_status": "ambiguous",
+   "generator_prompt_version": "extract_v1",
+   "id": "e8",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "undated_entry",
+   "provider": "Dr. Orla Pennywhistle, phone note",
+   "reasons": [
+    "DATE_AMBIGUOUS"
+   ],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "needs_review",
+   "summary_sha": "22b43168b6412c08"
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "text": "$310.00",
+   "value_cents": 31000
+  },
+  {
+   "category": "date_ambiguous",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "04/05/2026",
+     "record_id": "r8"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_date_r8",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [
+    "DATE_AMBIGUOUS"
+   ],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "needs_review",
+   "type": "record_warning"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [
+   [
+    "$310.00",
+    31000,
+    "charge",
+    "verified",
+    [
+     "r1"
+    ]
+   ]
+  ],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-02-03",
+    "parsed",
+    "Quillfeather Urgent Care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-02-17",
+    "parsed",
+    "Dr. Orla Pennywhistle, primary care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-02-24",
+    "parsed",
+    "Pemberwick Physical Therapy, visit 1",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-03-03",
+    "parsed",
+    "Pemberwick Physical Therapy, visit 2",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-03-10",
+    "parsed",
+    "Pemberwick Physical Therapy, visit 3",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r6"
+    ],
+    "2026-03-17",
+    "parsed",
+    "Pemberwick Physical Therapy, visit 4",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r7"
+    ],
+    "2026-03-25",
+    "parsed",
+    "Dr. Orla Pennywhistle, primary care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r8"
+    ],
+    null,
+    "ambiguous",
+    "Dr. Orla Pennywhistle, phone note",
+    "needs_review",
+    [
+     "DATE_AMBIGUOUS"
+    ]
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5",
+   "e6",
+   "e7",
+   "e8"
+  ],
+  "flags": [
+   [
+    "record_warning",
+    "date_ambiguous",
+    [
+     "r8"
+    ],
+    [
+     "04/05/2026"
+    ],
+    "needs_review"
+   ]
+  ],
+  "gap_flags": [],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-02-03",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-02-17",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-02-24",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-03-03",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-03-10",
+    "parsed"
+   ],
+   [
+    "r6",
+    "2026-03-17",
+    "parsed"
+   ],
+   [
+    "r7",
+    "2026-03-25",
+    "parsed"
+   ],
+   [
+    "r8",
+    null,
+    "ambiguous"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Quillfeather Urgent Care",
+    "d338eb28cca99536",
+    "2026-02-03",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Dr. Orla Pennywhistle, primary care",
+    "95ccdc207fc3fe8a",
+    "2026-02-17",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Pemberwick Physical Therapy, visit 1",
+    "b25259caabb3a9cf",
+    "2026-02-24",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Pemberwick Physical Therapy, visit 2",
+    "92deec675d49428b",
+    "2026-03-03",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Pemberwick Physical Therapy, visit 3",
+    "c5cfdee2eecbf82b",
+    "2026-03-10",
+    "parsed"
+   ],
+   [
+    "r6",
+    "Pemberwick Physical Therapy, visit 4",
+    "604c6e9f96334851",
+    "2026-03-17",
+    "parsed"
+   ],
+   [
+    "r7",
+    "Dr. Orla Pennywhistle, primary care",
+    "28cdb9dde51b6dc0",
+    "2026-03-25",
+    "parsed"
+   ],
+   [
+    "r8",
+    "Dr. Orla Pennywhistle, phone note",
+    "22b43168b6412c08",
+    null,
+    "ambiguous"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 1,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 31000,
+   "letter_line": null,
+   "status": "complete",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": [
+  "DATE_EXCLUDED_FROM_GAPS"
+ ]
+}

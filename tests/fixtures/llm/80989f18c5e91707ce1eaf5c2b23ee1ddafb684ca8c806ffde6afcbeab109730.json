@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain with abduction 6/10. Plan: injection versus surgical consult, patient to decide.",
+  "summary": "Pain with abduction 6/10; plan is injection versus surgical consult, with the patient to decide."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:05Z"
+ }
+}

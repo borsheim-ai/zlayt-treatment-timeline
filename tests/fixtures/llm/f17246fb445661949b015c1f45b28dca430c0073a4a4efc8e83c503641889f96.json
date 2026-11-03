@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Right shoulder pain 6/10. Treating under a letter of protection. Plan: MRI and injections.",
+  "summary": "Right shoulder pain 6/10; treating under a letter of protection; plan is MRI and injections."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:26:14Z"
+ }
+}

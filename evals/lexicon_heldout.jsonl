@@ -1,0 +1,115 @@
+{"id": "H-001", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Prior C6-7 anterior cervical fusion."}
+{"id": "H-002", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Previous L5-S1 microdiscectomy in 2018."}
+{"id": "H-003", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "PSH: T10-11 laminectomy."}
+{"id": "H-004", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "PMH: GERD, hypothyroidism, remote L3-4 fusion."}
+{"id": "H-005", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "S/p C5-6 ACDF."}
+{"id": "H-006", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "History of L2-3 stenosis."}
+{"id": "H-007", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Prior ESI at L4-5 in 2022."}
+{"id": "H-008", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Previously diagnosed with C4-5 spondylosis."}
+{"id": "H-009", "split": "dev", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Old L1 compression fracture noted."}
+{"id": "H-010", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Low back pain since 2017."}
+{"id": "H-011", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Reports right shoulder stiffness since 2020."}
+{"id": "H-012", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Has had intermittent headaches since 2018."}
+{"id": "H-013", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Reports neck pain for the past 6 years."}
+{"id": "H-014", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Patient injured his neck in 2022 while moving furniture."}
+{"id": "H-015", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Had a similar back injury in 2019."}
+{"id": "H-016", "split": "dev", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Cervical strain in 2020, resolved with PT."}
+{"id": "H-017", "split": "dev", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Saw a chiropractor for cervical pain in 2021."}
+{"id": "H-018", "split": "dev", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "MRI in 2023 showed an L4-5 disc bulge."}
+{"id": "H-019", "split": "dev", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Seen by Dr. Alvarez in 2019 for lumbar radiculopathy."}
+{"id": "H-020", "split": "dev", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Treated for mid back pain three years before this collision."}
+{"id": "H-021", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Findings may be degenerative."}
+{"id": "H-022", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "These changes may be post-traumatic."}
+{"id": "H-023", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "The appearance favors chronic change."}
+{"id": "H-024", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Probable small disc protrusion at C5-6."}
+{"id": "H-025", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Disc height loss of uncertain chronicity."}
+{"id": "H-026", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Presumed degenerative etiology."}
+{"id": "H-027", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Likely represents a chronic annular tear."}
+{"id": "H-028", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Marrow edema is suspicious for acute injury."}
+{"id": "H-029", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Appearance is age-indeterminate."}
+{"id": "H-030", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Thought to be congenital."}
+{"id": "H-031", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Edema may be acute or chronic."}
+{"id": "H-032", "split": "dev", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Signal change could reflect an old injury."}
+{"id": "H-033", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "She attributes her low back pain to the accident."}
+{"id": "H-034", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Patient relates his symptoms to the crash."}
+{"id": "H-035", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Pt relates onset of neck pain to the collision."}
+{"id": "H-036", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Client links the headaches to the wreck."}
+{"id": "H-037", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Headaches began after the collision, per patient."}
+{"id": "H-038", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "He says his shoulder pain started right after the impact."}
+{"id": "H-039", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Patient feels her neck pain is from the crash."}
+{"id": "H-040", "split": "dev", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Patient believes the accident caused her knee pain."}
+{"id": "H-041", "split": "dev", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Husband states she struck her head on the side window."}
+{"id": "H-042", "split": "dev", "group": "self_report", "expect": "self_report_any", "accident_year": 2026, "text": "Pt describes the pain as 8/10, worse with rotation."}
+{"id": "H-043", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Previously seen in this clinic on 02/03/2026 for neck pain."}
+{"id": "H-044", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "S/p rear-end collision 1/9/2026 with neck pain."}
+{"id": "H-045", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Prior injuries? Denies."}
+{"id": "H-046", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Chronic neck pain secondary to the MVA."}
+{"id": "H-047", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Chronic low back pain due to the collision."}
+{"id": "H-048", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Reviewed prior MRI from 03/15/2026 with the patient."}
+{"id": "H-049", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Neck pain since 2026."}
+{"id": "H-050", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Symptoms flared after stopping PT."}
+{"id": "H-051", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Status post MVC on 01/09/2026."}
+{"id": "H-052", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Previous visit note reviewed from 02/10/2026."}
+{"id": "H-053", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Prior authorization approved for MRI."}
+{"id": "H-054", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Denies prior neck or back injuries."}
+{"id": "H-055", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "No previous accidents or surgeries."}
+{"id": "H-056", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Prior to the collision, patient was working full time."}
+{"id": "H-057", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Follow-up visit for neck pain after the 01/09/2026 collision."}
+{"id": "H-058", "split": "dev", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Her prior appointment on 02/24/2026 was rescheduled by the clinic."}
+{"id": "H-059", "split": "dev", "group": "quiet_hedge", "expect": "quiet_hedge", "accident_year": 2026, "text": "May be discharged home when stable."}
+{"id": "H-060", "split": "dev", "group": "quiet_hedge", "expect": "quiet_hedge", "accident_year": 2026, "text": "Medication may be taken with food."}
+{"id": "H-061", "split": "dev", "group": "quiet_hedge", "expect": "quiet_hedge", "accident_year": 2026, "text": "Patient may return to work on Monday."}
+{"id": "H-062", "split": "dev", "group": "quiet_self_report", "expect": "quiet_self_report", "accident_year": 2026, "text": "Physician opines the symptoms are causally related to the collision."}
+{"id": "H-063", "split": "dev", "group": "quiet_self_report", "expect": "quiet_self_report", "accident_year": 2026, "text": "MRI shows a C5-6 disc protrusion."}
+{"id": "H-064", "split": "fresh", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Remote T12-L1 stabilization noted on prior films."}
+{"id": "H-065", "split": "fresh", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "Prior L3-L4 laminotomy, healed well."}
+{"id": "H-066", "split": "fresh", "group": "prior_level", "expect": "pre_existing", "accident_year": 2026, "text": "PSH: C4-5 arthroplasty 2017."}
+{"id": "H-067", "split": "fresh", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Complains of numbness in the left hand since 2015."}
+{"id": "H-068", "split": "fresh", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Right knee pain on and off for the past eight years."}
+{"id": "H-069", "split": "fresh", "group": "prior_since_year", "expect": "pre_existing", "accident_year": 2026, "text": "Lumbar spasms since 2019, managed with NSAIDs."}
+{"id": "H-070", "split": "fresh", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Received injections in her low back during 2020."}
+{"id": "H-071", "split": "fresh", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Underwent chiropractic adjustments for neck pain in 2018."}
+{"id": "H-072", "split": "fresh", "group": "prior_treatment", "expect": "pre_existing", "accident_year": 2026, "text": "Prior PT for the lumbar spine."}
+{"id": "H-073", "split": "fresh", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Findings may be age-related."}
+{"id": "H-074", "split": "fresh", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Probable annular fissure at L5-S1."}
+{"id": "H-075", "split": "fresh", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Appearance favors an old compression deformity."}
+{"id": "H-076", "split": "fresh", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "The edema may be reactive."}
+{"id": "H-077", "split": "fresh", "group": "hedge", "expect": "hedge", "accident_year": 2026, "text": "Presumed chronic."}
+{"id": "H-078", "split": "fresh", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Pt attributes the hip pain to the MVA."}
+{"id": "H-079", "split": "fresh", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Patient relates her dizziness to the crash."}
+{"id": "H-080", "split": "fresh", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Husband says she believes the accident caused the numbness."}
+{"id": "H-081", "split": "fresh", "group": "attribution", "expect": "attribution", "accident_year": 2026, "text": "Neck pain started after the wreck, per pt."}
+{"id": "H-082", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Previously evaluated here on 03/02/2026 for lumbar pain."}
+{"id": "H-083", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "S/p motor vehicle collision on 1/9/2026."}
+{"id": "H-084", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Previous injuries? None."}
+{"id": "H-085", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Chronic headaches resulting from the crash."}
+{"id": "H-086", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Prior MRI dated 04/08/2026 reviewed."}
+{"id": "H-087", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Back pain since 2026."}
+{"id": "H-088", "split": "fresh", "group": "quiet_post_accident", "expect": "quiet_pre_existing", "accident_year": 2026, "text": "Prior to the accident, she exercised daily."}
+{"id": "H-089", "split": "fresh", "group": "quiet_hedge", "expect": "quiet_hedge", "accident_year": 2026, "text": "He may drive as tolerated."}
+{"id": "H-090", "split": "fresh", "group": "quiet_hedge", "expect": "quiet_hedge", "accident_year": 2026, "text": "Patient may resume normal activities."}
+{"id": "H-091", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Patient complains of lower back pain."}
+{"id": "H-092", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "C/O left knee pain 6/10."}
+{"id": "H-093", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Pt reports numbness in the right hand."}
+{"id": "H-094", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Per the patient, the pain began at the scene."}
+{"id": "H-095", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Client states she was stopped when hit."}
+{"id": "H-096", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Patient-reported pain 6/10."}
+{"id": "H-097", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "She endorses daily headaches."}
+{"id": "H-098", "split": "t061", "group": "explicit_patient", "expect": "self_report_any", "accident_year": 2026, "text": "Patient describes a burning pain down the leg."}
+{"id": "H-099", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "EMS reports neck pain 7/10."}
+{"id": "H-100", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Witness states the sedan was stopped at the light."}
+{"id": "H-101", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Wife reports he hit his head on the wheel."}
+{"id": "H-102", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Husband states she complains of headaches every night."}
+{"id": "H-103", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Family says she has been sleeping poorly."}
+{"id": "H-104", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Bystander states she was walking at the scene."}
+{"id": "H-105", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Mother reports the patient cried at night."}
+{"id": "H-106", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Witness complains of neck pain."}
+{"id": "H-107", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Wife complains of neck pain."}
+{"id": "H-108", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "EMS complains of neck pain 7/10."}
+{"id": "H-109", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Per his wife, headaches began at the scene."}
+{"id": "H-110", "split": "t061", "group": "non_patient_speaker", "expect": "quiet_self_report", "accident_year": 2026, "text": "Paramedics note that she describes chest tightness."}
+{"id": "H-111", "split": "t061", "group": "headers_not_attribution", "expect": "quiet_self_report", "accident_year": 2026, "text": "S: neck pain 7/10."}
+{"id": "H-112", "split": "t061", "group": "headers_not_attribution", "expect": "quiet_self_report", "accident_year": 2026, "text": "Self-reported neck pain 7/10."}
+{"id": "H-113", "split": "t061", "group": "headers_not_attribution", "expect": "quiet_self_report", "accident_year": 2026, "text": "SUBJECTIVE: pain worse in the morning."}
+{"id": "H-114", "split": "t061", "group": "headers_not_attribution", "expect": "quiet_self_report", "accident_year": 2026, "text": "Date of injury per registration paperwork: 03/02/2026."}
+{"id": "H-115", "split": "t061", "group": "headers_not_attribution", "expect": "quiet_self_report", "accident_year": 2026, "text": "Per registration form, symptoms started in March."}

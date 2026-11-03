@@ -1,0 +1,765 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib08_second_crash_mri_after",
+  "synthetic": true,
+  "input_file": "case_lib08_second_crash_mri_after.txt",
+  "description": "Library L8 (P1+P13). Pre-suit file: rear-end collision, ED, orthopedics, 11 weeks of PT, then a second collision 11 days after PT discharge (EMS in a hard collar, ED), the first MRI only after crash 2, an orthopedic note that dates the arm numbness to crash 1, and a neurology note with a loss-of-consciousness history that the ED denied. Two incident dates, a conflicting LOC history and a 42-day gap before neurology; the tool never apportions between the crashes.",
+  "stress_types": [
+    "second_accident_between_care_and_imaging",
+    "loc_history_changes",
+    "history_attributes_to_first_event",
+    "ems_run_report",
+    "gap_before_specialist",
+    "rate_not_charge"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-01-12",
+      "date": "2026-01-12",
+      "kind": "encounter",
+      "source": "Pelham Ridge EMS run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-01-12",
+      "date": "2026-01-12",
+      "kind": "encounter",
+      "source": "Thornbury Regional ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-01-16",
+      "date": "2026-01-16",
+      "kind": "encounter",
+      "source": "Dr. Philippa Wenlock, orthopedics, new patient"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-01-26",
+      "date": "2026-01-26",
+      "kind": "encounter",
+      "source": "Larkmoor Physical Therapy, initial evaluation"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-02-23",
+      "date": "2026-02-23",
+      "kind": "encounter",
+      "source": "Larkmoor Physical Therapy, visit 12"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-03-23",
+      "date": "2026-03-23",
+      "kind": "encounter",
+      "source": "Larkmoor Physical Therapy, visit 22"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-04-13",
+      "date": "2026-04-13",
+      "kind": "encounter",
+      "source": "Larkmoor Physical Therapy, discharge"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-04-24",
+      "date": "2026-04-24",
+      "kind": "encounter",
+      "source": "Pelham Ridge EMS run report"
+    },
+    {
+      "record_no": 9,
+      "raw_date": "2026-04-24",
+      "date": "2026-04-24",
+      "kind": "encounter",
+      "source": "Thornbury Regional ED"
+    },
+    {
+      "record_no": 10,
+      "raw_date": "2026-05-20",
+      "date": "2026-05-20",
+      "kind": "encounter",
+      "source": "Valley Imaging, cervical MRI"
+    },
+    {
+      "record_no": 11,
+      "raw_date": "2026-06-02",
+      "date": "2026-06-02",
+      "kind": "encounter",
+      "source": "Dr. Philippa Wenlock, orthopedics, follow-up"
+    },
+    {
+      "record_no": 12,
+      "raw_date": "2026-07-14",
+      "date": "2026-07-14",
+      "kind": "encounter",
+      "source": "Dr. Ansgar Kellerman, neurology"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-01-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pelham Ridge EMS run report",
+      "must_contain_excerpt": "struck from behind at a stoplight",
+      "required_terms": [
+        "neck pain",
+        [
+          "denies loc",
+          "denies loss of consciousness",
+          "no loss of consciousness"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck pain 6/10.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-01-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thornbury Regional ED",
+      "must_contain_excerpt": "Dx: cervical strain",
+      "required_terms": [
+        "cervical strain",
+        [
+          "ct head negative",
+          "negative ct",
+          "head ct"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Denies LOC per patient.",
+          "attribution_any": [
+            "per patient",
+            "patient denies",
+            "denies loc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-01-16",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Philippa Wenlock, orthopedics, new patient",
+      "must_contain_excerpt": "Neck pain 5/10 without arm symptoms",
+      "required_terms": [
+        "5/10",
+        "physical therapy"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-01-26",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larkmoor Physical Therapy, initial evaluation",
+      "must_contain_excerpt": "Cervical range of motion reduced about 25%",
+      "required_terms": [
+        "25%"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-02-23",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larkmoor Physical Therapy, visit 12",
+      "must_contain_excerpt": "Pain 4/10",
+      "required_terms": [
+        "4/10"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-03-23",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larkmoor Physical Therapy, visit 22",
+      "must_contain_excerpt": "Pain 3/10",
+      "required_terms": [
+        "3/10"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-04-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larkmoor Physical Therapy, discharge",
+      "must_contain_excerpt": "Discharged from PT after 11 weeks",
+      "required_terms": [
+        "discharged",
+        "3/10"
+      ]
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-04-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pelham Ridge EMS run report",
+      "must_contain_excerpt": "Hard cervical collar applied",
+      "required_terms": [
+        "collar",
+        "left arm numbness"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck pain 8/10 and left arm numbness.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "record_nos": [
+        9
+      ],
+      "date": "2026-04-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thornbury Regional ED",
+      "must_contain_excerpt": "CT cervical spine negative for fracture",
+      "required_terms": [
+        "cervical strain",
+        "negative for fracture"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Denies LOC per patient.",
+          "attribution_any": [
+            "per patient",
+            "patient denies",
+            "denies loc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "record_nos": [
+        10
+      ],
+      "date": "2026-05-20",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Valley Imaging, cervical MRI",
+      "must_contain_excerpt": "C5-C6 disc herniation with mild canal narrowing",
+      "required_terms": [
+        "c5-c6",
+        "herniation"
+      ]
+    },
+    {
+      "id": "E11",
+      "record_nos": [
+        11
+      ],
+      "date": "2026-06-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Philippa Wenlock, orthopedics, follow-up",
+      "must_contain_excerpt": "left arm numbness since the rear-end collision of 2026-01-12",
+      "required_terms": [
+        "7/10",
+        "left arm numbness",
+        "neurosurgery"
+      ]
+    },
+    {
+      "id": "E12",
+      "record_nos": [
+        12
+      ],
+      "date": "2026-07-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ansgar Kellerman, neurology",
+      "must_contain_excerpt": "brief loss of consciousness at the second collision",
+      "required_terms": [
+        "loss of consciousness",
+        "headaches",
+        "neuropsychological"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states brief loss of consciousness at the second collision.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    }
+  ],
+  "expected_entry_count": 12,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-01-12",
+      "to_date": "2026-01-16",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 4,
+      "flag": false
+    },
+    {
+      "from_date": "2026-01-16",
+      "to_date": "2026-01-26",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 10,
+      "flag": false
+    },
+    {
+      "from_date": "2026-01-26",
+      "to_date": "2026-02-23",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2026-02-23",
+      "to_date": "2026-03-23",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-23",
+      "to_date": "2026-04-13",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 21,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-13",
+      "to_date": "2026-04-24",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8,
+        9
+      ],
+      "days": 11,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-24",
+      "to_date": "2026-05-20",
+      "from_records": [
+        8,
+        9
+      ],
+      "to_records": [
+        10
+      ],
+      "days": 26,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-20",
+      "to_date": "2026-06-02",
+      "from_records": [
+        10
+      ],
+      "to_records": [
+        11
+      ],
+      "days": 13,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-02",
+      "to_date": "2026-07-14",
+      "from_records": [
+        11
+      ],
+      "to_records": [
+        12
+      ],
+      "days": 42,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$4,210",
+      "value": 4210,
+      "class": "charge",
+      "excerpt": "ED charge: $4,210",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 4,
+      "raw": "$145",
+      "value": 145,
+      "class": "rate",
+      "excerpt": "Charge per visit $145",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: visits billed are never stated (12 weeks planned)."
+    },
+    {
+      "id": "A3",
+      "record_no": 9,
+      "raw": "$4,680",
+      "value": 4680,
+      "class": "charge",
+      "excerpt": "ED charge: $4,680",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A4",
+      "record_no": 10,
+      "raw": "$2,350",
+      "value": 2350,
+      "class": "charge",
+      "excerpt": "MRI charge: $2,350",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 11240,
+    "counted_amount_ids": [
+      "A1",
+      "A3",
+      "A4"
+    ],
+    "amounts_found": 4,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "Rate, not a charge: visits billed are never stated (12 weeks planned); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $11,240.00",
+    "ui_line": "Accepted charges: $11,240.00",
+    "notes_lines": [
+      "$145: Rate, not a charge: visits billed are never stated (12 weeks planned); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-06-02",
+      "to_date": "2026-07-14",
+      "days": 42,
+      "cite": {
+        "all": [
+          11,
+          12
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 11,
+          "field": "excerpt",
+          "excerpt": "Recommend referral to neurosurgery"
+        },
+        {
+          "record_no": 12,
+          "field": "excerpt",
+          "excerpt": "Headaches and word-finding difficulty since"
+        }
+      ],
+      "summary": "Treatment gap of 42 days (2026-06-02 to 2026-07-14), longer than 30."
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          9,
+          12
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 9,
+          "field": "excerpt",
+          "excerpt": "Denies LOC per patient"
+        },
+        {
+          "record_no": 12,
+          "field": "excerpt",
+          "excerpt": "Patient states brief loss of consciousness at the second collision"
+        }
+      ],
+      "summary": "LOC history differs: the ED record of the second collision has the patient denying LOC; neurology records the patient stating brief LOC at that collision. Both shown with attribution; the tool does not choose.",
+      "subtype": "loc_history_changed"
+    },
+    {
+      "id": "C2",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          3,
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Date of accident per intake form: 2026-01-12"
+        },
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Restrained driver in a second collision"
+        }
+      ],
+      "summary": "Two incidents in the chart: an intake accident date of 2026-01-12 and a second collision recorded by EMS on 2026-04-24. Human step: confirm which records belong to which event; the tool never apportions.",
+      "subtype": "second_incident"
+    },
+    {
+      "id": "C3",
+      "type": "conflict",
+      "level": "should",
+      "cite": {
+        "all": [
+          3,
+          11
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "without arm symptoms"
+        },
+        {
+          "record_no": 11,
+          "field": "excerpt",
+          "excerpt": "left arm numbness since the rear-end collision of 2026-01-12"
+        }
+      ],
+      "summary": "The 2026-06-02 note dates the left arm numbness to the first collision; the 2026-01-16 note records no arm symptoms and left arm numbness first appears in the 2026-04-24 EMS record. Both cited.",
+      "subtype": "history_attributes_to_first_event"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 4, 10, 28, 28, 21, 11, 26 and 13-day intervals."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "causation",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          10
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 10,
+          "field": "excerpt",
+          "excerpt": "C5-C6 disc herniation with mild canal narrowing"
+        }
+      ],
+      "summary": "The first MRI is dated after the second collision; may be raised for review but the tool links it to neither event.",
+      "subtype": "first_imaging_after_second_event"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Apportions the injury or the herniation between the two collisions, or says which collision caused it; no record does.",
+      "check": "judge",
+      "bad_examples": [
+        "The second collision caused the herniation.",
+        "The herniation is from the first accident, not the second.",
+        "Most of the neck injury came from the January crash."
+      ],
+      "good_examples": [
+        "Left arm numbness first appears in the 2026-04-24 EMS record.",
+        "The 2026-06-02 note dates the numbness to the 2026-01-12 collision.",
+        "First MRI is dated 2026-05-20."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "States as the tool's own fact that she did or did not lose consciousness; the ED has the patient denying it and neurology has the patient stating it.",
+      "check": "judge",
+      "bad_examples": [
+        "She lost consciousness in the second collision.",
+        "There was no loss of consciousness at either crash.",
+        "She was knocked out in the second crash."
+      ],
+      "good_examples": [
+        "Patient states brief loss of consciousness at the second collision.",
+        "ED record of 2026-04-24: denies LOC per patient.",
+        "LOC history differs between the ED and neurology records."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Diagnoses a concussion or brain injury; the records chart headaches and word-finding difficulty only.",
+      "check": "judge",
+      "bad_examples": [
+        "She suffered a concussion in the second collision.",
+        "Traumatic brain injury after the crash.",
+        "Post-concussion syndrome developed."
+      ],
+      "good_examples": [
+        "Headaches and word-finding difficulty since.",
+        "Referred for neuropsychological testing.",
+        "CT head negative."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Multiplies or adds the per-visit rate, or treats percentages, weeks and pain scores as dollars (values 1,740 / 11,385 / 12,980 / 25 / 11).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$1,740",
+          "value": 1740,
+          "class": "charge"
+        },
+        {
+          "raw": "$11,385",
+          "value": 11385,
+          "class": "charge"
+        },
+        {
+          "raw": "$12,980",
+          "value": 12980,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        1740,
+        11385,
+        12980,
+        25,
+        11
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P1 + P13 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic: 01-12 to 01-16 = 4; to 01-26 = 10; to 02-23 = 5 + 23 = 28; to 03-23 = 28; to 04-13 = 8 + 13 = 21 (about 11 weeks of PT from 01-26); to 04-24 = 11; to 05-20 = 6 + 20 = 26; to 06-02 = 11 + 2 = 13; to 07-14 = 28 + 14 = 42 (flag).",
+    "Charges counted: 4,210 + 4,680 + 2,350 = 11,240. Forbidden guess-sums: 12 x 145 = 1,740; 11,240 + 145 = 11,385; 11,240 + 1,740 = 12,980.",
+    "Pre-suit file: every record came from the firm's own request to that provider. Records 1-2, 8-9 are EMS and ED pairs for the two crashes; the orthopedic history in record 11 omits the second crash."
+  ]
+}

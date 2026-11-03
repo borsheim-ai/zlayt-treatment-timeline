@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Line 1: 092126 to 092326, CPT 98941, 24F 25500, 24G 3. Line 2: 092126 to 092326, CPT 97014, 24F 7500, 24G 3. Item 28 TOTAL CHARGE 33000.",
+  "summary": "Claim line 1: 092126 to 092326, CPT 98941, 24F 25500, 24G 3. Line 2: 092126 to 092326, CPT 97014, 24F 7500, 24G 3. Item 28 total charge 33000."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:10Z"
+ }
+}

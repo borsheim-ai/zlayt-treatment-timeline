@@ -1,0 +1,11 @@
+@page{size:Letter;margin:0.4in}
+body{font:8.7pt/1.25 -apple-system,Helvetica,Arial,sans-serif;max-width:none;margin:0;color:#111}
+header{display:none}
+h1{font-size:13pt;margin:0 0 2px}
+p{margin:2px 0}li{margin:0.5px 0}
+ul,ol{margin:2px 0;padding-left:16px}
+table{border-collapse:collapse;width:100%;margin:3px 0;font-size:8.2pt}
+td,th{border:1px solid #bbb;padding:1.5px 4px;vertical-align:top;text-align:left}
+code{font-size:7.8pt}
+blockquote{margin:3px 0 3px 6px;padding:1px 0 1px 8px;border-left:2px solid #999;color:#222}
+h2{font-size:11pt;margin:7px 0 2px}

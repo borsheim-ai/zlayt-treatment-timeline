@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "New patient exam charge $250.00; x-ray charge $180.00; treatment visits 1 through 14 charge $2,310.00; total charges $2,740.00.",
+  "summary": "Itemized ledger lists new patient exam charge $250.00, x-ray charge $180.00, treatment visits 1 through 14 charge $2,310.00, and total charges $2,740.00."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:45Z"
+ }
+}

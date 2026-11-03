@@ -1,0 +1,4 @@
+commit 9655f1df4a1a21b93c0123a2cfcce4559939e095 (git archive into a clean directory; .venv linked)
+command: E2E_REQUIRE_DB=1 .venv/bin/python -m pytest tests/unit -q -p no:cacheprovider
+6815 passed, 12 skipped in 420.48s (0:07:00)
+exit=0

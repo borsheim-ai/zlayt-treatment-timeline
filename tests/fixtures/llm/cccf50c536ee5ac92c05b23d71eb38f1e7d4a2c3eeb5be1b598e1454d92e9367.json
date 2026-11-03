@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Mild supraspinatus tendinosis; no full-thickness tear. Charge: $2,400. Insurance adjustment: -$1,250. Amount due: $1,150.",
+  "summary": "Right shoulder MRI showed mild supraspinatus tendinosis with no full-thickness tear; charge $2,400, insurance adjustment -$1,250, amount due $1,150."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:26:20Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Scar remains raised at 3 months. Revision discussed if no improvement by 12 months. Estimated revision cost: $6,500.",
+  "summary": "Scar remains raised at 3 months; revision discussed if no improvement by 12 months; estimated revision cost $6,500."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:47Z"
+ }
+}

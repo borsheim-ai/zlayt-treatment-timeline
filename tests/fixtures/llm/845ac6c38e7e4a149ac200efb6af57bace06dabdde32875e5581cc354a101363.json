@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: left clavicle fracture. Sling provided. Refer to orthopedics, Dr. Mortimer Tallowby. ED charge: $4,380.",
+  "summary": "Diagnosis of left clavicle fracture; sling provided; referred to orthopedics, Dr. Mortimer Tallowby; ED charge $4,380."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:51Z"
+ }
+}

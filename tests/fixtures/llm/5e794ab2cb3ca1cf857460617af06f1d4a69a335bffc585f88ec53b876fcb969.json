@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Itemized statement: new patient exam charge $210.00; treatment visits 1 through 18 charge $2,700.00; total charges $2,910.00. Payment received $250.00 (med pay). Balance due $2,660.00. Account held under letter of protection.",
+  "summary": "Itemized statement: new patient exam charge $210.00; treatment visits 1 through 18 charge $2,700.00; total charges $2,910.00. Payment received $250.00 (med pay). Balance due $2,660.00. Account held under letter of protection."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T06:32:53Z"
+ }
+}

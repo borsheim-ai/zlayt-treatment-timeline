@@ -1,0 +1,12 @@
+{
+ "CURATED": "CURATED: hand-checked response written by qa from evals/golden (summary/quote from sample.export.expected.txt, flag spans from sample.expected.json). Not a model output. Cached demo only; ship-bar metrics use recorded/live runs (D-029).",
+ "output": {
+  "excerpt": "Recommend cervical epidural steroid injection. Patient states symptoms began after the January collision.",
+  "summary": "Cervical epidural steroid injection recommended; patient states symptoms began after the January collision."
+ },
+ "recorded_from": {
+  "backend": "curated",
+  "model": "hand-checked (qa)",
+  "recorded_at": "2026-11-02T02:46:58Z"
+ }
+}

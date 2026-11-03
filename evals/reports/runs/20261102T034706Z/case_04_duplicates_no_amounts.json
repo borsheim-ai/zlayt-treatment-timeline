@@ -1,0 +1,241 @@
+{
+ "backend": "claude-cli",
+ "case": "case_04_duplicates_no_amounts",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-05-04",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Pottsworth Emergency Department",
+   "reasons": [],
+   "record_ids": [
+    "r1",
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "7a7f841821b4b38c"
+  },
+  {
+   "date": "2026-05-11",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Tabitha Wrenfield, orthopedics",
+   "reasons": [],
+   "record_ids": [
+    "r3",
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "8e16607fedf85cb5"
+  },
+  {
+   "date": "2026-05-25",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Tabitha Wrenfield, orthopedics",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "1d35377498b1ca6e"
+  },
+  {
+   "date": "2026-05-26",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e6",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Nimblewick Hand Therapy, intake",
+   "reasons": [],
+   "record_ids": [
+    "r6"
+   ],
+   "state": "verified",
+   "summary_sha": "7f58a009bbe5d0e2"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [],
+  "entries": [
+   [
+    [
+     "r1",
+     "r2"
+    ],
+    "2026-05-04",
+    "parsed",
+    "Pottsworth Emergency Department",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3",
+     "r4"
+    ],
+    "2026-05-11",
+    "parsed",
+    "Dr. Tabitha Wrenfield, orthopedics",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-05-25",
+    "parsed",
+    "Dr. Tabitha Wrenfield, orthopedics",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r6"
+    ],
+    "2026-05-26",
+    "parsed",
+    "Nimblewick Hand Therapy, intake",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e3",
+   "e5",
+   "e6"
+  ],
+  "flags": [],
+  "gap_flags": [],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-05-04",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-05-04",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-05-11",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-05-11",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-05-25",
+    "parsed"
+   ],
+   [
+    "r6",
+    "2026-05-26",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Pottsworth Emergency Department",
+    "33a8cf275c863b66",
+    "2026-05-04",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Pottsworth Emergency Department",
+    "33a8cf275c863b66",
+    "2026-05-04",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Dr. Tabitha Wrenfield, orthopedics",
+    "d44b3fe47898d3fa",
+    "2026-05-11",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Dr. Tabitha Wrenfield, Orthopedics",
+    "d44b3fe47898d3fa",
+    "2026-05-11",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Dr. Tabitha Wrenfield, orthopedics",
+    "1d35377498b1ca6e",
+    "2026-05-25",
+    "parsed"
+   ],
+   [
+    "r6",
+    "Nimblewick Hand Therapy, intake",
+    "7f58a009bbe5d0e2",
+    "2026-05-26",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 0,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 0,
+   "letter_line": null,
+   "status": "none_found",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "warning_codes": [
+  "DUPLICATE_MERGED"
+ ]
+}

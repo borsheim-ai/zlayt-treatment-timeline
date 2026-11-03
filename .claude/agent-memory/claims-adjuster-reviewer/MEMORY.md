@@ -1,0 +1,9 @@
+- [Lexicon review method](feedback_lexicon_review_method.md) — selfcheck PASS hides recall gaps; rerun probe script; must-probe constructions
+- [Research attack-map gaps](project_research_attack_map_gaps.md) — T-008 r1-r4: omissions, invented Rivera facts, partial scope fixes (line 34 left open at r4); sweep prose + golden must-not regex
+- [Flag-pass review patterns](project_flag_pass_review_patterns.md) — T-036 r0: vacuous guard test, silent-empty conflict pass, worker skipped full suite
+- [source_kind history and run signal](project_flag_source_kind_and_run_signal.md) — T-036 r2/r3 word filter; T-061 r0 (dd545e3) lexicon narrowed but AC2 flags/grounding wiring not done, exclude regex over-broad
+- [Review the commit, not the dirty tree](feedback_review_commit_not_worktree.md) — git archive the sha when working tree has uncommitted edits to reviewed files
+- [Reviews are write-once](feedback_reviews_write_once.md) — reviewer-write-guard blocks Edit on a written review; verify citations before the first write
+- [T-036 r4 split and judge fixtures](project_t036_r4_split_and_judge_fixtures.md) — self-report split to T-061; committed judge fixtures don't replay (JUDGE_UNAVAILABLE); r4 verdict changes
+- [T-061 r2 speaker scope](project_t061_r2_speaker_scope.md) — closed speaker list + 3-word window leaks colon labels, Mrs. split, mixed sentences; test variants, not just listed phrasings
+- [T-061 r3 clause-span holes](project_t061_r3_clause_span_holes.md) — D-035 span runs to ';' so comma/and family clause keeps the chip; closed verb list leaks 'thinks/told'; selfcheck not production

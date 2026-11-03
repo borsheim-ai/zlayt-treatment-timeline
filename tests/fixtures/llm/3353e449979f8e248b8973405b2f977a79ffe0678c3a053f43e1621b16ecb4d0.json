@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "accident_date_provenance",
+    "excerpt": "Date of injury: 3/l8/26.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:13:39Z"
+ }
+}

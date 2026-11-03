@@ -1,0 +1,181 @@
+SYNTHETIC statement-level and restating wordings collected from the T-140 adjuster and staff probes (rounds 1-2); one sentence per line.
+Running total $350.00.
+Running balance $350.00.
+Cumulative charges $350.00.
+Year-to-date charges $350.00.
+Charges to date $350.00.
+Total to date $350.00.
+Accumulated charges $350.00.
+Sum of charges $350.00.
+All charges $350.00.
+Charges for all visits $350.00.
+Combined charges $350.00.
+Aggregate charges billed $350.00.
+Statement total $350.00.
+Total, this statement: $350.00.
+This statement: $350.00.
+Statement amount $350.00.
+Amount of this statement $350.00.
+Current statement charges $350.00.
+New charges this statement $350.00.
+Statement charges $350.00.
+Billed this statement $350.00.
+Invoice amount $350.00.
+Previous balance $380.00.
+Prior balance carried forward $380.00.
+Balance forward $380.00.
+Previous statement $380.00.
+Brought forward $380.00.
+Carried forward charges $380.00.
+Prior charges $380.00.
+Previous charges $380.00.
+Opening balance $380.00.
+Beginning balance $380.00.
+Carry-over from 05/01/2026 statement $380.00.
+Charges carried from prior statement $380.00.
+Prior statement charges $380.00.
+Previously billed $380.00.
+Unpaid prior charges $380.00.
+Payment -$100.00.
+Ins pmt -$100.00.
+Insurance remit -$100.00.
+Acme Mutual EOB -$100.00.
+Refund of x-ray charge -$100.00.
+Exercise charge reversed -$100.00.
+Charge reversal -$100.00.
+Reversal of exercise charge $100.00 CR.
+Exercise charge reversed $100.00.
+Med pay applied to visit charge $100.00.
+Remittance $100.00.
+Collected $100.00.
+Received $100.00.
+Insurance check $100.00.
+Void of 05/07 charge $100.00.
+Charge voided $100.00.
+Less insurance $100.00.
+Insurance -$100.00.
+Acme Mutual paid on x-ray charge $100.00.
+Refund issued $100.00.
+Recoupment of billed $100.00.
+Visit charge (credit) -$100.00.
+Running total $730.00.
+Running balance $730.00.
+Cumulative charges $730.00.
+Year-to-date charges $730.00.
+Charges to date $730.00.
+Total to date $730.00.
+Accumulated charges $730.00.
+Sum of charges $730.00.
+All charges $730.00.
+Charges for all visits $730.00.
+Combined charges $730.00.
+Aggregate charges billed $730.00.
+Statement total $730.00.
+Total, this statement $730.00.
+This statement $730.00.
+Statement amount $730.00.
+Amount of this statement $730.00.
+Current statement charges $730.00.
+New charges this statement $730.00.
+Statement charges $730.00.
+Billed this statement $730.00.
+Invoice amount $730.00.
+Account total $730.00.
+Total billed to date $730.00.
+Charges since 04/02/2026 $730.00.
+Total charges for treatment 04/02/2026 to 06/24/2026 $730.00.
+Total charges (all statements) $730.00.
+Total charges $730.00.
+Statement amt $730.00.
+Stmt charges $730.00.
+Statement: $730.00.
+Statement dated 06/01/2026: $730.00.
+Statement balance $730.00.
+Stmt bal $730.00.
+Gross charges $730.00.
+Account charges $730.00.
+Overall charges $730.00.
+Charges this period $730.00.
+June charges $730.00.
+Monthly charges $730.00.
+Charges for June 2026: $730.00.
+Charges $730.00 year to date.
+Charges $730.00 to date.
+Charges $730.00 since 04/02/2026.
+Charges $730.00 (all statements).
+Amount billed since 04/02/2026: $730.00.
+Billed since start of care $730.00.
+Billed to Acme Mutual $730.00.
+Billed to insurance $730.00.
+Amount billed to date $730.00.
+Amount billed $730.00.
+Billed amount $730.00.
+Total billed $730.00.
+Billed $730.00 in all.
+Last statement $730.00.
+Charges from 05/01/2026 statement $730.00.
+Amount last billed $730.00.
+Earlier charges $730.00.
+Open charges $730.00.
+Unpaid charges $730.00.
+Outstanding charges $730.00.
+Open items $730.00.
+Charges on account $730.00.
+Account activity $730.00.
+Claim amount $730.00.
+Amount submitted to insurer $730.00.
+Charges submitted $730.00.
+Exercise charge $150.00 cr.
+Write off $730.00.
+Ins. adj. $730.00.
+Paid by Acme Mutual $730.00.
+Net charges $730.00.
+Charges so far $730.00.
+Charges thus far $730.00.
+Charges through 06/24/2026 $730.00.
+Charges for the period $730.00.
+Billing period charges $730.00.
+Invoice charges $730.00.
+Claim charges $730.00.
+Page charges $730.00.
+Charges this page $730.00.
+Page 1 charges $730.00.
+Billed to Blue Cross $730.00.
+Amount billed to insurance $730.00.
+Submitted to insurance $730.00.
+Billed to date $730.00.
+Total billed to Acme $730.00.
+Billed charges $730.00.
+Provider charges $730.00.
+Facility charges $730.00.
+Itemized charges $730.00.
+Charges (see above) $730.00.
+Charges listed above $730.00.
+Above charges $730.00.
+Charges: $730.00 (sum of the above).
+Charges $730.00 (sum of above).
+Charges $730.00 total.
+Charges $730.00 in all.
+Charges $730.00 combined.
+Visits 1-3 charges $730.00.
+Treatment to date: charges $730.00.
+Case charges $730.00.
+Statement of charges $730.00.
+Summary of charges $730.00.
+Previous statement charges $730.00.
+Charges, prior statement $730.00.
+Carried over charges $730.00.
+Charges (carried over) $730.00.
+Charges remaining $730.00.
+Pending charges $730.00.
+Insurance charges $730.00.
+Patient charges $730.00.
+Self-pay charges $730.00.
+Charges after adjustment $730.00.
+Adjusted charges $730.00.
+Net of adjustments, charges $730.00.
+Allowed charges $730.00.
+Charges allowed $730.00.
+Contract charges $730.00.
+Charges due $730.00.
+Charges owed $730.00.

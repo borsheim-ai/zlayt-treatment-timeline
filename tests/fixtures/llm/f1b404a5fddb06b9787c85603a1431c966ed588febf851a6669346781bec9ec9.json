@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Motivo de la visita: dolor de espaIda y hombro derecho.",
+  "summary": "Reason for visit given as back pain and right shoulder pain (intake form, OCR text)."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:18:45Z"
+ }
+}

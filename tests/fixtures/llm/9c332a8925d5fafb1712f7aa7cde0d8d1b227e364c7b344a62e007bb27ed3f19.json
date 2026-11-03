@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: left knee contusion, chest wall contusion. X-ray left knee negative for fracture. Admitted for observation.",
+  "summary": "Diagnosed with left knee contusion and chest wall contusion; left knee X-ray negative for fracture; admitted for observation."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:16:20Z"
+ }
+}

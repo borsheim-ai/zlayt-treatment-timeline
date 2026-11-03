@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Adjustment performed. Pain 3/10. Charge: $9S.00.",
+  "summary": "Adjustment performed. Pain 3/10. Charge: $9S.00."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:50:30Z"
+ }
+}

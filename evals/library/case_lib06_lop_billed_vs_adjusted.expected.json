@@ -1,0 +1,535 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib06_lop_billed_vs_adjusted",
+  "synthetic": true,
+  "input_file": "case_lib06_lop_billed_vs_adjusted.txt",
+  "description": "Library L6 (mirrors S6). Side-impact collision, attorney-referred clinic treating under a letter of protection, a billing statement with a balance, and an imaging bill with an adjustment and an amount due. Only stated charges are counted; adjustments, balances and amounts due are unclear and appear in internal notes only (D-019). The billing statement sits inside a 35-day visit gap.",
+  "stress_types": [
+    "letter_of_protection",
+    "attorney_referral",
+    "billed_vs_adjusted_amounts",
+    "billing_statement_inside_gap",
+    "balance_double_count_trap"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-05-02",
+      "date": "2026-05-02",
+      "kind": "encounter",
+      "source": "Eastvale Fire-Rescue run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-05-02",
+      "date": "2026-05-02",
+      "kind": "encounter",
+      "source": "Larchmont Ridge ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-05-13",
+      "date": "2026-05-13",
+      "kind": "encounter",
+      "source": "Gannet and Moor Injury Clinic, new patient"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-06-03",
+      "date": "2026-06-03",
+      "kind": "billing_statement",
+      "source": "Gannet and Moor Injury Clinic, billing statement"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-06-17",
+      "date": "2026-06-17",
+      "kind": "encounter",
+      "source": "Larchmont Ridge Imaging, right shoulder MRI"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-07-08",
+      "date": "2026-07-08",
+      "kind": "encounter",
+      "source": "Gannet and Moor Injury Clinic, injection visit"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-09-02",
+      "date": "2026-09-02",
+      "kind": "encounter",
+      "source": "Gannet and Moor Injury Clinic, follow-up"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-05-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Eastvale Fire-Rescue run report",
+      "must_contain_excerpt": "Car struck on the passenger side at an intersection",
+      "required_terms": [
+        "shoulder pain"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-05-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larchmont Ridge ED",
+      "must_contain_excerpt": "Dx: right shoulder contusion",
+      "required_terms": [
+        "right shoulder contusion",
+        "x-ray negative"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-05-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Gannet and Moor Injury Clinic, new patient",
+      "must_contain_excerpt": "Patient referred by attorney",
+      "required_terms": [
+        "referred by attorney",
+        "letter of protection",
+        "6/10"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-06-03",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Gannet and Moor Injury Clinic, billing statement",
+      "must_contain_excerpt": "Statement of charges",
+      "required_terms": [
+        "statement of charges"
+      ],
+      "note": "Billing statement: listed as an entry, never a gap endpoint."
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-06-17",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Larchmont Ridge Imaging, right shoulder MRI",
+      "must_contain_excerpt": "no full-thickness tear",
+      "required_terms": [
+        "supraspinatus tendinosis",
+        "no full-thickness tear"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-07-08",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Gannet and Moor Injury Clinic, injection visit",
+      "must_contain_excerpt": "Subacromial injection performed",
+      "required_terms": [
+        "injection"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-09-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Gannet and Moor Injury Clinic, follow-up",
+      "must_contain_excerpt": "Pain 3/10",
+      "required_terms": [
+        "3/10"
+      ]
+    }
+  ],
+  "expected_entry_count": 7,
+  "gap_excluded_records": [
+    4
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-05-02",
+      "to_date": "2026-05-13",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 11,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-13",
+      "to_date": "2026-06-17",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 35,
+      "flag": true
+    },
+    {
+      "from_date": "2026-06-17",
+      "to_date": "2026-07-08",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 21,
+      "flag": false
+    },
+    {
+      "from_date": "2026-07-08",
+      "to_date": "2026-09-02",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 56,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$2,880",
+      "value": 2880,
+      "class": "charge",
+      "excerpt": "ED charge: $2,880",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 4,
+      "raw": "$1,100",
+      "value": 1100,
+      "class": "charge",
+      "excerpt": "office visits $1,100",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 4,
+      "raw": "$450",
+      "value": 450,
+      "class": "charge",
+      "excerpt": "MRI referral fee $450",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A4",
+      "record_no": 4,
+      "raw": "$1,550",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Balance under letter of protection: $1,550",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Balance equals the two statement lines ($1,100 + $450); counting it would double count."
+    },
+    {
+      "id": "A5",
+      "record_no": 5,
+      "raw": "$2,400",
+      "value": 2400,
+      "class": "charge",
+      "excerpt": "Charge: $2,400",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A6",
+      "record_no": 5,
+      "raw": "$1,250",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Insurance adjustment: -$1,250",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Adjustment, not a charge; negative sign."
+    },
+    {
+      "id": "A7",
+      "record_no": 5,
+      "raw": "$1,150",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Amount due: $1,150",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Net amount due after adjustment; not the billed charge."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 6830,
+    "counted_amount_ids": [
+      "A1",
+      "A2",
+      "A3",
+      "A5"
+    ],
+    "amounts_found": 7,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A4",
+        "reason": "balance $1,550 equals statement lines A2 + A3; not counted; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A6",
+        "reason": "insurance adjustment -$1,250; not a charge; needs review (billed vs paid/incurred is a legal question, not a tool decision)",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A7",
+        "reason": "amount due $1,150 after adjustment; not the billed charge; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $6,830.00",
+    "ui_line": "Accepted charges: $6,830.00",
+    "notes_lines": [
+      "$1,550: balance $1,550 equals statement lines A2 + A3; not counted; needs review",
+      "$1,250: insurance adjustment -$1,250; not a charge; needs review (billed vs paid/incurred is a legal question, not a tool decision)",
+      "$1,150: amount due $1,150 after adjustment; not the billed charge; needs review"
+    ],
+    "accept_all_total": 5280,
+    "accept_all_reason": "Hand-verified against the records: ED charge $2,880 + office visits $1,100 + MRI referral fee $450 + MRI charge $2,400 = $6,830. The $1,550 LOP balance repeats the $1,100 + $450 statement lines, the -$1,250 insurance adjustment is not a charge and the $1,150 amount due is derived; none is totaled. D-060 (default-deny): the statement's 'office visits $1,100; MRI referral fee $450' line states no date of service, so it is not an itemized service line and both figures are listed under Amounts not totaled ('MRI referral fee' also carries no charge word). Accepting the acceptable lines one at a time gives $5,280.00 (ED charge + MRI charge); $6,830.00 is reached after the paralegal reads the statement and reclassifies the two lines."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-05-13",
+      "to_date": "2026-06-17",
+      "days": 35,
+      "cite": {
+        "all": [
+          3,
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Plan: MRI and injections"
+        },
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Mild supraspinatus tendinosis"
+        }
+      ],
+      "summary": "Treatment gap of 35 days (2026-05-13 to 2026-06-17), longer than 30."
+    },
+    {
+      "id": "G2",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-07-08",
+      "to_date": "2026-09-02",
+      "days": 56,
+      "cite": {
+        "all": [
+          6,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Subacromial injection performed"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Continue home exercises"
+        }
+      ],
+      "summary": "Treatment gap of 56 days (2026-07-08 to 2026-09-02), longer than 30."
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Patient referred by attorney"
+        }
+      ],
+      "summary": "Attorney referral and letter-of-protection treatment (internal notes only, D-001/D-018); the tool states the record wording and draws no inference about charges.",
+      "subtype": "litigation_referral"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 11 and 21-day intervals; the 2026-06-03 billing statement is not a gap endpoint."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "pre_existing",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Mild supraspinatus tendinosis"
+        }
+      ],
+      "summary": "Tendinosis wording an adjuster may argue is degenerative; tolerated, not required.",
+      "subtype": "degenerative_language"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Implies the attorney steered treatment, that charges are inflated or unreasonable, or that the letter of protection changes the care (adjuster arguments, not record facts).",
+      "check": "judge",
+      "bad_examples": [
+        "The attorney steered her to this clinic to build the claim.",
+        "Charges exceed the reasonable value of the care.",
+        "Treatment was inflated by the letter of protection."
+      ],
+      "good_examples": [
+        "Patient referred by attorney; treating under a letter of protection.",
+        "Plan: MRI and injections.",
+        "Right shoulder pain 6/10."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Nets the adjustment or states the amount due as the billed charge; the letter total counts stated charges only.",
+      "check": "judge",
+      "bad_examples": [
+        "MRI billed at $1,150.",
+        "Charges after insurance adjustment total $5,280.",
+        "MRI charge was reduced to $1,150."
+      ],
+      "good_examples": [
+        "Charge: $2,400 (adjustment and amount due listed in notes).",
+        "Billed charges accepted from these records: $6,830.00.",
+        "Insurance adjustment appears in the record; not netted."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Counts the adjustment, the amount due or the balance as a charge, or double counts the balance (values 1,150 / 1,250 / 1,550 / 8,380).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$1,150",
+          "value": 1150,
+          "class": "charge"
+        },
+        {
+          "raw": "$1,250",
+          "value": 1250,
+          "class": "charge"
+        },
+        {
+          "raw": "$1,550",
+          "value": 1550,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        1150,
+        1250,
+        1550,
+        8380,
+        5280
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S6 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: encounters 05-02 (rec 1, 2), 05-13, 06-17, 07-08, 09-02; the 06-03 billing statement is excluded. 05-02 to 05-13 = 11; 05-13 to 06-17 = 18 (to May 31) + 17 = 35 (flag); 06-17 to 07-08 = 21; 07-08 to 09-02 = 23 (to Jul 31) + 31 + 2 = 56 (flag).",
+    "Charges counted: 2,880 + 1,100 + 450 + 2,400 = 6,830. Forbidden: 6,830 + 1,550 = 8,380; 2,880 + 2,400 = 5,280 (statement lines omitted)."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Fall on ice, left knee pain 6/10. X-ray negative for fracture. Charge: $420.",
+  "summary": "Fall on ice with left knee pain 6/10; X-ray negative for fracture; charge $420."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:53:22Z"
+ }
+}

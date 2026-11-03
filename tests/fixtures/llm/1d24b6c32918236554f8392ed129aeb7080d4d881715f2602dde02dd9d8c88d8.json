@@ -1,0 +1,31 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On June 1, 2026, Fernwhistle County EMS documented a cyclist struck by a car at low speed, left shoulder pain, and transport to Thornapple Valley Hospital ED."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On June 1, 2026, Thornapple Valley Hospital ED documented a diagnosis of left clavicle fracture, provided a sling, and referred the patient to orthopedics, Dr. Mortimer Tallowby."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On June 9, 2026, Wombleton Orthopedics, Dr. Tallowby, documented a left clavicle fracture with nonoperative management and a sling for 4 more weeks."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On June 23, 2026, Crumpet Lane Orthopedics, M. Tallowby, MD, documented that callus formation was noted and that the sling was to continue."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On July 14, 2026, Wombleton Orthopedics, Dr. Tallowby, documented clinical union and release to light duty."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:52:16Z"
+ }
+}

@@ -1,0 +1,27 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-06-01
+Source: Fernwhistle County EMS
+Excerpt: "Cyclist struck by a car at low speed. Left shoulder pain. Transported to Thornapple Valley Hospital ED."
+
+=== Record 2 ===
+Date: 2026-06-01
+Source: Thornapple Valley Hospital ED
+Excerpt: "Dx: left clavicle fracture. Sling provided. Refer to orthopedics, Dr. Mortimer Tallowby. ED charge: $4,380."
+
+=== Record 3 ===
+Date: 2026-06-09
+Source: Wombleton Orthopedics, Dr. Tallowby
+Excerpt: "Left clavicle fracture, nonoperative management. Sling 4 more weeks."
+
+=== Record 4 ===
+Date: 2026-06-23
+Source: Crumpet Lane Orthopedics, M. Tallowby, MD
+Excerpt: "Callus formation noted. Continue sling."
+
+=== Record 5 ===
+Date: 2026-07-14
+Source: Wombleton Orthopedics, Dr. Tallowby
+Excerpt: "Clinical union. Released to light duty."
+

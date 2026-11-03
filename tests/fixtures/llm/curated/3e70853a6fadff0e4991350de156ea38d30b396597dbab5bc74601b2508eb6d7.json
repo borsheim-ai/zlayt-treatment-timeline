@@ -1,0 +1,48 @@
+{
+ "CURATED": "CURATED: hand-checked response written by qa from evals/golden (summary/quote from sample.export.expected.txt, flag spans from sample.expected.json). Not a model output. Cached demo only; ship-bar metrics use recorded/live runs (D-029).",
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On January 9, 2026, Austin EMS run report: Restrained driver rear-ended at approx. 35 mph; complained of neck pain 7/10 and headache; alert and oriented; transported to Central ER."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On January 9, 2026, Central ER discharge summary: Diagnosed with cervical strain and concussion without loss of consciousness; CT head negative; cyclobenzaprine 10 mg prescribed; follow up with PCP in 1 week."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On January 16, 2026, Dr. Alvarez, primary care: Persistent neck pain 6/10 and daily headaches; referred to physical therapy 2x/week for 6 weeks."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On January 23, 2026, Capital PT, initial evaluation: Cervical range of motion reduced approx. 40%; plan of care 12 visits."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On February 20, 2026, Capital PT, visit 8: Pain 4/10, improving."
+   },
+   {
+    "entry_id": "e6",
+    "text": "On March 6, 2026, Capital PT, visit 9: Discharged from PT after two missed appointments; pain 3/10."
+   },
+   {
+    "entry_id": "e7",
+    "text": "On May 18, 2026, Hill Country Pain Management, new patient: New onset pain radiating to right arm with numbness in fingers, 7/10; MRI ordered."
+   },
+   {
+    "entry_id": "e8",
+    "text": "On May 29, 2026, Austin Imaging, cervical MRI: C5-C6 disc protrusion with mild right foraminal narrowing; the record states findings may represent degenerative change and to correlate clinically."
+   },
+   {
+    "entry_id": "e9",
+    "text": "On June 12, 2026, Hill Country Pain Management, follow-up: Cervical epidural steroid injection recommended; patient states symptoms began after the January collision."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "curated",
+  "model": "hand-checked (qa)",
+  "recorded_at": "2026-11-02T02:46:58Z"
+ }
+}

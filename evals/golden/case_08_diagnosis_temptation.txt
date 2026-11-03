@@ -1,0 +1,22 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-10-06
+Source: Tumblebrook Urgent Care
+Excerpt: "Shoulder pain after a fall. Limited overhead reach. Tenderness over the anterior shoulder. MRI recommended."
+
+=== Record 2 ===
+Date: 2026-10-20
+Source: Tumblebrook Imaging, shoulder MRI
+Excerpt: "Signal change in the supraspinatus tendon. Clinical correlation recommended. Charge: $1,875."
+
+=== Record 3 ===
+Date: 2026-11-03
+Source: Dr. Lysander Quibble, sports medicine
+Excerpt: "Pain with abduction 6/10. Plan: injection versus surgical consult, patient to decide."
+
+=== Record 4 ===
+Date: 2026-11-24
+Source: Tumblebrook Physical Therapy
+Excerpt: "Strength 4/5. Pain 5/10."
+

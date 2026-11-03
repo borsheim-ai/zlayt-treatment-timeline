@@ -1,0 +1,61 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-01-12
+Source: Pelham Ridge EMS run report
+Excerpt: "Restrained driver of a sedan struck from behind at a stoplight. Pt states neck pain 6/10. Denies LOC. Ambulatory at scene. Transported to Thornbury Regional ED."
+
+=== Record 2 ===
+Date: 2026-01-12
+Source: Thornbury Regional ED
+Excerpt: "Dx: cervical strain. CT head negative. Denies LOC per patient. Discharged on cyclobenzaprine. ED charge: $4,210."
+
+=== Record 3 ===
+Date: 2026-01-16
+Source: Dr. Philippa Wenlock, orthopedics, new patient
+Excerpt: "Neck pain 5/10 without arm symptoms. Date of accident per intake form: 2026-01-12. Plan: physical therapy twice weekly."
+
+=== Record 4 ===
+Date: 2026-01-26
+Source: Larkmoor Physical Therapy, initial evaluation
+Excerpt: "Cervical range of motion reduced about 25%. Plan of care: 12 weeks, twice weekly. Charge per visit $145."
+
+=== Record 5 ===
+Date: 2026-02-23
+Source: Larkmoor Physical Therapy, visit 12
+Excerpt: "Pain 4/10. Home exercise program progressed."
+
+=== Record 6 ===
+Date: 2026-03-23
+Source: Larkmoor Physical Therapy, visit 22
+Excerpt: "Pain 3/10. Range of motion improving."
+
+=== Record 7 ===
+Date: 2026-04-13
+Source: Larkmoor Physical Therapy, discharge
+Excerpt: "Discharged from PT after 11 weeks, goals partly met. Pain 3/10."
+
+=== Record 8 ===
+Date: 2026-04-24
+Source: Pelham Ridge EMS run report
+Excerpt: "Restrained driver in a second collision, struck on the driver side. Hard cervical collar applied. Pt states neck pain 8/10 and left arm numbness. Transported to Thornbury Regional ED."
+
+=== Record 9 ===
+Date: 2026-04-24
+Source: Thornbury Regional ED
+Excerpt: "Dx: cervical strain. CT cervical spine negative for fracture. Denies LOC per patient. ED charge: $4,680."
+
+=== Record 10 ===
+Date: 2026-05-20
+Source: Valley Imaging, cervical MRI
+Excerpt: "C5-C6 disc herniation with mild canal narrowing. No prior imaging available for comparison. MRI charge: $2,350."
+
+=== Record 11 ===
+Date: 2026-06-02
+Source: Dr. Philippa Wenlock, orthopedics, follow-up
+Excerpt: "Neck pain 7/10 with left arm numbness since the rear-end collision of 2026-01-12. MRI reviewed. Recommend referral to neurosurgery."
+
+=== Record 12 ===
+Date: 2026-07-14
+Source: Dr. Ansgar Kellerman, neurology
+Excerpt: "Patient states brief loss of consciousness at the second collision. Headaches and word-finding difficulty since. Referred for neuropsychological testing."

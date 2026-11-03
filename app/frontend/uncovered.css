@@ -1,0 +1,17 @@
+/* T-144: the collapsed "Also in this record, not in an entry (n)" list under an entry. Tokens only. */
+.entry[data-entry-id] > .unc { order: 7; grid-column: 1 / -1; }   /* after the decision buttons and the link bar */
+.unc { margin-top: var(--s-2); border-top: 1px dashed var(--border); padding-top: var(--s-1); }
+.unc[hidden] { display: none; }
+.unc-h { margin: 0; font-size: var(--t-sm); line-height: var(--lh-sm); font-weight: var(--w-strong); color: var(--text); }
+.unc-note { margin: var(--s-1) 0 var(--s-2); }
+.unc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.unc-item { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-3); padding: var(--s-2) var(--s-3); background: var(--sunken); border-radius: var(--r-1, var(--r-2)); }
+.unc-text { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; font-size: var(--t-read); line-height: var(--lh-read); color: var(--text); }
+.unc-jump { flex: 0 0 auto; white-space: nowrap; }
+@media (max-width: 768px) {
+  .unc-item { flex-direction: column; gap: var(--s-1); }
+  .unc-jump { align-self: flex-start; min-height: 2.25rem; padding-left: 0; }
+}
+
+/* T-160: the link lives in the head line; it never takes a line of its own */
+.entry-head > .unc-toggle { flex: none; white-space: nowrap; min-height: 1.5rem; font-size: var(--t-sm); }

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Low back pain 4/10. Patient states she missed two physical therapy visits in May. Refer to pain management.",
+  "summary": "Low back pain 4/10. Patient states she missed two physical therapy visits in May. Referral to pain management."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:07Z"
+ }
+}

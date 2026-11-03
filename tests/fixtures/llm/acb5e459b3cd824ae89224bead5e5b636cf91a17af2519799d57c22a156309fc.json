@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Partial-thickness supraspinatus tear. MRI charge: $2,150.",
+  "summary": "Partial-thickness supraspinatus tear. MRI charge: $2,150."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:18:43Z"
+ }
+}

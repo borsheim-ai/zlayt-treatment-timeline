@@ -1,0 +1,419 @@
+{
+ "backend": "claude-cli",
+ "case": "case_03_rate_and_ocr",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-08-03",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Gloamwood Chiropractic, initial evaluation",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "d29da6e1c036531e"
+  },
+  {
+   "date": "2026-08-10",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Gloamwood Chiropractic, billing statement",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "3f44fef96e11431b"
+  },
+  {
+   "date": "2026-08-17",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Gloamwood Chiropractic, visit 2",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "3bf1e5f39ee07a5c"
+  },
+  {
+   "date": "2026-08-24",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Gloamwood Chiropractic, visit 3",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "89bcd2d414c0f198"
+  },
+  {
+   "date": "2026-09-02",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Hobart Wimbleton, radiology",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "940122a1c7315f40"
+  },
+  {
+   "cls": "rate",
+   "generator_prompt_version": null,
+   "id": "a1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [
+    "AMOUNT_RATE_NOT_TOTALED"
+   ],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "needs_review",
+   "text": "$95",
+   "value_cents": 9500
+  },
+  {
+   "cls": "unclear",
+   "generator_prompt_version": null,
+   "id": "a2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "SHOULD_BE_CHARGE",
+    "verdict": "disagree"
+   },
+   "kind": "amount",
+   "reasons": [
+    "JUDGE_DISAGREES",
+    "AMOUNT_UNCLEAR"
+   ],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "needs_review",
+   "text": "$1,2OO",
+   "value_cents": null
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "text": "$95.00",
+   "value_cents": 9500
+  },
+  {
+   "cls": "unclear",
+   "generator_prompt_version": null,
+   "id": "a4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [
+    "AMOUNT_UNCLEAR"
+   ],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "needs_review",
+   "text": "$9S.00",
+   "value_cents": null
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "text": "$240",
+   "value_cents": 24000
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [
+   [
+    "$1,2OO",
+    null,
+    "unclear",
+    "needs_review",
+    [
+     "r2"
+    ]
+   ],
+   [
+    "$240",
+    24000,
+    "charge",
+    "verified",
+    [
+     "r5"
+    ]
+   ],
+   [
+    "$95",
+    9500,
+    "rate",
+    "needs_review",
+    [
+     "r1"
+    ]
+   ],
+   [
+    "$95.00",
+    9500,
+    "charge",
+    "verified",
+    [
+     "r3"
+    ]
+   ],
+   [
+    "$9S.00",
+    null,
+    "unclear",
+    "needs_review",
+    [
+     "r4"
+    ]
+   ]
+  ],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-08-03",
+    "parsed",
+    "Gloamwood Chiropractic, initial evaluation",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-08-10",
+    "parsed",
+    "Gloamwood Chiropractic, billing statement",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-08-17",
+    "parsed",
+    "Gloamwood Chiropractic, visit 2",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-08-24",
+    "parsed",
+    "Gloamwood Chiropractic, visit 3",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-09-02",
+    "parsed",
+    "Dr. Hobart Wimbleton, radiology",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5"
+  ],
+  "flags": [],
+  "gap_flags": [],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-08-03",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-08-10",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-08-17",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-08-24",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-09-02",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Gloamwood Chiropractic, initial evaluation",
+    "113a582a57b4b654",
+    "2026-08-03",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Gloamwood Chiropractic, billing statement",
+    "3f44fef96e11431b",
+    "2026-08-10",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Gloamwood Chiropractic, visit 2",
+    "3bf1e5f39ee07a5c",
+    "2026-08-17",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Gloamwood Chiropractic, visit 3",
+    "89bcd2d414c0f198",
+    "2026-08-24",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Dr. Hobart Wimbleton, radiology",
+    "940122a1c7315f40",
+    "2026-09-02",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 5,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 33500,
+   "letter_line": null,
+   "status": "partial_unclear",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": [
+    {
+     "cents": 9500,
+     "cls": "rate",
+     "review_status": "pending"
+    },
+    {
+     "cents": null,
+     "cls": "unclear",
+     "review_status": "pending"
+    },
+    {
+     "cents": null,
+     "cls": "unclear",
+     "review_status": "pending"
+    }
+   ]
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": []
+}

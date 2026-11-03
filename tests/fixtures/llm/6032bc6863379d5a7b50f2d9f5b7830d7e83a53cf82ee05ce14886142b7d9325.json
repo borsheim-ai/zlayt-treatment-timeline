@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "prior_surgery",
+    "excerpt": "X-ray right knee: no acute fracture; prior arthroscopic changes noted.",
+    "type": "pre_existing"
+   },
+   {
+    "category": "objective_negative",
+    "excerpt": "X-ray right knee: no acute fracture; prior arthroscopic changes noted.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:29:37Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 6/10. Waddell 3/5 positive; effort inconsistent. Lifting tolerance 25 pounds.",
+  "summary": "Pain 6/10. Waddell 3/5 positive; effort inconsistent. Lifting tolerance 25 pounds."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:05Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Surgeon cannot state to a reasonable degree of medical probability whether the fall aggravated the low back condition. Recommend epidural steroid injection at L4-L5.",
+  "summary": "Surgeon cannot state to a reasonable degree of medical probability whether the fall aggravated the low back condition; epidural steroid injection at L4-L5 recommended."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:23Z"
+ }
+}

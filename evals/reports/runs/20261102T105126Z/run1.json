@@ -1,0 +1,974 @@
+{
+ "backend": "claude-cli",
+ "case": "sample",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-01-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Austin EMS run report",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "960b193665be0fc1"
+  },
+  {
+   "date": "2026-01-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Central ER discharge summary",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "02011743700066bb"
+  },
+  {
+   "date": "2026-01-16",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Alvarez, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "a8a25994705be1da"
+  },
+  {
+   "date": "2026-01-23",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Capital PT, initial evaluation",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "40e8a344a7640cb6"
+  },
+  {
+   "date": "2026-02-20",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Capital PT, visit 8",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "79e55a4bf0074433"
+  },
+  {
+   "date": "2026-03-06",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e6",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Capital PT, visit 9",
+   "reasons": [],
+   "record_ids": [
+    "r6"
+   ],
+   "state": "verified",
+   "summary_sha": "459d280a9d224ea3"
+  },
+  {
+   "date": "2026-05-18",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e7",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hill Country Pain Management, new patient",
+   "reasons": [],
+   "record_ids": [
+    "r7"
+   ],
+   "state": "verified",
+   "summary_sha": "16997af95ce6154a"
+  },
+  {
+   "date": "2026-05-29",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e8",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Austin Imaging, cervical MRI",
+   "reasons": [],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "verified",
+   "summary_sha": "08df59e46227b697"
+  },
+  {
+   "date": "2026-06-12",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e9",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hill Country Pain Management, follow-up",
+   "reasons": [],
+   "record_ids": [
+    "r9"
+   ],
+   "state": "verified",
+   "summary_sha": "57681515910747a8"
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "text": "$6,240",
+   "value_cents": 624000
+  },
+  {
+   "cls": "rate",
+   "generator_prompt_version": null,
+   "id": "a2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [
+    "AMOUNT_RATE_NOT_TOTALED"
+   ],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "needs_review",
+   "text": "$185",
+   "value_cents": 18500
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "verified",
+   "text": "$2,150",
+   "value_cents": 215000
+  },
+  {
+   "cls": "damages",
+   "generator_prompt_version": null,
+   "id": "a3",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "amount",
+   "reasons": [
+    "AMOUNT_DAMAGES"
+   ],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "needs_review",
+   "text": "missing 3 days of work",
+   "value_cents": null
+  },
+  {
+   "category": "gap_over_30",
+   "computed": {
+    "days": 73,
+    "from": "2026-03-06",
+    "to": "2026-05-18"
+   },
+   "evidence": [
+    {
+     "excerpt": "Date: 2026-03-06",
+     "record_id": "r6"
+    },
+    {
+     "excerpt": "Source: Capital PT, visit 9",
+     "record_id": "r6"
+    },
+    {
+     "excerpt": "Date: 2026-05-18",
+     "record_id": "r7"
+    },
+    {
+     "excerpt": "Source: Hill Country Pain Management, new patient",
+     "record_id": "r7"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_gap_r6_r7",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r6",
+    "r7"
+   ],
+   "state": "verified",
+   "type": "gap"
+  },
+  {
+   "category": "accident_date_after_treatment",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Date of accident per intake form: 2026-01-19",
+     "record_id": "r7"
+    },
+    {
+     "excerpt": "Date: 2026-01-09",
+     "record_id": "r1"
+    },
+    {
+     "excerpt": "Date: 2026-01-09",
+     "record_id": "r2"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_accident_date_after_treatment_1_2_7",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r1",
+    "r2",
+    "r7"
+   ],
+   "state": "verified",
+   "type": "conflict"
+  },
+  {
+   "category": "treatment_plan_vs_actual",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Plan of care: 12 visits.",
+     "record_id": "r4"
+    },
+    {
+     "excerpt": "Discharged from PT after two missed appointments.",
+     "record_id": "r6"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_cx1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_conflict_v6",
+    "reason_code": "PLAN_VS_ACTUAL",
+    "verdict": "conflict"
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r4",
+    "r6"
+   ],
+   "state": "verified",
+   "type": "conflict"
+  },
+  {
+   "category": "pre_existing",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Patient reports low back pain in 2023, resolved.",
+     "record_id": "r3"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r3_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "type": "pre_existing"
+  },
+  {
+   "category": "degenerative_language",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Findings may represent degenerative change; correlate clinically.",
+     "record_id": "r8"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r8_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "verified",
+   "type": "pre_existing"
+  },
+  {
+   "category": "missed_care",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Discharged from PT after two missed appointments.",
+     "record_id": "r6"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r6_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r6"
+   ],
+   "state": "verified",
+   "type": "causation"
+  },
+  {
+   "category": "accident_date_provenance",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Date of accident per intake form: 2026-01-19.",
+     "record_id": "r7"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r7_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r7"
+   ],
+   "state": "verified",
+   "type": "causation"
+  },
+  {
+   "category": "new_onset",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "New onset pain radiating to right arm with numbness in fingers.",
+     "record_id": "r7"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r7_2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r7"
+   ],
+   "state": "verified",
+   "type": "causation"
+  },
+  {
+   "category": "speculative_language",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Findings may represent degenerative change; correlate clinically.",
+     "record_id": "r8"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r8_2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "verified",
+   "type": "causation"
+  },
+  {
+   "category": "patient_report",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Patient states symptoms began after the January collision.",
+     "record_id": "r9"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r9_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r9"
+   ],
+   "state": "verified",
+   "type": "causation"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": 1,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [
+   [
+    "$185",
+    18500,
+    "rate",
+    "needs_review",
+    [
+     "r4"
+    ]
+   ],
+   [
+    "$2,150",
+    215000,
+    "charge",
+    "verified",
+    [
+     "r8"
+    ]
+   ],
+   [
+    "$6,240",
+    624000,
+    "charge",
+    "verified",
+    [
+     "r2"
+    ]
+   ],
+   [
+    "missing 3 days of work",
+    null,
+    "damages",
+    "needs_review",
+    [
+     "r5"
+    ]
+   ]
+  ],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-01-09",
+    "parsed",
+    "Austin EMS run report",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-01-09",
+    "parsed",
+    "Central ER discharge summary",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-01-16",
+    "parsed",
+    "Dr. Alvarez, primary care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-01-23",
+    "parsed",
+    "Capital PT, initial evaluation",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-02-20",
+    "parsed",
+    "Capital PT, visit 8",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r6"
+    ],
+    "2026-03-06",
+    "parsed",
+    "Capital PT, visit 9",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r7"
+    ],
+    "2026-05-18",
+    "parsed",
+    "Hill Country Pain Management, new patient",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r8"
+    ],
+    "2026-05-29",
+    "parsed",
+    "Austin Imaging, cervical MRI",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r9"
+    ],
+    "2026-06-12",
+    "parsed",
+    "Hill Country Pain Management, follow-up",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5",
+   "e6",
+   "e7",
+   "e8",
+   "e9"
+  ],
+  "flags": [
+   [
+    "causation",
+    "accident_date_provenance",
+    [
+     "r7"
+    ],
+    [
+     "Date of accident per intake form: 2026-01-19."
+    ],
+    "verified"
+   ],
+   [
+    "causation",
+    "missed_care",
+    [
+     "r6"
+    ],
+    [
+     "Discharged from PT after two missed appointments."
+    ],
+    "verified"
+   ],
+   [
+    "causation",
+    "new_onset",
+    [
+     "r7"
+    ],
+    [
+     "New onset pain radiating to right arm with numbness in fingers."
+    ],
+    "verified"
+   ],
+   [
+    "causation",
+    "patient_report",
+    [
+     "r9"
+    ],
+    [
+     "Patient states symptoms began after the January collision."
+    ],
+    "verified"
+   ],
+   [
+    "causation",
+    "speculative_language",
+    [
+     "r8"
+    ],
+    [
+     "Findings may represent degenerative change; correlate clinically."
+    ],
+    "verified"
+   ],
+   [
+    "conflict",
+    "accident_date_after_treatment",
+    [
+     "r1",
+     "r2",
+     "r7"
+    ],
+    [
+     "Date of accident per intake form: 2026-01-19",
+     "Date: 2026-01-09",
+     "Date: 2026-01-09"
+    ],
+    "verified"
+   ],
+   [
+    "conflict",
+    "treatment_plan_vs_actual",
+    [
+     "r4",
+     "r6"
+    ],
+    [
+     "Discharged from PT after two missed appointments.",
+     "Plan of care: 12 visits."
+    ],
+    "verified"
+   ],
+   [
+    "gap",
+    "gap_over_30",
+    [
+     "r6",
+     "r7"
+    ],
+    [
+     "Date: 2026-03-06",
+     "Date: 2026-05-18",
+     "Source: Capital PT, visit 9",
+     "Source: Hill Country Pain Management, new patient"
+    ],
+    "verified"
+   ],
+   [
+    "pre_existing",
+    "degenerative_language",
+    [
+     "r8"
+    ],
+    [
+     "Findings may represent degenerative change; correlate clinically."
+    ],
+    "verified"
+   ],
+   [
+    "pre_existing",
+    "pre_existing",
+    [
+     "r3"
+    ],
+    [
+     "Patient reports low back pain in 2023, resolved."
+    ],
+    "verified"
+   ]
+  ],
+  "gap_flags": [
+   [
+    [
+     "r6",
+     "r7"
+    ],
+    "2026-03-06",
+    "2026-05-18",
+    73,
+    "verified"
+   ]
+  ],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-01-09",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-01-09",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-01-16",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-01-23",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-02-20",
+    "parsed"
+   ],
+   [
+    "r6",
+    "2026-03-06",
+    "parsed"
+   ],
+   [
+    "r7",
+    "2026-05-18",
+    "parsed"
+   ],
+   [
+    "r8",
+    "2026-05-29",
+    "parsed"
+   ],
+   [
+    "r9",
+    "2026-06-12",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Austin EMS run report",
+    "c032a2fcb3cbaa74",
+    "2026-01-09",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Central ER discharge summary",
+    "3d28e086ccf06681",
+    "2026-01-09",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Dr. Alvarez, primary care",
+    "c30348af5ec30f3c",
+    "2026-01-16",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Capital PT, initial evaluation",
+    "40e8a344a7640cb6",
+    "2026-01-23",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Capital PT, visit 8",
+    "79e55a4bf0074433",
+    "2026-02-20",
+    "parsed"
+   ],
+   [
+    "r6",
+    "Capital PT, visit 9",
+    "459d280a9d224ea3",
+    "2026-03-06",
+    "parsed"
+   ],
+   [
+    "r7",
+    "Hill Country Pain Management, new patient",
+    "6f82d5fc544dc50d",
+    "2026-05-18",
+    "parsed"
+   ],
+   [
+    "r8",
+    "Austin Imaging, cervical MRI",
+    "0ad38373c3ecb357",
+    "2026-05-29",
+    "parsed"
+   ],
+   [
+    "r9",
+    "Hill Country Pain Management, follow-up",
+    "528a05cbc3d0e41c",
+    "2026-06-12",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 3,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 839000,
+   "letter_line": null,
+   "status": "partial_unclear",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": [
+    {
+     "cents": 18500,
+     "cls": "rate",
+     "review_status": "pending"
+    }
+   ]
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": []
+}

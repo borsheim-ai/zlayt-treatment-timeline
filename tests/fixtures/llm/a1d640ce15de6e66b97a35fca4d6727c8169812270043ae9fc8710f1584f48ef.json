@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "UB-04 type of bill 0111, statement period 06/09/2026 to 06/12/2026. Rev 0120 room and board semi-private, FL44 rate $1,640.00 per day, FL46 3 days, FL47 total charges $4,920.00. Rev 0450 emergency room, 1 unit, FL47 total charges $2,105.00. Rev 0250 pharmacy, 14 units, FL47 total charges $386.50. Rev 0300 laboratory, 6 units, FL47 total charges $712.00. Rev 0001 total charges $8,123.50.",
+  "summary": "UB-04 bill, type of bill 0111, for statement period 06/09/2026 to 06/12/2026: room and board semi-private 3 days at $1,640.00 per day totaling $4,920.00; emergency room 1 unit $2,105.00; pharmacy 14 units $386.50; laboratory 6 units $712.00; total charges $8,123.50."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:16:24Z"
+ }
+}

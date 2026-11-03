@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pt states chest wall and left knee pain.",
+  "summary": "Driver of a pickup struck at an intersection; patient states chest wall and left knee pain."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:16:23Z"
+ }
+}

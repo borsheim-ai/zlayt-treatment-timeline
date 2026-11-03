@@ -1,0 +1,12 @@
+{
+ "CURATED": "CURATED: hand-checked response written by qa from evals/golden (summary/quote from sample.export.expected.txt, flag spans from sample.expected.json). Not a model output. Cached demo only; ship-bar metrics use recorded/live runs (D-029).",
+ "output": {
+  "excerpt": "New onset pain radiating to right arm with numbness in fingers. Pain 7/10. MRI ordered.",
+  "summary": "New onset pain radiating to right arm with numbness in fingers, 7/10; MRI ordered."
+ },
+ "recorded_from": {
+  "backend": "curated",
+  "model": "hand-checked (qa)",
+  "recorded_at": "2026-11-02T02:46:58Z"
+ }
+}

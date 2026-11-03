@@ -1,0 +1,284 @@
+/* Base, chrome and the shared components (T-060). Every value comes from tokens.css; no colour, size, radius or shadow is written here by hand.
+   Sections: 1 base  2 chrome (banner, header, skip links)  3 buttons and controls  4 chips and notices  5 cards, rows, quotes  6 dialogs  7 responsive. */
+[hidden] { display: none !important; }
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--text); font: var(--w-regular) var(--t-md)/var(--lh-md) var(--font); }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+h1 { font-size: var(--t-lg); line-height: var(--lh-lg); font-weight: var(--w-strong); }
+h2 { font-size: var(--t-xl); line-height: var(--lh-xl); font-weight: var(--w-strong); }
+h3 { font-size: var(--t-lg); line-height: var(--lh-lg); font-weight: var(--w-strong); }
+h4 { font-size: var(--t-md); line-height: var(--lh-md); font-weight: var(--w-strong); }
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+small, .small { font-size: var(--t-sm); line-height: var(--lh-sm); }
+.muted { color: var(--text-muted); }
+.sr, .rv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+kbd { font: var(--w-strong) var(--t-xs)/var(--lh-xs) var(--mono); padding: 0 var(--s-1); border: 1px solid var(--border-strong); border-radius: var(--r-1); background: var(--sunken); }
+mark { background: var(--mark); color: var(--on-mark); padding: 0 1px; border-radius: 2px; }
+:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+[tabindex="-1"]:focus { outline: none; }
+.entry, .rv-card, [data-item-id], [data-testid="btn-export"], h2[tabindex], section[tabindex] { scroll-margin-top: var(--sticky); }
+@media (forced-colors: active) { mark { background: Highlight; color: HighlightText; } .chip, .btn { border: 1px solid ButtonText; } }
+
+/* ---- 2 chrome -------------------------------------------------------------------------------------------------------------- */
+.banner { padding: 0 var(--gutter); }
+.banner.synth { position: sticky; top: 0; z-index: 30; height: var(--banner-h); display: flex; align-items: center; justify-content: center; gap: var(--s-2);
+  background: var(--warn-bg); color: var(--warn); border-bottom: 1px solid var(--border); font-size: var(--t-xs); line-height: var(--lh-xs); font-weight: var(--w-strong); text-align: center; }
+.banner.synth::before { content: "i"; display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; border: 1.5px solid currentColor; border-radius: 50%; font-size: var(--t-xs); line-height: 1; font-style: italic; flex: none; }
+.banner.ai { background: var(--info-bg); color: var(--info); border-bottom: 1px solid var(--border); font-size: var(--t-sm); line-height: var(--lh-sm); text-align: center; padding-top: var(--s-1); padding-bottom: var(--s-1); }
+.skip-nav { position: absolute; left: var(--s-2); top: var(--s-2); z-index: 60; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.skip-nav a { position: absolute; left: -10000px; top: 0; white-space: nowrap; padding: var(--s-2) var(--s-3); background: var(--panel); color: var(--accent); border: 2px solid var(--accent); border-radius: var(--r-1); font-weight: var(--w-strong); text-decoration: none; box-shadow: var(--elev-2); }
+.skip-nav a:focus { position: static; }
+.app-header { position: sticky; top: var(--banner-h); z-index: 20; min-height: var(--header-h); display: flex; align-items: center; background: var(--panel); border-bottom: 1px solid var(--border); box-shadow: var(--elev-1); }
+.app-header-row { width: 100%; margin: 0 auto; padding: var(--s-2) var(--gutter); display: flex; align-items: center; flex-wrap: wrap; gap: var(--s-2) var(--s-3); }
+.brand { white-space: nowrap; }
+.case-name { font-size: var(--t-lg); line-height: var(--lh-lg); font-weight: var(--w-strong); min-width: 0; overflow-wrap: anywhere; }
+.case-progress { display: flex; align-items: center; gap: var(--s-3); min-width: 0; font-variant-numeric: tabular-nums; font-weight: var(--w-strong); }
+.spacer { flex: 1 1 0; }
+.header-tools { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+/* T-166 F2: on a wide screen the case header is ONE row. The name gives way first (ellipsis, full name in its title); the progress line is short and never wraps; the tools sit together at the right. */
+@media (min-width: 1100px) {
+  .app-header-row { flex-wrap: nowrap; }
+  .case-name { flex: 0 1 auto; min-width: 16ch; max-width: 28ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .case-progress { flex: 0 0 auto; white-space: nowrap; }
+  .spacer { flex: 1 1 0; min-width: 0; }
+  .header-tools { flex-wrap: nowrap; flex: none; }
+  .header-tools .btn { white-space: nowrap; }
+}
+@media (min-width: 1100px) and (max-width: 1279px) { .case-progress progress { display: none; } }   /* the words carry the progress when the bar has no room */
+progress { appearance: none; -webkit-appearance: none; box-sizing: border-box; width: 6rem; height: var(--s-2); border: 1px solid var(--border-strong); border-radius: var(--r-1); background: var(--sunken); overflow: hidden; vertical-align: middle; }   /* T-174 F20: the empty track has a boundary of its own (>= 3:1), in dark mode too */
+progress::-webkit-progress-bar { background: var(--sunken); border-radius: var(--r-1); }
+progress::-webkit-progress-value { background: var(--accent); border-radius: var(--r-1); }
+progress::-moz-progress-bar { background: var(--accent); }
+main { max-width: 1040px; margin: 0 auto; padding: var(--s-4) var(--gutter) var(--s-7); }
+.top { display: none; }
+
+/* ---- 3 buttons and controls ------------------------------------------------------------------------------------------------ */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: var(--control-h); padding: 0 var(--s-3); border: 1px solid var(--border-strong); border-radius: var(--r-1);
+  background: var(--panel); color: var(--text); font: var(--w-strong) var(--t-md)/var(--lh-md) var(--font); text-align: center; cursor: pointer; text-decoration: none;
+  transition: background-color var(--motion), border-color var(--motion), color var(--motion); }
+.btn:hover { background: var(--hover); }
+.btn:active { background: var(--pressed); }
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn--primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn--primary:active { background: var(--accent-active); border-color: var(--accent-active); }
+.btn--ghost { border-color: transparent; background: transparent; color: var(--accent); }
+.btn--link { min-height: var(--control-h-sm); padding: 0 var(--s-2); border-color: transparent; background: transparent; color: var(--accent); font-weight: var(--w-regular); font-size: var(--t-sm); line-height: var(--lh-sm); text-decoration: underline; text-underline-offset: 2px; }
+.btn--link:hover { background: var(--hover); color: var(--accent-hover); }
+.btn--sm { min-height: var(--control-h-sm); padding: 0 var(--s-2); font-size: var(--t-sm); line-height: var(--lh-sm); }
+.btn[aria-pressed="true"]:not(.btn--primary) { border-color: var(--ok); color: var(--ok); }
+.btn[aria-busy="true"] { cursor: progress; }
+.btn:disabled, .btn[disabled] { background: var(--sunken); border-color: var(--border); color: var(--text-subtle); cursor: not-allowed; }
+.btn:disabled:hover { background: var(--sunken); }
+label.btn { cursor: pointer; }
+input[type="text"], input[type="search"], input:not([type]), textarea, select { font: var(--w-regular) var(--t-md)/var(--lh-md) var(--font); color: var(--text); background: var(--panel); border: 1px solid var(--border-strong); border-radius: var(--r-1); padding: var(--s-2) var(--s-3); max-width: 100%; }
+input[type="search"] { appearance: none; -webkit-appearance: none; }   /* T-174 F20: the native search box paints its own grey in dark mode; it takes the same tokens as the other inputs */
+textarea { width: 100%; display: block; resize: vertical; }
+#paste { font-family: var(--mono); font-size: var(--t-sm); line-height: var(--lh-sm); min-height: 12rem; }
+select { min-height: var(--control-h-sm); padding: var(--s-1) var(--s-2); }
+select:hover, textarea:hover, input:hover { border-color: var(--text-muted); }
+input[type="radio"], input[type="checkbox"] { width: 1.5rem; height: 1.5rem; accent-color: var(--accent); margin: 0; flex: none; }
+.lbl, .rv-label { display: block; font-weight: var(--w-strong); margin-bottom: var(--s-1); }
+.row { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin-top: var(--s-3); }
+.error, .rv-error { color: var(--bad); font-weight: var(--w-strong); }
+.error { background: var(--bad-bg); border: 1px solid var(--bad); border-radius: var(--r-1); padding: var(--s-2) var(--s-3); margin-top: var(--s-3); }
+.rv-error:empty { display: none; }
+.progress { font-weight: var(--w-strong); }
+details > summary { cursor: pointer; min-height: var(--control-h-sm); display: flex; align-items: center; gap: var(--s-2); }
+details > summary:hover { color: var(--accent-hover); }
+
+/* ---- 4 chips and notices --------------------------------------------------------------------------------------------------- */
+.chip, .rv-chip, .zs-chip, .zs-kind, .zs-verdict, .tag, .sg-tag, .zs-blocks { display: inline-flex; align-items: center; gap: var(--s-1); min-height: 1.375rem; padding: 0 var(--s-2); border: 1px solid var(--border); border-radius: var(--r-1);
+  background: var(--sunken); color: var(--text-muted); font-size: var(--t-xs); line-height: var(--lh-xs); font-weight: var(--w-strong); white-space: nowrap; }
+.chip[data-icon]::before, .rv-chip[data-icon]::before { flex: none; width: 1rem; text-align: center; }
+[data-icon="check"]::before { content: "\2713"; } [data-icon="alert"]::before { content: "\25B2"; font-size: 0.7em; } [data-icon="x"]::before { content: "\2715"; }
+[data-icon="pencil"]::before { content: "\270E"; } [data-icon="dash"]::before { content: "\2296"; } [data-icon="ai"]::before { content: "AI"; width: auto; } [data-icon="calendar"]::before { content: "\25F7"; }
+[data-icon="info"]::before { content: "i"; font-style: italic; }
+.chip--ok, .rv-rs-accepted, .rv-rs-edited { background: var(--ok-bg); color: var(--ok); border-color: var(--ok); }
+.chip--warn, .rv-state-needs_review { background: var(--warn-bg); color: var(--warn); border-color: var(--warn); }
+.chip--bad, .rv-state-rejected, .rv-rs-dismissed { background: var(--bad-bg); color: var(--bad); border-color: var(--bad); }
+.chip--info, .rv-state-verified, .tag, .sg-tag, .rv-selfreport { background: var(--info-bg); color: var(--info); border-color: var(--info); }
+.chip--muted { background: transparent; color: var(--text-muted); border-color: var(--border-strong); }
+.chip--rec { background: transparent; font-weight: var(--w-regular); }
+.rv-rs-dismissed { background: transparent; color: var(--text-muted); border-color: var(--border-strong); }
+.count-line { font-weight: var(--w-strong); background: var(--sunken); border-radius: var(--r-1); padding: var(--s-2) var(--s-3); }
+.notice { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-3); padding: var(--s-3) var(--s-4); border: 1px solid var(--border); border-left: 3px solid var(--info); border-radius: var(--r-2); background: var(--info-bg); color: var(--text); margin: var(--s-3) 0; }
+.notice--warn, .rv-banner { border-left-color: var(--warn); background: var(--warn-bg); }
+.notice--bad { border-left-color: var(--bad); background: var(--bad-bg); }
+.notice--ok { border-left-color: var(--ok); background: var(--ok-bg); }
+.notice-body { min-width: 0; overflow-wrap: anywhere; }
+.rv-banner { padding: var(--s-3) var(--s-4); border: 1px solid var(--border); border-left-width: 3px; border-radius: var(--r-2); margin: var(--s-3) 0; }
+
+/* ---- 5 cards, rows, quotes -------------------------------------------------------------------------------------------------- */
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-2); padding: var(--s-4) var(--s-5); margin-bottom: var(--s-4); }
+.card > h2, .card-title { margin-bottom: var(--s-3); }
+.found { font-size: var(--t-xl); line-height: var(--lh-xl); font-weight: var(--w-strong); }
+.reclist { padding-left: var(--s-5); margin: var(--s-2) 0; }
+.reclist-wrap > summary { font-weight: var(--w-strong); }
+.toolbar { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); align-items: center; }
+.toolbar h2 { margin-right: var(--s-2); }
+.toolbar-counts { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+.toolbar-sort { margin-left: auto; display: flex; align-items: center; gap: var(--s-2); color: var(--text-muted); font-size: var(--t-sm); }
+.timeline { margin-top: var(--s-2); }
+.group { margin-top: var(--s-5); }
+.group > h2 { font-size: var(--t-lg); line-height: var(--lh-lg); margin-bottom: var(--s-2); }
+.group--empty { margin-top: var(--s-4); color: var(--text-subtle); font-size: var(--t-sm); line-height: var(--lh-sm); }
+.group--empty > h2 { display: inline; font-size: var(--t-sm); line-height: var(--lh-sm); font-weight: var(--w-strong); color: var(--text-muted); }
+.group--empty > h2::after { content: ": "; }
+.group--empty > p { display: inline; }
+.group--empty > .muted { color: var(--text-subtle); }
+
+/* A compact review row (T-060 r3): head line (date, provider, record, why it needs a look, state), then the summary and its excerpt side by side (each clamped),
+   then the decision buttons on the left and the row's links on the right. "More" opens the whole row. Nothing here depends on focus or selection. */
+.entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-content: start; gap: var(--s-1) var(--s-4); margin: var(--s-2) 0; padding: var(--s-2) var(--s-4); background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--border-strong); border-radius: var(--r-2); }
+.entry > * { grid-column: 1 / -1; min-width: 0; }
+.entry > .entry-head { order: 0; }
+.entry[data-entry-id] > .summary { order: 1; grid-column: 1; align-self: start; }
+.entry[data-entry-id] > figure.quote { order: 2; grid-column: 2; align-self: start; }
+.entry[data-entry-id] > .note { order: 3; }
+.entry[data-entry-id] > .sg-dateform, .entry[data-entry-id] > .row, .entry[data-entry-id] > .reason, .entry[data-entry-id] > .muted { order: 3; }
+.entry[data-entry-id] .rv-controls { display: contents; }
+.entry[data-entry-id] .rv-actions { order: 4; grid-column: 1; margin: 0; }
+.entry[data-entry-id] .row-actions { order: 5; grid-column: 2; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0 var(--s-1); align-self: center; }
+.entry[data-entry-id] .rv-refused, .entry[data-entry-id] .rv-error, .entry[data-entry-id] form.rv-reason, .entry[data-entry-id] form.rv-edit, .entry[data-entry-id] .rv-blocked, .entry[data-entry-id] .rv-discard, .entry[data-entry-id] > details, .entry[data-entry-id] > form, .entry[data-entry-id] > .ex-edit { order: 6; }
+.entry[data-entry-id] .rv-refused, .entry[data-entry-id] .rv-error, .entry[data-entry-id] form.rv-reason, .entry[data-entry-id] form.rv-edit, .entry[data-entry-id] .rv-blocked, .entry[data-entry-id] .rv-discard { grid-column: 1 / -1; }   /* these sit inside .rv-controls (display: contents), so the direct-child span rule does not reach them */
+.entry.st-needs_review { border-left-color: var(--warn); }
+.entry.st-rejected { border-left-color: var(--bad); }
+.entry.sbs-current { background: var(--accent-soft); border-left-color: var(--accent); }
+.entry[data-review="dismissed"] .summary { color: var(--text-subtle); text-decoration: line-through; text-decoration-color: var(--border-strong); }   /* the summary is struck, never the record's own quote */
+.dismissed-group { margin-top: var(--s-3); border: 1px solid var(--border); border-radius: var(--r-2); padding: 0 var(--s-3); background: var(--sunken); }
+.dismissed-group > summary { font-weight: var(--w-strong); }
+.dismissed-group[open] > summary { border-bottom: 1px solid var(--border); margin-bottom: var(--s-1); }
+.entry[data-review="accepted"] .summary, .entry[data-review="edited"] .summary { color: var(--text-muted); }
+.entry:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--s-3); min-height: 1.5rem; }
+.entry-chips { display: inline-flex; flex-wrap: wrap; gap: var(--s-1); margin-left: auto; }
+.date { font-weight: var(--w-strong); font-variant-numeric: tabular-nums; }
+.provider { font-weight: var(--w-regular); color: var(--text); min-width: 0; overflow-wrap: anywhere; }
+.summary { max-width: var(--measure); }
+/* T-166 F3: an excerpt or a summary is never cut off mid-sentence while the row still needs a decision. Only a decided row keeps a short form, with a button right under the quote that shows the rest. */
+.entry[data-entry-id] .summary, .entry[data-entry-id] .excerpt { display: block; }
+.entry[data-entry-id][data-state="needs_review"] .entry-head .reason { flex-basis: 100%; white-space: normal; overflow: visible; text-overflow: clip; order: 3; }   /* T-166 F3: why it needs a look is read whole, on its own line under the date and the chips */
+.entry[data-entry-id][data-state="needs_review"] .entry-head .entry-chips { order: 2; }
+.entry[data-entry-id] .entry-head .reason { flex: 1 1 12rem; min-width: 0; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.entry[data-entry-id].is-open .entry-head .reason, .entry[data-entry-id] .entry-head .reason--caution { white-space: normal; overflow: visible; flex-basis: 100%; }   /* "read the original quote yourself" is never cut short */
+.entry[data-entry-id]:is([data-review="accepted"], [data-review="edited"], [data-review="dismissed"]):not(.is-open):not([data-edit-check]) .summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.entry[data-entry-id]:is([data-review="accepted"], [data-review="edited"], [data-review="dismissed"]):not(.is-open):not([data-edit-check]) figure.quote:not([data-full]) .excerpt { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.quote-more { display: none; }
+.entry[data-entry-id]:is([data-review="accepted"], [data-review="edited"], [data-review="dismissed"]):not(.is-open):not([data-edit-check]) .quote-more { display: inline-flex; }
+.reason { color: var(--warn); font-size: var(--t-sm); line-height: var(--lh-sm); font-weight: var(--w-strong); }
+.reason::before { content: "\25B2\00a0"; font-size: 0.7em; vertical-align: 0.1em; }
+figure.quote { margin: 0; max-width: var(--measure); }
+.quote-cap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* names the quote for assistive tech; shown when the row is open */
+.entry.is-open .quote-cap { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; display: block; font-size: var(--t-xs); line-height: var(--lh-xs); color: var(--text-subtle); margin-bottom: 2px; }
+.excerpt, .rv-quote, .zs-quote blockquote { margin: 0; padding: var(--s-1) var(--s-3); background: var(--sunken); border-left: 3px solid var(--border-strong); border-radius: 0 var(--r-1) var(--r-1) 0; color: var(--text);
+  font-size: var(--t-read); line-height: var(--lh-read); font-style: normal; overflow-wrap: anywhere; }
+/* nothing about a row's height depends on focus or selection (a layout shift between mousedown and mouseup loses the click): only the decision state and the Show full excerpt / More buttons change it */
+/* a tray or date-to-confirm card keeps the full quote */
+.entry:not([data-entry-id]) .excerpt { display: block; }
+.src-text, .ex-text { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--sunken); border: 1px solid var(--border); border-radius: var(--r-1); padding: var(--s-3); font: var(--w-regular) var(--t-read)/var(--lh-read) var(--font); }
+.ex-text { max-height: none; overflow: visible; }   /* the box is as tall as its text: no scroll inside a scrolling page */
+.ex-block .toolbar { justify-content: space-between; }
+.ex-btns { margin-top: 0; }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: var(--s-1) var(--s-3); }
+.kv dt { font-weight: var(--w-strong); } .kv dd { overflow-wrap: anywhere; }
+.kv--keys { grid-template-columns: 7rem 1fr; align-items: baseline; }
+.checks { margin: 0; padding-left: var(--s-4); } .checks .bad { color: var(--bad); font-weight: var(--w-strong); }
+.why-sentence { font-weight: var(--w-strong); margin-bottom: var(--s-3); }
+.ex-block { margin: var(--s-4) 0; } .ex-block h3 { margin: 0; }
+.ex-confirm-msg { background: var(--warn-bg); border: 1px solid var(--warn); color: var(--warn); border-radius: var(--r-1); padding: var(--s-2) var(--s-3); font-weight: var(--w-strong); }
+.ex-warn { margin: var(--s-2) 0; padding-left: var(--s-5); }
+.ex-units { margin-top: var(--s-3); border-top: 1px solid var(--border); padding-top: var(--s-3); }
+.ex-unit-list { list-style: none; padding: 0; margin: var(--s-2) 0; display: grid; gap: var(--s-1); }
+.ex-unit-list label { display: flex; gap: var(--s-2); align-items: flex-start; }
+.todo-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4); background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--warn); border-radius: var(--r-2); padding: var(--s-2) var(--s-4); margin: var(--s-3) 0; }
+.todo-strip--done { border-left-color: var(--ok); }
+.todo-strip h2 { font-size: var(--t-md); line-height: var(--lh-md); margin: 0; }
+.todo-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.todo-list li { display: flex; align-items: center; gap: var(--s-1); }
+.todo-lead { max-width: var(--measure); }
+
+/* ---- 6 dialogs --------------------------------------------------------------------------------------------------------------- */
+dialog { padding: 0; border: 1px solid var(--border); border-radius: var(--r-2); background: var(--panel); color: var(--text); width: min(52rem, 96vw); max-height: 90vh; box-shadow: var(--elev-2); }
+dialog.dlg--sm { width: min(30rem, 96vw); }
+dialog.dlg--md { width: min(38rem, 96vw); }
+dialog::backdrop { background: var(--scrim); }
+.dlg-head { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); position: sticky; top: 0; z-index: 3; background: var(--panel); padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--border); }
+.dlg-head h2 { font-size: var(--t-lg); line-height: var(--lh-lg); }
+.dlg-body, #source-body, #why-body { padding: var(--s-4); display: grid; gap: var(--s-3); }
+.dlg-foot { display: flex; gap: var(--s-2); justify-content: flex-end; padding: var(--s-3) var(--s-4); border-top: 1px solid var(--border); }
+
+/* ---- 7 responsive ------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .card { padding: var(--s-3); }
+  :root { --header-h: 5.5rem; }
+  progress { width: 6rem; }
+  .entry { grid-template-columns: minmax(0, 1fr); padding: var(--s-2) var(--s-3); }
+  .entry[data-entry-id] > .summary, .entry[data-entry-id] > figure.quote, .entry[data-entry-id] .rv-actions, .entry[data-entry-id] .row-actions { grid-column: 1; }
+  .entry .row-actions { justify-content: flex-start; }
+  .entry[data-entry-id] .entry-head .reason { flex-basis: 100%; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .entry[data-entry-id].is-open .entry-head .reason { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .kv { grid-template-columns: 1fr; }
+  .toolbar-sort { margin-left: 0; width: 100%; }
+  .dlg-head, .dlg-foot { padding: var(--s-3); }
+}
+@media (max-width: 480px) { .case-name { font-size: var(--t-md); } }
+@media print { .banner.synth, .app-header { position: static; } }
+
+/* processing state */
+.run-state { margin-top: var(--s-3); display: grid; gap: var(--s-2); }
+.skeletons { display: grid; gap: var(--s-2); margin-top: var(--s-2); }
+.skeleton { height: 4rem; border-radius: var(--r-2); background: linear-gradient(90deg, var(--sunken), var(--border), var(--sunken)); background-size: 200% 100%; }
+@media (prefers-reduced-motion: no-preference) { .skeleton { animation: shimmer 1.4s linear infinite; } @keyframes shimmer { to { background-position: -200% 0; } } }
+
+/* a finished run: the records card is one row (count, list, start over) */
+.input-done { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-4); }
+.input-done .found { font-size: var(--t-lg); line-height: var(--lh-lg); }
+.input-done .row { margin-top: 0; margin-left: auto; }
+.input-done .reclist-wrap { margin: 0; }
+.input-done .reclist-wrap[open] { flex: 1 1 100%; order: 5; }
+#view-input:has(.input-done) { padding: var(--s-1) var(--s-4); margin-bottom: 0; }
+#view-input:has(.input-done) > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.summary .tag { margin-left: var(--s-2); vertical-align: baseline; min-height: 0; line-height: var(--lh-xs); }
+@media (max-width: 768px) {
+  /* phone header: case name and Export on one row, progress under it; the rest is on the desktop header */
+  .app-header-row { gap: var(--s-1) var(--s-3); padding-top: var(--s-2); padding-bottom: var(--s-2); }
+  .app-header-row:has(#case-name:not([hidden])) .brand, #btn-shortcuts, #btn-theme, #badge, #retention { display: none; }
+  .case-name { flex: 1 1 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .spacer { display: none; }
+  .case-progress { order: 3; flex: 1 1 100%; }
+  .header-tools { margin-left: auto; }
+  .case-progress progress { flex: 1 1 auto; width: auto; }
+}
+
+/* decided rows: the state, not the action (T-060 r3). Filled primary is for an undecided item only. */
+.btn.rv-decided, .btn[aria-pressed="true"].rv-decided { border-color: transparent; background: transparent; color: var(--ok); font-weight: var(--w-strong); cursor: default; }
+.btn.rv-decided:hover { background: transparent; }
+.btn.rv-decided--muted, .btn[aria-pressed="true"].rv-decided--muted { color: var(--text-muted); }
+.btn.rv-decided[data-icon]::before { content: "\2713"; }
+.btn.rv-decided--muted[data-icon]::before { content: "\2296"; }
+.entry .rv-actions .btn, .entry .row-actions .btn { min-height: var(--control-h-sm); }
+.rv-actions .btn--link.rv-reset { font-size: var(--t-sm); }
+/* the visible Upload control carries the focus ring of the (visually hidden) file input */
+h2[tabindex="-1"]:focus { outline: var(--focus-ring); outline-offset: var(--focus-offset); }   /* Export moves focus to its heading: it shows where focus is */
+label.btn:has(+ #file:focus-visible) { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+/* chips in the case-check panels wrap instead of running off a narrow screen (WCAG 1.4.10) */
+.zs-chip, .zs-kind, .zs-verdict, .zs-blocks { white-space: normal; max-width: 100%; }
+.zs-counts { display: flex; flex-wrap: wrap; gap: var(--s-1); }
+@media (max-width: 768px) { .entry .row-actions .btn { min-height: 2.25rem; } }   /* secondary links: 36px, above the 24px minimum; the decision buttons keep 44px */
+
+/* T-060 r5: letter layout choice, the one need-review count in the strip, the "Filtered by rule" group (D-057) */
+.ex-style { border: 0; padding: 0; margin: var(--s-2) 0; display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); align-items: center; }
+.ex-style legend { float: left; margin-right: var(--s-3); padding: 0; font-weight: var(--w-strong); }
+.ex-style-opt { display: inline-flex; align-items: center; gap: var(--s-1); }
+.todo-count { margin: 0; font-weight: var(--w-strong); }
+.tray-filtered { margin-top: var(--s-3); border: 1px solid var(--border); border-radius: var(--r-2); padding: 0 var(--s-3); background: var(--sunken); }
+.tray-filtered > summary { font-weight: var(--w-strong); }
+.tray-filtered[open] > summary { border-bottom: 1px solid var(--border); margin-bottom: var(--s-1); }
+.tf-rule h3 { font-size: var(--t-md); line-height: var(--lh-md); margin: var(--s-2) 0 0; }
+.tf-items { margin: var(--s-1) 0 var(--s-3); padding-left: var(--s-5); }
+.tf-rec { font-weight: var(--w-strong); }
+/* T-174 r2: the demo's "not a recorded case" refusal: a second button and one quiet line under the sentence */
+.error .error-note { display: block; margin-top: var(--s-2); font-weight: var(--w-regular); color: var(--text); font-size: var(--t-sm); }
+.error .btn + .btn { margin-left: var(--s-1); }

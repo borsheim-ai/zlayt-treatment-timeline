@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "prior_surgery",
+    "excerpt": "Removal of hardware, left tibial plateau.",
+    "type": "pre_existing"
+   },
+   {
+    "category": "speculative_language",
+    "excerpt": "Total knee replacement may be needed in the future.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:59Z"
+ }
+}

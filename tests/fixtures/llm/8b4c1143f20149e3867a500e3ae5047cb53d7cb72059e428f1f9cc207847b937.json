@@ -1,0 +1,43 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On January 10, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented left wrist pain 6/10 and that a splint was fitted."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On February 8, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 5/10 and \"Continue splint.\""
+   },
+   {
+    "entry_id": "e3",
+    "text": "On March 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 5/10 and \"Begin hand therapy.\""
+   },
+   {
+    "entry_id": "e4",
+    "text": "On April 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 4/10 and \"Hand therapy ongoing.\""
+   },
+   {
+    "entry_id": "e5",
+    "text": "On May 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 4/10 and \"Grip strength improving.\""
+   },
+   {
+    "entry_id": "e6",
+    "text": "On June 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 3/10 and grip strength 70% of right side."
+   },
+   {
+    "entry_id": "e7",
+    "text": "On July 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 3/10 and \"Therapy continues.\""
+   },
+   {
+    "entry_id": "e8",
+    "text": "On August 9, 2028, Thistlewick Orthopedics (Dr. Beatrix Quillon) documented pain 2/10 and that discharge planning was discussed."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:50:01Z"
+ }
+}

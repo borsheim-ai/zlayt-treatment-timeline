@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 5/10. Waddell signs negative on the left and positive on the right. Full effort, but symptom magnification noted with light touch.",
+  "summary": "Pain 5/10. Waddell signs negative on the left and positive on the right. Full effort, but symptom magnification noted with light touch."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:06Z"
+ }
+}

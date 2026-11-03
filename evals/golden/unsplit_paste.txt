@@ -1,0 +1,10 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+May 4, 2026 — Pottsworth Emergency Department
+Fell from a ladder at a worksite. Right wrist swelling. X-ray: distal radius fracture. Splint applied.
+
+May 11, 2026 — Dr. Tabitha Wrenfield, orthopedics
+Right wrist pain 5/10. Fracture alignment satisfactory. Continue splint for two more weeks.
+
+May 25, 2026 — Dr. Tabitha Wrenfield, orthopedics
+Splint removed. Pain 2/10. Begin hand therapy.

@@ -1,0 +1,659 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib09_spanish_interpreter_espalda",
+  "synthetic": true,
+  "input_file": "case_lib09_spanish_interpreter_espalda.txt",
+  "description": "Library L9 (P9+P4+P11). Pedestrian struck in a parking lot. English ED record with history via the patient's son (left shoulder), a Spanish-language clinic note (day-first date, 'espalda' with no level, right shoulder), an English orthopedic note with a family interpreter (right shoulder, a different mechanism), a scanned Spanish intake form as OCR text with an ambiguous numeric date, and a Spanish statement of account. Side flips between ED and the later records; the excerpt stays in Spanish and any English rendering must be labeled as a translation.",
+  "stress_types": [
+    "spanish_language_record",
+    "ad_hoc_interpreter",
+    "left_right_transposition",
+    "espalda_no_level",
+    "day_first_date",
+    "ambiguous_numeric_date",
+    "ocr_noise_text",
+    "rate_not_charge",
+    "balance_double_count_trap"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-03-03",
+      "date": "2026-03-03",
+      "kind": "encounter",
+      "source": "Quillmere Regional ED"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "14/04/2026",
+      "date": "2026-04-14",
+      "kind": "encounter",
+      "source": "Consultorio Médico Aguaclara, nota de consulta"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-04-21",
+      "date": "2026-04-21",
+      "kind": "encounter",
+      "source": "Dr. Lucan Ostrowe, orthopedics, new patient"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "03/05/2026",
+      "date": null,
+      "kind": "encounter",
+      "source": "Consultorio Médico Aguaclara, formulario de admisión (OCR)"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-05-05",
+      "date": "2026-05-05",
+      "kind": "encounter",
+      "source": "Cinder Valley Imaging, right shoulder MRI"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-05-12",
+      "date": "2026-05-12",
+      "kind": "encounter",
+      "source": "Dr. Lucan Ostrowe, orthopedics, follow-up"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-05-20",
+      "date": "2026-05-20",
+      "kind": "billing_statement",
+      "source": "Consultorio Médico Aguaclara, estado de cuenta (billing statement)"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-03-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Quillmere Regional ED",
+      "must_contain_excerpt": "Left shoulder pain 7/10",
+      "required_terms": [
+        "left shoulder",
+        "negative for fracture"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states she was struck by a car while walking in a parking lot.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-04-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Consultorio Médico Aguaclara, nota de consulta",
+      "must_contain_excerpt": "dolor de espalda y hombro derecho desde el atropello del 3 de marzo",
+      "required_terms": [
+        [
+          "hombro derecho",
+          "right shoulder"
+        ],
+        "6/10"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Refiere dolor 6/10 que empeora al levantar el brazo.",
+          "attribution_any": [
+            "refiere",
+            "patient reports",
+            "patient states",
+            "reports",
+            "per patient"
+          ]
+        }
+      ],
+      "note": "Day-first numeric date (14 > 12, so unambiguous). Spanish excerpt stays in Spanish; an English summary must be labeled as a translation (D-042)."
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-04-21",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Lucan Ostrowe, orthopedics, new patient",
+      "must_contain_excerpt": "Right shoulder pain 6/10",
+      "required_terms": [
+        "right shoulder",
+        "6/10"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states she fell in the parking lot after a car brushed her.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": null,
+      "date_status": "ambiguous",
+      "encounter": true,
+      "provider": "Consultorio Médico Aguaclara, formulario de admisión (OCR)",
+      "must_contain_excerpt": "dolor de espaIda y hombro derecho",
+      "required_terms": [
+        [
+          "hombro derecho",
+          "right shoulder"
+        ]
+      ],
+      "needs_review": true,
+      "date_candidates": [
+        "2026-03-05",
+        "2026-05-03"
+      ],
+      "note": "Ambiguous numeric date (both readings valid): must not be guessed. The clinic's other note uses day-first dates, so D-042's date-convention suggestion may pre-select 3 May 2026 with that reason; the paralegal still confirms once. OCR noise in the excerpt (O for 0, I for l) is kept as scanned."
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-05-05",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Cinder Valley Imaging, right shoulder MRI",
+      "must_contain_excerpt": "Partial-thickness supraspinatus tear",
+      "required_terms": [
+        "partial-thickness",
+        "supraspinatus"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-05-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Lucan Ostrowe, orthopedics, follow-up",
+      "must_contain_excerpt": "Recommend physical therapy and subacromial injection",
+      "required_terms": [
+        "physical therapy",
+        "injection",
+        "5/10"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-05-20",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Consultorio Médico Aguaclara, estado de cuenta (billing statement)",
+      "must_contain_excerpt": "Estado de cuenta",
+      "required_terms": []
+    }
+  ],
+  "expected_entry_count": 7,
+  "gap_excluded_records": [
+    4,
+    7
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-03-03",
+      "to_date": "2026-04-14",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        2
+      ],
+      "days": 42,
+      "flag": true
+    },
+    {
+      "from_date": "2026-04-14",
+      "to_date": "2026-04-21",
+      "from_records": [
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-21",
+      "to_date": "2026-05-05",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-05",
+      "to_date": "2026-05-12",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 7,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 1,
+      "raw": "$2,940",
+      "value": 2940,
+      "class": "charge",
+      "excerpt": "ED charge: $2,940",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 2,
+      "raw": "$650.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Consulta: $650.00",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "The note's own consult fee; the statement's plural 'consultas' line is $1,300.00 (2 x $650.00) and the packet holds one consult note, so this fee is probably inside that line. Counted once, through the statement line"
+    },
+    {
+      "id": "A3",
+      "record_no": 2,
+      "raw": "$400.00",
+      "value": 400,
+      "class": "rate",
+      "excerpt": "Costo por sesión de terapia física: $400.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate per session (costo por sesión), not a charge: sessions billed are not stated."
+    },
+    {
+      "id": "A4",
+      "record_no": 5,
+      "raw": "$2,150",
+      "value": 2150,
+      "class": "charge",
+      "excerpt": "MRI charge: $2,150",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A5",
+      "record_no": 7,
+      "raw": "$1,300.00",
+      "value": 1300,
+      "class": "charge",
+      "excerpt": "consultas $1,300.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false,
+      "note": "The billed consult line; counted instead of the $650.00 note fee, which it probably includes"
+    },
+    {
+      "id": "A6",
+      "record_no": 7,
+      "raw": "$400.00",
+      "value": 400,
+      "class": "rate",
+      "excerpt": "4 sesiones a $400.00 por sesión",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Rate per session; the four sessions have no stated charge total."
+    },
+    {
+      "id": "A7",
+      "record_no": 7,
+      "raw": "$2,900.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Saldo: $2,900.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Balance (saldo) equals $1,300.00 + 4 x $400.00; counting it would double count."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 6390,
+    "counted_amount_ids": [
+      "A1",
+      "A4",
+      "A5"
+    ],
+    "amounts_found": 7,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "The note's own consult fee; the statement's plural 'consultas' line is $1,300.00 (2 x $650.00) and the packet holds one consult note, so this fee is probably inside that line. Counted once, through the statement line; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A3",
+        "reason": "Rate per session (costo por sesión), not a charge: sessions billed are not stated; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A6",
+        "reason": "Rate per session; the four sessions have no stated charge total; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A7",
+        "reason": "Balance (saldo) equals $1,300.00 + 4 x $400.00; counting it would double count; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $6,390.00",
+    "ui_line": "Accepted charges: $6,390.00",
+    "notes_lines": [
+      "$650.00: The note's own consult fee; the statement's plural 'consultas' line is $1,300.00 (2 x $650.00) and the packet holds one consult note, so this fee is probably inside that line. Counted once, through the statement line; needs review",
+      "$400.00: Rate per session (costo por sesión), not a charge: sessions billed are not stated; needs review",
+      "$400.00: Rate per session; the four sessions have no stated charge total; needs review",
+      "$2,900.00: Balance (saldo) equals $1,300.00 + 4 x $400.00; counting it would double count; needs review"
+    ],
+    "accept_all_total": 5090,
+    "accept_all_reason": "Hand-verified: ED charge $2,940 + MRI charge $2,150 + the statement's consultas line $1,300 (2 x $650; the note's own $650 consult is inside it and is counted once) = $6,390; the four therapy sessions are a rate ($400 per session, sessions billed not stated) and the $2,900 saldo repeats the lines. A Spanish figure stays unclear until the paralegal reads the original and reclassifies it (D-050), so accepting the acceptable lines one at a time gives $5,090.00 (ED + MRI); $6,390.00 is reached after she reclassifies the $1,300.00 consultas line."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-03-03",
+      "to_date": "2026-04-14",
+      "days": 42,
+      "cite": {
+        "all": [
+          1,
+          2
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Dx: left shoulder contusion"
+        },
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "dolor de espalda y hombro derecho"
+        }
+      ],
+      "summary": "Treatment gap of 42 days (2026-03-03 to 2026-04-14), longer than 30."
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          1,
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Left shoulder pain 7/10"
+        },
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Right shoulder pain 6/10"
+        }
+      ],
+      "summary": "Side differs: the ED record (history via the patient's son) has the left shoulder; the Spanish clinic note, the scanned intake and orthopedics have the right shoulder. Both sides cited; the tool never picks one (human step: confirm side).",
+      "subtype": "laterality_mismatch"
+    },
+    {
+      "id": "C2",
+      "type": "conflict",
+      "level": "should",
+      "cite": {
+        "all": [
+          1,
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Patient states she was struck by a car while walking in a parking lot."
+        },
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Patient states she fell in the parking lot after a car brushed her."
+        }
+      ],
+      "summary": "Mechanism worded differently in two records, each through a family interpreter (struck by a car vs fell after a car brushed her). Both attributed to the patient; the tool does not reconcile them.",
+      "subtype": "mechanism_differs"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 7, 14 and 7-day intervals; the ambiguous-date intake (record 4) and the statement of account (record 7) are not gap endpoints."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "causation",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          2
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "desde el atropello del 3 de marzo"
+        }
+      ],
+      "summary": "Patient-stated onset in Spanish; may be shown as the patient's report, never as the tool's causation finding.",
+      "subtype": "patient_stated_onset"
+    },
+    {
+      "id": "T2",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "terapia física, 4 sesiones a $400.00 por sesión"
+        }
+      ],
+      "summary": "The statement bills 4 therapy sessions and the packet holds no physical-therapy note (only a recommendation, record 6); a billed-without-a-note notice may be raised for review but is not required, and the product has no flag type for it.",
+      "subtype": "billed_sessions_without_notes"
+    }
+  ],
+  "record_warnings": [
+    {
+      "id": "W1",
+      "type": "record_warning",
+      "category": "date_ambiguous",
+      "record_no": 4,
+      "field": "date",
+      "level": "must",
+      "excerpt": "03/05/2026",
+      "expected_state": "needs_review"
+    }
+  ],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Resolves left vs right (picks a side, calls one record a charting error) or merges the two sides into one finding.",
+      "check": "judge",
+      "bad_examples": [
+        "The right shoulder was the injured side.",
+        "The ED recorded the wrong side.",
+        "Left shoulder injury was a charting error."
+      ],
+      "good_examples": [
+        "ED record has left shoulder pain 7/10; orthopedics and the clinic note have the right shoulder.",
+        "Side differs between the 2026-03-03 ED record and later records.",
+        "Right shoulder pain 6/10."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Gives 'espalda' a spinal level or region (cervical, thoracic, lumbar, upper or lower back); the note says 'dolor de espalda' and nothing more.",
+      "check": "regex",
+      "pattern": "(?i)\\b(?:lower|upper|mid|low)[- ]?back\\b|\\blumbar\\b|\\bcervical\\b|\\bthoracic\\b|espalda\\s+(?:baja|alta|media)",
+      "bad_examples": [
+        "Lower back pain after the accident.",
+        "Patient reports lumbar pain (espalda).",
+        "Dolor de espalda baja y hombro."
+      ],
+      "good_examples": [
+        "Back pain (espalda), level not stated.",
+        "Dolor de espalda y hombro derecho.",
+        "Back and right shoulder pain per the Spanish note."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "States that the collision caused the tear or the shoulder condition; the MRI says only 'partial-thickness supraspinatus tear'.",
+      "check": "judge",
+      "bad_examples": [
+        "The collision tore her rotator cuff.",
+        "Partial-thickness tear caused by being struck by the car.",
+        "Her shoulder tear is from the accident."
+      ],
+      "good_examples": [
+        "Partial-thickness supraspinatus tear on MRI.",
+        "Patient states she was struck by a car while walking in a parking lot.",
+        "MRI right shoulder ordered."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Shows an English rendering of the Spanish note as if it were the record's own text (an unlabeled translation), or replaces the Spanish excerpt with it.",
+      "check": "judge",
+      "bad_examples": [
+        "The note says: she has right shoulder and back pain since being run over on March 3.",
+        "In English the record reads: pain 6/10 when lifting the arm.",
+        "Record text: patient denies loss of consciousness."
+      ],
+      "good_examples": [
+        "Machine translation (unverified): right shoulder and back pain since March 3.",
+        "Excerpt (Spanish): Refiere dolor 6/10 que empeora al levantar el brazo.",
+        "Translation label: this English line is an AI translation of the Spanish note."
+      ]
+    },
+    {
+      "id": "M5",
+      "statement": "Counts the balance, double counts the balance with its parts, totals the per-session rate, or adds the $650.00 consult note to the $1,300.00 statement line (values 2,900 / 1,600 / 9,290 / 7,990 / 7,040).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$2,900",
+          "value": 2900,
+          "class": "charge"
+        },
+        {
+          "raw": "$1,600",
+          "value": 1600,
+          "class": "charge"
+        },
+        {
+          "raw": "$9,290",
+          "value": 9290,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        2900,
+        1600,
+        9290,
+        7990,
+        7040
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P9 + P4 + P11 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic (encounters with a parsed date): 03-03 to 04-14 = 28 + 14 = 42 (flag); 04-14 to 04-21 = 7; 04-21 to 05-05 = 9 + 5 = 14; 05-05 to 05-12 = 7. Record 4 (ambiguous date) and record 7 (statement) are excluded.",
+    "Charges counted: 2,940 + 2,150 + 1,300 = 6,390. Round-2 call (T-079 r2): the statement's plural 'consultas' line is $1,300.00 = 2 x $650.00 and the packet holds one consult note ($650.00, record 2), so the note's fee is most likely inside the statement line; the statement is the billing record, so it is counted and the note's $650.00 is listed unclear. Counting both ($7,040) would bill the same visit twice. Forbidden: 6,390 + 2,900 = 9,290; 6,390 + 1,600 = 7,990; 6,390 + 650 = 7,040; 4 x 400 = 1,600.",
+    "Gap in the product (no flag type): the statement bills 4 therapy sessions at $400.00 ($1,600.00) but the packet holds no PT note. The product has no billed-without-a-note flag type (flag types are gap, conflict, pre_existing, causation; billing analysis is not a flag), so expected.json lists it only as tolerated T2 and the card records the gap.",
+    "Spanish text is composed fresh. 'atropello' is a Spanish word for being hit by a vehicle; any English summary of it is a labeled LLM translation (D-042, T-085).",
+    "Record 4 is an OCR-style scan: the letter O stands in for zero and a capital I for l (as in 'espaIda'), kept verbatim."
+  ]
+}

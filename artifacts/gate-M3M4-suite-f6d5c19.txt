@@ -1,0 +1,55 @@
+GATE M3+M4 FULL SUITE (D-075) on commit f6d5c1919a26b7e71f67dfd079b520d5aa82ec68
+Tree: fresh `git archive f6d5c19` extracted to an empty scratch dir (no .git, no data/, no .env); repo .venv python, ANTHROPIC_API_KEY unset, fixture backend. 2026-11-03.
+Nothing was fixed. Unit and e2e ran in parallel; every failure was re-run alone and reproduced.
+
+RESULTS
+  unit     pytest tests/unit                          10 failed, 5935 passed, 12 skipped  (428 s)  exit 1
+  e2e      E2E_REQUIRE_DB=1 pytest tests/e2e           6 failed,  607 passed,  2 skipped  (849 s)  exit 1
+  letter   python -m evals.letter_check               value 0 violations, 25 cases, 11 held-out entries, backend fixture  exit 0
+  golden   python -m evals.run (fixture; there is no evals.check_golden module)
+                                                        ship_bar_met=False (expected on fixture: determinism_3run and judge_controls not measured)
+                                                        grounding 1.000 (241 checked), entry_recall 0.982, amount_recall 1.000, flag P/R 1.000 on gap/conflict/pre_existing/causation,
+                                                        hallucination_catch 40/40, golden_must_not_hits 0, letter_currency_outside_charges 0
+                                                        extra blocker: spec_matches_golden is false  (exit 1)
+           python -m evals.run --check-spec             {"spec_matches_golden": false, "letter_equal": false, "internal_notes_equal": false}  exit 1
+
+FAILURES (10 unit + 6 e2e; all reproduce when run alone)
+ Cause A: spec/REQUIREMENTS.md section 6 blocks differ from evals/golden/sample.export.expected.txt (the D-073 date-of-service blank).
+   Spec line:   "Central ER discharge summary, January 9, 2026: $6,240.00"
+   Golden line: "Central ER discharge summary, date of service [__________] (record dated January 9, 2026): $6,240.00"
+   The golden notes also carry an extra bullet "Central ER discharge summary, $6,240: The letter does not take a date of service from the records...".
+   The committed evals/reports/latest.json also has spec_matches_golden false.
+   unit (first line of each error):
+    tests/unit/test_eval_spec_check.py::test_real_spec_matches_golden                       AssertionError: assert {'spec_matches_golden': False, ... 'letter_equal': False} == {... True}
+    tests/unit/test_eval_spec_check.py::test_cli_writes_spec_matches_golden_to_latest_json  AssertionError: assert 1 == 0
+    tests/unit/test_eval_runner.py::test_perfect_run_meets_ship_bar_on_a_live_backend       AssertionError: assert (['spec_matche...den is false'] == [])
+    tests/unit/test_eval_runner.py::test_check_spec_recomputes_the_bar_in_a_full_report     assert False is True
+    tests/unit/test_eval_runner.py::test_unsplit_paste_is_scored_and_a_missing_llm_split_warning_fails_bar_4   assert (True is True and False is True)
+    tests/unit/test_eval_runner.py::test_plain_run_leaves_committed_calibration_json_untouched                 assert 1 == 0
+    tests/unit/test_eval_runner.py::test_plain_run_with_dirty_tree_still_never_writes_calibration_json         assert 1 == 0
+    tests/unit/test_eval_runner.py::test_write_calibration_follows_real_git_cleanliness_and_records_the_t090_header  assert 1 == 0 (R.main(['--write-calibration', ...]) returned 1)
+   (the last four are exit-code failures of the runner; most likely the same spec_matches_golden blocker, not separately confirmed)
+ Cause B (tests written for the old charge text / old latest.json), unit:
+    tests/unit/test_t139_charge_text.py::test_a_provider_with_an_accepted_charge_and_nothing_dismissed_is_unchanged
+        AssertionError: assert 'Marrowgate' not in ' (entry in ...'  (the new notes bullet "Marrowgate General ED, $3,915: The letter does not take a date of service..." is inside the BILLS TO REQUEST span)
+    tests/unit/test_t045_r2.py::test_the_committed_latest_json_still_matches_what_record_latest_would_write
+        AssertionError: assert {'backend': '...5', ...}, ...} == {'backend': '...5', ...}, ...}  (committed latest.json differs from what --record-latest would write)
+ e2e (31 other tests in the same files pass):
+    tests/e2e/guided/test_round2.py::test_a_disputed_line_and_its_tick_box_are_on_screen_together_at_390
+        AssertionError: {'card': [332.6, 591.6], 'head': 378.6, 'line': [388.6, 460.6], 'chk': [575.6, 603.6], ...}   (layout, 390 wide)
+    tests/e2e/guided/test_step2.py::test_nothing_moves_when_she_answers_or_changes_mode_and_the_primary_action_is_above_the_fold[390-844]
+        AssertionError: Fix the wording moved something   (layout)
+    tests/e2e/guided/test_step3.py::test_opens_on_the_first_amount_with_the_figure_marked_in_its_record
+        assert 'added to the bill total' in 'The letter does not take a date of service from the records. The letter prints no service date for this line. It leav...'   (card text now D-073 wording)
+    tests/e2e/guided/test_step3.py::test_a_stale_screen_shows_the_plain_message_and_reloads_the_amount
+        assert page.get_by_test_id("card-foot").inner_text().startswith("Your answer: not counted.") -> assert False   (likely the same card-text change)
+    tests/e2e/guided/test_t203.py::test_375x667_disabled_yes_says_why_in_the_status_slot_beside_the_buttons
+        AssertionError: ('the hint is not fully on screen inside the action bar', {'yes': [880.4, 930.4], 'st': [985.6, 1003.2, 12, 363], 'bar': [772, 1016.4], 'vh': 667, ...})
+    tests/e2e/guided/test_t203.py::test_375x667_the_show_box_button_is_there_when_the_box_is_hidden_and_the_hint_stays_one_line_at_rest
+        AssertionError: this size is expected to hide the box  (assert False)   (375x667 layout)
+
+SKIPS
+  unit 12 (3 of them in test_eval_runner.py are "no git repository here", because the archive has no .git; the rest not itemised).
+  e2e 2 (not itemised; E2E_REQUIRE_DB=1 turns a missing DB into a failure, and none failed for that).
+
+Raw logs (scratch, not committed): unit.txt, e2e.txt, letter.txt, golden.txt, unit_rerun.txt, e2e_rerun.txt in the session scratchpad gate/out dir.

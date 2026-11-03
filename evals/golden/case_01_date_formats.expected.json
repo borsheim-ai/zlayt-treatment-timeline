@@ -1,0 +1,442 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_01_date_formats",
+  "synthetic": true,
+  "input_file": "case_01_date_formats.txt",
+  "description": "Seven distinct date formats plus one genuinely ambiguous numeric date (04/05/2026: April 5 or May 4) on a phone note. Ambiguous date must be marked ambiguous, excluded from gap math, and surfaced for review. A future date inside an excerpt (04/14/2026) is not a record date.",
+  "stress_types": [
+    "date_format_variety",
+    "ambiguous_date",
+    "date_in_excerpt_trap",
+    "no_flags_clean_case",
+    "discharge_without_noncompliance"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-02-03",
+      "date": "2026-02-03",
+      "kind": "encounter",
+      "source": "Quillfeather Urgent Care"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "02/17/2026",
+      "date": "2026-02-17",
+      "kind": "encounter",
+      "source": "Dr. Orla Pennywhistle, primary care"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "Feb 24, 2026",
+      "date": "2026-02-24",
+      "kind": "encounter",
+      "source": "Pemberwick Physical Therapy, visit 1"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "3 March 2026",
+      "date": "2026-03-03",
+      "kind": "encounter",
+      "source": "Pemberwick Physical Therapy, visit 2"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "March 10th, 2026",
+      "date": "2026-03-10",
+      "kind": "encounter",
+      "source": "Pemberwick Physical Therapy, visit 3"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "03-17-26",
+      "date": "2026-03-17",
+      "kind": "encounter",
+      "source": "Pemberwick Physical Therapy, visit 4"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "3/25/26",
+      "date": "2026-03-25",
+      "kind": "encounter",
+      "source": "Dr. Orla Pennywhistle, primary care"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "04/05/2026",
+      "date": null,
+      "kind": "phone_note",
+      "source": "Dr. Orla Pennywhistle, phone note"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-02-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Quillfeather Urgent Care",
+      "must_contain_excerpt": "Right ankle swelling after twisting on stairs",
+      "required_terms": [
+        "ankle",
+        "negative for fracture"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-02-17",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Orla Pennywhistle, primary care",
+      "must_contain_excerpt": "Refer to physical therapy 1x/week for 4 weeks",
+      "required_terms": [
+        "physical therapy"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-02-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pemberwick Physical Therapy, visit 1",
+      "must_contain_excerpt": "Gait mildly antalgic",
+      "required_terms": []
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-03-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pemberwick Physical Therapy, visit 2",
+      "must_contain_excerpt": "Balance exercises added",
+      "required_terms": []
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-03-10",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pemberwick Physical Therapy, visit 3",
+      "must_contain_excerpt": "Walking without a limp",
+      "required_terms": []
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-03-17",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pemberwick Physical Therapy, visit 4",
+      "must_contain_excerpt": "Discharged to home exercise program",
+      "required_terms": [
+        "discharged"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-03-25",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Orla Pennywhistle, primary care",
+      "must_contain_excerpt": "Ankle exam normal",
+      "required_terms": []
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": null,
+      "date_status": "ambiguous",
+      "encounter": false,
+      "provider": "Dr. Orla Pennywhistle, phone note",
+      "must_contain_excerpt": "Patient reports no new symptoms",
+      "required_terms": [],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient reports no new symptoms",
+          "attribution_any": [
+            "patient reports",
+            "patient states",
+            "per patient",
+            "reports"
+          ]
+        }
+      ],
+      "needs_review": true,
+      "date_candidates": [
+        "2026-04-05",
+        "2026-05-04"
+      ],
+      "note": "Ambiguous numeric date: must not be guessed; entry sorts to the needs-review group."
+    }
+  ],
+  "expected_entry_count": 8,
+  "gap_excluded_records": [
+    8
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-02-03",
+      "to_date": "2026-02-17",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        2
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-02-17",
+      "to_date": "2026-02-24",
+      "from_records": [
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-02-24",
+      "to_date": "2026-03-03",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-03",
+      "to_date": "2026-03-10",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-10",
+      "to_date": "2026-03-17",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-17",
+      "to_date": "2026-03-25",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 8,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 1,
+      "raw": "$310.00",
+      "value": 310,
+      "class": "charge",
+      "excerpt": "Urgent care charge: $310.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 310,
+    "counted_amount_ids": [
+      "A1"
+    ],
+    "amounts_found": 1,
+    "status": "complete",
+    "unclear_items": [],
+    "letter_line": "Billed charges accepted from these records: $310.00",
+    "ui_line": "Accepted charges: $310.00",
+    "notes_lines": []
+  },
+  "flags": [],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flags anywhere. In particular record 8 (ambiguous date, phone note) creates no gap: read as 2026-05-04 it would be 40 days after record 7."
+    },
+    {
+      "id": "N2",
+      "type": "causation",
+      "record_nos": [
+        6
+      ],
+      "statement": "'Discharged' here is a completed program (pain 1/10), not non-compliance."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [
+    {
+      "id": "W1",
+      "type": "record_warning",
+      "category": "date_ambiguous",
+      "record_no": 8,
+      "field": "date",
+      "level": "must",
+      "excerpt": "04/05/2026",
+      "expected_state": "needs_review"
+    }
+  ],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Creates an entry dated 2026-04-14 (a date inside an excerpt, not a record date).",
+      "check": "entry_date",
+      "bad_examples": [
+        {
+          "date": "2026-04-14",
+          "provider": "X"
+        },
+        {
+          "date": "2026-04-14",
+          "provider": "Y"
+        },
+        {
+          "date": "2026-04-14",
+          "provider": "Z"
+        }
+      ],
+      "good_examples": [
+        {
+          "date": "2026-01-01",
+          "provider": "X"
+        },
+        {
+          "date": "2026-02-02",
+          "provider": "Y"
+        },
+        {
+          "date": null,
+          "provider": "Z"
+        }
+      ],
+      "dates": [
+        "2026-04-14"
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Silently assigns record 8 a single date (2026-04-05 or 2026-05-04) as if parsed.",
+      "check": "judge",
+      "bad_examples": [
+        "April 5, 2026 — phone note: no new symptoms.",
+        "May 4, 2026 — Dr. Orla Pennywhistle phone note.",
+        "2026-04-05 Patient reports no new symptoms."
+      ],
+      "good_examples": [
+        "Date ambiguous: 04/05/2026 could be April 5 or May 4, 2026; needs review.",
+        "Phone note dated 04/05/2026 (date not determined).",
+        "Date unclear (04/05/2026); not placed in sequence."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Misreads any record date (e.g. 03-17-26 as 2003 or 2017; 3/25/26 as other than 2026-03-25).",
+      "check": "judge",
+      "bad_examples": [
+        "March 17, 2003 — physical therapy visit 4.",
+        "Pemberwick PT visit 4 on 2026-03-25.",
+        "February 3, 2017 — urgent care visit."
+      ],
+      "good_examples": [
+        "March 17, 2026 — Pemberwick Physical Therapy visit 4: pain 1/10; discharged to home exercise program.",
+        "March 25, 2026 — Dr. Orla Pennywhistle: ankle exam normal.",
+        "February 17, 2026 — referral to physical therapy 1x/week for 4 weeks."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Treats '1x/week', '4 weeks' or pain scores as dollar amounts.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$1",
+          "value": 1,
+          "class": "charge"
+        },
+        {
+          "raw": "$4",
+          "value": 4,
+          "class": "charge"
+        },
+        {
+          "raw": "$3",
+          "value": 3,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        1,
+        4,
+        3,
+        2
+      ]
+    }
+  ],
+  "notes": [
+    "Reading the ambiguous date is a human decision (docs/LLM_VS_CODE.md row 2). Record 8 is a phone note (non-encounter) and is excluded from gap math in any case."
+  ]
+}

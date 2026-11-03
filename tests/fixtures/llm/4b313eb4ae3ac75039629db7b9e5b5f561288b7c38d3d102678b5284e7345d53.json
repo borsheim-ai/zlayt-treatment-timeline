@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "This firm represents the client for injuries from a collision on 2026-03-18. We ask that you defer collection while the claim is pending.",
+  "summary": "Law firm letter of protection to Fennimoor Spine Clinic states the firm represents the client for injuries from a collision on 2026-03-18 and asks the clinic to defer collection while the claim is pending."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:39Z"
+ }
+}

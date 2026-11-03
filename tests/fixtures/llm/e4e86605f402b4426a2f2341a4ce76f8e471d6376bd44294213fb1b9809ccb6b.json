@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: cervical strain. CT cervical spine negative for fracture. Denies LOC per patient. ED charge: $4,680.",
+  "summary": "Diagnosis of cervical strain; CT cervical spine negative for fracture; patient denies loss of consciousness; ED charge $4,680."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:33Z"
+ }
+}

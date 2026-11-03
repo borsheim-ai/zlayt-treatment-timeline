@@ -1,0 +1,728 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib11_priors_and_ledger",
+  "synthetic": true,
+  "input_file": "case_lib11_priors_and_ledger.txt",
+  "description": "Library L11 (P5+P2). Rear-end collision two weeks after an annual primary-care visit that lists two earlier car accidents, a chronic low back problem and a baseline back pain score. Attorney-referred spine clinic under a letter of protection, a scanned intake form (OCR text) answering 'prior accidents: No', and an itemized ledger with charges, a payment, a courtesy adjustment and a balance. Only stated charges count; payment, adjustment and balance are listed unclear.",
+  "stress_types": [
+    "intake_denies_prior_accidents",
+    "prior_accidents_in_older_note",
+    "baseline_back_pain_before_accident",
+    "itemized_ledger_billed_adjusted_paid",
+    "letter_of_protection",
+    "ocr_noise_text",
+    "attorney_referral",
+    "balance_double_count_trap"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-03-04",
+      "date": "2026-03-04",
+      "kind": "encounter",
+      "source": "Dr. Hesper Alderton, primary care"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-03-18",
+      "date": "2026-03-18",
+      "kind": "encounter",
+      "source": "Ashgrove Fire-Rescue run report"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-03-18",
+      "date": "2026-03-18",
+      "kind": "encounter",
+      "source": "Wexcombe Memorial ED"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-03-26",
+      "date": "2026-03-26",
+      "kind": "phone_note",
+      "source": "Pellingham and Rook PLLC, correspondence (letter of protection)"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-03-27",
+      "date": "2026-03-27",
+      "kind": "encounter",
+      "source": "Fennimoor Spine Clinic, new patient"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "3/27/26",
+      "date": "2026-03-27",
+      "kind": "encounter",
+      "source": "Fennimoor Spine Clinic, new patient intake form (OCR text)"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-04-24",
+      "date": "2026-04-24",
+      "kind": "encounter",
+      "source": "Fennimoor Spine Clinic, visit 8"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-05-29",
+      "date": "2026-05-29",
+      "kind": "encounter",
+      "source": "Fennimoor Spine Clinic, visit 14"
+    },
+    {
+      "record_no": 9,
+      "raw_date": "2026-06-15",
+      "date": "2026-06-15",
+      "kind": "billing_statement",
+      "source": "Fennimoor Spine Clinic, itemized ledger"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-03-04",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Hesper Alderton, primary care",
+      "must_contain_excerpt": "car accidents in 2019 and 2022",
+      "required_terms": [
+        "2019",
+        "2022",
+        "chronic low back pain"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "History per patient: car accidents in 2019 and 2022 with neck and low back pain, treated with physical therapy.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-03-18",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Ashgrove Fire-Rescue run report",
+      "must_contain_excerpt": "Passenger vehicle struck from behind",
+      "required_terms": [
+        "low back pain"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck and low back pain 7/10.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-03-18",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Wexcombe Memorial ED",
+      "must_contain_excerpt": "X-ray cervical and lumbar spine negative for fracture",
+      "required_terms": [
+        "cervical strain",
+        "lumbar strain"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-03-26",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Pellingham and Rook PLLC, correspondence (letter of protection)",
+      "must_contain_excerpt": "Letter of protection to Fennimoor Spine Clinic",
+      "required_terms": [
+        [
+          "letter of protection",
+          "lop"
+        ]
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-03-27",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Fennimoor Spine Clinic, new patient",
+      "must_contain_excerpt": "Patient referred by attorney",
+      "required_terms": [
+        "referred by attorney",
+        "letter of protection",
+        "7/10"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-03-27",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Fennimoor Spine Clinic, new patient intake form (OCR text)",
+      "must_contain_excerpt": "Prior accidents? Yes [ ] No [X]",
+      "required_terms": [
+        [
+          "prior accident",
+          "previous accident",
+          "accidents"
+        ]
+      ],
+      "note": "Scanned form as OCR text: l for 1, I for l, G for 6 are kept as scanned. Header date 3/27/26 is unambiguous (27 > 12). The accident date inside the form is evidence for conflict checks only, never a service date."
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-04-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Fennimoor Spine Clinic, visit 8",
+      "must_contain_excerpt": "Neck pain 5/10, low back pain 6/10",
+      "required_terms": [
+        "5/10",
+        "6/10"
+      ]
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-05-29",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Fennimoor Spine Clinic, visit 14",
+      "must_contain_excerpt": "Neck pain 4/10, low back pain 5/10",
+      "required_terms": [
+        "4/10",
+        "5/10"
+      ]
+    },
+    {
+      "id": "E9",
+      "record_nos": [
+        9
+      ],
+      "date": "2026-06-15",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Fennimoor Spine Clinic, itemized ledger",
+      "must_contain_excerpt": "Account held under letter of protection",
+      "required_terms": [
+        [
+          "letter of protection",
+          "lop"
+        ]
+      ]
+    }
+  ],
+  "expected_entry_count": 9,
+  "gap_excluded_records": [
+    4,
+    9
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-03-04",
+      "to_date": "2026-03-18",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        2,
+        3
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-18",
+      "to_date": "2026-03-27",
+      "from_records": [
+        2,
+        3
+      ],
+      "to_records": [
+        5,
+        6
+      ],
+      "days": 9,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-27",
+      "to_date": "2026-04-24",
+      "from_records": [
+        5,
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-24",
+      "to_date": "2026-05-29",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8
+      ],
+      "days": 35,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 3,
+      "raw": "$3,260",
+      "value": 3260,
+      "class": "charge",
+      "excerpt": "ED charge: $3,260",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 9,
+      "raw": "$250.00",
+      "value": 250,
+      "class": "charge",
+      "excerpt": "New patient exam charge $250.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 9,
+      "raw": "$180.00",
+      "value": 180,
+      "class": "charge",
+      "excerpt": "x-ray charge $180.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A4",
+      "record_no": 9,
+      "raw": "$2,310.00",
+      "value": 2310,
+      "class": "charge",
+      "excerpt": "charge $2,310.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A5",
+      "record_no": 9,
+      "raw": "$2,740.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "total charges $2,740.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Ledger total repeats the three ledger lines above; counting it double counts."
+    },
+    {
+      "id": "A6",
+      "record_no": 9,
+      "raw": "$300.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Payment received $300.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Payment, not a charge."
+    },
+    {
+      "id": "A7",
+      "record_no": 9,
+      "raw": "$274.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Adjustment (courtesy discount) -$274.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Adjustment with a negative sign; not a charge and never netted from billed."
+    },
+    {
+      "id": "A8",
+      "record_no": 9,
+      "raw": "$2,166.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Balance due $2,166.00",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Balance = 2,740.00 - 300.00 - 274.00; derived, not a charge."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 6000,
+    "counted_amount_ids": [
+      "A1",
+      "A2",
+      "A3",
+      "A4"
+    ],
+    "amounts_found": 8,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A5",
+        "reason": "Ledger total repeats the three ledger lines above; counting it double counts; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A6",
+        "reason": "Payment, not a charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A7",
+        "reason": "Adjustment with a negative sign; not a charge and never netted from billed; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A8",
+        "reason": "Balance = 2,740.00 - 300.00 - 274.00; derived, not a charge; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $6,000.00",
+    "ui_line": "Accepted charges: $6,000.00",
+    "notes_lines": [
+      "$2,740.00: Ledger total repeats the three ledger lines above; counting it double counts; needs review",
+      "$300.00: Payment, not a charge; needs review",
+      "$274.00: Adjustment with a negative sign; not a charge and never netted from billed; needs review",
+      "$2,166.00: Balance = 2,740.00 - 300.00 - 274.00; derived, not a charge; needs review"
+    ],
+    "accept_all_total": 3260,
+    "accept_all_reason": "Hand-verified against the records: ED charge $3,260 + ledger lines $250 + $180 + $2,310 = $6,000; the $2,740 ledger total, $300 payment, -$274 adjustment and $2,166 balance are never charges. D-060 (default-deny): the three ledger lines (new patient exam, x-ray, treatment visits 1 through 14) state no date of service, so they are not itemized service lines and are listed under Amounts not totaled. Accepting the acceptable lines one at a time gives $3,260.00 (the ED charge); $6,000.00 is reached after the paralegal reads the ledger and reclassifies the three lines."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-04-24",
+      "to_date": "2026-05-29",
+      "days": 35,
+      "cite": {
+        "all": [
+          7,
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Manual therapy and exercises continued"
+        },
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Neck pain 4/10, low back pain 5/10"
+        }
+      ],
+      "summary": "Treatment gap of 35 days (2026-04-24 to 2026-05-29), longer than 30."
+    },
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "chronic low back pain"
+        }
+      ],
+      "summary": "Problem list entry before the collision; stated as the record's wording only.",
+      "subtype": "prior_condition_listed"
+    },
+    {
+      "id": "P2",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "car accidents in 2019 and 2022"
+        }
+      ],
+      "summary": "Two earlier car accidents reported by the patient in a note dated two weeks before the collision.",
+      "subtype": "prior_accidents_reported"
+    },
+    {
+      "id": "P3",
+      "type": "pre_existing",
+      "level": "should",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Low back pain 3/10 today"
+        }
+      ],
+      "summary": "Back pain score recorded before the collision.",
+      "subtype": "baseline_symptom_before_accident"
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          1,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "car accidents in 2019 and 2022"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Prior accidents? Yes [ ] No [X]"
+        }
+      ],
+      "summary": "The intake form answers 'Prior accidents? No' while the primary-care note of 2026-03-04 lists accidents in 2019 and 2022. Both cited; the tool does not say which is right. T-141: the code reads a checked 'No [X]' (OCR 'No IX]') as the denial and an accident named by a year before the form's year as a prior event, so this pair is now proposed and sent to the judge.",
+      "subtype": "intake_denies_prior_accidents"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Patient referred by attorney"
+        }
+      ],
+      "summary": "Attorney referral and letter-of-protection treatment (internal notes only, D-001/D-018); the record wording is stated and no inference is drawn about charges.",
+      "subtype": "litigation_referral"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 14, 9 and 28-day intervals; the letter of protection (record 4) and the ledger (record 9) are not gap endpoints."
+    },
+    {
+      "id": "N2",
+      "type": "conflict",
+      "record_nos": [
+        1,
+        4
+      ],
+      "statement": "No 'stated accident date is later than the first recorded treatment' conflict. The earliest record (2026-03-04, record 1) is an annual primary-care visit two weeks BEFORE the collision; the stated date 2026-03-18 (record 4, letter of protection) is the date of the EMS and ED records (2, 3) and no earlier record describes this collision (T-141, GATE-M2 paralegal major)."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          1,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Problem list: hypertension, type 2 diabetes, chronic low back pain."
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Prior injuries? Yes [ ] No IX]."
+        }
+      ],
+      "summary": "A second form field ('Prior injuries?' answered No) paired with a different sentence of the same primary-care note. The code proposes one pair per denial and prior sentence; the judge classifies each and the first confirmed pair per denial stands (T-141).",
+      "subtype": "intake_denies_prior_injuries"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Counts the ledger total, payment, adjustment or balance as a charge, or adds the total line to the lines (values 2,740 / 2,166 / 274 / 300 / 8,740).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$2,740",
+          "value": 2740,
+          "class": "charge"
+        },
+        {
+          "raw": "$2,166",
+          "value": 2166,
+          "class": "charge"
+        },
+        {
+          "raw": "$274",
+          "value": 274,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        2740,
+        2166,
+        274,
+        300,
+        8740
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Nets the payment or adjustment into the billed figure, calls the charges reduced, reasonable or inflated, or states what was incurred.",
+      "check": "judge",
+      "bad_examples": [
+        "Charges after the courtesy discount total $5,726.",
+        "The clinic reduced its bill to $2,166.00.",
+        "The amount incurred is $2,166.00."
+      ],
+      "good_examples": [
+        "Ledger lists total charges $2,740.00, payment $300.00, a courtesy discount and a balance due; none netted.",
+        "Billed charges accepted from these records: $6,000.00.",
+        "Account held under letter of protection."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Calls the intake answer false or dishonest (lied, false, misrepresented).",
+      "check": "regex",
+      "pattern": "(?i)\\b(?:lied|lying|false(?:ly)?|dishonest\\w*|misrepresent\\w*)\\b",
+      "bad_examples": [
+        "She lied on the intake form.",
+        "The intake answer was false.",
+        "Dishonest answer about prior accidents."
+      ],
+      "good_examples": [
+        "Intake form answer: Prior accidents? No.",
+        "The 2026-03-04 note lists car accidents in 2019 and 2022, per patient.",
+        "Intake and primary-care note differ; both cited."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Decides the neck or back complaints are pre-existing, old, or not caused by the collision, or apportions between the earlier accidents and this one.",
+      "check": "judge",
+      "bad_examples": [
+        "Her back pain predates the collision.",
+        "Most of the low back pain is from the 2022 accident.",
+        "The collision did not cause her low back pain."
+      ],
+      "good_examples": [
+        "Chronic low back pain is on the 2026-03-04 problem list.",
+        "History per patient: car accidents in 2019 and 2022 with neck and low back pain.",
+        "Low back pain 7/10 on 2026-03-18."
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P5 + P2 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic (encounters): 03-04 to 03-18 = 14; 03-18 to 03-27 = 9 (records 5 and 6 share 03-27); 03-27 to 04-24 = 4 + 24 = 28; 04-24 to 05-29 = 6 + 29 = 35 (flag). The LOP letter (03-26) and the ledger (06-15) are non-encounters.",
+    "Charges counted: 3,260 + 250 + 180 + 2,310 = 6,000. Ledger arithmetic: 250 + 180 + 2,310 = 2,740; 2,740 - 300 - 274 = 2,166. Forbidden: 6,000 + 2,740 = 8,740.",
+    "Older notes come from the firm's records request to the PCP; the intake form is the clinic's. D-042 calibrated confidence: the tool shows measured precision per state for the pre-existing flags, never an invented percentage.",
+    "Ledger columns follow P5's billing items 1-4 and 6 (billed, adjustment, payment, balance, LOP); the carrier-contract item is a separate document and is not in this packet."
+  ]
+}

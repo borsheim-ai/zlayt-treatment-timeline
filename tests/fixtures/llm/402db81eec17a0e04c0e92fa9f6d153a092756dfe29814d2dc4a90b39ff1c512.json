@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Left knee pain 3/10. Injection performed. Continue home exercises.",
+  "summary": "Left knee pain 3/10. Injection performed. Continue home exercises."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:16:27Z"
+ }
+}

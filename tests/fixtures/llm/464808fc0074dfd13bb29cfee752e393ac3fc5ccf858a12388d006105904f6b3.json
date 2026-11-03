@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Discussed arthroscopic meniscal repair versus conservative care. Patient elects physical therapy first. Aggravation of the underlying knee condition is possible.",
+  "summary": "Arthroscopic meniscal repair versus conservative care discussed; patient elects physical therapy first; aggravation of the underlying knee condition is possible."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:29:14Z"
+ }
+}

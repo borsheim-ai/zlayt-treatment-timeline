@@ -1,0 +1,44 @@
+SYNTHETIC — invented by claims-adjuster-reviewer for T-140 round 3 (D-060 default-deny attack); not real patient data
+
+=== Record 1 ===
+Date: 2026-04-01
+Source: Larkspur Regional ED
+Excerpt: "Dx: cervical strain. X-ray cervical spine negative for fracture. ED charge: $1,000."
+
+=== Record 2 ===
+Date: 2026-05-01
+Source: Brindlewood Physical Therapy, billing statement
+Excerpt: "Date  Code  Description  Charges
+04/02/2026  97161  PT evaluation  $200.00
+04/09/2026  97110  Therapeutic exercise  $75.00
+04/09/2026  97110  Therapeutic exercise  $75.00
+04/16/2026  97140  Manual therapy  $150.00"
+
+=== Record 3 ===
+Date: 2026-06-01
+Source: Brindlewood Physical Therapy, billing statement
+Excerpt: "Date  Code  Description  Charges
+Apr 16, 2026  CPT 97140  Manual therapy  $150.00
+05/07/2026  97110  Therapeutic exercise  $150.00
+05/31/2026  97110  Physical therapy, April-May  $650.00"
+
+=== Record 4 ===
+Date: 2026-07-01
+Source: Brindlewood Physical Therapy, account ledger
+Excerpt: "Date  Code  Description  Charges
+4/9/26  97110  Ther ex  $75.00
+4/9/26  97110  Ther ex  $75.00
+06/10/2026  97140  Manual therapy  $150.00
+06/24/2026  97140  Manual therapy  $150.00"
+
+=== Record 5 ===
+Date: 2026-07-20
+Source: Pecan Valley Auto Club, med pay ledger
+Excerpt: "DOS  CPT  Service  Billed  Approved  Paid
+04/09/2026  97110  Therapeutic exercise x2  $150.00  $90.00  $72.00
+06/10/2026  97140  Manual therapy  $150.00  $90.00  $72.00"
+
+=== Record 6 ===
+Date: 2026-07-02
+Source: Brindlewood Physical Therapy, discharge summary
+Excerpt: "Discharged after 6 visits; goals partially met. Physical therapy charges: $950.00."

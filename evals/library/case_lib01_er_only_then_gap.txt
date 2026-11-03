@@ -1,0 +1,31 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-02-14
+Source: Dunmarrow Fire-Rescue run report
+Excerpt: "Driver of a sedan struck from behind while stopped at a light. C/O neck stiffness. Transported to Marrowgate General ED."
+
+=== Record 2 ===
+Date: 2026-02-14
+Source: Marrowgate General ED
+Excerpt: "Dx: cervical strain. X-ray cervical spine negative for fracture. Rx ibuprofen 600 mg. Follow up with primary care in 1 week. ED charge: $3,915."
+
+=== Record 3 ===
+Date: 2026-03-30
+Source: Dr. Imelda Quarrington, primary care
+Excerpt: "Neck pain 5/10 with new left arm tingling. Patient states she could not get an earlier appointment because the clinic was closed. Refer to physical therapy."
+
+=== Record 4 ===
+Date: 2026-04-13
+Source: Plumtree Physical Therapy, initial evaluation
+Excerpt: "Cervical range of motion reduced approx. 30%. Plan of care: 8 visits. Charge per visit $140."
+
+=== Record 5 ===
+Date: 2026-05-04
+Source: Plumtree Physical Therapy, visit 6
+Excerpt: "Pain 3/10, improving. Home exercise program reviewed."
+
+=== Record 6 ===
+Date: 2026-05-18
+Source: Plumtree Physical Therapy, discharge
+Excerpt: "Discharged from PT, goals met. Pain 2/10."

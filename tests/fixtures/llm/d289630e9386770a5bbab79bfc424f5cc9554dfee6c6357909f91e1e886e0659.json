@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "prior_surgery",
+    "excerpt": "Patient reports a right knee arthroscopy in 2021 with good recovery before the fall.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:29:36Z"
+ }
+}

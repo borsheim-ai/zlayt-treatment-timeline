@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Persistent knee pain 5/10 with atrophy of left thigh. Hardware removal discussed.",
+  "summary": "Persistent knee pain 5/10 with atrophy of left thigh; hardware removal discussed."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:26Z"
+ }
+}

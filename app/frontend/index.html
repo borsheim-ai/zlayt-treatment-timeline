@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treatment timeline</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="review.css">
+<link rel="stylesheet" href="stepper.css">
+<link rel="stylesheet" href="sidebyside.css">
+<link rel="stylesheet" href="suggestions.css">
+<link rel="stylesheet" href="overview.css">
+<link rel="stylesheet" href="uncovered.css">
+</head>
+<body>
+<nav id="skip-nav" class="skip-nav" aria-label="Skip links" data-testid="skip-nav"></nav>
+<div id="banner-synthetic" class="banner synth" data-testid="banner-synthetic" role="region" aria-label="Synthetic data notice">Synthetic data only — never paste real records</div>
+<header class="app-header" data-testid="app-header">
+  <div class="app-header-row">
+    <button type="button" id="btn-all-cases" class="btn btn--sm" data-testid="btn-all-cases" hidden>All cases</button>
+    <h1 class="brand">Treatment timeline</h1>
+    <span id="case-name" class="case-name" data-testid="case-name" hidden></span>
+    <div id="case-progress" class="case-progress" data-testid="case-progress-bar" hidden>
+      <span id="progress-text" data-testid="progress-text" role="status"></span>
+      <progress id="progress-bar" max="1" value="0" aria-label="Items decided"></progress>
+    </div>
+    <span class="spacer"></span>
+    <div class="header-tools">
+      <span id="badge" class="chip chip--muted" hidden></span>
+      <span id="retention" class="muted small" hidden></span>
+      <button type="button" id="delete-now" class="btn btn--sm" hidden>Delete now</button>
+      <button type="button" id="btn-shortcuts" class="btn btn--sm" data-testid="btn-shortcuts" aria-haspopup="dialog" hidden>Shortcuts</button>
+      <button type="button" id="btn-theme" class="btn btn--sm" data-testid="btn-theme" aria-label="Theme: auto. Press to change it.">Theme: auto</button>
+      <button type="button" id="btn-export" class="btn btn--primary" data-testid="btn-export" hidden>Export</button>
+    </div>
+  </div>
+</header>
+<nav id="section-nav" class="section-nav" data-testid="section-nav" aria-label="Sections of this case" hidden><div class="section-nav-bar"><div id="section-nav-row" class="section-nav-row"></div></div></nav>
+<div id="banner-ai" class="banner ai" data-testid="banner-ai" role="region" aria-label="Notice about the answers" hidden></div>
+<main id="main">
+  <section id="view-cases" class="card cv" data-testid="cases-overview" aria-labelledby="cv-h" hidden>
+    <div id="cases-body"></div>
+  </section>
+  <section id="view-input" class="card" aria-labelledby="h-input">
+    <h2 id="h-input">Records</h2>
+    <div id="input-body"></div>
+  </section>
+  <section id="view-review" aria-labelledby="h-review" hidden>
+    <h2 id="h-review" class="sr">Review</h2>
+    <div id="review-body"></div>
+  </section>
+  <section id="view-export" class="card" aria-labelledby="h-export" hidden>
+    <h2 id="h-export">Export</h2>
+    <div id="export-body"></div>
+  </section>
+</main>
+<dialog id="source-modal" data-testid="record-modal" aria-labelledby="source-title">
+  <div class="dlg-head"><h2 id="source-title">Source record</h2><button type="button" id="source-close" class="btn btn--sm" data-testid="btn-close-modal">Close</button></div>
+  <div id="source-body"></div>
+</dialog>
+<dialog id="why-modal" data-testid="why-modal" aria-labelledby="why-title">
+  <div class="dlg-head"><h2 id="why-title">Why?</h2><button type="button" class="btn btn--sm" data-testid="why-close" onclick="this.closest('dialog').close()">Close</button></div>
+  <div id="why-body"></div>
+</dialog>
+<!-- load order matters; mock files are only used when API_MODE is "mock" -->
+<script src="dom.js"></script>
+<script src="mock_sample.js"></script>
+<script src="mock.js"></script>
+<script src="mock_flags.js"></script>
+<script src="mock_extra.js"></script>
+<script src="api.js"></script>
+<script src="state.js"></script>
+<script src="input.js"></script>
+<script src="source.js"></script>
+<script src="stepper.js"></script>
+<script src="suggestions.js"></script>
+<script src="timeline.js"></script>
+<!-- T-043 (frontend-2): review.js first (controls + keys), then the panels -->
+<script src="review.js"></script>
+<script src="flags.js"></script>
+<script src="charges.js"></script>
+<script src="batch.js"></script>
+<script src="audit.js"></script>
+<script src="judges.js"></script>
+<script src="manual.js"></script>
+<script src="exportcfg.js"></script>
+<script src="excerpt.js"></script>
+<script src="uncovered.js"></script>
+<script src="export.js"></script>
+<script src="sidebyside.js"></script>
+<script src="sections.js"></script>
+<script src="overview.js"></script>
+<script src="switcher.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

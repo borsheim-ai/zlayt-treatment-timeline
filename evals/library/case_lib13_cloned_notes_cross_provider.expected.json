@@ -1,0 +1,628 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib13_cloned_notes_cross_provider",
+  "synthetic": true,
+  "input_file": "case_lib13_cloned_notes_cross_provider.txt",
+  "description": "Library L13 (P10+P16). Rear-end collision on a highway on-ramp. Three PCP visits weeks apart carry the identical copied-forward ROS 'denies neck pain, denies back pain, denies numbness' while orthopedics, two days after the first PCP visit and again two weeks before the last, charts low back pain 8/10 radiating to the left leg. The orthopedist's surgical cost estimate is an estimate, not a charge. Near-identical notes from the same provider on different dates are separate visits and must not be merged.",
+  "stress_types": [
+    "cloned_ros_across_visits",
+    "cross_provider_symptom_contradiction",
+    "near_duplicate_not_merged",
+    "surgical_estimate_not_charge",
+    "gap_before_followup"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-08-03",
+      "date": "2026-08-03",
+      "kind": "encounter",
+      "source": "Marlpit Fire-Rescue run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-08-03",
+      "date": "2026-08-03",
+      "kind": "encounter",
+      "source": "Vessel Grove Medical Center ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-08-05",
+      "date": "2026-08-05",
+      "kind": "encounter",
+      "source": "Dr. Corwin Pettibone, primary care"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-08-07",
+      "date": "2026-08-07",
+      "kind": "encounter",
+      "source": "Dr. Fenwick Larkspur, orthopedics, new patient"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-08-26",
+      "date": "2026-08-26",
+      "kind": "encounter",
+      "source": "Dr. Corwin Pettibone, primary care, follow-up"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-08-28",
+      "date": "2026-08-28",
+      "kind": "encounter",
+      "source": "Vessel Grove Imaging, lumbar MRI"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-09-04",
+      "date": "2026-09-04",
+      "kind": "encounter",
+      "source": "Dr. Fenwick Larkspur, orthopedics, follow-up"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-09-16",
+      "date": "2026-09-16",
+      "kind": "encounter",
+      "source": "Dr. Corwin Pettibone, primary care, follow-up"
+    },
+    {
+      "record_no": 9,
+      "raw_date": "2026-11-02",
+      "date": "2026-11-02",
+      "kind": "encounter",
+      "source": "Dr. Fenwick Larkspur, orthopedics, follow-up"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-08-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Marlpit Fire-Rescue run report",
+      "must_contain_excerpt": "Driver rear-ended on a highway on-ramp",
+      "required_terms": [
+        "low back pain"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck and low back pain.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-08-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Vessel Grove Medical Center ED",
+      "must_contain_excerpt": "X-ray lumbar and cervical spine negative for fracture",
+      "required_terms": [
+        "lumbar strain",
+        "cervical strain"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-08-05",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Corwin Pettibone, primary care",
+      "must_contain_excerpt": "ROS: denies neck pain, denies back pain, denies numbness",
+      "required_terms": [
+        [
+          "denies back pain",
+          "denied back pain",
+          "denies neck pain",
+          "denied neck pain"
+        ]
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-08-07",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Fenwick Larkspur, orthopedics, new patient",
+      "must_contain_excerpt": "Low back pain 8/10, radiating to the left leg",
+      "required_terms": [
+        "8/10",
+        "mri"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-08-26",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Corwin Pettibone, primary care, follow-up",
+      "must_contain_excerpt": "ROS: denies neck pain, denies back pain, denies numbness",
+      "required_terms": [
+        [
+          "denies back pain",
+          "denied back pain",
+          "denies neck pain",
+          "denied neck pain"
+        ]
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-08-28",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Vessel Grove Imaging, lumbar MRI",
+      "must_contain_excerpt": "L5-S1 disc protrusion contacting the left S1 nerve root",
+      "required_terms": [
+        "l5-s1",
+        "protrusion"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-09-04",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Fenwick Larkspur, orthopedics, follow-up",
+      "must_contain_excerpt": "Recommend microdiscectomy",
+      "required_terms": [
+        "8/10",
+        "microdiscectomy"
+      ]
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-09-16",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Corwin Pettibone, primary care, follow-up",
+      "must_contain_excerpt": "ROS: denies neck pain, denies back pain, denies numbness",
+      "required_terms": [
+        [
+          "denies back pain",
+          "denied back pain",
+          "denies neck pain",
+          "denied neck pain"
+        ]
+      ]
+    },
+    {
+      "id": "E9",
+      "record_nos": [
+        9
+      ],
+      "date": "2026-11-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Fenwick Larkspur, orthopedics, follow-up",
+      "must_contain_excerpt": "Surgery date pending authorization",
+      "required_terms": [
+        "7/10"
+      ]
+    }
+  ],
+  "expected_entry_count": 9,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-08-03",
+      "to_date": "2026-08-05",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 2,
+      "flag": false
+    },
+    {
+      "from_date": "2026-08-05",
+      "to_date": "2026-08-07",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 2,
+      "flag": false
+    },
+    {
+      "from_date": "2026-08-07",
+      "to_date": "2026-08-26",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 19,
+      "flag": false
+    },
+    {
+      "from_date": "2026-08-26",
+      "to_date": "2026-08-28",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 2,
+      "flag": false
+    },
+    {
+      "from_date": "2026-08-28",
+      "to_date": "2026-09-04",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-09-04",
+      "to_date": "2026-09-16",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8
+      ],
+      "days": 12,
+      "flag": false
+    },
+    {
+      "from_date": "2026-09-16",
+      "to_date": "2026-11-02",
+      "from_records": [
+        8
+      ],
+      "to_records": [
+        9
+      ],
+      "days": 47,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$3,540",
+      "value": 3540,
+      "class": "charge",
+      "excerpt": "ED charge: $3,540",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 6,
+      "raw": "$2,290",
+      "value": 2290,
+      "class": "charge",
+      "excerpt": "MRI charge: $2,290",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 7,
+      "raw": "$38,500",
+      "value": 38500,
+      "class": "estimate",
+      "excerpt": "Estimated surgical cost $38,500",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Estimate of future surgery, not a charge (D-019)."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 5830,
+    "counted_amount_ids": [
+      "A1",
+      "A2"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A3",
+        "reason": "Estimate of future surgery, not a charge (D-019); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $5,830.00",
+    "ui_line": "Accepted charges: $5,830.00",
+    "notes_lines": [
+      "$38,500: Estimate of future surgery, not a charge (D-019); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-09-16",
+      "to_date": "2026-11-02",
+      "days": 47,
+      "cite": {
+        "all": [
+          8,
+          9
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Seen for lab review"
+        },
+        {
+          "record_no": 9,
+          "field": "excerpt",
+          "excerpt": "Low back pain 7/10"
+        }
+      ],
+      "summary": "Treatment gap of 47 days (2026-09-16 to 2026-11-02), longer than 30."
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          3,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "denies back pain"
+        },
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Low back pain 8/10"
+        }
+      ],
+      "summary": "Two providers disagree within days: the PCP ROS of 2026-08-05 records 'denies back pain'; orthopedics on 2026-08-07 records low back pain 8/10. Both cited; the paralegal decides which to cite (HITL step).",
+      "subtype": "cross_provider_symptom"
+    },
+    {
+      "id": "C2",
+      "type": "conflict",
+      "level": "should",
+      "cite": {
+        "all": [
+          4,
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Low back pain 8/10"
+        },
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "denies back pain"
+        }
+      ],
+      "summary": "The PCP follow-up of 2026-08-26 again records 'denies back pain' after orthopedics charted low back pain 8/10.",
+      "subtype": "cross_provider_symptom"
+    },
+    {
+      "id": "C3",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          7,
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Low back pain 8/10"
+        },
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "denies back pain"
+        }
+      ],
+      "summary": "Twelve days apart, orthopedics charts low back pain 8/10 with an MRI finding while the PCP ROS again records 'denies back pain'.",
+      "subtype": "cross_provider_symptom"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 2, 2, 19, 2, 7 and 12-day intervals."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          3,
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "ROS: denies neck pain, denies back pain, denies numbness"
+        },
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "ROS: denies neck pain, denies back pain, denies numbness"
+        }
+      ],
+      "summary": "Identical ROS text on two PCP visits 21 days apart; a near-duplicate notice may be shown for review but the visits are never merged.",
+      "subtype": "near_duplicate_text"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Resolves the disagreement: picks a provider, says one is wrong or unreliable, or says the patient did or did not have back pain.",
+      "check": "judge",
+      "bad_examples": [
+        "She does not have back pain; the PCP records deny it.",
+        "The orthopedist's back pain finding is wrong.",
+        "The patient denied back pain, so the ortho note is unreliable."
+      ],
+      "good_examples": [
+        "PCP ROS on 2026-08-05 records 'denies back pain'; orthopedics on 2026-08-07 records low back pain 8/10.",
+        "Two providers disagree within days; both are cited.",
+        "Orthopedics charts low back pain 8/10 on 2026-09-04."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Presents the copied-forward ROS as a current, independent finding at each PCP visit (for example, that back pain had resolved by 2026-09-16).",
+      "check": "judge",
+      "bad_examples": [
+        "At the 2026-09-16 visit she denied back pain, so it had resolved.",
+        "The PCP found no back pain at three visits.",
+        "No neck or back pain per primary care in September."
+      ],
+      "good_examples": [
+        "PCP ROS text on 2026-08-05, 2026-08-26 and 2026-09-16 is identical.",
+        "ROS: denies neck pain, denies back pain, denies numbness (2026-09-16 visit, seen for lab review).",
+        "Seen for lab review."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Treats the $38,500 surgical estimate as a charge or as incurred, or adds it to billed charges.",
+      "check": "judge",
+      "bad_examples": [
+        "Surgery was billed at $38,500.",
+        "Charges total $44,330 including the surgery.",
+        "A $38,500 surgical charge is outstanding."
+      ],
+      "good_examples": [
+        "Orthopedics estimates surgical cost at $38,500 (an estimate, not a charge).",
+        "Billed charges accepted from these records: $5,830.00.",
+        "Recommend microdiscectomy."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Adds the estimate to the charges or treats pain scores, level numbers or interval days as dollars (values 44,330 / 8 / 10 / 47 / 19).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$44,330",
+          "value": 44330,
+          "class": "charge"
+        },
+        {
+          "raw": "$8",
+          "value": 8,
+          "class": "charge"
+        },
+        {
+          "raw": "$10",
+          "value": 10,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        44330,
+        8,
+        10,
+        47,
+        19
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P10 + P16 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic: 08-03 to 08-05 = 2; to 08-07 = 2; to 08-26 = 19; to 08-28 = 2; to 09-04 = 3 + 4 = 7; to 09-16 = 12; to 11-02 = 14 + 31 + 2 = 47 (flag).",
+    "Charges counted: 3,540 + 2,290 = 5,830. Forbidden: 5,830 + 38,500 = 44,330.",
+    "Dedupe: the three PCP visits have the same provider and text but different dates, so they are three entries (expected_entry_count 9). Records 3, 5 and 8 are the copied-forward notes; the orthopedic notes in records 4 and 7 are the contradicting ones.",
+    "Pre-suit: the PCP records came from the firm's own request after the client listed the PCP on intake."
+  ]
+}

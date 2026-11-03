@@ -1,0 +1,23 @@
+{
+ "output": {
+  "records": [
+   {
+    "end": 210,
+    "start": 0
+   },
+   {
+    "end": 353,
+    "start": 210
+   },
+   {
+    "end": 449,
+    "start": 353
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:26:20Z"
+ }
+}

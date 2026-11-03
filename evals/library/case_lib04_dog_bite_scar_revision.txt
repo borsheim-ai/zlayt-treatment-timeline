@@ -1,0 +1,31 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2025-09-13
+Source: Wrenfield EMS run report
+Excerpt: "Adult bitten on the left cheek and chin by a neighbor's dog. Bleeding controlled. Transported to Harlow Memorial ED."
+
+=== Record 2 ===
+Date: 2025-09-13
+Source: Harlow Memorial ED
+Excerpt: "Dx: dog bite, left cheek laceration 4 cm and chin laceration 2 cm. Wounds irrigated and sutured. Amoxicillin-clavulanate prescribed. ED charge: $4,730."
+
+=== Record 3 ===
+Date: 2025-09-20
+Source: Dr. Odalys Pennywhistle, plastic surgery
+Excerpt: "Suture removal. Wounds healing with erythema along the cheek scar. Patient states she is self-conscious about the scar."
+
+=== Record 4 ===
+Date: 2025-10-18
+Source: Dr. Odalys Pennywhistle, plastic surgery
+Excerpt: "Cheek scar 4 cm, raised and erythematous. Silicone sheeting and massage started. Photographs taken for the chart. Return in 8 weeks."
+
+=== Record 5 ===
+Date: 2025-12-13
+Source: Dr. Odalys Pennywhistle, plastic surgery
+Excerpt: "Scar remains raised at 3 months. Revision discussed if no improvement by 12 months. Estimated revision cost: $6,500."
+
+=== Record 6 ===
+Date: 2026-09-12
+Source: Dr. Odalys Pennywhistle, plastic surgery, operative note
+Excerpt: "Scar revision performed under local anesthesia. Surgeon fee: $3,900. Photographs taken."

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Incision healing. Radiographs show hardware in good position. Begin physical therapy.",
+  "summary": "Incision healing; radiographs show hardware in good position; physical therapy to begin."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:19Z"
+ }
+}

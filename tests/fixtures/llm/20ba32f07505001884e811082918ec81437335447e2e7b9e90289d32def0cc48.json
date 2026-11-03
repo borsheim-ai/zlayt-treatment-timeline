@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Neck pain 5/10 without arm symptoms. Date of accident per intake form: 2026-01-12. Plan: physical therapy twice weekly.",
+  "summary": "Neck pain 5/10 without arm symptoms; plan is physical therapy twice weekly."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:26Z"
+ }
+}

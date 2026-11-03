@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Cervical and lumbar spasm. Plan: 3 visits per week for 12 weeks. Charge per visit $120.",
+  "summary": "Cervical and lumbar spasm. Plan: 3 visits per week for 12 weeks. Charge per visit $120."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:23:56Z"
+ }
+}

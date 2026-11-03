@@ -1,0 +1,41 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-01-22
+Source: Brightwater EMS run report
+Excerpt: "Pedestrian struck by a vehicle in a crosswalk. Left knee deformity, unable to bear weight. Transported to Coldharbor Trauma Center."
+
+=== Record 2 ===
+Date: 2026-01-22
+Source: Coldharbor Trauma Center ED
+Excerpt: "Dx: left tibial plateau fracture and left fibular fracture. Splinted. Admitted to orthopedics. ED charges: $38,420."
+
+=== Record 3 ===
+Date: 2026-01-24
+Source: Dr. Casimir Voss, orthopedic surgery, operative report
+Excerpt: "Open reduction and internal fixation, left tibial plateau, two screws. Non-weight-bearing 8 weeks."
+
+=== Record 4 ===
+Date: 2026-02-19
+Source: Dr. Casimir Voss, orthopedic surgery, clinic
+Excerpt: "Incision healing. Radiographs show hardware in good position. Begin physical therapy. Patient reports a prior left knee arthroscopy in 2019."
+
+=== Record 5 ===
+Date: 2026-03-05
+Source: Mosswood Physical Therapy, initial evaluation
+Excerpt: "Left knee flexion limited to 80 degrees. Plan of care: 16 visits. Charge per visit $175."
+
+=== Record 6 ===
+Date: 2026-04-23
+Source: Mosswood Physical Therapy, visit 12
+Excerpt: "Flexion 115 degrees. Pain 4/10."
+
+=== Record 7 ===
+Date: 2026-08-20
+Source: Dr. Casimir Voss, orthopedic surgery, clinic
+Excerpt: "Persistent knee pain 5/10 with atrophy of left thigh. Hardware removal discussed."
+
+=== Record 8 ===
+Date: 2026-09-10
+Source: Dr. Casimir Voss, orthopedic surgery, operative report
+Excerpt: "Removal of hardware, left tibial plateau. Subchondral cyst repaired. Total knee replacement may be needed in the future. Surgeon fee: $6,150."

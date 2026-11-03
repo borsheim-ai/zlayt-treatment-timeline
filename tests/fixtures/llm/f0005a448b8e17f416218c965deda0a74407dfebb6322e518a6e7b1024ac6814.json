@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 4 circled. Adjusted C4-C6. [X] e-stim. Pt states neck feels better.",
+  "summary": "Pain 4 circled; adjusted C4-C6; [X] e-stim; patient states neck feels better."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:06Z"
+ }
+}

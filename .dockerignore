@@ -1,0 +1,15 @@
+# Allow-list build context (CONTRACT section 10: the CLI backend, app/llm/backends/claude_cli.py, is never in the image): only what the demo image runs. No .env, no .git, no board, no memory, no reviews, no databases.
+*
+!requirements.txt
+!app/**
+app/llm/backends/claude_cli.py
+!evals/golden/**
+!evals/library/**
+!evals/reports/calibration.json
+!tests/fixtures/llm/**
+**/__pycache__
+**/*.pyc
+**/*.sqlite
+**/*.sqlite3
+**/.env
+**/.env.*

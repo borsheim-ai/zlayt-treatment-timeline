@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Lumbar flexion limited. 0/5 Waddell signs. Pain 6/10. Plan of care: 12 visits.",
+  "summary": "Lumbar flexion limited; 0/5 Waddell signs; pain 6/10; plan of care is 12 visits."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:04Z"
+ }
+}

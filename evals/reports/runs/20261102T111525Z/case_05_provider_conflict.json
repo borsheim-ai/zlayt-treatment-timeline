@@ -1,0 +1,364 @@
+{
+ "backend": "claude-cli",
+ "case": "case_05_provider_conflict",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-06-01",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Fernwhistle County EMS",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "a1f0088b9e893f58"
+  },
+  {
+   "date": "2026-06-01",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thornapple Valley Hospital ED",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "7071a546ee631735"
+  },
+  {
+   "date": "2026-06-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Wombleton Orthopedics, Dr. Tallowby",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "e87dc3c157fb0c19"
+  },
+  {
+   "date": "2026-06-23",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Crumpet Lane Orthopedics, M. Tallowby, MD",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "b75b0de03b799bcc"
+  },
+  {
+   "date": "2026-07-14",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Wombleton Orthopedics, Dr. Tallowby",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "a1ef18ce844f6cf4"
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "text": "$4,380",
+   "value_cents": 438000
+  },
+  {
+   "category": "provider_name_variant",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Source: Wombleton Orthopedics, Dr. Tallowby",
+     "record_id": "r3"
+    },
+    {
+     "excerpt": "Source: Crumpet Lane Orthopedics, M. Tallowby, MD",
+     "record_id": "r4"
+    },
+    {
+     "excerpt": "Source: Wombleton Orthopedics, Dr. Tallowby",
+     "record_id": "r5"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_provider_name_variant_3_4_5",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r3",
+    "r4",
+    "r5"
+   ],
+   "state": "verified",
+   "type": "conflict"
+  },
+  {
+   "category": "scene_facts",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Cyclist struck by a car at low speed.",
+     "record_id": "r1"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r1_1",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "llm",
+   "reasons": [
+    "LLM_ONLY"
+   ],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "rejected",
+   "type": "causation"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [
+   [
+    "$4,380",
+    438000,
+    "charge",
+    "verified",
+    [
+     "r2"
+    ]
+   ]
+  ],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-06-01",
+    "parsed",
+    "Fernwhistle County EMS",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-06-01",
+    "parsed",
+    "Thornapple Valley Hospital ED",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-06-09",
+    "parsed",
+    "Wombleton Orthopedics, Dr. Tallowby",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-06-23",
+    "parsed",
+    "Crumpet Lane Orthopedics, M. Tallowby, MD",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-07-14",
+    "parsed",
+    "Wombleton Orthopedics, Dr. Tallowby",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5"
+  ],
+  "flags": [
+   [
+    "conflict",
+    "provider_name_variant",
+    [
+     "r3",
+     "r4",
+     "r5"
+    ],
+    [
+     "Source: Crumpet Lane Orthopedics, M. Tallowby, MD",
+     "Source: Wombleton Orthopedics, Dr. Tallowby",
+     "Source: Wombleton Orthopedics, Dr. Tallowby"
+    ],
+    "verified"
+   ]
+  ],
+  "gap_flags": [],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-06-01",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-06-01",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-06-09",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-06-23",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-07-14",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Fernwhistle County EMS",
+    "f9be216a75a14e8c",
+    "2026-06-01",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Thornapple Valley Hospital ED",
+    "55a391abe65f6839",
+    "2026-06-01",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Wombleton Orthopedics, Dr. Tallowby",
+    "2107fb7082cf2e24",
+    "2026-06-09",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Crumpet Lane Orthopedics, M. Tallowby, MD",
+    "b75b0de03b799bcc",
+    "2026-06-23",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Wombleton Orthopedics, Dr. Tallowby",
+    "eea97869c20203e6",
+    "2026-07-14",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 1,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 438000,
+   "letter_line": null,
+   "status": "complete",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 1,
+ "warning_codes": []
+}

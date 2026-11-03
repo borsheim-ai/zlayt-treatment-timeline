@@ -1,0 +1,46 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-10-04
+Source: Brindlewick Fire-Rescue run report
+Excerpt: "Restrained driver in a low-speed rear-end collision. Minor damage to the rear bumper. Ambulatory at scene. Pt states mild neck stiffness. Pt refused transport against medical advice."
+
+=== Record 2 ===
+Date: 2026-10-05
+Source: Cobblewood Urgent Care
+Excerpt: "Seen the day after a low-speed MVC. Neck pain 4/10. Mild paraspinal tenderness. X-ray cervical spine negative. Dx: cervical strain. Charge: $385."
+
+=== Record 3 ===
+Date: 2026-10-19
+Source: Sunderland Chiropractic, new patient
+Excerpt: "Patient states the impact was violent and she was thrown against the seat belt. Neck pain 7/10 with headaches. Plan: chiropractic care three times weekly."
+
+=== Record 4 ===
+Date: 2026-11-02
+Source: Sunderland Chiropractic, visit 6
+Excerpt: "Neck pain 6/10. Adjustment and e-stim. Patient states pain began right after the collision."
+
+=== Record 5 ===
+Date: 2026-12-14
+Source: Sunderland Chiropractic, visit 18
+Excerpt: "Neck pain 4/10. Continue care."
+
+=== Record 6 ===
+Date: 2027-01-11
+Source: Sunderland Chiropractic, correspondence, narrative letter
+Excerpt: "Letter to the attorney dated 01/11/2027. The patient reports she was rear-ended on 2026-10-04 and developed neck pain and headaches. Diagnoses: cervical sprain; post-traumatic headache. Prognosis: guarded. The collision of 2026-10-04 caused all of the injuries and treatment described in this letter. Future care: an estimated 12 additional visits at $150.00 per visit ($1,800.00)."
+
+=== Record 7 ===
+Date: 2027-01-20
+Source: Sunderland Chiropractic, itemized statement
+Excerpt: "Itemized statement: new patient exam charge $210.00; treatment visits 1 through 18 charge $2,700.00; total charges $2,910.00. Payment received $250.00 (med pay). Balance due $2,660.00. Account held under letter of protection."
+
+=== Record 8 ===
+Date: 2027-01-20
+Source: Sunderland Chiropractic, itemized statement
+Excerpt: "Itemized statement: new patient exam charge $210.00; treatment visits 1 through 18 charge $2,700.00; total charges $2,910.00. Payment received $250.00 (med pay). Balance due $2,660.00. Account held under letter of protection."
+
+=== Record 9 ===
+Date: 2027-02-03
+Source: Pennyroyal Records Retrieval, 18.001 affidavit
+Excerpt: "Affidavit concerning cost and necessity of services (CPRC 18.001). The custodian of records states the attached records were kept in the regular course of business. Services provided 10/19/2026 through 12/14/2026. Total amount charged: $2,910.00. Amount paid: $250.00. Amount unpaid that the provider has a right to be paid: $2,660.00. The services were necessary and the charges reasonable. Sworn 02/01/2027."

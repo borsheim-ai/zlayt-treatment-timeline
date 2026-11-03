@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Diagnoses: cervical sprain; post-traumatic headache.",
+  "summary": "Diagnoses: cervical sprain; post-traumatic headache."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:51Z"
+ }
+}

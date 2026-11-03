@@ -1,0 +1,20 @@
+{
+  "schema_version": "golden-split/1",
+  "case_id": "unsplit_paste",
+  "synthetic": true,
+  "input_file": "unsplit_paste.txt",
+  "description": "D-031 LLM split fallback: three records pasted with no '=== Record N ===' headers, no Date:/Source: labels and no separator lines. The code split finds one unsplit block; the model proposes boundary offsets; code validates them (contiguous, cover the text, on line starts). Record fields come from code. Every LLM-split record carries the record_warning LLM_SPLIT.",
+  "stress_types": ["unsplit_paste", "llm_split"],
+  "code_split": {"record_count": 1, "split_method": "ambiguous"},
+  "records": [
+    {"record_no": 1, "date": "2026-05-04", "source": "Pottsworth Emergency Department", "starts_with": "May 4, 2026"},
+    {"record_no": 2, "date": "2026-05-11", "source": "Dr. Tabitha Wrenfield, orthopedics", "starts_with": "May 11, 2026"},
+    {"record_no": 3, "date": "2026-05-25", "source": "Dr. Tabitha Wrenfield, orthopedics", "starts_with": "May 25, 2026"}
+  ],
+  "llm_split": {"split_method": "llm", "warning_code": "LLM_SPLIT", "record_warning_category": "llm_split", "record_warnings_per_record": 1},
+  "must_not": [
+    {"id": "M1", "statement": "Accepts boundaries that are not on a line start or do not cover the whole text (keeps one record instead)."},
+    {"id": "M2", "statement": "Takes any date, provider or excerpt from the model: record fields are parsed by code from the pasted text."},
+    {"id": "M3", "statement": "Presents an LLM-split record without the LLM_SPLIT record_warning."}
+  ]
+}

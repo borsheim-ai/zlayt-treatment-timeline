@@ -1,0 +1,20 @@
+/* Suggestions and confidence (T-096, restyled in T-060). Tokens only; single column and 44px targets come from tokens at <= 768px. */
+.sg-muted { color: var(--text-muted); font-size: var(--t-sm); line-height: var(--lh-sm); margin: var(--s-1) 0; overflow-wrap: anywhere; }
+.sg-tag { margin-left: var(--s-2); }
+.sg-radio { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-2); min-height: var(--control-h); }
+.sg-reason { margin: var(--s-2) 0; padding: var(--s-2) var(--s-3); border-left: 3px solid var(--accent); background: var(--sunken); color: var(--text); font-size: var(--t-sm); line-height: var(--lh-sm); overflow-wrap: anywhere; }
+.sg-dateform { margin: var(--s-2) 0; max-width: 100%; }
+.sg-dateform .rv-fieldset { max-width: 100%; min-width: 0; }
+.sg-error:empty { display: none; }
+.sg-ds { margin: var(--s-3) 0; }
+.sg-ds-item, .sg-overlap { border: 1px solid var(--border); border-left: 3px solid var(--warn); background: var(--warn-bg); color: var(--text); border-radius: var(--r-2); padding: var(--s-3) var(--s-4); margin: var(--s-2) 0; }
+.sg-ds-msg, .sg-overlap-msg { margin: 0 0 var(--s-1); font-weight: var(--w-strong); overflow-wrap: anywhere; }
+.sg-overlap h3 { margin: 0 0 var(--s-1); }
+.sg-overlap-item { border-top: 1px solid var(--border-strong); padding-top: var(--s-2); margin-top: var(--s-2); }
+.sg-overlap-figs { margin: var(--s-1) 0; padding-left: var(--s-4); }
+.sg-overlap-figs li { overflow-wrap: anywhere; }
+.sg-cal { margin: var(--s-3) 0; padding: var(--s-2) var(--s-4); border: 1px solid var(--border); border-radius: var(--r-2); background: var(--panel); font-size: var(--t-sm); line-height: var(--lh-sm); }
+.sg-cal p { margin: var(--s-1) 0; overflow-wrap: anywhere; }
+.sg-cal-more summary, .sg-cal-why summary { font-weight: var(--w-strong); }
+.sg-cal[data-status="missing"], .sg-cal[data-status="invalid"], .sg-cal[data-status="error"] { border-left: 3px solid var(--warn); background: var(--warn-bg); }
+.sg-cal-stale { margin: var(--s-1) 0; padding: var(--s-1) 0; color: var(--text-muted); }   /* T-166 F7: a quiet note, not an amber warning box */

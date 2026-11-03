@@ -1,0 +1,527 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib03_truck_rear_end_chiro",
+  "synthetic": true,
+  "input_file": "case_lib03_truck_rear_end_chiro.txt",
+  "description": "Library L3 (mirrors S3). Passenger car struck from behind by a tractor-trailer; chiropractic plan of 36 visits, no change in pain score at visit 14, discharge at maximum benefit after 31 visits, then an MRI 35 days later with hedged chronic wording and desiccation. The tool must not call the care excessive.",
+  "stress_types": [
+    "chiropractic_heavy_plan",
+    "plan_vs_actual_visits",
+    "near_miss_28_day",
+    "hedged_chronic_imaging",
+    "no_improvement_not_a_conclusion"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-04-06",
+      "date": "2026-04-06",
+      "kind": "encounter",
+      "source": "Okmarrow EMS run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-04-06",
+      "date": "2026-04-06",
+      "kind": "encounter",
+      "source": "Redhaven Regional ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-04-09",
+      "date": "2026-04-09",
+      "kind": "encounter",
+      "source": "Thimbleby Chiropractic, initial exam"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-05-07",
+      "date": "2026-05-07",
+      "kind": "encounter",
+      "source": "Thimbleby Chiropractic, visit 14"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-05-27",
+      "date": "2026-05-27",
+      "kind": "encounter",
+      "source": "Thimbleby Chiropractic, visit 22"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-06-15",
+      "date": "2026-06-15",
+      "kind": "encounter",
+      "source": "Thimbleby Chiropractic, discharge"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-07-20",
+      "date": "2026-07-20",
+      "kind": "encounter",
+      "source": "Redhaven Imaging, lumbar MRI"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-04-06",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Okmarrow EMS run report",
+      "must_contain_excerpt": "struck from behind by a tractor-trailer",
+      "required_terms": [
+        "tractor-trailer",
+        "low back pain"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-04-06",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Redhaven Regional ED",
+      "must_contain_excerpt": "Dx: lumbar and cervical sprain",
+      "required_terms": [
+        "lumbar and cervical sprain",
+        "CT cervical spine negative"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-04-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thimbleby Chiropractic, initial exam",
+      "must_contain_excerpt": "Plan: 3 visits per week for 12 weeks",
+      "required_terms": [
+        "3 visits per week",
+        "12 weeks"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-05-07",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thimbleby Chiropractic, visit 14",
+      "must_contain_excerpt": "Pain 5/10, unchanged from visit 1",
+      "required_terms": [
+        "unchanged"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-05-27",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thimbleby Chiropractic, visit 22",
+      "must_contain_excerpt": "Pain 4/10",
+      "required_terms": [
+        "4/10"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-06-15",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thimbleby Chiropractic, discharge",
+      "must_contain_excerpt": "Discharged at maximum chiropractic benefit after 31 visits",
+      "required_terms": [
+        "31 visits"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-07-20",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Redhaven Imaging, lumbar MRI",
+      "must_contain_excerpt": "findings likely chronic",
+      "required_terms": [
+        "L4-L5 disc bulge",
+        "likely chronic",
+        "desiccation"
+      ]
+    }
+  ],
+  "expected_entry_count": 7,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-04-06",
+      "to_date": "2026-04-09",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 3,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-09",
+      "to_date": "2026-05-07",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-07",
+      "to_date": "2026-05-27",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 20,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-27",
+      "to_date": "2026-06-15",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 19,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-15",
+      "to_date": "2026-07-20",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 35,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$5,260",
+      "value": 5260,
+      "class": "charge",
+      "excerpt": "ED charge: $5,260",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 3,
+      "raw": "$120",
+      "value": 120,
+      "class": "rate",
+      "excerpt": "Charge per visit $120",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: 36 visits planned, 31 attended; no visit count billed."
+    },
+    {
+      "id": "A3",
+      "record_no": 7,
+      "raw": "$2,240",
+      "value": 2240,
+      "class": "charge",
+      "excerpt": "MRI charge: $2,240",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 7500,
+    "counted_amount_ids": [
+      "A1",
+      "A3"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "rate $120/visit; billed visit count not stated (36 planned, 31 attended); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $7,500.00",
+    "ui_line": "Accepted charges: $7,500.00",
+    "notes_lines": [
+      "$120: rate $120/visit; billed visit count not stated (36 planned, 31 attended); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-06-15",
+      "to_date": "2026-07-20",
+      "days": 35,
+      "cite": {
+        "all": [
+          6,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Discharged at maximum chiropractic benefit after 31 visits"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "findings likely chronic"
+        }
+      ],
+      "summary": "Treatment gap of 35 days (2026-06-15 to 2026-07-20), longer than 30."
+    },
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Mild disc desiccation"
+        }
+      ],
+      "summary": "Imaging term an adjuster may argue shows degeneration; stated as a finding only.",
+      "subtype": "degenerative_language"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "findings likely chronic"
+        }
+      ],
+      "summary": "Hedged radiology wording ('likely chronic') that an adjuster can use against causation.",
+      "subtype": "hedged_imaging"
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "should",
+      "cite": {
+        "all": [
+          3,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Plan: 3 visits per week for 12 weeks"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Discharged at maximum chiropractic benefit after 31 visits"
+        }
+      ],
+      "summary": "Plan of 36 visits (3 per week for 12 weeks) vs discharge after 31 visits; shown side by side, not resolved.",
+      "subtype": "treatment_plan"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "from_date": "2026-04-09",
+      "to_date": "2026-05-07",
+      "days": 28,
+      "statement": "28-day interval (records 3 to 4) is a near-miss and must NOT be flagged as a gap."
+    },
+    {
+      "id": "N2",
+      "type": "gap",
+      "statement": "No gap flag for the 3, 20 and 19-day intervals."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "causation",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Pain 5/10, unchanged from visit 1"
+        }
+      ],
+      "summary": "'Unchanged' pain at visit 14 may be raised as a plateau note; the tool must word it as the record does.",
+      "subtype": "no_improvement"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Characterises the chiropractic care as excessive, unnecessary or over-treatment (an adjuster's argument, not a record fact).",
+      "check": "judge",
+      "bad_examples": [
+        "Excessive chiropractic care (31 visits).",
+        "Over-treatment by the chiropractor.",
+        "Chiropractic visits were not medically necessary."
+      ],
+      "good_examples": [
+        "Plan: 3 visits per week for 12 weeks.",
+        "Discharged at maximum chiropractic benefit after 31 visits.",
+        "Pain 5/10, unchanged from visit 1."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "States the disc bulge is chronic or degenerative as fact; the record says 'findings likely chronic' (a hedge) and 'mild disc desiccation'.",
+      "check": "judge",
+      "bad_examples": [
+        "Chronic L4-L5 disc disease.",
+        "The disc bulge is chronic.",
+        "Degenerative disc disease at L4-L5."
+      ],
+      "good_examples": [
+        "Mild disc desiccation; radiology says findings likely chronic.",
+        "L4-L5 disc bulge without nerve root compression.",
+        "Radiology: findings likely chronic."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Adds a diagnosis the records do not state (whiplash, herniation, radiculopathy).",
+      "check": "regex",
+      "pattern": "(?i)\\b(whiplash|herniat\\w+|radiculopath\\w+)\\b",
+      "bad_examples": [
+        "Whiplash injury.",
+        "L4-L5 herniation.",
+        "Lumbar radiculopathy."
+      ],
+      "good_examples": [
+        "Disc bulge without nerve root compression.",
+        "Dx: lumbar and cervical sprain.",
+        "Cervical and lumbar spasm."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Treats visit counts, weeks or pain scores as dollars, or totals the per-visit rate (36 x 120 = 4,320; 31 x 120 = 3,720).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$3",
+          "value": 3,
+          "class": "charge"
+        },
+        {
+          "raw": "$12",
+          "value": 12,
+          "class": "charge"
+        },
+        {
+          "raw": "$31",
+          "value": 31,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        3,
+        12,
+        31,
+        36,
+        3720,
+        4320,
+        11820
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S3 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: 04-06 to 04-09 = 3; 04-09 to 05-07 = 21 (to Apr 30) + 7 = 28 (near-miss); 05-07 to 05-27 = 20; 05-27 to 06-15 = 19; 06-15 to 07-20 = 15 (to Jun 30) + 20 = 35 (flag).",
+    "Forbidden guess-sums: 36 x 120 = 4,320; 31 x 120 = 3,720; 7,500 + 4,320 = 11,820."
+  ]
+}

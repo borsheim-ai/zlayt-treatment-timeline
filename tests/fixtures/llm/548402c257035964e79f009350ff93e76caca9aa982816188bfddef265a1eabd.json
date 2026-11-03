@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Open reduction and internal fixation, left tibial plateau, two screws. Non-weight-bearing 8 weeks.",
+  "summary": "Open reduction and internal fixation of the left tibial plateau with two screws; non-weight-bearing for 8 weeks."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:15Z"
+ }
+}

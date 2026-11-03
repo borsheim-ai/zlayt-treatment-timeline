@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Left shoulder pain 7/10. X-ray left shoulder negative for fracture. Dx: left shoulder contusion. ED charge: $2,940.",
+  "summary": "Left shoulder pain 7/10; X-ray of left shoulder negative for fracture; diagnosis left shoulder contusion; ED charge $2,940."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:18:40Z"
+ }
+}

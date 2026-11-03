@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: lumbar strain, cervical strain. X-ray lumbar and cervical spine negative for fracture. Discharged home. ED charge: $3,540.",
+  "summary": "Diagnosed with lumbar strain and cervical strain; lumbar and cervical spine x-rays negative for fracture; discharged home; ED charge $3,540."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:01Z"
+ }
+}

@@ -1,0 +1,46 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-08-03
+Source: Marlpit Fire-Rescue run report
+Excerpt: "Driver rear-ended on a highway on-ramp. Pt states neck and low back pain. Ambulatory at scene. Transported to Vessel Grove Medical Center ED."
+
+=== Record 2 ===
+Date: 2026-08-03
+Source: Vessel Grove Medical Center ED
+Excerpt: "Dx: lumbar strain, cervical strain. X-ray lumbar and cervical spine negative for fracture. Discharged home. ED charge: $3,540."
+
+=== Record 3 ===
+Date: 2026-08-05
+Source: Dr. Corwin Pettibone, primary care
+Excerpt: "ROS: denies neck pain, denies back pain, denies numbness. Seen for medication refill. Plan: continue current medications."
+
+=== Record 4 ===
+Date: 2026-08-07
+Source: Dr. Fenwick Larkspur, orthopedics, new patient
+Excerpt: "Low back pain 8/10, radiating to the left leg. MRI lumbar spine ordered. Surgical consult if no improvement."
+
+=== Record 5 ===
+Date: 2026-08-26
+Source: Dr. Corwin Pettibone, primary care, follow-up
+Excerpt: "ROS: denies neck pain, denies back pain, denies numbness. Seen for blood pressure check. Plan: continue current medications."
+
+=== Record 6 ===
+Date: 2026-08-28
+Source: Vessel Grove Imaging, lumbar MRI
+Excerpt: "L5-S1 disc protrusion contacting the left S1 nerve root. MRI charge: $2,290."
+
+=== Record 7 ===
+Date: 2026-09-04
+Source: Dr. Fenwick Larkspur, orthopedics, follow-up
+Excerpt: "MRI reviewed. Low back pain 8/10. Recommend microdiscectomy. Estimated surgical cost $38,500."
+
+=== Record 8 ===
+Date: 2026-09-16
+Source: Dr. Corwin Pettibone, primary care, follow-up
+Excerpt: "ROS: denies neck pain, denies back pain, denies numbness. Seen for lab review. Plan: continue current medications."
+
+=== Record 9 ===
+Date: 2026-11-02
+Source: Dr. Fenwick Larkspur, orthopedics, follow-up
+Excerpt: "Low back pain 7/10. Surgery date pending authorization."

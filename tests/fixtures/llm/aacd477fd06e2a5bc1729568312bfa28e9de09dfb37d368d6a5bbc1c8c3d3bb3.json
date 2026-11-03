@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Persistent neck pain 6/10, daily headaches. Refer to physical therapy 2x/week for 6 weeks.",
+  "summary": "Persistent neck pain 6/10 and daily headaches; referred to physical therapy 2x/week for 6 weeks."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:01Z"
+ }
+}

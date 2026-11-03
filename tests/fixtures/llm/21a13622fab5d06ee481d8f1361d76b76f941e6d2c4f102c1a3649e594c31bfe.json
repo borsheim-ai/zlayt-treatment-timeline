@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Initial consult. Left wrist pain 6/10. Splint fitted.",
+  "summary": "Initial consult. Left wrist pain 6/10. Splint fitted."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:12:45Z"
+ }
+}

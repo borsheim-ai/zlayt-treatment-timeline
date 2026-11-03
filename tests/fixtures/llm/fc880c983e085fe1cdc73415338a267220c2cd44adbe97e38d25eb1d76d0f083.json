@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pt states neck and low back pain 7/10. Ambulatory at scene. Transported to Wexcombe Memorial ED.",
+  "summary": "Patient states neck and low back pain 7/10 after passenger vehicle was struck from behind; ambulatory at scene and transported to Wexcombe Memorial ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:35Z"
+ }
+}

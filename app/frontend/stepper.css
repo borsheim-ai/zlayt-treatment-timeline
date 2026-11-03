@@ -1,0 +1,114 @@
+/* Vertical steppers and the "How the AI was checked" panel (T-081, T-082; restyled on tokens in T-060). Rail marker = glyph + word, never colour alone. */
+.zs { color: var(--text); min-width: 0; overflow-wrap: anywhere; }
+.zs-case { margin: var(--s-3) 0; }
+.zs-case-det { border: 1px solid var(--border); border-radius: var(--r-2); background: var(--panel); padding: 0 var(--s-4); }
+.zs-case-det > summary { min-height: var(--control-h); flex-wrap: wrap; gap: var(--s-1) var(--s-3); font-weight: var(--w-strong); list-style-position: inside; }
+.zs-case-title { font-size: var(--t-md); line-height: var(--lh-md); margin: 0; }
+.zs-case-det > summary .zs-toggle { margin-left: auto; font-size: var(--t-sm); font-weight: var(--w-strong); color: var(--accent); text-decoration: underline; }
+.zs-case-det > summary .zs-toggle::after { content: " \25BE"; text-decoration: none; display: inline-block; }
+.zs-case-det[open] > summary .zs-toggle::after { content: " \25B4"; }
+.zs-case-det > summary .zs-sumgate { color: var(--warn); font-weight: var(--w-strong); }
+.zs-case-det[open] > summary { border-bottom: 1px solid var(--border); margin-bottom: var(--s-2); }
+.zs-case-det[open] { padding-bottom: var(--s-3); }
+.zs-nextline { margin: var(--s-2) 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-3); padding: var(--s-2) var(--s-4); border: 1px solid var(--border); border-left: 3px solid var(--warn); border-radius: var(--r-2); background: var(--panel); }
+.zs-nextline p { flex: 1 1 18rem; margin: 0; }
+.zs-now { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-3); margin: 0 0 var(--s-3); padding: var(--s-2) var(--s-3); border: 1px solid var(--warn); background: var(--warn-bg); border-radius: var(--r-1); }
+.zs-wording { margin: 0 0 var(--s-3); padding: var(--s-3); border: 1px solid var(--bad); border-left-width: 3px; background: var(--bad-bg); border-radius: var(--r-1); }
+.zs-wording .zs-todo-text { margin: 0 0 var(--s-2); }
+.zs-now-text { margin: 0; flex: 1 1 14rem; }
+.zs-err { color: var(--bad); }
+.zj-panel { margin: var(--s-3) 0; }
+.zj-chips { margin: var(--s-1) 0; }
+.zj-chip-bad { color: var(--bad); border-color: var(--bad); }
+.zj-sum-bad { color: var(--bad); font-weight: var(--w-strong); }
+.zs-sumv { color: var(--text-muted); font-weight: var(--w-regular); font-size: var(--t-sm); }
+.zs-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-3); margin: var(--s-2) 0 var(--s-3); }
+.zs-progress { font-size: var(--t-sm); color: var(--text-muted); font-variant-numeric: tabular-nums; font-weight: var(--w-strong); }
+.zs-verdict { font-weight: var(--w-strong); }
+.zs-v-accepted, .zs-v-ready { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.zs-v-needs_attention, .zs-v-rejected, .zs-v-failed { color: var(--bad); border-color: var(--bad); background: var(--bad-bg); }
+.zs-v-ready_for_decision, .zs-v-waiting_for_run, .zs-v-running { color: var(--warn); border-color: var(--warn); background: var(--warn-bg); }
+.zs-reasons { margin: 0 0 var(--s-2); padding-left: var(--s-5); color: var(--warn); font-size: var(--t-sm); }
+
+/* the rail: a vertical line, a marker per step, the body to the right */
+.zs-rail { --marker: 1.375rem; list-style: none; margin: 0; padding: 0; }
+.zs-step { position: relative; display: block; margin: 0; padding: var(--s-1) 0 var(--s-4) calc(var(--marker) + var(--s-3)); }
+.zs-step::before { content: ""; position: absolute; left: calc(var(--marker) / 2 - 1px); top: calc(var(--marker) + var(--s-2)); bottom: calc(var(--s-1) * -0.5); width: 2px; background: var(--border); }
+.zs-step:last-child::before { display: none; }
+.zs-marker { position: absolute; left: 0; top: var(--s-1); width: var(--marker); height: var(--marker); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: var(--t-xs); font-weight: var(--w-strong); line-height: 1; background: var(--panel); border: 2px solid var(--border-strong); color: var(--text-muted); }
+.zs-step[data-status="pass"] .zs-marker { border-color: var(--ok); color: var(--ok); }
+.zs-step[data-status="fail"] .zs-marker { border-color: var(--warn); background: var(--warn-bg); color: var(--warn); }
+.zs-step[data-status="skipped"] .zs-marker { border-style: dashed; }
+.zs-step[data-status="pending"] .zs-marker { border-color: var(--accent); color: var(--accent); }
+.zs-step[aria-current="step"] > .zs-body { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: var(--r-1); padding: var(--s-2); margin: calc(var(--s-1) * -1) 0 0 calc(var(--s-1) * -1); }
+.zs-body { min-width: 0; }
+.zs-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-2); }
+.zs-label { font-weight: var(--w-strong); }
+.zs-chip { font-weight: var(--w-regular); margin: 2px var(--s-1) 2px 0; }
+.zs-kind-llm { color: var(--info); border-color: var(--info); background: var(--info-bg); }
+.zs-kind-human { color: var(--text); }
+.zs-status { font-size: var(--t-sm); font-weight: var(--w-strong); }
+.zs-step[data-status="pass"] .zs-status { color: var(--ok); }
+.zs-step[data-status="fail"] .zs-status { color: var(--warn); }
+.zs-step[data-status="pending"] .zs-status { color: var(--accent); }
+.zs-step[data-status="skipped"] .zs-status { color: var(--text-muted); }
+.zs-blocks { color: var(--bad); border-color: var(--bad); background: var(--bad-bg); }
+.zs-why { margin: 2px 0 var(--s-1); }
+.zs-ev { margin: 2px 0; font-size: var(--t-sm); color: var(--text-muted); }
+.zs-ev strong { color: var(--text); }
+.zs-k { color: var(--text-muted); }
+.zs-kv { display: inline-block; margin-right: var(--s-3); }
+.zs-code, .zs-tok { font: var(--w-regular) var(--t-xs)/var(--lh-xs) var(--mono); background: var(--sunken); border-radius: var(--r-1); padding: 0 var(--s-1); margin-right: var(--s-1); }
+.zs-rule { color: var(--text-muted); font-size: var(--t-sm); }
+.zs-evidence, .zs-quote { margin: var(--s-1) 0; }
+.zs-quote figcaption { font-size: var(--t-xs); font-weight: var(--w-strong); color: var(--text-subtle); }
+.zs-quote blockquote { margin-top: 2px; font-size: var(--t-sm); line-height: var(--lh-sm); }
+.zs-todo { margin: var(--s-2) 0; padding: var(--s-2) var(--s-3); border: 1px solid var(--warn); background: var(--warn-bg); border-radius: var(--r-1); }
+.zs-todo-text { margin: 0 0 var(--s-1); }
+.zs-todo-btns { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-1) 0; }
+.zs-more { margin: var(--s-1) 0; }
+.zs-more > summary { font-size: var(--t-sm); font-weight: var(--w-strong); }
+.zs-more > summary::before { content: "\25B8"; display: inline-block; width: 1.1em; }
+.zs-more[open] > summary::before { content: "\25BE"; }
+.zs-pre { white-space: pre-wrap; overflow-wrap: anywhere; font: var(--w-regular) var(--t-xs)/var(--lh-xs) var(--mono); background: var(--sunken); padding: var(--s-2); border-radius: var(--r-1); max-height: 14rem; overflow: auto; }
+.zs-counts { margin: var(--s-1) 0; }
+.zs-legend { margin: var(--s-2) 0 0; font-size: var(--t-xs); line-height: var(--lh-xs); color: var(--text-muted); }
+.zs-section h3 { margin: var(--s-3) 0 var(--s-2); }
+.zs-blockers, .zj-list { list-style: none; margin: var(--s-1) 0; padding: 0; }
+.zs-blocker { display: flex; flex-wrap: wrap; align-items: center; gap: 2px var(--s-2); padding: var(--s-1) 0; border-top: 1px solid var(--border); }
+.zs-blocker-name { font-weight: var(--w-strong); }
+.zs-flash { outline: var(--focus-ring); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { .zs-flash { transition: outline-color 0.4s; } }
+
+/* "How the AI was checked" */
+.zj-models { margin: var(--s-1) 0; }
+.zj-det .rv-help { margin: var(--s-2) 0 var(--s-1); }
+.zj-tiles { list-style: none; margin: var(--s-2) 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: var(--s-2); }
+.zj-tile { border: 1px solid var(--border); border-radius: var(--r-2); padding: var(--s-2) var(--s-3); background: var(--panel); display: flex; flex-direction: column; }
+.zj-n { font-size: var(--t-xl); line-height: var(--lh-xl); font-variant-numeric: tabular-nums; font-weight: var(--w-strong); }
+.zj-l { font-size: var(--t-xs); color: var(--text-muted); }
+.zj-group h3 { margin: var(--s-4) 0 var(--s-1); }
+.zj-row { border: 1px solid var(--border); border-left: 3px solid var(--warn); border-radius: var(--r-1); padding: var(--s-2) var(--s-3); margin: var(--s-2) 0; background: var(--panel); }
+[data-testid="judge-disagreements"] .zj-row { border-left-color: var(--accent); }
+.zj-by .zj-row, .zj-tech .zj-row { border-left-color: var(--border-strong); }
+
+/* message beside the Export button, rerun button, gate warning */
+.zs-exnote { margin: var(--s-3) 0; padding: var(--s-3) var(--s-4); border: 1px solid var(--bad); border-left-width: 3px; border-radius: var(--r-2); background: var(--bad-bg); }
+.zs-exnote:focus { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.zs-exnote-ok { border-color: var(--ok); background: var(--ok-bg); }
+.zs-exnote-msg { margin: 0 0 var(--s-2); }
+.zs-rerun-status:empty { display: none; }
+.zs-warnbox { margin: var(--s-2) 0; padding: var(--s-2) var(--s-3); border: 1px solid var(--border); border-left: 3px solid var(--warn); border-radius: var(--r-1); background: var(--sunken); }
+@media (max-width: 480px) { .zs-todo-btns .btn { flex: 1 1 100%; } .zj-tiles { grid-template-columns: repeat(2, 1fr); } }
+
+/* T-060 r3: one card for case checks, the next step, the AI-check row and the accuracy note: a header row each, one divider between them */
+.checks { border: 1px solid var(--border); border-radius: var(--r-2); background: var(--panel); margin: var(--s-3) 0; overflow: hidden; }
+.checks > * + *, .checks .zs-case + .zj-panel { border-top: 1px solid var(--border); }
+.checks .zs-case, .checks .zj-panel, .checks .sg-cal { margin: 0; border: 0; border-radius: 0; background: transparent; padding: 0; }
+.checks .zs-case-det, .checks .zj-panel .zs-case-det { border: 0; border-radius: 0; background: transparent; padding: 0 var(--s-4); }
+.checks .zs-case > .zs-case-det + .zs-nextline { border: 0; border-top: 1px solid var(--border); border-radius: 0; margin: 0; padding: var(--s-2) var(--s-4); background: var(--warn-bg); }
+.checks .zs-case-det[open] > summary { margin-bottom: var(--s-2); }
+.checks .zs-case-det[open] { padding-bottom: var(--s-3); }
+.rv-panel .zs-case-title, .zs-case-title { margin: 0; font-size: var(--t-md); line-height: var(--lh-md); }
+.checks summary { min-height: 2.25rem; }

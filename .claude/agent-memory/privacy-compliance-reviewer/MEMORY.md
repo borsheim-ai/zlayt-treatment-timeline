@@ -1,0 +1,1 @@
+- [Recurring findings checklist](recurring-findings.md) — injection paths, demo storage, retention ("not retained by default" trap), §181.154 per-disclosure, D-020, fetch tips

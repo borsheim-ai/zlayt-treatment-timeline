@@ -1,0 +1,12 @@
+{
+ "CURATED": "CURATED: hand-checked response written by qa from evals/golden (summary/quote from sample.export.expected.txt, flag spans from sample.expected.json). Not a model output. Cached demo only; ship-bar metrics use recorded/live runs (D-029).",
+ "output": {
+  "excerpt": "Persistent neck pain 6/10, daily headaches. Refer to physical therapy 2x/week for 6 weeks.",
+  "summary": "Persistent neck pain 6/10 and daily headaches; referred to physical therapy 2x/week for 6 weeks."
+ },
+ "recorded_from": {
+  "backend": "curated",
+  "model": "hand-checked (qa)",
+  "recorded_at": "2026-11-02T02:46:58Z"
+ }
+}

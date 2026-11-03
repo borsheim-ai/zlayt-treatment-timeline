@@ -1,0 +1,13 @@
+---
+name: t166-mvp-polish
+description: T-166 hooks and pitfalls: one-row header + --chrome-h, unclamped quotes, dismiss placeholder (ghost), a/n/x keys, More actions, discard confirm, Save and accept
+metadata:
+  type: project
+---
+**Header (F2):** `--chrome-h` (tokens.css default banner+header) is overwritten by app.js `measureChrome` (ResizeObserver); `--sticky` and `.sbs-pane` top/max-height read it. One row at >= 1100 px (case-name ellipsis, `title` = full name). `#progress-text` is short ("4 of 23 decided · 3 to review"); counts are `data-needs` / `data-edits`, title + aria-label carry the full sentence. Tests that parsed the old long text now read the data attributes.
+**Quotes (F3):** an undecided row never clamps summary, excerpt or reason; a decided row (accepted/edited/dismissed, not `[data-edit-check]`, not `.is-open`) clamps to 1 line with `btn-show-excerpt` under the quote (`fullQuotes` Set, `data-full` on the figure). Charge quote = the sentence holding the amount (`charge-quote`; never name a testid `amount-*`: tests select `[data-testid^=amount-]`).
+**More (F11/F7):** `RV.moreActions(items, name, {testid, panelTestid, open, onToggle})` -> {btn, panel}. Entries: `entry-toggle` + `entry-more-panel` (is-open class kept); flags/charges: `btn-more` + `flag-more-panel` / `charge-more-panel`. Why this status, Change quote, Audit, Dismiss with reason live in the panel (hidden = not clickable): e2e uses `reveal(loc)` from conftest.
+**Ghost (F5):** review.js `ghosts` Map; `slotOf` captures the row's neighbours before the API call, `addGhost` before `applyReview`, `placeGhosts` re-inserts after every `zl:panels`; 6 s timer; pointer dismiss focuses `btn-undo-dismiss`, `d` key advances. Ghost nodes have no `data-item-id`.
+**Keys (F6):** at the end of a list `a`/`d` focus the first open item of the NEXT list (page order) without deciding it and say "Next: ..."; `n` = RV.focusFirstPending, `x` = Export; sheet has 11 keys.
+**Edit (F4/F12):** `btn-save-accept` (ev.submitter) = edit then accept; Undo/`r` on an `item.edited` row opens `discard-confirm` (Keep focused, Escape keeps) via `RV.reset`.
+**Pitfalls:** a `//` comment at the end of a one-line `constructor(...) { ... }` swallows the rest (api.js); git-guard rejects `rm` with a variable and heredocs mixed with quotes: use a python script (scratchpad mktree.py recipe: temp index of HEAD + my files -> write-tree -> git archive -> symlink .venv). Full e2e takes ~25 min: run in background. Server text is never edited: calibration shows plain counts from `by_state` and keeps the report's sentence in `calibration-tech`.

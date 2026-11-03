@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "41M restrained driver, rear-ended at approx. 35 mph. C/O neck pain 7/10 and headache. Alert and oriented. Transported to Central ER.",
+  "summary": "41-year-old male restrained driver rear-ended at approx. 35 mph; complained of neck pain 7/10 and headache, alert and oriented, transported to Central ER."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:01Z"
+ }
+}

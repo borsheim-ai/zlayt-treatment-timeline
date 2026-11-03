@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Low back pain 5/10. Treatment plan: 8 visits. Fee schedule: $95 per adjustment.",
+  "summary": "Low back pain 5/10; treatment plan of 8 visits; fee schedule $95 per adjustment."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:50:27Z"
+ }
+}

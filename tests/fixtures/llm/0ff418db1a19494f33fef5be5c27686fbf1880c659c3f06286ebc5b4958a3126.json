@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Neck pain 4/10. Continue care.",
+  "summary": "Neck pain 4/10; plan to continue care."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:47Z"
+ }
+}

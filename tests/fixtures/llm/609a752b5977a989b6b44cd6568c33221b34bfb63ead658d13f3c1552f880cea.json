@@ -1,0 +1,39 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On February 3, 2026, Quillfeather Urgent Care documented right ankle swelling after twisting on stairs and an X-ray negative for fracture."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On February 17, 2026, Dr. Orla Pennywhistle documented that ankle swelling improved and referred the patient to physical therapy 1x/week for 4 weeks."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On February 24, 2026, Pemberwick Physical Therapy documented, at visit 1, a mildly antalgic gait and pain of 4/10."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On March 3, 2026, Pemberwick Physical Therapy documented, at visit 2, pain of 3/10 and that balance exercises were added."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On March 10, 2026, Pemberwick Physical Therapy documented, at visit 3, pain of 2/10 and walking without a limp."
+   },
+   {
+    "entry_id": "e6",
+    "text": "On March 17, 2026, Pemberwick Physical Therapy documented, at visit 4, pain of 1/10 and discharge to a home exercise program."
+   },
+   {
+    "entry_id": "e7",
+    "text": "On March 25, 2026, Dr. Orla Pennywhistle documented a normal ankle exam and an optional recheck on 04/14/2026 if symptoms return."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:38:35Z"
+ }
+}

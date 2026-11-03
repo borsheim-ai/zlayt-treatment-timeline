@@ -1,0 +1,27 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-09-14
+Source: Snickerwood ER
+Excerpt: "Rear-end collision. Cervical strain, neck pain 5/10. Patient denies prior neck problems. Rx ibuprofen 800 mg."
+
+=== Record 2 ===
+Date: 2026-09-21
+Source: Dr. Ophelia Marchbanks, primary care
+Excerpt: "Neck pain persists. Has been seeing a chiropractor off and on since a lifting injury several years ago."
+
+=== Record 3 ===
+Date: 2026-10-05
+Source: Plumtree Physical Therapy, evaluation
+Excerpt: "History: occasional stiffness in the mornings at baseline. Cervical ROM reduced. Pain 5/10."
+
+=== Record 4 ===
+Date: 2026-10-19
+Source: Dr. Ophelia Marchbanks, primary care
+Excerpt: "Pain 4/10. Return in 4 weeks."
+
+=== Record 5 ===
+Date: 2026-11-16
+Source: Dr. Ophelia Marchbanks, primary care
+Excerpt: "Pain 2/10. Patient notes the old shoulder problem is acting up again."
+

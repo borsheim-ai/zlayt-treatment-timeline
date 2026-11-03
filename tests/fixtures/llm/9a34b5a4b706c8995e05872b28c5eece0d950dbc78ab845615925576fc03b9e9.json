@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "patient_report",
+    "excerpt": "Patient states the impact was violent and she was thrown against the seat belt.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:50Z"
+ }
+}

@@ -1,0 +1,46 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-06-09
+Source: Rainhollow Fire-Rescue run report
+Excerpt: "Driver of a pickup struck at an intersection. Pt states chest wall and left knee pain. Ambulatory at scene. Transported to Saltmarrow General Hospital."
+
+=== Record 2 ===
+Date: 2026-06-09
+Source: Saltmarrow General Hospital ED
+Excerpt: "Dx: left knee contusion, chest wall contusion. X-ray left knee negative for fracture. Admitted for observation."
+
+=== Record 3 ===
+Date: 2026-06-12
+Source: Saltmarrow General Hospital, discharge summary
+Excerpt: "Discharged after 3 days of observation. Dx: left knee contusion. Follow up with orthopedics."
+
+=== Record 4 ===
+Date: 2026-06-19
+Source: Saltmarrow General Hospital, UB-04 itemized bill
+Excerpt: "UB-04 type of bill 0111, statement period 06/09/2026 to 06/12/2026. Rev 0120 room and board semi-private, FL44 rate $1,640.00 per day, FL46 3 days, FL47 total charges $4,920.00. Rev 0450 emergency room, 1 unit, FL47 total charges $2,105.00. Rev 0250 pharmacy, 14 units, FL47 total charges $386.50. Rev 0300 laboratory, 6 units, FL47 total charges $712.00. Rev 0001 total charges $8,123.50."
+
+=== Record 5 ===
+Date: 2026-06-24
+Source: Dr. Ignatius Wardlaw, orthopedics, new patient
+Excerpt: "Left knee pain 5/10. MRI left knee ordered. Patient states his health plan was billed for the hospital stay."
+
+=== Record 6 ===
+Date: 2026-07-03
+Source: Quoinmere Mutual Health Plan, EOB
+Excerpt: "Explanation of benefits, processed 07/03/2026, for dates of service 06/09/2026 to 06/12/2026. This is not a bill. Amount billed $8,023.50; network discount $3,610.00; allowed amount $4,413.50; plan paid $3,530.80; you may owe $882.70."
+
+=== Record 7 ===
+Date: 2026-07-08
+Source: Dr. Ignatius Wardlaw, orthopedics, follow-up
+Excerpt: "Left knee pain 3/10. Injection performed. Continue home exercises."
+
+=== Record 8 ===
+Date: 2026-07-14
+Source: Wardlaw Orthopedics, CMS-1500 (OCR of scanned claim)
+Excerpt: "OCR of scanned CMS-1500 for dates of service 06/24/2026 and 07/08/2026. Item 24F lines: CPT 99204, 18500, 1 unit; CPT 20610, 21000, 1 unit; CPT 97110, 96 OO, 4 units. Item 28 TOTAL CHARGE 49100. Item 29 AMOUNT PAID 0 00."
+
+=== Record 9 ===
+Date: 2026-08-26
+Source: Dr. Ignatius Wardlaw, orthopedics, follow-up
+Excerpt: "Left knee pain 2/10. Discharged from care."

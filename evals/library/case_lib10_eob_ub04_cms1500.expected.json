@@ -1,0 +1,745 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib10_eob_ub04_cms1500",
+  "synthetic": true,
+  "input_file": "case_lib10_eob_ub04_cms1500.txt",
+  "description": "Library L10 (P6+P14). Pickup struck at an intersection, ED then three days of observation. A UB-04 itemized hospital bill with an accommodation rate beside the line charge and a 0001 total line, a health-plan EOB for the same dates of service whose 'amount billed' is $100.00 lower than the UB-04 total, and an orthopedic CMS-1500 OCR copy whose money boxes lost their decimal point. Only stated line charges count; the rate, the 0001 repeat, every EOB figure and every decimal-less box are not counted.",
+  "stress_types": [
+    "ub04_rate_vs_charge",
+    "ub04_0001_total_line",
+    "eob_vs_provider_bill_mismatch",
+    "cms1500_ocr_decimal_less",
+    "billing_statement_inside_gap",
+    "no_double_count"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-06-09",
+      "date": "2026-06-09",
+      "kind": "encounter",
+      "source": "Rainhollow Fire-Rescue run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-06-09",
+      "date": "2026-06-09",
+      "kind": "encounter",
+      "source": "Saltmarrow General Hospital ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-06-12",
+      "date": "2026-06-12",
+      "kind": "encounter",
+      "source": "Saltmarrow General Hospital, discharge summary"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-06-19",
+      "date": "2026-06-19",
+      "kind": "billing_statement",
+      "source": "Saltmarrow General Hospital, UB-04 itemized bill"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-06-24",
+      "date": "2026-06-24",
+      "kind": "encounter",
+      "source": "Dr. Ignatius Wardlaw, orthopedics, new patient"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-07-03",
+      "date": "2026-07-03",
+      "kind": "billing_statement",
+      "source": "Quoinmere Mutual Health Plan, EOB"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-07-08",
+      "date": "2026-07-08",
+      "kind": "encounter",
+      "source": "Dr. Ignatius Wardlaw, orthopedics, follow-up"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-07-14",
+      "date": "2026-07-14",
+      "kind": "billing_statement",
+      "source": "Wardlaw Orthopedics, CMS-1500 (OCR of scanned claim)"
+    },
+    {
+      "record_no": 9,
+      "raw_date": "2026-08-26",
+      "date": "2026-08-26",
+      "kind": "encounter",
+      "source": "Dr. Ignatius Wardlaw, orthopedics, follow-up"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-06-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Rainhollow Fire-Rescue run report",
+      "must_contain_excerpt": "Driver of a pickup struck at an intersection",
+      "required_terms": [
+        "left knee"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states chest wall and left knee pain.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-06-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Saltmarrow General Hospital ED",
+      "must_contain_excerpt": "X-ray left knee negative for fracture",
+      "required_terms": [
+        "left knee contusion",
+        "observation"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-06-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Saltmarrow General Hospital, discharge summary",
+      "must_contain_excerpt": "Discharged after 3 days of observation",
+      "required_terms": [
+        "discharged",
+        "orthopedics"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-06-19",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Saltmarrow General Hospital, UB-04 itemized bill",
+      "must_contain_excerpt": "FL44 rate $1,640.00 per day",
+      "required_terms": [
+        "room and board"
+      ],
+      "note": "UB-04 room line: FL44 rate x FL46 days = FL47 charge (1,640.00 x 3 = 4,920.00). The 0001 line repeats the sum of the lines."
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-06-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ignatius Wardlaw, orthopedics, new patient",
+      "must_contain_excerpt": "Left knee pain 5/10",
+      "required_terms": [
+        "5/10",
+        "mri"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states his health plan was billed for the hospital stay.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-07-03",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Quoinmere Mutual Health Plan, EOB",
+      "must_contain_excerpt": "This is not a bill",
+      "required_terms": [
+        [
+          "explanation of benefits",
+          "eob"
+        ]
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-07-08",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ignatius Wardlaw, orthopedics, follow-up",
+      "must_contain_excerpt": "Injection performed",
+      "required_terms": [
+        "3/10",
+        "injection"
+      ]
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-07-14",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Wardlaw Orthopedics, CMS-1500 (OCR of scanned claim)",
+      "must_contain_excerpt": "OCR of scanned CMS-1500",
+      "required_terms": [
+        [
+          "cms-1500",
+          "claim"
+        ]
+      ],
+      "note": "Money boxes print no decimal point (cents sit right of a bar). Truth by position: 185.00, 210.00, 96.00 and a total of 491.00 (185 + 210 + 96); the tool must not read 18500 as $18,500. Every OCR-derived amount goes to review."
+    },
+    {
+      "id": "E9",
+      "record_nos": [
+        9
+      ],
+      "date": "2026-08-26",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ignatius Wardlaw, orthopedics, follow-up",
+      "must_contain_excerpt": "Discharged from care",
+      "required_terms": [
+        "2/10",
+        "discharged"
+      ]
+    }
+  ],
+  "expected_entry_count": 9,
+  "gap_excluded_records": [
+    4,
+    6,
+    8
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-06-09",
+      "to_date": "2026-06-12",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 3,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-12",
+      "to_date": "2026-06-24",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 12,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-24",
+      "to_date": "2026-07-08",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-07-08",
+      "to_date": "2026-08-26",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        9
+      ],
+      "days": 49,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 4,
+      "raw": "$1,640.00",
+      "value": 1640,
+      "class": "rate",
+      "excerpt": "FL44 rate $1,640.00 per day",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Accommodation rate (FL44), not a charge; the FL47 charge on the same line is rate x days."
+    },
+    {
+      "id": "A2",
+      "record_no": 4,
+      "raw": "$4,920.00",
+      "value": 4920,
+      "class": "charge",
+      "excerpt": "FL47 total charges $4,920.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 4,
+      "raw": "$2,105.00",
+      "value": 2105,
+      "class": "charge",
+      "excerpt": "FL47 total charges $2,105.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A4",
+      "record_no": 4,
+      "raw": "$386.50",
+      "value": 386.5,
+      "class": "charge",
+      "excerpt": "FL47 total charges $386.50",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A5",
+      "record_no": 4,
+      "raw": "$712.00",
+      "value": 712,
+      "class": "charge",
+      "excerpt": "FL47 total charges $712.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A6",
+      "record_no": 4,
+      "raw": "$8,123.50",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Rev 0001 total charges $8,123.50",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "0001 line repeats the sum of the four lines; counting it doubles the bill."
+    },
+    {
+      "id": "A7",
+      "record_no": 6,
+      "raw": "$8,023.50",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Amount billed $8,023.50",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "EOB restates the provider charge and differs from the UB-04 total by $100.00 (mismatch for review); not a second charge."
+    },
+    {
+      "id": "A8",
+      "record_no": 6,
+      "raw": "$3,610.00",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "network discount $3,610.00",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Network discount; not a charge."
+    },
+    {
+      "id": "A9",
+      "record_no": 6,
+      "raw": "$4,413.50",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "allowed amount $4,413.50",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Allowed amount, not a charge."
+    },
+    {
+      "id": "A10",
+      "record_no": 6,
+      "raw": "$3,530.80",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "plan paid $3,530.80",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Payment by the plan; paid vs incurred is a legal question, not a tool decision."
+    },
+    {
+      "id": "A11",
+      "record_no": 6,
+      "raw": "$882.70",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "you may owe $882.70",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Patient responsibility estimate on an EOB; not a charge."
+    },
+    {
+      "id": "A12",
+      "record_no": 8,
+      "raw": "18500",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "CPT 99204, 18500, 1 unit",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Decimal-less CMS-1500 box; truth 185.00 by position, OCR-derived, needs review."
+    },
+    {
+      "id": "A13",
+      "record_no": 8,
+      "raw": "21000",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "CPT 20610, 21000, 1 unit",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Decimal-less box; truth 210.00."
+    },
+    {
+      "id": "A14",
+      "record_no": 8,
+      "raw": "96 OO",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "CPT 97110, 96 OO, 4 units",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Letter O for zero; truth 96.00 for 4 units."
+    },
+    {
+      "id": "A15",
+      "record_no": 8,
+      "raw": "49100",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Item 28 TOTAL CHARGE 49100",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Item 28; truth 491.00. The tool compares the line sum with Item 28 in code."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 8123.5,
+    "counted_amount_ids": [
+      "A2",
+      "A3",
+      "A4",
+      "A5"
+    ],
+    "amounts_found": 15,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A1",
+        "reason": "Accommodation rate (FL44), not a charge; the FL47 charge on the same line is rate x days; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A6",
+        "reason": "0001 line repeats the sum of the four lines; counting it doubles the bill; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A7",
+        "reason": "EOB restates the provider charge and differs from the UB-04 total by $100.00 (mismatch for review); not a second charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A8",
+        "reason": "Network discount; not a charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A9",
+        "reason": "Allowed amount, not a charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A10",
+        "reason": "Payment by the plan; paid vs incurred is a legal question, not a tool decision; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A11",
+        "reason": "Patient responsibility estimate on an EOB; not a charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A12",
+        "reason": "Decimal-less CMS-1500 box; truth 185.00 by position, OCR-derived, needs review; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A13",
+        "reason": "Decimal-less box; truth 210.00; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A14",
+        "reason": "Letter O for zero; truth 96.00 for 4 units; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A15",
+        "reason": "Item 28; truth 491.00. The tool compares the line sum with Item 28 in code; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $8,123.50",
+    "ui_line": "Accepted charges: $8,123.50",
+    "notes_lines": [
+      "$1,640.00: Accommodation rate (FL44), not a charge; the FL47 charge on the same line is rate x days; needs review",
+      "$8,123.50: 0001 line repeats the sum of the four lines; counting it doubles the bill; needs review",
+      "$8,023.50: EOB restates the provider charge and differs from the UB-04 total by $100.00 (mismatch for review); not a second charge; needs review",
+      "$3,610.00: Network discount; not a charge; needs review",
+      "$4,413.50: Allowed amount, not a charge; needs review",
+      "$3,530.80: Payment by the plan; paid vs incurred is a legal question, not a tool decision; needs review",
+      "$882.70: Patient responsibility estimate on an EOB; not a charge; needs review",
+      "18500: Decimal-less CMS-1500 box; truth 185.00 by position, OCR-derived, needs review; needs review",
+      "21000: Decimal-less box; truth 210.00; needs review",
+      "96 OO: Letter O for zero; truth 96.00 for 4 units; needs review",
+      "49100: Item 28; truth 491.00. The tool compares the line sum with Item 28 in code; needs review"
+    ],
+    "explicit_charges_reason": "Hand-verified: UB-04 FL47 lines $4,920.00 + $2,105.00 + $386.50 + $712.00 = $8,123.50 (the Rev 0001 line repeats it). The EOB 'Amount billed $8,023.50' restates the provider's bill from an insurer document and is never a second charge (D-059); the CMS-1500 boxes have no decimal point and stay unclear."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-07-08",
+      "to_date": "2026-08-26",
+      "days": 49,
+      "cite": {
+        "all": [
+          7,
+          9
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Continue home exercises"
+        },
+        {
+          "record_no": 9,
+          "field": "excerpt",
+          "excerpt": "Left knee pain 2/10"
+        }
+      ],
+      "summary": "Treatment gap of 49 days (2026-07-08 to 2026-08-26), longer than 30."
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 3, 12 and 14-day intervals; the UB-04 (record 4), EOB (record 6) and CMS-1500 (record 8) are not gap endpoints."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          4,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Rev 0001 total charges $8,123.50"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Amount billed $8,023.50"
+        }
+      ],
+      "summary": "Same dates of service, $100.00 apart between the UB-04 total and the EOB amount billed; a billing-analysis mismatch may be raised for review but is not required as a flag.",
+      "subtype": "billing_amount_mismatch"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Sums every money figure on the UB-04, doubles the bill with the 0001 line, adds the EOB's amount billed, or reads an EOB/allowed/paid figure as a charge (values 17,887 / 16,247 / 16,147 / 8,023.50 / 4,413.50 / 3,530.80 / 3,610 / 882.70).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$17,887",
+          "value": 17887,
+          "class": "charge"
+        },
+        {
+          "raw": "$16,247",
+          "value": 16247,
+          "class": "charge"
+        },
+        {
+          "raw": "$16,147",
+          "value": 16147,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        17887,
+        16247,
+        16147,
+        8023.5,
+        4413.5,
+        3530.8,
+        3610,
+        882.7
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Reads decimal-less CMS-1500 boxes as whole dollars (18500 -> $18,500) (values 18,500 / 21,000 / 9,600 / 49,100).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$18,500",
+          "value": 18500,
+          "class": "charge"
+        },
+        {
+          "raw": "$21,000",
+          "value": 21000,
+          "class": "charge"
+        },
+        {
+          "raw": "$9,600",
+          "value": 9600,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        18500,
+        21000,
+        9600,
+        49100
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Chooses between billed, allowed and paid as the real cost, says the hospital overcharged, or states what was incurred; paid vs incurred is for the attorney.",
+      "check": "judge",
+      "bad_examples": [
+        "The hospital was paid $3,530.80, so that is the real cost.",
+        "The charges were inflated; the plan allowed only $4,413.50.",
+        "The amount incurred is $4,413.50."
+      ],
+      "good_examples": [
+        "UB-04 total charges $8,123.50; the EOB lists amount billed $8,023.50, allowed $4,413.50 and plan paid $3,530.80.",
+        "UB-04 and EOB totals differ by $100.00 for the same dates of service; flagged for review.",
+        "Billed charges accepted from these records: $8,123.50."
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P6 + P14 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic: 06-09 to 06-12 = 3; 06-12 to 06-24 = 12; 06-24 to 07-08 = 6 + 8 = 14; 07-08 to 08-26 = 23 + 26 = 49 (flag). UB-04 (06-19), EOB (07-03) and CMS-1500 (07-14) are non-encounters and sit inside the 49-day gap.",
+    "Charges counted: 4,920.00 + 2,105.00 + 386.50 + 712.00 = 8,123.50. Naive sum of every UB-04 figure: 8,123.50 + 8,123.50 + 1,640.00 = 17,887.00. EOB billed 8,023.50: 8,023.50 - 3,610.00 = 4,413.50 allowed; 4,413.50 x 0.8 = 3,530.80 plan paid.",
+    "Pre-suit: the EOB came from the client's health plan; the UB-04 and CMS-1500 came from the providers. Dedupe must not merge them (same dates of service, different documents)."
+  ]
+}

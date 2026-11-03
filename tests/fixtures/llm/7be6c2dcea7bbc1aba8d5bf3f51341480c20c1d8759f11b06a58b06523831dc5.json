@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Medial meniscus tear with moderate joint effusion. Mild tricompartmental degenerative change. Findings may reflect both acute injury and prior surgical change. MRI charge: $1,850.",
+  "summary": "Right knee MRI shows medial meniscus tear with moderate joint effusion, mild tricompartmental degenerative change, and findings that may reflect both acute injury and prior surgical change; MRI charge $1,850."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:29:15Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: lumbar strain. X-ray lumbar spine negative for fracture. Discharged on ibuprofen. ED charge: $2,780.",
+  "summary": "Diagnosis lumbar strain; lumbar spine X-ray negative for fracture; discharged on ibuprofen; ED charge $2,780."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:01Z"
+ }
+}

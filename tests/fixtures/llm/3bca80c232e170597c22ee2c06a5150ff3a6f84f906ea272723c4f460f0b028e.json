@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Ankle exam normal. Optional recheck on 04/14/2026 if symptoms return.",
+  "summary": "Ankle exam normal. Optional recheck on 04/14/2026 if symptoms return."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:48:41Z"
+ }
+}

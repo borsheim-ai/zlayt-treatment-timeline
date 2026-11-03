@@ -1,0 +1,360 @@
+{
+ "backend": "claude-cli",
+ "case": "case_09_nonvisit_hides_gap",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-02-02",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hobbleton Family Clinic, visit",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "81f05fb9d2906811"
+  },
+  {
+   "date": "2026-03-01",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hobbleton Family Clinic, billing statement",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "1db7c849fd444095"
+  },
+  {
+   "date": "2026-03-12",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hobbleton Family Clinic, phone note",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "d56297a3607ea4b6"
+  },
+  {
+   "date": "2026-03-30",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hobbleton Family Clinic, visit",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "b0d7c83bc7284841"
+  },
+  {
+   "date": "2026-04-13",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Hobbleton Family Clinic, visit",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "6e909e5777f48791"
+  },
+  {
+   "cls": "charge",
+   "generator_prompt_version": null,
+   "id": "a1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_amount_class_v1",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "amount",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "text": "$275",
+   "value_cents": 27500
+  },
+  {
+   "category": "gap_over_30",
+   "computed": {
+    "days": 56,
+    "from": "2026-02-02",
+    "to": "2026-03-30"
+   },
+   "evidence": [
+    {
+     "excerpt": "Date: 2026-02-02",
+     "record_id": "r1"
+    },
+    {
+     "excerpt": "Source: Hobbleton Family Clinic, visit",
+     "record_id": "r1"
+    },
+    {
+     "excerpt": "Date: 2026-03-30",
+     "record_id": "r4"
+    },
+    {
+     "excerpt": "Source: Hobbleton Family Clinic, visit",
+     "record_id": "r4"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_gap_r1_r4",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r1",
+    "r2",
+    "r3",
+    "r4"
+   ],
+   "state": "verified",
+   "type": "gap"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [
+   [
+    "$275",
+    27500,
+    "charge",
+    "verified",
+    [
+     "r2"
+    ]
+   ]
+  ],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-02-02",
+    "parsed",
+    "Hobbleton Family Clinic, visit",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-03-01",
+    "parsed",
+    "Hobbleton Family Clinic, billing statement",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-03-12",
+    "parsed",
+    "Hobbleton Family Clinic, phone note",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-03-30",
+    "parsed",
+    "Hobbleton Family Clinic, visit",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-04-13",
+    "parsed",
+    "Hobbleton Family Clinic, visit",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5"
+  ],
+  "flags": [
+   [
+    "gap",
+    "gap_over_30",
+    [
+     "r1",
+     "r2",
+     "r3",
+     "r4"
+    ],
+    [
+     "Date: 2026-02-02",
+     "Date: 2026-03-30",
+     "Source: Hobbleton Family Clinic, visit",
+     "Source: Hobbleton Family Clinic, visit"
+    ],
+    "verified"
+   ]
+  ],
+  "gap_flags": [
+   [
+    [
+     "r1",
+     "r2",
+     "r3",
+     "r4"
+    ],
+    "2026-02-02",
+    "2026-03-30",
+    56,
+    "verified"
+   ]
+  ],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-02-02",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-03-01",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-03-12",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-03-30",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-04-13",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Hobbleton Family Clinic, visit",
+    "81f05fb9d2906811",
+    "2026-02-02",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Hobbleton Family Clinic, billing statement",
+    "000d9041dea20068",
+    "2026-03-01",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Hobbleton Family Clinic, phone note",
+    "87b5c11b4199f23a",
+    "2026-03-12",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Hobbleton Family Clinic, visit",
+    "54dcbd28b41f1a6d",
+    "2026-03-30",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Hobbleton Family Clinic, visit",
+    "6e909e5777f48791",
+    "2026-04-13",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 1,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 27500,
+   "letter_line": null,
+   "status": "complete",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": []
+}

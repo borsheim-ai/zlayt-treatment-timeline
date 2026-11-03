@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Patient states the impact was violent and she was thrown against the seat belt. Neck pain 7/10 with headaches. Plan: chiropractic care three times weekly.",
+  "summary": "Patient states the impact was violent and she was thrown against the seat belt; neck pain 7/10 with headaches; plan is chiropractic care three times weekly."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:45Z"
+ }
+}

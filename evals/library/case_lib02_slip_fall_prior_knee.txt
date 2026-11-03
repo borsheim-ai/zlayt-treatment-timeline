@@ -1,0 +1,36 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-03-09
+Source: Sablewood Market first-aid log
+Excerpt: "Customer slipped on a wet floor near the produce display and fell onto the right knee. Ice applied. Declined ambulance."
+
+=== Record 2 ===
+Date: 2026-03-09
+Source: Tamsin Valley Urgent Care
+Excerpt: "Right knee pain 7/10 with swelling. X-ray right knee: no acute fracture; prior arthroscopic changes noted. Dx: knee contusion. Knee immobilizer provided. Visit charge: $410."
+
+=== Record 3 ===
+Date: 2026-03-16
+Source: Dr. Lucan Pettibone, orthopedics
+Excerpt: "Patient reports a right knee arthroscopy in 2021 with good recovery before the fall. Effusion persists. MRI right knee ordered."
+
+=== Record 4 ===
+Date: 2026-03-30
+Source: Tamsin Imaging, right knee MRI
+Excerpt: "Medial meniscus tear with moderate joint effusion. Mild tricompartmental degenerative change. Findings may reflect both acute injury and prior surgical change. MRI charge: $1,850."
+
+=== Record 5 ===
+Date: 2026-04-13
+Source: Dr. Lucan Pettibone, orthopedics
+Excerpt: "Discussed arthroscopic meniscal repair versus conservative care. Patient elects physical therapy first. Aggravation of the underlying knee condition is possible."
+
+=== Record 6 ===
+Date: 2026-05-04
+Source: Cedar Run Physical Therapy, initial evaluation
+Excerpt: "Right knee flexion limited to 100 degrees. Plan of care: 10 visits. Charge per visit $155."
+
+=== Record 7 ===
+Date: 2026-06-22
+Source: Cedar Run Physical Therapy, visit 10
+Excerpt: "Flexion improved to 125 degrees. Pain 3/10."

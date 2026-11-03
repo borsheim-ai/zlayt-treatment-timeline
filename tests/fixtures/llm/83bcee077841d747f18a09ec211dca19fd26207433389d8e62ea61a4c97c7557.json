@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Neck pain 5/10 with new left arm tingling. Patient states she could not get an earlier appointment because the clinic was closed. Refer to physical therapy.",
+  "summary": "Neck pain 5/10 with new left arm tingling; patient states she could not get an earlier appointment because the clinic was closed; refer to physical therapy."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T16:19:44Z"
+ }
+}

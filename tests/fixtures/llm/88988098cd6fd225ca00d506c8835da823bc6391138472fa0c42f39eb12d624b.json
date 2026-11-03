@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Estado de cuenta: consultas $1,300.00; terapia f\u00edsica, 4 sesiones a $400.00 por sesi\u00f3n. Saldo: $2,900.00.",
+  "summary": "Account statement: consultations $1,300.00; physical therapy, 4 sessions at $400.00 per session. Balance: $2,900.00."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:30:59Z"
+ }
+}

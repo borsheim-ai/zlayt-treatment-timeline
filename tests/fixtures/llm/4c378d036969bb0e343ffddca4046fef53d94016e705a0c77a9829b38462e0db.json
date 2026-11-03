@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Rear-end collision. Cervical strain, neck pain 5/10. Patient denies prior neck problems. Rx ibuprofen 800 mg.",
+  "summary": "Rear-end collision; cervical strain with neck pain 5/10; patient denies prior neck problems; ibuprofen 800 mg prescribed."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:52:30Z"
+ }
+}

@@ -1,0 +1,15 @@
+T-103 staff-engineer review r4: CORRECTION-1 (companion to reviews/T-103-staff-engineer-r4.md, which is write-once and is not edited)
+
+The verdict (changes), the two majors, the three minors, and the JSON block in reviews/T-103-staff-engineer-r4.md are unchanged. Three statements in that file are corrected here.
+
+1. Exercised item 3 and the closing "grep" note. The file says the grep for codes finds MISMATCH only in the module docstring. That is wrong. The command was
+   grep -n "MISMATCH\|mismatch\|DIFFER\|BALANCE_STEP\|LEDGER_EOB\|CLAIM_\|complete\b" app/backend/billing.py
+   and its only hit was billing.py line 5, a docstring line that matched on the word 'complete'. No MISMATCH string appears in billing.py. The conclusion (no comparison code remains in the listing code) stands.
+
+2. Finding 2 evidence. The file says artifacts/review-evidence/T-103-r4/compare_scan_8a2b934_output.txt lists the offset calls at billing.py:763, 776, 786, 789, 797, 801 and 970. It does not. compare_scan matches only ==, !=, <, >, and membership, so it lists billing.py 113, 117, 968 (the == in a list comprehension), 403 and 949, but none of the offset calls. The complete list of offset-overlap or containment calls, from `grep -n "_lap(\|_within(" app/backend/billing.py` on the 8a2b934 archive, is:
+   275, 763, 774, 776, 786, 789, 795, 797, 799, 801, 824, 827, 917, 970
+   (the definitions are at 112 for _lap and 116 for _within). The finding's conclusion is unchanged, and the list is longer than the file says.
+
+3. Labels of the line-790 mutant. The scratch copy named mut_R4M3_rate_row_drops_own_other_figure_move (under the scratchpad t103r4_archive directory tree) has the billing.py:790 branch replaced by pass. In mutation_results_r4.txt that same change is R4M2, and the stated-total change at billing.py:798 is R4M3. The output file artifacts/review-evidence/T-103-r4/rate_rule_random_R4M3_mutant_output.txt was produced on the line-790 copy, so its name is misleading. Its contents are identical to the baseline output (rate_rule_random_8a2b934_output.txt), which is the point of finding 5.
+
+Nothing in these corrections changes a finding's severity or the verdict.

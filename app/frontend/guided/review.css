@@ -1,0 +1,110 @@
+/* Review pages (step 2 and 3): the fixed frame, the action bar, the phone layout. OWNER: frontend-B. Loaded after styles.css, so equal-specificity rules here win.
+   Nothing moves when she answers: every box below has a fixed size on desktop (title row, cards, footer slot, action bar rows, status slot). Spec 0, 2.5-2.7, 8; T-180 review majors. */
+
+/* ---------- desktop ---------- */
+@media (min-width: 761px) {
+  :root { --title-h: 120px; }
+  .titlebar { padding-top: 12px; align-items: flex-start; }
+  .titlebar .count-box { padding-top: 8px; }
+  .titlebar .total-chip { margin-top: 4px; }
+  .titlebar .t-ai { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .875rem; line-height: 1.2rem; max-width: 880px; }
+  .steps-toggle { display: none; }
+  .card-f { min-height: 0; height: 150px; overflow: auto; padding: 12px 24px; }
+}
+/* 1366x768 and other short desktops: give the cards the room */
+@media (min-width: 761px) and (max-height: 820px) {
+  :root { --title-h: 88px; }
+  .titlebar .t-ai { display: none; }
+  .titlebar { padding-top: 8px; }
+  .card-f { height: 120px; padding: 10px 20px; }
+  .card-h { min-height: 52px; padding-top: 10px; padding-bottom: 10px; }
+  .actions-in { padding-top: 10px; padding-bottom: 8px; row-gap: 8px; }
+}
+
+/* ---------- action bar: the status slot holds the saved sentence and Undo, always whole ---------- */
+.actions .status { grid-area: status; display: flex; align-items: center; gap: 8px; min-height: 40px; }
+.actions .status .st-msg { flex: 1; min-width: 0; }
+.actions .status.hint { color: var(--subtle); font-size: .9375rem; }
+.actions .status .undo { flex: none; height: 36px; padding: 0 14px; border-color: var(--accent); }
+.btn.hint { background: var(--accent-soft); border-color: var(--accent); }
+.btn.answer .sub { white-space: normal; text-align: center; }
+
+/* ---------- the cards ---------- */
+.card-h .ch-title { flex: none; white-space: nowrap; }
+.card-h .tag { flex: none; }
+.card-b .line-text, .card-b .explain, .card-b .warn-title { overflow-wrap: anywhere; }
+.gap-top { margin-top: 12px; }
+.src-hint, .fix-hint { font-size: 1rem; margin-bottom: 12px; }
+.fix-hint { margin-bottom: 10px; }
+.foot-warn { margin-top: 8px; color: var(--text); font-weight: 600; }
+.foot-rule { border: 0; border-top: 1px solid var(--warn-edge); margin: 10px 0 8px; }
+.card-f .check { margin-top: 6px; font-size: 1rem; line-height: 1.4rem; }
+.card-f .check input { width: 28px; height: 28px; }
+.card-f .label-cap { color: var(--muted); }
+.also q { display: inline; }
+.also div { margin-top: 4px; }
+.sent { display: inline; }
+.sent:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.rec .meta { opacity: .85; }
+
+/* ---------- done screens ---------- */
+.legend { margin-top: 12px; font-size: .9375rem; line-height: 1.4rem; }
+.plain-list { margin: 8px 0 0; padding-left: 20px; }
+.rule-out + .rule-out { margin-top: 12px; }
+.note-box.overlap { margin-bottom: 20px; flex-wrap: wrap; }
+.row-actions.tight { margin-top: 0; }
+.answers .tag { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- phones: the step bar folds behind "Step N of 4" (an overlay, so no row changes size), the record gets the room ---------- */
+@media (max-width: 760px) {
+  body.frame { grid-template-rows: var(--banner-h) var(--header-h) 0 var(--title-h) minmax(0, 1fr) auto; }
+  body.frame .steps { height: 0; padding: 0; border: 0; position: relative; z-index: 30; overflow: visible; }
+  body.frame .steps ol { display: none; }
+  body.frame.steps-open .steps ol { display: grid; position: absolute; top: 0; left: 0; right: 0; height: calc(var(--steps-h) + 36px); padding: 36px 8px 0; box-sizing: border-box; background: var(--panel); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-bar); }
+  :root { --title-h: 56px; }
+  .titlebar { align-items: center; padding-bottom: 0; }
+  .titlebar .t-main { display: flex; flex-direction: column; justify-content: center; }
+  .titlebar h1 { font-size: 1.125rem; line-height: 1.5rem; }
+  .steps-toggle { display: inline-flex; align-items: center; align-self: flex-start; height: 28px; padding: 0 10px 0 0; border: 0; background: transparent; color: var(--accent); font: 700 .8125rem var(--font); cursor: pointer; }
+  body.steps-open .steps-toggle { position: relative; z-index: 40; }      /* the overlay leaves the top band free: tapping the toggle again closes the list (UX review T-181 major) */
+  .steps-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .titlebar:has(.total-chip) .t-main { display: flex; }
+  .titlebar:has(.total-chip) .total-chip { flex: none; }
+  .titlebar:has(.total-chip) h1 { display: none; }
+  .titlebar:has(.total-chip) .count-box { width: 120px; }
+  .titlebar .total-chip { width: auto; padding: 2px 10px; }
+  .titlebar .total-chip .tc-v { font-size: 1rem; }
+  /* the record gets the larger share; the line card scrolls as one box so its footer (a tick box, a refusal) is never cut off by a fixed row */
+  body.frame .work { grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr); gap: 8px; }
+  body.frame .work.needs-check { grid-template-rows: minmax(0, .8fr) minmax(0, 1.2fr); }      /* the record window holds the highlighted words with a line of context either side (UX r2 major); the line card still shows the line and its tick box */
+  body.frame .work.needs-check .card-line .card-h { flex-wrap: nowrap; min-height: 0; padding-top: 8px; padding-bottom: 8px; }
+  body.frame .work.needs-check .card-line .card-h .ch-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1 1 0; }
+  body.frame .work.needs-check .card-line .card-b { padding-top: 10px; padding-bottom: 6px; }
+  body.frame .work.needs-check .card-line .card-f { padding-top: 8px; padding-bottom: 8px; }      /* a line to compare + its tick box: both on screen together */
+  .card-line { overflow: auto; }
+  .card-line .card-b { flex: none; overflow: visible; }
+  .card-line .card-f, .card-f.plain { flex: none; height: auto; min-height: 0; display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .card-line .card-h { position: sticky; top: 0; z-index: 2; background: var(--panel); flex-wrap: wrap; row-gap: 4px; }
+  .card-src .card-h { min-height: 40px; padding: 6px 12px; }
+  .card-src .card-h .ch-sub { font-size: .8125rem; }
+  .actions-in { padding: 6px 12px 4px; row-gap: 4px; }
+  .question { min-height: 2.4rem; font-size: .9375rem; line-height: 1.2rem; }
+  .btn.answer { height: 50px; font-size: 1rem; }
+  .small .btn { height: 38px; }
+  .actions .status { min-height: 36px; font-size: .8125rem; line-height: 1.1rem; }
+  .actions .status .st-msg { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; }
+  .actions .status .undo { height: 34px; padding: 0 12px; }
+  .card-b .line-text { font-size: 1.0625rem; line-height: 1.5rem; }
+}
+@media (max-width: 760px) and (max-height: 720px) {
+  body.frame .work { grid-template-rows: none; }
+  .card-line { overflow: visible; }
+  .card-line .card-h { position: static; }
+  .card-line .card-f { scroll-margin-bottom: 200px; }      /* the page scrolls here: a refusal scrolled into view stops above the action bar */
+}
+
+/* ---------- words of a line that are not in the highlighted words (underlined by code) ---------- */
+.line-text u.out { text-decoration: underline wavy var(--warn, #b45309); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.out-note { margin: 6px 0 0; font-size: .875rem; }
+.also q { display: block; }
+.btn.src-toggle { height: auto; min-height: 0; padding: 0; margin: 0 0 8px; font-size: .875rem; font-weight: 600; justify-content: flex-start; text-decoration: underline; }

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 6/10, unchanged from the initial visit. Plan: continue care three times weekly.",
+  "summary": "Re-examination: pain 6/10, unchanged from the initial visit; plan to continue care three times weekly."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:05Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pt states neck pain 6/10 and tingling in the right hand. Cervical collar applied. Transported to Orrin Mere Regional ED.",
+  "summary": "Patient states neck pain 6/10 and tingling in the right hand; cervical collar applied and transported to Orrin Mere Regional ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:01Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Discharged from PT after 11 weeks, goals partly met. Pain 3/10.",
+  "summary": "Discharged from PT after 11 weeks with goals partly met; pain 3/10."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:32Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Passenger car struck from behind by a tractor-trailer. Restrained driver. C/O low back pain and neck pain. Transported to Redhaven Regional ED.",
+  "summary": "Restrained driver of a passenger car struck from behind by a tractor-trailer; complained of low back pain and neck pain; transported to Redhaven Regional ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:23:57Z"
+ }
+}

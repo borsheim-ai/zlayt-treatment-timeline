@@ -1,0 +1,567 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib02_slip_fall_prior_knee",
+  "synthetic": true,
+  "input_file": "case_lib02_slip_fall_prior_knee.txt",
+  "description": "Library L2 (mirrors S2). Store slip-and-fall with a prior knee arthroscopy shown in imaging and in the patient's history; MRI wording that may reflect both acute and prior change. The tool shows the prior-condition language and the hedge and draws no apportionment. PT records are partial, so a 49-day gap appears between them.",
+  "stress_types": [
+    "prior_surgery_same_joint",
+    "hedged_imaging_two_causes",
+    "degenerative_language",
+    "partial_pt_records_gap",
+    "scene_fact_declined_ambulance"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-03-09",
+      "date": "2026-03-09",
+      "kind": "encounter",
+      "source": "Sablewood Market first-aid log"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-03-09",
+      "date": "2026-03-09",
+      "kind": "encounter",
+      "source": "Tamsin Valley Urgent Care"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-03-16",
+      "date": "2026-03-16",
+      "kind": "encounter",
+      "source": "Dr. Lucan Pettibone, orthopedics"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-03-30",
+      "date": "2026-03-30",
+      "kind": "encounter",
+      "source": "Tamsin Imaging, right knee MRI"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-04-13",
+      "date": "2026-04-13",
+      "kind": "encounter",
+      "source": "Dr. Lucan Pettibone, orthopedics"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-05-04",
+      "date": "2026-05-04",
+      "kind": "encounter",
+      "source": "Cedar Run Physical Therapy, initial evaluation"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-06-22",
+      "date": "2026-06-22",
+      "kind": "encounter",
+      "source": "Cedar Run Physical Therapy, visit 10"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-03-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Sablewood Market first-aid log",
+      "must_contain_excerpt": "slipped on a wet floor",
+      "required_terms": [
+        "right knee"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-03-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Tamsin Valley Urgent Care",
+      "must_contain_excerpt": "prior arthroscopic changes noted",
+      "required_terms": [
+        "right knee",
+        "contusion",
+        "prior arthroscopic changes"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-03-16",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Lucan Pettibone, orthopedics",
+      "must_contain_excerpt": "Effusion persists",
+      "required_terms": [
+        "MRI",
+        [
+          "patient reports",
+          "per patient",
+          "patient states"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient reports a right knee arthroscopy in 2021 with good recovery before the fall.",
+          "attribution_any": [
+            "patient reports",
+            "per patient",
+            "patient states",
+            "patient-reported"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-03-30",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Tamsin Imaging, right knee MRI",
+      "must_contain_excerpt": "Findings may reflect both acute injury and prior surgical change",
+      "required_terms": [
+        "medial meniscus tear",
+        "may reflect",
+        "degenerative"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-04-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Lucan Pettibone, orthopedics",
+      "must_contain_excerpt": "Aggravation of the underlying knee condition is possible",
+      "required_terms": [
+        "physical therapy",
+        "possible"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-05-04",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Cedar Run Physical Therapy, initial evaluation",
+      "must_contain_excerpt": "Right knee flexion limited to 100 degrees",
+      "required_terms": [
+        "100 degrees"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-06-22",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Cedar Run Physical Therapy, visit 10",
+      "must_contain_excerpt": "Flexion improved to 125 degrees",
+      "required_terms": [
+        "125 degrees"
+      ]
+    }
+  ],
+  "expected_entry_count": 7,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-03-09",
+      "to_date": "2026-03-16",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-16",
+      "to_date": "2026-03-30",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-30",
+      "to_date": "2026-04-13",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-13",
+      "to_date": "2026-05-04",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 21,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-04",
+      "to_date": "2026-06-22",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 49,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$410",
+      "value": 410,
+      "class": "charge",
+      "excerpt": "Visit charge: $410",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 4,
+      "raw": "$1,850",
+      "value": 1850,
+      "class": "charge",
+      "excerpt": "MRI charge: $1,850",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 6,
+      "raw": "$155",
+      "value": 155,
+      "class": "rate",
+      "excerpt": "Charge per visit $155",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: visits billed are never stated (10 planned)."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 2260,
+    "counted_amount_ids": [
+      "A1",
+      "A2"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A3",
+        "reason": "rate $155/visit; visit count not stated (10 planned; visit 10 note present); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $2,260.00",
+    "ui_line": "Accepted charges: $2,260.00",
+    "notes_lines": [
+      "$155: rate $155/visit; visit count not stated (10 planned; visit 10 note present); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-05-04",
+      "to_date": "2026-06-22",
+      "days": 49,
+      "cite": {
+        "all": [
+          6,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Plan of care: 10 visits"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Flexion improved to 125 degrees"
+        }
+      ],
+      "summary": "Treatment gap of 49 days (2026-05-04 to 2026-06-22), longer than 30."
+    },
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Patient reports a right knee arthroscopy in 2021"
+        }
+      ],
+      "summary": "Prior right knee arthroscopy (2021), reported by the patient. Same joint as the fall.",
+      "subtype": "prior_surgery_reported"
+    },
+    {
+      "id": "P2",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Mild tricompartmental degenerative change"
+        }
+      ],
+      "summary": "Imaging wording an adjuster may argue shows a pre-existing condition; stated as findings, not a diagnosis.",
+      "subtype": "degenerative_language"
+    },
+    {
+      "id": "P3",
+      "type": "pre_existing",
+      "level": "should",
+      "cite": {
+        "all": [
+          2
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "prior arthroscopic changes noted"
+        }
+      ],
+      "summary": "Urgent-care x-ray notes prior arthroscopic changes (first record of the prior surgery).",
+      "subtype": "prior_surgery_imaging"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "may reflect both acute injury and prior surgical change"
+        }
+      ],
+      "summary": "Hedged imaging language that names two possible sources; the tool does not choose between them.",
+      "subtype": "hedged_imaging"
+    },
+    {
+      "id": "K2",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Aggravation of the underlying knee condition is possible"
+        }
+      ],
+      "summary": "Treating-physician wording that is only 'possible'; not a reasonable-medical-probability statement.",
+      "subtype": "speculative_language"
+    },
+    {
+      "id": "K3",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Declined ambulance"
+        }
+      ],
+      "summary": "Scene fact from the first-aid log (internal notes only).",
+      "subtype": "scene_facts"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 7, 14, 14 and 21-day intervals."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "States which condition the meniscus tear comes from (the fall or the prior surgery) or that it is degenerative.",
+      "check": "judge",
+      "bad_examples": [
+        "The fall tore the medial meniscus.",
+        "Meniscus tear caused by the prior surgery.",
+        "The tear is degenerative."
+      ],
+      "good_examples": [
+        "Medial meniscus tear with moderate joint effusion.",
+        "Findings may reflect both acute injury and prior surgical change.",
+        "MRI right knee ordered."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Apportions the knee condition between the fall and the prior surgery (a fraction, a percentage or 'mostly').",
+      "check": "judge",
+      "bad_examples": [
+        "About half of the knee condition predates the fall.",
+        "60% of the damage is from the prior surgery.",
+        "The prior surgery accounts for most of the symptoms."
+      ],
+      "good_examples": [
+        "Aggravation of the underlying knee condition is possible.",
+        "Prior arthroscopic changes noted.",
+        "Patient reports a right knee arthroscopy in 2021 with good recovery before the fall."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Drops 'prior' or the 2021 date from the arthroscopy, or relocates it to the left knee or to the fall.",
+      "check": "judge",
+      "bad_examples": [
+        "Right knee arthroscopy after the fall.",
+        "Left knee arthroscopy in 2021.",
+        "Arthroscopy was performed for the fall injury."
+      ],
+      "good_examples": [
+        "Prior right knee arthroscopy (2021), per patient.",
+        "Patient reports a right knee arthroscopy in 2021.",
+        "Prior arthroscopic changes noted on x-ray."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Treats degrees, visit counts, pain scores or years as dollar amounts, or totals the per-visit rate.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$7",
+          "value": 7,
+          "class": "charge"
+        },
+        {
+          "raw": "$10",
+          "value": 10,
+          "class": "charge"
+        },
+        {
+          "raw": "$100",
+          "value": 100,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        7,
+        10,
+        100,
+        125,
+        1550,
+        2021,
+        3810
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S2 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: 03-09 to 03-16 = 7; to 03-30 = 14; to 04-13 = 14; to 05-04 = 17 (to Apr 30) + 4 = 21; 05-04 to 06-22 = 27 (to May 31) + 22 = 49 (flag). 49 days with a visit-10 note implies missing interim PT records; the flag is still correct (records only).",
+    "Forbidden guess-sums: 10 x 155 = 1,550; 410 + 1,850 + 1,550 = 3,810."
+  ]
+}

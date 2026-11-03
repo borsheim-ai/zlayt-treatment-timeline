@@ -1,0 +1,94 @@
+=== LETTER_TEXT (block 1: paste into letter) ===
+TREATMENT CHRONOLOGY
+
+January 9, 2026 — Austin EMS run report
+Restrained driver rear-ended at approx. 35 mph; complained of neck pain 7/10 and headache; alert and oriented; transported to Central ER.
+Source [Ex. __ / Bates __]: "41M restrained driver, rear-ended at approx. 35 mph. C/O neck pain 7/10 and headache. Alert and oriented. Transported to Central ER."
+
+January 9, 2026 — Central ER discharge summary
+Diagnosed with cervical strain and concussion without loss of consciousness; CT head negative; cyclobenzaprine 10 mg prescribed; follow up with PCP in 1 week.
+Source [Ex. __ / Bates __]: "Dx: cervical strain; concussion without loss of consciousness. CT head negative. Rx cyclobenzaprine 10 mg. Follow up with PCP in 1 week."
+
+January 16, 2026 — Dr. Alvarez, primary care
+Persistent neck pain 6/10 and daily headaches; referred to physical therapy 2x/week for 6 weeks.
+Source [Ex. __ / Bates __]: "Persistent neck pain 6/10, daily headaches. Refer to physical therapy 2x/week for 6 weeks."
+
+January 23, 2026 — Capital PT, initial evaluation
+Cervical range of motion reduced approx. 40%; plan of care 12 visits.
+Source [Ex. __ / Bates __]: "Cervical range of motion reduced approx. 40%. Plan of care: 12 visits."
+
+February 20, 2026 — Capital PT, visit 8
+Pain 4/10, improving.
+Source [Ex. __ / Bates __]: "Pain 4/10, improving."
+
+March 6, 2026 — Capital PT, visit 9
+Discharged from physical therapy after two missed appointments; pain 3/10.
+Source [Ex. __ / Bates __]: "Discharged from PT after two missed appointments. Pain 3/10."
+
+May 18, 2026 — Hill Country Pain Management, new patient
+New onset pain radiating to right arm with numbness in fingers, 7/10; MRI ordered.
+Source [Ex. __ / Bates __]: "New onset pain radiating to right arm with numbness in fingers. Pain 7/10. MRI ordered."
+
+May 29, 2026 — Austin Imaging, cervical MRI
+C5-C6 disc protrusion with mild right foraminal narrowing; the record states findings may represent degenerative change and to correlate clinically.
+Source [Ex. __ / Bates __]: "C5-C6 disc protrusion with mild right foraminal narrowing. Findings may represent degenerative change; correlate clinically."
+
+June 12, 2026 — Hill Country Pain Management, follow-up
+Cervical epidural steroid injection recommended; patient states symptoms began after the January collision.
+Source [Ex. __ / Bates __]: "Recommend cervical epidural steroid injection. Patient states symptoms began after the January collision."
+
+BILLED CHARGES
+
+Central ER discharge summary, date of service [__________] (record dated January 9, 2026): $6,240.00
+Source [Ex. __ / Bates __]: "ER charges: $6,240."
+Austin Imaging, cervical MRI, date of service [__________] (record dated May 29, 2026): $2,150.00
+Source [Ex. __ / Bates __]: "Charge: $2,150."
+
+Billed charges accepted from these records: $8,390.00
+=== INTERNAL_NOTES_TEXT (block 2: do not send) ===
+INTERNAL REVIEW NOTES — DO NOT SEND
+
+This chronology was drafted with AI assistance; every item in the treatment section was accepted by the paralegal. Items not reviewed: 0.
+
+FLAGS ACCEPTED
+- Gap: 73 days, March 6, 2026 to May 18, 2026: record 6 (Capital PT, visit 9, March 6, 2026) to record 7 (Hill Country Pain Management, new patient, May 18, 2026).
+- Conflict, accident date: record 7 (Hill Country Pain Management, new patient, May 18, 2026): "Date of accident per intake form: 2026-01-19." Record 1 (Austin EMS run report, January 9, 2026): "41M restrained driver, rear-ended at approx. 35 mph." Record 2 (Central ER discharge summary, dated January 9, 2026). The tool does not choose between the dates. First recorded treatment: January 9, 2026.
+- Conflict, PT plan: record 4 (Capital PT, initial evaluation, January 23, 2026) "Plan of care: 12 visits."; record 6 (Capital PT, visit 9, March 6, 2026) "Discharged from PT after two missed appointments."
+- Prior condition: record 3 (Dr. Alvarez, primary care, January 16, 2026) "Patient reports low back pain in 2023, resolved."; record 8 (Austin Imaging, cervical MRI, May 29, 2026) "Findings may represent degenerative change".
+- Causation language: record 8 (Austin Imaging, cervical MRI, May 29, 2026) "may represent degenerative change; correlate clinically"; record 6 (Capital PT, visit 9, March 6, 2026) "Discharged from PT after two missed appointments."; record 9 (Hill Country Pain Management, follow-up, June 12, 2026) "Patient states symptoms began after the January collision."; record 7 (Hill Country Pain Management, new patient, May 18, 2026) "New onset pain"; record 7 (Hill Country Pain Management, new patient, May 18, 2026) "Date of accident per intake form: 2026-01-19."
+
+FLAGS DISMISSED
+- none
+
+FLAGGED LANGUAGE QUOTED IN THE LETTER (your call whether it goes out; edit the excerpt or dismiss the entry to remove it; hedge sentences cannot be removed)
+- Record 1 (Austin EMS run report, January 9, 2026): "41M restrained driver, rear-ended at approx. 35 mph." Conflict, accident date.
+- Record 4 (Capital PT, initial evaluation, January 23, 2026): "Plan of care: 12 visits." Conflict, PT plan.
+- Record 6 (Capital PT, visit 9, March 6, 2026): "Discharged from PT after two missed appointments." Gap; conflict, PT plan; causation language.
+- Record 7 (Hill Country Pain Management, new patient, May 18, 2026): "New onset pain radiating to right arm with numbness in fingers." Gap; causation language.
+- Record 8 (Austin Imaging, cervical MRI, May 29, 2026): "Findings may represent degenerative change; correlate clinically." Prior condition; causation language.
+- Record 9 (Hill Country Pain Management, follow-up, June 12, 2026): "Patient states symptoms began after the January collision." Causation language.
+
+AMOUNTS NOT TOTALED
+- Record 4 (Capital PT, initial evaluation, January 23, 2026): "Charge per visit $185." Rate $185/visit; visit count not stated (12 planned; discharged at visit 9). Request itemized PT ledger.
+
+DAMAGES MENTIONS (not charges)
+- Record 5 (Capital PT, visit 8, February 20, 2026): "Patient reports missing 3 days of work."
+
+FUTURE TREATMENT RECOMMENDED (no cost stated)
+- Record 9 (Hill Country Pain Management, follow-up, June 12, 2026): "Recommend cervical epidural steroid injection." Request cost estimate.
+
+CHARGES WITHOUT A CERTAIN DATE OF SERVICE
+- Central ER discharge summary, $6,240: The letter does not take a date of service from the records. The letter leaves a blank for the date of service; fill it from the quote or request a dated itemized bill from the provider.
+- Austin Imaging, $2,150: The letter does not take a date of service from the records. The letter leaves a blank for the date of service; fill it from the quote or request a dated itemized bill from the provider.
+
+BILLS TO REQUEST (entry in the letter, no accepted charge)
+- Austin EMS run report; Dr. Alvarez; Capital PT (itemized ledger); Hill Country Pain Management.
+
+RECORDS NOT IN THE TREATMENT SECTION
+- none (9 of 9 records included)
+
+EDITED ITEMS
+- none
+
+PENDING ITEMS NOT INCLUDED
+- none

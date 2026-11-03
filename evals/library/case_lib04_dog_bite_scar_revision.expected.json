@@ -1,0 +1,458 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib04_dog_bite_scar_revision",
+  "synthetic": true,
+  "input_file": "case_lib04_dog_bite_scar_revision.txt",
+  "description": "Library L4 (mirrors S4). Facial dog bite repaired in the ED, plastic-surgery follow-ups with scar photographs, a planned 8-week interval that the tool still flags, a $6,500 revision estimate and a later revision with a surgeon fee. The tool must not predict permanence or disfigurement.",
+  "stress_types": [
+    "planned_interval_still_flagged",
+    "estimate_vs_actual_amount",
+    "scar_documentation",
+    "long_gap_before_revision",
+    "no_prediction_of_permanence"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2025-09-13",
+      "date": "2025-09-13",
+      "kind": "encounter",
+      "source": "Wrenfield EMS run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2025-09-13",
+      "date": "2025-09-13",
+      "kind": "encounter",
+      "source": "Harlow Memorial ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2025-09-20",
+      "date": "2025-09-20",
+      "kind": "encounter",
+      "source": "Dr. Odalys Pennywhistle, plastic surgery"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2025-10-18",
+      "date": "2025-10-18",
+      "kind": "encounter",
+      "source": "Dr. Odalys Pennywhistle, plastic surgery"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2025-12-13",
+      "date": "2025-12-13",
+      "kind": "encounter",
+      "source": "Dr. Odalys Pennywhistle, plastic surgery"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-09-12",
+      "date": "2026-09-12",
+      "kind": "encounter",
+      "source": "Dr. Odalys Pennywhistle, plastic surgery, operative note"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2025-09-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Wrenfield EMS run report",
+      "must_contain_excerpt": "bitten on the left cheek and chin by a neighbor's dog",
+      "required_terms": [
+        "left cheek",
+        "chin"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2025-09-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Harlow Memorial ED",
+      "must_contain_excerpt": "left cheek laceration 4 cm and chin laceration 2 cm",
+      "required_terms": [
+        "4 cm",
+        "2 cm",
+        "sutured"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2025-09-20",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Odalys Pennywhistle, plastic surgery",
+      "must_contain_excerpt": "Suture removal",
+      "required_terms": [
+        "suture removal",
+        [
+          "patient states",
+          "per patient",
+          "patient reports"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states she is self-conscious about the scar.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2025-10-18",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Odalys Pennywhistle, plastic surgery",
+      "must_contain_excerpt": "Cheek scar 4 cm, raised and erythematous",
+      "required_terms": [
+        "4 cm",
+        "silicone"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2025-12-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Odalys Pennywhistle, plastic surgery",
+      "must_contain_excerpt": "Scar remains raised at 3 months",
+      "required_terms": [
+        "raised",
+        "3 months",
+        "revision"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-09-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Odalys Pennywhistle, plastic surgery, operative note",
+      "must_contain_excerpt": "Scar revision performed under local anesthesia",
+      "required_terms": [
+        "scar revision",
+        "local anesthesia"
+      ]
+    }
+  ],
+  "expected_entry_count": 6,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2025-09-13",
+      "to_date": "2025-09-20",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2025-09-20",
+      "to_date": "2025-10-18",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2025-10-18",
+      "to_date": "2025-12-13",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 56,
+      "flag": true
+    },
+    {
+      "from_date": "2025-12-13",
+      "to_date": "2026-09-12",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 273,
+      "flag": true
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$4,730",
+      "value": 4730,
+      "class": "charge",
+      "excerpt": "ED charge: $4,730",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 5,
+      "raw": "$6,500",
+      "value": 6500,
+      "class": "estimate",
+      "excerpt": "Estimated revision cost: $6,500",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Estimate, not a charge; the later fee is stated separately in record 6."
+    },
+    {
+      "id": "A3",
+      "record_no": 6,
+      "raw": "$3,900",
+      "value": 3900,
+      "class": "charge",
+      "excerpt": "Surgeon fee: $3,900",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 8630,
+    "counted_amount_ids": [
+      "A1",
+      "A3"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "estimate $6,500 for a revision; not a billed charge; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $8,630.00",
+    "ui_line": "Accepted charges: $8,630.00",
+    "notes_lines": [
+      "$6,500: estimate $6,500 for a revision; not a billed charge; needs review"
+    ],
+    "accept_all_total": 4730,
+    "accept_all_reason": "Hand-verified against the records: ED charge $4,730 (record 1) + surgeon fee $3,900 (record 6) = $8,630. The $6,500 revision is an estimate and is not a charge. 'Surgeon fee' carries no charge word, so the tool lists the $3,900 as unclear; accepting the acceptable lines one at a time gives $4,730.00, and $8,630.00 is reached after the paralegal reclassifies the surgeon fee as a charge."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2025-10-18",
+      "to_date": "2025-12-13",
+      "days": 56,
+      "cite": {
+        "all": [
+          4,
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Return in 8 weeks"
+        },
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Scar remains raised at 3 months"
+        }
+      ],
+      "summary": "Treatment gap of 56 days (2025-10-18 to 2025-12-13), longer than 30."
+    },
+    {
+      "id": "G2",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2025-12-13",
+      "to_date": "2026-09-12",
+      "days": 273,
+      "cite": {
+        "all": [
+          5,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Revision discussed if no improvement by 12 months"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Scar revision performed under local anesthesia"
+        }
+      ],
+      "summary": "Treatment gap of 273 days (2025-12-13 to 2026-09-12), longer than 30."
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "pre_existing",
+      "statement": "No prior-condition flag: the record names none."
+    },
+    {
+      "id": "N2",
+      "type": "causation",
+      "statement": "'Bitten ... by a neighbor's dog' is mechanism of injury, not weakening language."
+    },
+    {
+      "id": "N3",
+      "type": "gap",
+      "from_date": "2025-09-13",
+      "to_date": "2025-09-20",
+      "days": 7,
+      "statement": "No gap flag for the 7 and 28-day intervals."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Predicts permanence, disfigurement or the future course of the scar; the record gives size, appearance and a revision plan only.",
+      "check": "judge",
+      "bad_examples": [
+        "Permanent facial disfigurement.",
+        "The scar will never fade.",
+        "Disfigured for life."
+      ],
+      "good_examples": [
+        "Cheek scar 4 cm, raised and erythematous.",
+        "Scar remains raised at 3 months.",
+        "Scar revision performed under local anesthesia."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Adds dog ownership, breed, liability or provocation facts that the record does not state.",
+      "check": "judge",
+      "bad_examples": [
+        "The neighbor's unleashed pit bull attacked her.",
+        "The owner is liable for the bite.",
+        "The dog was provoked."
+      ],
+      "good_examples": [
+        "Adult bitten on the left cheek and chin by a neighbor's dog.",
+        "Rabies status was not stated in the record.",
+        "Dx: dog bite."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Treats the $6,500 estimate as a billed charge, or replaces the estimate with the actual fee as if the estimate had not been stated.",
+      "check": "judge",
+      "bad_examples": [
+        "Revision cost $6,500.",
+        "Billed charges include the $6,500 revision.",
+        "The revision was originally billed at $3,900."
+      ],
+      "good_examples": [
+        "Estimated revision cost: $6,500 (estimate, not counted).",
+        "Surgeon fee: $3,900.",
+        "Revision discussed if no improvement by 12 months."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Counts the estimate in a total or treats centimetres, weeks or months as dollars.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$2",
+          "value": 2,
+          "class": "charge"
+        },
+        {
+          "raw": "$4",
+          "value": 4,
+          "class": "charge"
+        },
+        {
+          "raw": "$8",
+          "value": 8,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        2,
+        4,
+        8,
+        12,
+        6500,
+        10400,
+        15130
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S4 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: 2025-09-13 to 09-20 = 7; 09-20 to 10-18 = 10 (to Sep 30) + 18 = 28 (near-miss, no flag); 10-18 to 12-13 = 13 (to Oct 31) + 30 + 13 = 56 (flag; record 4 says 'Return in 8 weeks', so the interval is planned but still flagged by code); 12-13 to 2026-09-12 = 19 (to Jan 1) + 254 = 273 (flag).",
+    "Charges counted: $4,730 + $3,900 = $8,630. The $6,500 estimate is not counted. Forbidden: 4,730 + 6,500 + 3,900 = 15,130; 6,500 + 3,900 = 10,400."
+  ]
+}

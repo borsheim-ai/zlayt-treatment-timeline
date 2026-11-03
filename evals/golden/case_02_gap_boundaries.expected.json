@@ -1,0 +1,457 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_02_gap_boundaries",
+  "synthetic": true,
+  "input_file": "case_02_gap_boundaries.txt",
+  "description": "Gaps of 29, 30, 31, 30, 31, 30, 31 days across month ends, in leap year 2028 (Feb 8 to Mar 9 is 30 days only because Feb has 29 days). Only intervals strictly longer than 30 days flag. Future-dated on purpose (leap year).",
+  "stress_types": [
+    "gap_boundary_29_30_31",
+    "leap_year",
+    "no_amounts",
+    "month_end_arithmetic"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2028-01-10",
+      "date": "2028-01-10",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2028-02-08",
+      "date": "2028-02-08",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2028-03-09",
+      "date": "2028-03-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2028-04-09",
+      "date": "2028-04-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2028-05-09",
+      "date": "2028-05-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2028-06-09",
+      "date": "2028-06-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2028-07-09",
+      "date": "2028-07-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2028-08-09",
+      "date": "2028-08-09",
+      "kind": "encounter",
+      "source": "Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2028-01-10",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Initial consult",
+      "required_terms": []
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2028-02-08",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Continue splint",
+      "required_terms": []
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2028-03-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Begin hand therapy",
+      "required_terms": []
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2028-04-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Hand therapy ongoing",
+      "required_terms": []
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2028-05-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Grip strength improving",
+      "required_terms": []
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2028-06-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Grip strength 70% of right side",
+      "required_terms": []
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2028-07-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Therapy continues",
+      "required_terms": []
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2028-08-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+      "must_contain_excerpt": "Discharge planning discussed",
+      "required_terms": []
+    }
+  ],
+  "expected_entry_count": 8,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2028-01-10",
+      "to_date": "2028-02-08",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        2
+      ],
+      "days": 29,
+      "flag": false
+    },
+    {
+      "from_date": "2028-02-08",
+      "to_date": "2028-03-09",
+      "from_records": [
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 30,
+      "flag": false
+    },
+    {
+      "from_date": "2028-03-09",
+      "to_date": "2028-04-09",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 31,
+      "flag": true
+    },
+    {
+      "from_date": "2028-04-09",
+      "to_date": "2028-05-09",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 30,
+      "flag": false
+    },
+    {
+      "from_date": "2028-05-09",
+      "to_date": "2028-06-09",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 31,
+      "flag": true
+    },
+    {
+      "from_date": "2028-06-09",
+      "to_date": "2028-07-09",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 30,
+      "flag": false
+    },
+    {
+      "from_date": "2028-07-09",
+      "to_date": "2028-08-09",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8
+      ],
+      "days": 31,
+      "flag": true
+    }
+  ],
+  "amounts": [],
+  "totals": {
+    "explicit_charges_total": 0,
+    "counted_amount_ids": [],
+    "amounts_found": 0,
+    "status": "none_found",
+    "unclear_items": [],
+    "letter_line": null,
+    "ui_line": "No dollar amounts found in these records.",
+    "notes_lines": []
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2028-03-09",
+      "to_date": "2028-04-09",
+      "days": 31,
+      "cite": {
+        "all": [
+          3,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Begin hand therapy"
+        },
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Hand therapy ongoing"
+        }
+      ],
+      "summary": "Treatment gap of 31 days (2028-03-09 to 2028-04-09), longer than 30."
+    },
+    {
+      "id": "G2",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2028-05-09",
+      "to_date": "2028-06-09",
+      "days": 31,
+      "cite": {
+        "all": [
+          5,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Grip strength improving"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Grip strength 70% of right side"
+        }
+      ],
+      "summary": "Treatment gap of 31 days (2028-05-09 to 2028-06-09), longer than 30."
+    },
+    {
+      "id": "G3",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2028-07-09",
+      "to_date": "2028-08-09",
+      "days": 31,
+      "cite": {
+        "all": [
+          7,
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Therapy continues"
+        },
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Discharge planning discussed"
+        }
+      ],
+      "summary": "Treatment gap of 31 days (2028-07-09 to 2028-08-09), longer than 30."
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "from_date": "2028-01-10",
+      "to_date": "2028-02-08",
+      "days": 29,
+      "statement": "29 days: no flag."
+    },
+    {
+      "id": "N2",
+      "type": "gap",
+      "from_date": "2028-02-08",
+      "to_date": "2028-03-09",
+      "days": 30,
+      "statement": "Exactly 30 days (leap February): no flag; 'longer than 30' is strict. A leap-unaware tool computes 29; a month-based tool might say 1 month."
+    },
+    {
+      "id": "N3",
+      "type": "gap",
+      "from_date": "2028-04-09",
+      "to_date": "2028-05-09",
+      "days": 30,
+      "statement": "30 days: no flag."
+    },
+    {
+      "id": "N4",
+      "type": "gap",
+      "from_date": "2028-06-09",
+      "to_date": "2028-07-09",
+      "days": 30,
+      "statement": "30 days: no flag."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Reports any gap length different from the golden day count (30 vs 31 confusion, 'about a month', or 'no gap' where one is flagged).",
+      "check": "judge",
+      "bad_examples": [
+        "Gap of about a month between March 9 and April 9, 2028.",
+        "30-day gap from March 9, 2028 to April 9, 2028.",
+        "No treatment gap between 2028-03-09 and 2028-04-09."
+      ],
+      "good_examples": [
+        "31-day gap between 2028-03-09 and 2028-04-09.",
+        "Treatment gap of 31 days (March 9, 2028 to April 9, 2028).",
+        "31 days elapsed between visits on 2028-05-09 and 2028-06-09."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Treats '70%' or pain scores as dollar amounts.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$70",
+          "value": 70,
+          "class": "charge"
+        },
+        {
+          "raw": "$6",
+          "value": 6,
+          "class": "charge"
+        },
+        {
+          "raw": "$5",
+          "value": 5,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        70,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    }
+  ],
+  "notes": [
+    "Gap rule: calendar days between consecutive clinical-encounter dates across all providers; flag iff days > 30."
+  ]
+}

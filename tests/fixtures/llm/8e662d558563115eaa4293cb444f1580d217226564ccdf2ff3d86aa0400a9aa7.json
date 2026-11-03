@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Explanation of benefits, processed 07/03/2026, for dates of service 06/09/2026 to 06/12/2026. This is not a bill. Amount billed $8,023.50; network discount $3,610.00; allowed amount $4,413.50; plan paid $3,530.80; you may owe $882.70.",
+  "summary": "Explanation of benefits, not a bill, for dates of service 06/09/2026 to 06/12/2026: amount billed $8,023.50; network discount $3,610.00; allowed amount $4,413.50; plan paid $3,530.80; patient may owe $882.70."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T06:32:56Z"
+ }
+}

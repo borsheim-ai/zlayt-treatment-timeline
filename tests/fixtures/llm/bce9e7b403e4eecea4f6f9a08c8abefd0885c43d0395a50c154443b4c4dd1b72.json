@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "patient_report",
+    "excerpt": "The patient reports she was rear-ended on 2026-10-04 and developed neck pain and headaches.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:54Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Statement of charges: office visits $1,100; MRI referral fee $450. Balance under letter of protection: $1,550.",
+  "summary": "Statement of charges: office visits $1,100; MRI referral fee $450. Balance under letter of protection: $1,550."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:26:18Z"
+ }
+}

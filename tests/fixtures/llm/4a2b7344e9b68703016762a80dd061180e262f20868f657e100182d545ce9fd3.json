@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "A0427 ALS emergency transport, 1 unit, charge $1,380.00. A0425 ground mileage, loaded, 8.7 miles at $21.50 per mile, charge $187.05. Total charges $1,567.05.",
+  "summary": "Invoice lists A0427 ALS emergency transport, 1 unit, charge $1,380.00, and A0425 ground mileage, loaded, 8.7 miles at $21.50 per mile, charge $187.05; total charges $1,567.05."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:09Z"
+ }
+}

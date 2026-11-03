@@ -1,0 +1,338 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_09_nonvisit_hides_gap",
+  "synthetic": true,
+  "input_file": "case_09_nonvisit_hides_gap.txt",
+  "description": "A billing statement (03-01) and a phone note (03-12) sit inside a 56-day interval between two visits (02-02 and 03-30). Gap math uses clinical encounters only: counting either non-visit record would split the interval into parts under 30 days (27/29 or 38/...) and hide the gap.",
+  "stress_types": [
+    "non_encounter_record_hides_gap",
+    "billing_statement_not_encounter",
+    "phone_note_not_encounter",
+    "date_of_service_in_body_trap"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-02-02",
+      "date": "2026-02-02",
+      "kind": "encounter",
+      "source": "Hobbleton Family Clinic, visit"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-03-01",
+      "date": "2026-03-01",
+      "kind": "billing_statement",
+      "source": "Hobbleton Family Clinic, billing statement"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-03-12",
+      "date": "2026-03-12",
+      "kind": "phone_note",
+      "source": "Hobbleton Family Clinic, phone note"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-03-30",
+      "date": "2026-03-30",
+      "kind": "encounter",
+      "source": "Hobbleton Family Clinic, visit"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-04-13",
+      "date": "2026-04-13",
+      "kind": "encounter",
+      "source": "Hobbleton Family Clinic, visit"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-02-02",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hobbleton Family Clinic, visit",
+      "must_contain_excerpt": "Splint applied",
+      "required_terms": [
+        "splint"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-03-01",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Hobbleton Family Clinic, billing statement",
+      "must_contain_excerpt": "Statement for visit of 2026-02-02",
+      "required_terms": [],
+      "note": "Dated by its header (2026-03-01), not by the service date in the body."
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-03-12",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Hobbleton Family Clinic, phone note",
+      "must_contain_excerpt": "Work note provided",
+      "required_terms": []
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-03-30",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hobbleton Family Clinic, visit",
+      "must_contain_excerpt": "Splint removed",
+      "required_terms": []
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-04-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hobbleton Family Clinic, visit",
+      "must_contain_excerpt": "Released from care",
+      "required_terms": []
+    }
+  ],
+  "expected_entry_count": 5,
+  "gap_excluded_records": [
+    2,
+    3
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-02-02",
+      "to_date": "2026-03-30",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 56,
+      "flag": true
+    },
+    {
+      "from_date": "2026-03-30",
+      "to_date": "2026-04-13",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 14,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$275",
+      "value": 275,
+      "class": "charge",
+      "excerpt": "Statement for visit of 2026-02-02: $275.",
+      "in_total": true,
+      "required": true,
+      "needs_review": false,
+      "service_date_in_excerpt": "2026-02-02"
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 275,
+    "counted_amount_ids": [
+      "A1"
+    ],
+    "amounts_found": 1,
+    "status": "complete",
+    "unclear_items": [],
+    "letter_line": "Billed charges accepted from these records: $275.00",
+    "ui_line": "Accepted charges: $275.00",
+    "notes_lines": []
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-02-02",
+      "to_date": "2026-03-30",
+      "days": 56,
+      "cite": {
+        "all": [
+          1,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Return in 2 weeks"
+        },
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Splint removed"
+        }
+      ],
+      "summary": "Treatment gap of 56 days (2026-02-02 to 2026-03-30), longer than 30."
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "from_date": "2026-03-30",
+      "to_date": "2026-04-13",
+      "days": 14,
+      "statement": "14 days: no flag."
+    },
+    {
+      "id": "N2",
+      "type": "gap",
+      "from_date": "2026-02-02",
+      "to_date": "2026-03-01",
+      "days": 27,
+      "statement": "27 days measured to the billing statement: not a gap, because a billing statement is not an encounter."
+    },
+    {
+      "id": "N3",
+      "type": "gap",
+      "from_date": "2026-03-12",
+      "to_date": "2026-03-30",
+      "days": 18,
+      "statement": "18 days from the phone note: not a gap."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "causation",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          1,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Return in 2 weeks"
+        },
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Splint removed"
+        }
+      ],
+      "summary": "Follow-up not kept as instructed: the record says 'Return in 2 weeks' (02-02) and the next visit is 03-30. Worded from the records' own words, with no 'non-compliant' label.",
+      "subtype": "follow_up_not_kept"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Hides the 56-day gap by treating the billing statement or phone note as treatment.",
+      "check": "judge",
+      "bad_examples": [
+        "No treatment gaps identified.",
+        "Treatment continued with contact on March 1, 2026 and March 12, 2026.",
+        "Longest interval between treatment dates: 29 days."
+      ],
+      "good_examples": [
+        "56-day gap between February 2, 2026 and March 30, 2026 (billing statement and phone note are not visits).",
+        "Treatment gap: 56 days.",
+        "The March 1, 2026 billing statement is not treatment."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Dates the billing-statement entry with the service date in its body (2026-02-02) instead of its header date (2026-03-01).",
+      "check": "judge",
+      "bad_examples": [
+        "February 2, 2026 — Hobbleton Family Clinic billing statement.",
+        "Billing statement dated 2026-02-02.",
+        "Two entries on February 2, 2026 (visit and statement)."
+      ],
+      "good_examples": [
+        "March 1, 2026 — Hobbleton Family Clinic billing statement: statement for visit of 2026-02-02, $275.",
+        "Billing statement (header date 2026-03-01) refers to the 2026-02-02 visit.",
+        "The statement's date of service, 2026-02-02, is evidence only; the entry date is 2026-03-01."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Treats '2 weeks', pain scores or day counts as dollar amounts.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$2",
+          "value": 2,
+          "class": "charge"
+        },
+        {
+          "raw": "$4",
+          "value": 4,
+          "class": "charge"
+        },
+        {
+          "raw": "$3",
+          "value": 3,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        2,
+        4,
+        3,
+        1,
+        56
+      ]
+    }
+  ],
+  "notes": [
+    "Policy: record kinds billing_statement and phone_note are listed as entries but are never gap endpoints. Hand arithmetic is in README."
+  ]
+}

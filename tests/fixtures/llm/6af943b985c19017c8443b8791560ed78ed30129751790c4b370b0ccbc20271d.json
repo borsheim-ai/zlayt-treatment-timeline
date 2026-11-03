@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "objective_negative",
+    "excerpt": "Waddell signs negative on the left and positive on the right.",
+    "type": "causation"
+   },
+   {
+    "category": "objective_negative",
+    "excerpt": "Full effort, but symptom magnification noted with light touch.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:52Z"
+ }
+}

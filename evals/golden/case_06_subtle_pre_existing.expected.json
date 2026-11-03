@@ -1,0 +1,461 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_06_subtle_pre_existing",
+  "synthetic": true,
+  "input_file": "case_06_subtle_pre_existing.txt",
+  "description": "Pre-existing conditions that never use the words 'pre-existing' or 'prior': intermittent chiropractic care 'since a lifting injury several years ago' (body region unstated), 'stiffness ... at baseline', 'the old shoulder problem acting up again'. The ER's 'denies prior neck problems' versus the later chiropractic history is an expected conflict. The final interval is the 28-day near-miss. Future-dated records are intentional.",
+  "stress_types": [
+    "subtle_pre_existing",
+    "negated_prior_condition",
+    "body_region_unstated",
+    "near_miss_28_day_gap",
+    "rx_dose_not_money",
+    "history_inconsistency"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-09-14",
+      "date": "2026-09-14",
+      "kind": "encounter",
+      "source": "Snickerwood ER"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-09-21",
+      "date": "2026-09-21",
+      "kind": "encounter",
+      "source": "Dr. Ophelia Marchbanks, primary care"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-10-05",
+      "date": "2026-10-05",
+      "kind": "encounter",
+      "source": "Plumtree Physical Therapy, evaluation"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-10-19",
+      "date": "2026-10-19",
+      "kind": "encounter",
+      "source": "Dr. Ophelia Marchbanks, primary care"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-11-16",
+      "date": "2026-11-16",
+      "kind": "encounter",
+      "source": "Dr. Ophelia Marchbanks, primary care"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-09-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Snickerwood ER",
+      "must_contain_excerpt": [
+        "Cervical strain, neck pain 5/10",
+        "Patient denies prior neck problems"
+      ],
+      "required_terms": [
+        "cervical strain",
+        [
+          "denies",
+          "denied",
+          "denial"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient denies prior neck problems",
+          "attribution_any": [
+            "denies",
+            "denied",
+            "denial"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-09-21",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ophelia Marchbanks, primary care",
+      "must_contain_excerpt": "Has been seeing a chiropractor off and on since a lifting injury several years ago",
+      "required_terms": [
+        "chiropractor",
+        "lifting injury",
+        [
+          "off and on",
+          "intermittent",
+          "intermittently"
+        ]
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-10-05",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Plumtree Physical Therapy, evaluation",
+      "must_contain_excerpt": "occasional stiffness in the mornings at baseline",
+      "required_terms": [
+        "baseline",
+        "stiffness"
+      ],
+      "self_report_spans": []
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-10-19",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ophelia Marchbanks, primary care",
+      "must_contain_excerpt": "Return in 4 weeks",
+      "required_terms": []
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-11-16",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Ophelia Marchbanks, primary care",
+      "must_contain_excerpt": "Patient notes the old shoulder problem is acting up again",
+      "required_terms": [
+        "old shoulder problem"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient notes the old shoulder problem is acting up again",
+          "attribution_any": [
+            "patient notes",
+            "patient reports",
+            "patient states",
+            "per patient"
+          ]
+        }
+      ]
+    }
+  ],
+  "expected_entry_count": 5,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-09-14",
+      "to_date": "2026-09-21",
+      "from_records": [
+        1
+      ],
+      "to_records": [
+        2
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-09-21",
+      "to_date": "2026-10-05",
+      "from_records": [
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-10-05",
+      "to_date": "2026-10-19",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-10-19",
+      "to_date": "2026-11-16",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 28,
+      "flag": false
+    }
+  ],
+  "amounts": [],
+  "totals": {
+    "explicit_charges_total": 0,
+    "counted_amount_ids": [],
+    "amounts_found": 0,
+    "status": "none_found",
+    "unclear_items": [],
+    "letter_line": null,
+    "ui_line": "No dollar amounts found in these records.",
+    "notes_lines": []
+  },
+  "flags": [
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          2
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "off and on since a lifting injury several years ago"
+        }
+      ],
+      "summary": "Intermittent (\"off and on\") chiropractic care since an earlier lifting injury; body region not stated in the record.",
+      "subtype": "prior_injury_prior_treatment"
+    },
+    {
+      "id": "P2",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "occasional stiffness in the mornings at baseline"
+        }
+      ],
+      "summary": "Baseline morning stiffness in the history; region not stated.",
+      "subtype": "baseline_symptom"
+    },
+    {
+      "id": "P3",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          5
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "the old shoulder problem is acting up again"
+        }
+      ],
+      "summary": "A prior shoulder problem is mentioned (different region from the neck complaints).",
+      "subtype": "prior_other_region"
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          1,
+          2
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Patient denies prior neck problems"
+        },
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "Has been seeing a chiropractor off and on since a lifting injury several years ago"
+        }
+      ],
+      "summary": "Possible history inconsistency: denial of prior neck problems (record 1) vs chiropractic care since an earlier lifting injury (record 2). Body region of the chiropractic care is not stated; request records. Not a finding that the patient misstated anything.",
+      "subtype": "history_inconsistency"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "from_date": "2026-10-19",
+      "to_date": "2026-11-16",
+      "days": 28,
+      "statement": "28-day near-miss: no gap flag."
+    },
+    {
+      "id": "N2",
+      "type": "gap",
+      "statement": "No other gap flags (7, 14, 14 days)."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "pre_existing",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Patient denies prior neck problems"
+        }
+      ],
+      "summary": "Surfacing the denial as informational is tolerated; it must not be worded as a prior condition.",
+      "subtype": "negated_prior"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "States that the earlier lifting injury or chiropractic care involved the neck/cervical spine, or that it resolved (record is silent on both).",
+      "check": "judge",
+      "bad_examples": [
+        "Chiropractic care for prior neck injury.",
+        "Prior lifting injury to the neck, now resolved.",
+        "Patient has a history of cervical problems from an earlier lifting injury."
+      ],
+      "good_examples": [
+        "Has been seeing a chiropractor off and on since a lifting injury several years ago (body region not stated).",
+        "Prior lifting injury and chiropractic care noted; region unstated.",
+        "The record does not say which body part the lifting injury affected."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Converts the denial into a stated fact ('no prior neck problems', 'no prior conditions'). Attributed wording ('patient denies/reports no ...') is allowed.",
+      "check": "regex",
+      "bad_examples": [
+        "No prior neck problems.",
+        "Patient has no prior conditions.",
+        "No previous neck injuries.",
+        "No history of neck problems.",
+        "No past neck problems.",
+        "Negative for prior neck problems."
+      ],
+      "good_examples": [
+        "Patient denies prior neck problems.",
+        "Patient reports no prior neck problems.",
+        "Denies prior neck problems; later records mention chiropractic care."
+      ],
+      "pattern": "(?i)\\b(?:no|negative for)\\s+(?:any\\s+)?(?:(?:prior|previous|past|pre-?existing)\\s+|history of\\s+)(?:\\w+\\s+){0,2}(?:conditions?|history|problems?|injur\\w+|issues?|complaints?)",
+      "unless_context": "(?i)\\b(patient|pt|she|he)\\s+(reports?|states?|stated|reported|says|denies|believes|attributes?)\\b[^.;:]{0,40}$"
+    },
+    {
+      "id": "M3",
+      "statement": "Treats 'ibuprofen 800 mg' or pain scores as dollar amounts.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$800",
+          "value": 800,
+          "class": "charge"
+        },
+        {
+          "raw": "$5",
+          "value": 5,
+          "class": "charge"
+        },
+        {
+          "raw": "$4",
+          "value": 4,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        800,
+        5,
+        4,
+        2
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Relates the shoulder problem (or the stiffness) to the collision.",
+      "check": "judge",
+      "bad_examples": [
+        "Shoulder problem aggravated by the rear-end collision.",
+        "Shoulder pain is a result of the collision.",
+        "The collision caused the old shoulder problem to flare up."
+      ],
+      "good_examples": [
+        "Patient notes the old shoulder problem is acting up again.",
+        "Prior shoulder problem mentioned; a different region from the neck complaints.",
+        "Pain 2/10; patient notes the old shoulder problem is acting up again."
+      ]
+    },
+    {
+      "id": "M5",
+      "statement": "Says the patient lied, misrepresented or committed fraud about prior history.",
+      "check": "judge",
+      "bad_examples": [
+        "Patient lied about prior neck problems.",
+        "Patient misrepresented his history to the ER.",
+        "Fraudulent denial of prior neck problems."
+      ],
+      "good_examples": [
+        "Possible inconsistency between record 1 and record 2; body region of chiropractic care not stated; request records.",
+        "Record 1: patient denies prior neck problems. Record 2: chiropractic care since a lifting injury (region not stated).",
+        "History statements differ and need clarification."
+      ]
+    }
+  ],
+  "notes": []
+}

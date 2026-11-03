@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Recommend cervical epidural steroid injection. Patient states symptoms began after the January collision.",
+  "summary": "Cervical epidural steroid injection recommended; patient states symptoms began after the January collision."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:11Z"
+ }
+}

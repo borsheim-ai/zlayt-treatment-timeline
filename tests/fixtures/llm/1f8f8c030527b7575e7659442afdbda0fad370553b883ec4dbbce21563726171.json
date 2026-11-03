@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Itemized statement: initial evaluation charge $210.00; treatment visits 1 through 16 charge $2,320.00; functional capacity evaluation charge $480.00. Fee schedule $145.00 per visit.",
+  "summary": "Itemized statement lists initial evaluation charge $210.00; treatment visits 1 through 16 charge $2,320.00; functional capacity evaluation charge $480.00; fee schedule $145.00 per visit."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:12Z"
+ }
+}

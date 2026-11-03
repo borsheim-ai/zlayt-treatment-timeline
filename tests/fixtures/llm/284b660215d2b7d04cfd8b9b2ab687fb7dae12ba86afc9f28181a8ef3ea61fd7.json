@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Restrained driver of a sedan struck from behind at a stoplight. Pt states neck pain 6/10. Denies LOC. Ambulatory at scene. Transported to Thornbury Regional ED.",
+  "summary": "Restrained sedan driver struck from behind at a stoplight; patient states neck pain 6/10, denies LOC, was ambulatory at scene, and was transported to Thornbury Regional ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:27Z"
+ }
+}

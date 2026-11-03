@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 3/10, improving. Home exercise program reviewed.",
+  "summary": "Pain 3/10, improving; home exercise program reviewed."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:41Z"
+ }
+}

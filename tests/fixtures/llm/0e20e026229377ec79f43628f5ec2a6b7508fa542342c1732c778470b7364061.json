@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Restrained driver in a second collision, struck on the driver side. Hard cervical collar applied. Pt states neck pain 8/10 and left arm numbness. Transported to Thornbury Regional ED.",
+  "summary": "Restrained driver struck on the driver side in a second collision had a hard cervical collar applied; patient states neck pain 8/10 and left arm numbness; transported to Thornbury Regional ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:35Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Opinion: findings are consistent with a self-limited lumbar strain; treatment after 04/20/2026 was not reasonable or necessary.",
+  "summary": "Opinion stated: findings are consistent with a self-limited lumbar strain, and treatment after 04/20/2026 was not reasonable or necessary."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:13Z"
+ }
+}

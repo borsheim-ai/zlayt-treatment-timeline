@@ -1,0 +1,41 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-09-14
+Source: Tarnwick Fire-Rescue run report
+Excerpt: "Driver of a sedan struck from behind. Moderate damage to the rear of the vehicle. Pt ambulatory at scene. Pt states neck pain 6/10 and tingling in the right hand. Cervical collar applied. Transported to Orrin Mere Regional ED."
+
+=== Record 2 ===
+Date: 2026-09-14
+Source: Orrin Mere Regional ED
+Excerpt: "Dx: cervical strain. X-ray cervical spine negative for fracture. Discharged with a muscle relaxant. ED charge: $2,960."
+
+=== Record 3 ===
+Date: 2026-09-21
+Source: Hollowbrook Chiropractic, daily note visit 1 (scanned, OCR text)
+Excerpt: "Pain 7 circled on a 0-10 scale. Tenderness at C4-C6. [X] adjustment [X] e-stim [X] hot pack. Date written 9/2l/26."
+
+=== Record 4 ===
+Date: 2026-10-06
+Source: Hollowbrook Chiropractic, daily note visit 9 (scanned, OCR text)
+Excerpt: "Pain 5 circled. Tenderness at C4-C5, improved. [X] adjustment [X] e-stim. Next visit 1O/2O."
+
+=== Record 5 ===
+Date: 10/20
+Source: Hollowbrook Chiropractic, daily note visit 12 (handwritten, OCR text)
+Excerpt: "Pain 4 circled. Adjusted C4-C6. [X] e-stim. Pt states neck feels better."
+
+=== Record 6 ===
+Date: 2026-11-03
+Source: Hollowbrook Chiropractic, re-examination (typed)
+Excerpt: "Re-examination. Pain 6/10, unchanged from the initial visit. Plan: continue care three times weekly."
+
+=== Record 7 ===
+Date: 2026-11-10
+Source: Hollowbrook Chiropractic, CMS-1500 (OCR of scanned claim)
+Excerpt: "OCR of scanned CMS-1500. Item 14 injury date 091426 qualifier 431. Line 1: 092126 to 092326, CPT 98941, 24F 25500, 24G 3. Line 2: 092126 to 092326, CPT 97014, 24F 7500, 24G 3. Item 28 TOTAL CHARGE 33000. Item 29 AMOUNT PAID 0 00. Item 31 signature date 110926."
+
+=== Record 8 ===
+Date: 2026-11-12
+Source: Tarnwick Fire-Rescue, ambulance invoice
+Excerpt: "Invoice for the run of 09/14/2026. A0427 ALS emergency transport, 1 unit, charge $1,380.00. A0425 ground mileage, loaded, 8.7 miles at $21.50 per mile, charge $187.05. Total charges $1,567.05. No payments posted. Letter of protection requested."

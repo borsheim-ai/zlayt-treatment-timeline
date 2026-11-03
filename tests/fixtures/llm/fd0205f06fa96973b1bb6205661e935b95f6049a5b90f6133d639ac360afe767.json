@@ -1,0 +1,26 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "scene_facts",
+    "excerpt": "Minor damage to the rear bumper.",
+    "type": "causation"
+   },
+   {
+    "category": "scene_facts",
+    "excerpt": "Ambulatory at scene.",
+    "type": "causation"
+   },
+   {
+    "category": "scene_facts",
+    "excerpt": "Pt refused transport against medical advice.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:50Z"
+ }
+}

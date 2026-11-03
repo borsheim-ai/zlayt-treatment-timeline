@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "L4-L5 disc bulge without nerve root compression. Mild disc desiccation. Radiology: findings likely chronic. MRI charge: $2,240.",
+  "summary": "L4-L5 disc bulge without nerve root compression; mild disc desiccation; radiology states findings likely chronic; MRI charge $2,240."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:03Z"
+ }
+}

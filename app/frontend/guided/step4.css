@@ -1,0 +1,31 @@
+/* step4: rules for this module only (T-181 Builder A). Shell tokens and base classes live in styles.css; the sticky action bar is in step1.css. */
+.do-not-send { color: var(--bad); font-weight: 700; }
+.letter-grid { margin-top: 20px; align-items: start; }
+.letter-grid section { min-width: 0; }
+.doc.placeholder { height: 520px; }
+.doc.notes.placeholder { height: 520px; }
+.doc-actions .btn { min-width: 200px; }
+.blockers li { align-items: center; }
+.blockers .blk-why { flex: 1; min-width: 0; font-weight: 600; }
+.blk-note { max-width: 420px; font-size: 1rem; line-height: 1.4rem; }
+.blk-note.bad { color: var(--bad); }
+.check.anyway { margin-top: 14px; }
+.check.inline { margin: 0; font-size: 1rem; align-items: center; }
+.note-box + .blockers, .note-box + .check, .note-box + .prov { margin-top: 12px; }
+.prov { margin: 14px 0 0; color: var(--muted); font-size: 1rem; line-height: 1.5rem; }
+.cfg-panel { margin-top: 24px; }
+.cfg-panel .err-slot { margin-top: 8px; }
+@media (max-width: 760px) {
+  .sbar.pair .sbar-btns { flex-direction: row; }
+  .sbar.pair .sbar-btns .btn { flex: 1 1 0; width: auto; min-width: 0; white-space: normal; line-height: 1.2rem; height: auto; min-height: 52px; padding: 6px 8px; font-size: 1rem; }
+  .sbar.pair .sbar-alt { display: none; }
+  .doc-h { flex-wrap: wrap; }
+  .doc.placeholder, .doc.notes.placeholder { height: 260px; }
+  .blockers li { flex-direction: column; align-items: stretch; }
+  .blockers li .btn { width: 100%; }
+  .doc-actions { flex-wrap: wrap; }
+  .doc-actions .btn { min-width: 0; white-space: normal; height: auto; min-height: 48px; padding: 6px 10px; line-height: 1.2rem; }
+}
+
+/* T-216: the ready message now names the date-of-service blanks too (up to four lines on a phone); the bar keeps that height so a "Copied" message moves nothing */
+@media (max-width: 760px) { .sbar.letter-bar .sbar-msg { min-height: 4.8rem; } }

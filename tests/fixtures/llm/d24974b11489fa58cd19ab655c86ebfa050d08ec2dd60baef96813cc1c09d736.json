@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Ankle swelling improved. Refer to physical therapy 1x/week for 4 weeks.",
+  "summary": "Ankle swelling improved. Referred to physical therapy 1x/week for 4 weeks."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:48:34Z"
+ }
+}

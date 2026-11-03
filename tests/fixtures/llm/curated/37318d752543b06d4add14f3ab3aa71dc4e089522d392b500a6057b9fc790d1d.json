@@ -1,0 +1,18 @@
+{
+ "CURATED": "CURATED: hand-checked response written by qa from evals/golden (summary/quote from sample.export.expected.txt, flag spans from sample.expected.json). Not a model output. Cached demo only; ship-bar metrics use recorded/live runs (D-029).",
+ "output": {
+  "flags": [
+   {
+    "category": "pre_existing",
+    "excerpt": "Patient reports low back pain in 2023, resolved.",
+    "excerpt_b": null,
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "curated",
+  "model": "hand-checked (qa)",
+  "recorded_at": "2026-11-02T02:46:58Z"
+ }
+}

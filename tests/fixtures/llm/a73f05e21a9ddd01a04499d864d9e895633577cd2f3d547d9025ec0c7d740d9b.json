@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On May 4, 2026, Pottsworth Emergency Department documented that the patient fell from a ladder at a worksite, had right wrist swelling, had an X-ray showing a distal radius fracture, and had a splint applied."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On May 11, 2026, Dr. Tabitha Wrenfield of orthopedics documented that fracture alignment was satisfactory, that the splint was to continue for 3 weeks, and that the patient was not to drive."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On May 25, 2026, Dr. Tabitha Wrenfield of orthopedics documented that the splint was removed and that hand therapy was to begin 2x/week."
+   },
+   {
+    "entry_id": "e6",
+    "text": "On May 26, 2026, Nimblewick Hand Therapy documented at intake that grip strength was reduced and pain was 3/10."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:39Z"
+ }
+}

@@ -1,0 +1,590 @@
+{
+ "backend": "claude-cli",
+ "case": "case_02_gap_boundaries",
+ "errors": [],
+ "items": [
+  {
+   "date": "2028-01-10",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "62cd50f85b17d12a"
+  },
+  {
+   "date": "2028-02-08",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "5972b284914352ba"
+  },
+  {
+   "date": "2028-03-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "304a64161c1b9ecf"
+  },
+  {
+   "date": "2028-04-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "aafda20db682a605"
+  },
+  {
+   "date": "2028-05-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "9275a0fce72d26f0"
+  },
+  {
+   "date": "2028-06-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e6",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r6"
+   ],
+   "state": "verified",
+   "summary_sha": "54a061d5ac7efd9e"
+  },
+  {
+   "date": "2028-07-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e7",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r7"
+   ],
+   "state": "verified",
+   "summary_sha": "c2764f41203eb938"
+  },
+  {
+   "date": "2028-08-09",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e8",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+   "reasons": [],
+   "record_ids": [
+    "r8"
+   ],
+   "state": "verified",
+   "summary_sha": "9c379bdb4c49c206"
+  },
+  {
+   "category": "gap_over_30",
+   "computed": {
+    "days": 31,
+    "from": "2028-03-09",
+    "to": "2028-04-09"
+   },
+   "evidence": [
+    {
+     "excerpt": "Date: 2028-03-09",
+     "record_id": "r3"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r3"
+    },
+    {
+     "excerpt": "Date: 2028-04-09",
+     "record_id": "r4"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r4"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_gap_r3_r4",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r3",
+    "r4"
+   ],
+   "state": "verified",
+   "type": "gap"
+  },
+  {
+   "category": "gap_over_30",
+   "computed": {
+    "days": 31,
+    "from": "2028-05-09",
+    "to": "2028-06-09"
+   },
+   "evidence": [
+    {
+     "excerpt": "Date: 2028-05-09",
+     "record_id": "r5"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r5"
+    },
+    {
+     "excerpt": "Date: 2028-06-09",
+     "record_id": "r6"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r6"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_gap_r5_r6",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r5",
+    "r6"
+   ],
+   "state": "verified",
+   "type": "gap"
+  },
+  {
+   "category": "gap_over_30",
+   "computed": {
+    "days": 31,
+    "from": "2028-07-09",
+    "to": "2028-08-09"
+   },
+   "evidence": [
+    {
+     "excerpt": "Date: 2028-07-09",
+     "record_id": "r7"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r7"
+    },
+    {
+     "excerpt": "Date: 2028-08-09",
+     "record_id": "r8"
+    },
+    {
+     "excerpt": "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "record_id": "r8"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_gap_r7_r8",
+   "judge": {
+    "model": null,
+    "prompt_version": null,
+    "reason_code": null,
+    "verdict": null
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r7",
+    "r8"
+   ],
+   "state": "verified",
+   "type": "gap"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2028-01-10",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2028-02-08",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2028-03-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2028-04-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2028-05-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r6"
+    ],
+    "2028-06-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r7"
+    ],
+    "2028-07-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r8"
+    ],
+    "2028-08-09",
+    "parsed",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5",
+   "e6",
+   "e7",
+   "e8"
+  ],
+  "flags": [
+   [
+    "gap",
+    "gap_over_30",
+    [
+     "r3",
+     "r4"
+    ],
+    [
+     "Date: 2028-03-09",
+     "Date: 2028-04-09",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    ],
+    "verified"
+   ],
+   [
+    "gap",
+    "gap_over_30",
+    [
+     "r5",
+     "r6"
+    ],
+    [
+     "Date: 2028-05-09",
+     "Date: 2028-06-09",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    ],
+    "verified"
+   ],
+   [
+    "gap",
+    "gap_over_30",
+    [
+     "r7",
+     "r8"
+    ],
+    [
+     "Date: 2028-07-09",
+     "Date: 2028-08-09",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon",
+     "Source: Thistlewick Orthopedics, Dr. Beatrix Quillon"
+    ],
+    "verified"
+   ]
+  ],
+  "gap_flags": [
+   [
+    [
+     "r3",
+     "r4"
+    ],
+    "2028-03-09",
+    "2028-04-09",
+    31,
+    "verified"
+   ],
+   [
+    [
+     "r5",
+     "r6"
+    ],
+    "2028-05-09",
+    "2028-06-09",
+    31,
+    "verified"
+   ],
+   [
+    [
+     "r7",
+     "r8"
+    ],
+    "2028-07-09",
+    "2028-08-09",
+    31,
+    "verified"
+   ]
+  ],
+  "parsed_dates": [
+   [
+    "r1",
+    "2028-01-10",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2028-02-08",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2028-03-09",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2028-04-09",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2028-05-09",
+    "parsed"
+   ],
+   [
+    "r6",
+    "2028-06-09",
+    "parsed"
+   ],
+   [
+    "r7",
+    "2028-07-09",
+    "parsed"
+   ],
+   [
+    "r8",
+    "2028-08-09",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "aa90c5bf11f61129",
+    "2028-01-10",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "5972b284914352ba",
+    "2028-02-08",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "304a64161c1b9ecf",
+    "2028-03-09",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "aafda20db682a605",
+    "2028-04-09",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "ed5795acd617599b",
+    "2028-05-09",
+    "parsed"
+   ],
+   [
+    "r6",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "54a061d5ac7efd9e",
+    "2028-06-09",
+    "parsed"
+   ],
+   [
+    "r7",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "c2764f41203eb938",
+    "2028-07-09",
+    "parsed"
+   ],
+   [
+    "r8",
+    "Thistlewick Orthopedics, Dr. Beatrix Quillon",
+    "9c379bdb4c49c206",
+    "2028-08-09",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 0,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 0,
+   "letter_line": null,
+   "status": "none_found",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": []
+}

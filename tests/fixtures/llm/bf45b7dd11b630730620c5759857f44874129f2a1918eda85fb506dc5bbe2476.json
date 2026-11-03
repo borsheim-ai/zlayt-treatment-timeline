@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Neck pain 5/10, low back pain 6/10. Manual therapy and exercises continued.",
+  "summary": "Neck pain 5/10 and low back pain 6/10; manual therapy and exercises continued."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:42Z"
+ }
+}

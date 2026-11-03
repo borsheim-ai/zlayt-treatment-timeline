@@ -1,0 +1,372 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_05_provider_conflict",
+  "synthetic": true,
+  "input_file": "case_05_provider_conflict.txt",
+  "description": "The same orthopedist (Tallowby) is attributed to two different practices: Wombleton Orthopedics (records 3, 5) vs Crumpet Lane Orthopedics (record 4). Must be flagged as a provider conflict, never silently normalized. Name-form variants of the person (Dr. Mortimer Tallowby / Dr. Tallowby / M. Tallowby, MD) are tolerated, not required.",
+  "stress_types": [
+    "provider_name_conflict",
+    "name_form_variants",
+    "same_day_different_provider"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-06-01",
+      "date": "2026-06-01",
+      "kind": "encounter",
+      "source": "Fernwhistle County EMS"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-06-01",
+      "date": "2026-06-01",
+      "kind": "encounter",
+      "source": "Thornapple Valley Hospital ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-06-09",
+      "date": "2026-06-09",
+      "kind": "encounter",
+      "source": "Wombleton Orthopedics, Dr. Tallowby"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-06-23",
+      "date": "2026-06-23",
+      "kind": "encounter",
+      "source": "Crumpet Lane Orthopedics, M. Tallowby, MD"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-07-14",
+      "date": "2026-07-14",
+      "kind": "encounter",
+      "source": "Wombleton Orthopedics, Dr. Tallowby"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-06-01",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Fernwhistle County EMS",
+      "must_contain_excerpt": "Cyclist struck by a car at low speed",
+      "required_terms": [
+        "left shoulder"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-06-01",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Thornapple Valley Hospital ED",
+      "must_contain_excerpt": "Dx: left clavicle fracture",
+      "required_terms": [
+        "left clavicle fracture"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-06-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Wombleton Orthopedics, Dr. Tallowby",
+      "must_contain_excerpt": "nonoperative management",
+      "required_terms": [
+        "left clavicle fracture"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-06-23",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Crumpet Lane Orthopedics, M. Tallowby, MD",
+      "must_contain_excerpt": "Callus formation noted",
+      "required_terms": [],
+      "note": "Provider stays as written in the record; a conflict flag, not a rewrite, handles the discrepancy."
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-07-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Wombleton Orthopedics, Dr. Tallowby",
+      "must_contain_excerpt": "Clinical union",
+      "required_terms": []
+    }
+  ],
+  "expected_entry_count": 5,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-06-01",
+      "to_date": "2026-06-09",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 8,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-09",
+      "to_date": "2026-06-23",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-06-23",
+      "to_date": "2026-07-14",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 21,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$4,380",
+      "value": 4380,
+      "class": "charge",
+      "excerpt": "ED charge: $4,380",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 4380,
+    "counted_amount_ids": [
+      "A1"
+    ],
+    "amounts_found": 1,
+    "status": "complete",
+    "unclear_items": [],
+    "letter_line": "Billed charges accepted from these records: $4,380.00",
+    "ui_line": "Accepted charges: $4,380.00",
+    "notes_lines": []
+  },
+  "flags": [
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          3,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "source",
+          "excerpt": "Wombleton Orthopedics, Dr. Tallowby"
+        },
+        {
+          "record_no": 4,
+          "field": "source",
+          "excerpt": "Crumpet Lane Orthopedics, M. Tallowby, MD"
+        },
+        {
+          "record_no": 5,
+          "field": "source",
+          "excerpt": "Wombleton Orthopedics, Dr. Tallowby"
+        }
+      ],
+      "summary": "Provider/practice conflict: Dr. Tallowby appears at Wombleton Orthopedics (records 3, 5) but at Crumpet Lane Orthopedics in record 4. Both shown; not merged.",
+      "subtype": "provider_name"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flags (8, 14, 21 days)."
+    },
+    {
+      "id": "N2",
+      "type": "causation",
+      "statement": "'Cyclist struck by a car' is mechanism of injury, not weakening language."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          2,
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "Dr. Mortimer Tallowby"
+        },
+        {
+          "record_no": 4,
+          "field": "source",
+          "excerpt": "M. Tallowby, MD"
+        }
+      ],
+      "summary": "Name-form variants 'Dr. Mortimer Tallowby' vs 'M. Tallowby, MD': a code-level spelling flag is acceptable but not required.",
+      "subtype": "provider_name_variant"
+    }
+  ],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Merges the two practices into one provider or picks one silently.",
+      "check": "judge",
+      "bad_examples": [
+        "Dr. Tallowby's practice: Wombleton Orthopedics (all visits).",
+        "The June 23 Crumpet Lane Orthopedics visit was actually at Wombleton Orthopedics.",
+        "Crumpet Lane Orthopedics and Wombleton Orthopedics are the same practice."
+      ],
+      "good_examples": [
+        "Record 4 lists Crumpet Lane Orthopedics; records 3 and 5 list Wombleton Orthopedics for the same physician — conflict for review.",
+        "June 23, 2026 — Crumpet Lane Orthopedics (M. Tallowby, MD): callus formation noted; continue sling.",
+        "Provider/practice conflict shown with both records quoted."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Invents provider details beyond the records (credentials, specialty descriptors, addresses).",
+      "check": "judge",
+      "bad_examples": [
+        "Dr. Mortimer Tallowby, board-certified orthopedic surgeon.",
+        "Wombleton Orthopedics, 12 Main Street.",
+        "Dr. Tallowby, a shoulder specialist."
+      ],
+      "good_examples": [
+        "Referred to orthopedics, Dr. Mortimer Tallowby.",
+        "Dr. Tallowby at Wombleton Orthopedics: left clavicle fracture, nonoperative management.",
+        "M. Tallowby, MD at Crumpet Lane Orthopedics."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Treats '4 more weeks', days or visit numbers as dollar amounts.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$4",
+          "value": 4,
+          "class": "charge"
+        },
+        {
+          "raw": "$8",
+          "value": 8,
+          "class": "charge"
+        },
+        {
+          "raw": "$14",
+          "value": 14,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        4,
+        8,
+        14,
+        21
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "States the car caused the fracture as a conclusion (record gives a mechanism and a diagnosis; the tool draws no causal link).",
+      "check": "regex",
+      "bad_examples": [
+        "Clavicle fracture caused by the car strike.",
+        "Injury due to the collision with the car.",
+        "Fracture resulting from being struck by a car.",
+        "The car caused the fracture.",
+        "Left clavicle fracture from being struck by a car."
+      ],
+      "good_examples": [
+        "Cyclist struck by a car at low speed; left shoulder pain.",
+        "Dx: left clavicle fracture.",
+        "Sling provided; refer to orthopedics."
+      ],
+      "pattern": "(?i)(fracture|injur\\w+)\\s+(was\\s+)?(caused by|due to|resulting from)|\\bcaused the (?:fracture|injur\\w+)|\\bfrom being struck"
+    },
+    {
+      "id": "M5",
+      "statement": "Changes the side or bone (right clavicle, shoulder fracture) from 'left clavicle fracture'.",
+      "check": "regex",
+      "bad_examples": [
+        "Right clavicle fracture.",
+        "Fracture of the right collarbone.",
+        "Left shoulder fracture."
+      ],
+      "good_examples": [
+        "Left clavicle fracture, nonoperative management.",
+        "Dx: left clavicle fracture.",
+        "Left shoulder pain."
+      ],
+      "pattern": "(?i)\\bright\\s+(clavicle|collarbone)|\\bleft\\s+shoulder\\s+fracture|shoulder fracture"
+    }
+  ],
+  "notes": [
+    "Provider conflict evidence quotes the Source line (field: source)."
+  ]
+}

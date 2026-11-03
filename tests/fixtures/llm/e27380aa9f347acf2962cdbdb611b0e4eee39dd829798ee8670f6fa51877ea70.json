@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Low back pain 6/10, likely a strain superimposed on mild degenerative changes. Referred to physical therapy.",
+  "summary": "Low back pain 6/10, likely a strain superimposed on mild degenerative changes; referred to physical therapy."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:00Z"
+ }
+}

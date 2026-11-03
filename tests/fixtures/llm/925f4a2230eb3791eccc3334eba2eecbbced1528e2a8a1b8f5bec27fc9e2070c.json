@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 3/10. Grip strength 70% of right side.",
+  "summary": "Pain 3/10. Grip strength 70% of right side."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:49:38Z"
+ }
+}

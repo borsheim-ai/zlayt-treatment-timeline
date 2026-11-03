@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "new_onset",
+    "excerpt": "New onset pain radiating to right arm with numbness in fingers.",
+    "type": "causation"
+   },
+   {
+    "category": "accident_date_provenance",
+    "excerpt": "Date of accident per intake form: 2026-01-19.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:42Z"
+ }
+}

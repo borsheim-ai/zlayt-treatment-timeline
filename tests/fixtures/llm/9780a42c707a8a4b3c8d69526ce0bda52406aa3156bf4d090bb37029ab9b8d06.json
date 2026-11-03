@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: left tibial plateau fracture and left fibular fracture. Splinted. Admitted to orthopedics. ED charges: $38,420.",
+  "summary": "Diagnosed with left tibial plateau fracture and left fibular fracture; splinted and admitted to orthopedics; ED charges $38,420."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:16Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Employee slipped on ice in the employer parking lot before the shift and fell on the right wrist and low back. Reported to supervisor. Not on duty at the time per patient.",
+  "summary": "Employee slipped on ice in the employer parking lot before the shift and fell on the right wrist and low back; reported to supervisor; not on duty at the time per patient."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:15Z"
+ }
+}

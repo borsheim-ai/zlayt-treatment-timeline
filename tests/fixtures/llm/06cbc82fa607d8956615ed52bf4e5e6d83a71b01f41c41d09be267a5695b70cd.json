@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "X-ray right wrist: nondisplaced distal radius fracture. X-ray lumbar spine: mild degenerative changes. Charge: $640.",
+  "summary": "X-ray right wrist showed nondisplaced distal radius fracture; X-ray lumbar spine showed mild degenerative changes; charge $640."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:16Z"
+ }
+}

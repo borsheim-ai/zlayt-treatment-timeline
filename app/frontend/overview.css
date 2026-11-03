@@ -1,0 +1,162 @@
+/* T-149: the case overview (home) and the case overview block (detail). Tokens only; no colour, size or radius is defined here. */
+.cv { padding: var(--s-4) var(--s-5); }
+.cv-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-1) var(--s-4); margin-bottom: var(--s-3); }
+.cv-head h2 { margin: 0; }
+.cv-count { margin: 0; }
+.cv-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4); margin-bottom: var(--s-3); }
+.cv-filters { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.cv-sort { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--t-sm); color: var(--text-muted); }
+.cv-sort select { min-height: var(--control-h); }
+.cv-msg:empty, .cv-empty:empty, .cv-loading[hidden], .cv-msg[hidden], .cv-empty[hidden] { display: none; }
+.cv-empty { margin: var(--s-3) 0; color: var(--text-muted); }
+.cv-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: var(--r-2); overflow: hidden; }
+.cv-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: var(--s-3) var(--s-5); padding: var(--s-3) var(--s-4); background: var(--panel); cursor: pointer; align-items: start; }
+.cv-row + .cv-row { border-top: 1px solid var(--border); }
+.cv-row:hover { background: var(--hover); }
+.cv-row:focus-within { box-shadow: inset 3px 0 0 var(--accent); }
+.cv-title { margin: 0; font-size: var(--t-lg); line-height: var(--lh-lg); overflow-wrap: anywhere; }
+.cv-open { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; display: inline-flex; align-items: center; min-height: var(--control-h-sm); }
+.cv-open:hover { color: var(--accent-hover); }
+.cv-open:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); border-radius: var(--r-1); }
+.cv-dates { margin: var(--s-1) 0; }
+.cv-stage { margin: 0 0 var(--s-1); }
+.cv-next { margin: 0; font-weight: var(--w-strong); }
+.cv-decided { margin: 0 0 var(--s-1); font-weight: var(--w-strong); }
+.cv-loading { margin: var(--s-3) 0; }
+.cv-err-text { margin-right: var(--s-2); }
+.cv-sort input[type=search] { min-height: var(--control-h); min-width: 11rem; }
+.cv-rename { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-2); }
+.cv-rename-input { min-height: var(--control-h-sm); min-width: 12rem; }
+.cv-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-1); }
+.cv-bar { display: grid; grid-template-columns: 4.5rem minmax(3rem, 1fr) 4.5rem; align-items: center; gap: var(--s-2); font-size: var(--t-sm); line-height: var(--lh-sm); }
+.cv-bar progress { width: 100%; }
+.cv-bar-label { color: var(--text-muted); }
+.cv-bar-n { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.cv-chips { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); }
+.cv-chips .chip { white-space: normal; }
+.cv-reasons { list-style: none; margin: var(--s-2) 0 0; padding: 0; font-size: var(--t-sm); line-height: var(--lh-sm); }
+.cv-reasons li + li { margin-top: var(--s-1); }
+.cv-reasons--soft { color: var(--text-muted); }
+
+/* ---- the case overview block: first thing in the detail view. ONE block: progress, Do this first, call-outs, then (in .co-slot) the Open-decisions buttons and the Case checks. */
+.co { margin: var(--s-2) 0; background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-2); overflow: hidden; }
+.co-main { padding: var(--s-2) var(--s-4); }
+.co-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-5); }
+.co-top h2 { margin: 0; font-size: var(--t-lg); line-height: var(--lh-lg); }
+.co-top h2:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); border-radius: var(--r-1); }
+.co-top .cv-bars { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-5); flex: 1 1 auto; }
+.co-top .cv-bar { grid-template-columns: auto 6rem auto; }
+.co-top .cv-bar-n { text-align: left; min-width: 3.5rem; }
+.co .cv-callouts { margin-top: var(--s-1); }
+.co .cv-reasons { margin-top: var(--s-1); }
+.co-first { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-3); margin-top: var(--s-2); padding: var(--s-1) var(--s-3); border-left: 3px solid var(--accent); background: var(--hover); border-radius: var(--r-1); }
+.co-first p { flex: 1 1 16rem; margin: 0; }
+/* the slot holds the Open-decisions strip and the Case checks card: flat rows inside the one block */
+.co-slot > * { border: 0; border-top: 1px solid var(--border); border-radius: 0; margin: 0; }
+.co-slot .todo-strip { padding: var(--s-2) var(--s-4); background: transparent; border-left: 0; }
+.co-slot .checks { background: transparent; }
+.co[data-do-first] .zs-nextline { display: none; }       /* the block already says what to do first; the case checks do not say it a second time, in other words */
+
+#btn-all-cases { flex: none; }
+.app-header-row:has(#btn-all-cases:not([hidden])) .brand { display: none; }   /* the button takes the brand's place while a case is open: one header row */
+@media (max-width: 768px) {
+  .cv { padding: var(--s-3); }
+  .cv-row { grid-template-columns: minmax(0, 1fr); padding: var(--s-3); gap: var(--s-2); }
+  .cv-filters .btn { flex: 1 1 auto; }
+  .cv-sort { width: 100%; } .cv-sort select { flex: 1 1 auto; min-width: 0; }
+  .co-main { padding: var(--s-2) var(--s-3); }
+  .co-slot .todo-strip { padding: var(--s-2) var(--s-3); }
+  .co-top .cv-bars { flex: 1 1 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); }
+  .co-top .cv-bar { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "l n" "p p"; gap: 0 var(--s-2); }
+  .co-top .cv-bar-label { grid-area: l; } .co-top .cv-bar-n { grid-area: n; min-width: 0; text-align: right; } .co-top .cv-bar progress { grid-area: p; }
+  .co-top { gap: var(--s-1) var(--s-3); }
+  .cv-sort input[type=search] { flex: 1 1 auto; min-width: 0; }
+  .co .cv-reasons li:nth-child(n+2) { display: none; }
+}
+/* the phone: one line each for the open-decisions jump list and the two case-check rows, so the first entry stays near the top of the page */
+@media (max-width: 768px) {
+  .co-slot .todo-strip { gap: var(--s-1) var(--s-3); flex-wrap: nowrap; align-items: flex-start; }
+  .co-slot .todo-more { flex: 1 1 auto; min-width: 0; }
+  .co-slot .todo-more > summary { cursor: pointer; display: inline-flex; align-items: center; }
+  .co-slot .todo-more[open] > summary { margin-bottom: var(--s-2); }
+  .co-slot .checks .zs-case-det > summary { min-height: var(--control-h-sm); flex-wrap: nowrap; gap: var(--s-2); overflow: hidden; white-space: nowrap; }
+  .co-slot .checks .zs-case-det > summary > * { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .co-slot .checks .zs-case-det > summary [data-testid=case-summary-need] { display: none; }
+  .co-slot .checks .zs-case-det > summary .zs-toggle { flex: none; }
+  .co-slot .checks .zs-case-det > summary .zs-case-title { flex: none; }
+  .co-slot .checks .zs-case-det > summary .zs-progress { display: none; }
+  .co-slot .checks .zs-nextline { padding: var(--s-1) var(--s-3); flex-wrap: nowrap; gap: var(--s-2); }
+  .co-slot .checks .zs-nextline p { flex: 1 1 auto; min-width: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: var(--t-sm); }
+  .co-slot .checks .zs-nextline .btn { flex: none; }
+  .co[data-do-first] .cv-reasons { display: none; }
+  .co .cv-reasons { font-size: var(--t-sm); }
+  .co-first { flex-wrap: nowrap; gap: var(--s-2); padding: var(--s-1) var(--s-2); }
+  .co-first p { flex: 1 1 auto; min-width: 0; font-size: var(--t-sm); }
+  .co-first .btn { flex: none; }
+  .co[data-do-first] .todo-strip .btn--primary { background: var(--panel); border-color: var(--border-strong); color: var(--text); }
+.co[data-do-first] .todo-strip .btn--primary:hover { background: var(--hover); }      /* "Go to it" above is the same move as Start review: one first step, not two */
+  .co-slot .todo-strip { padding-top: var(--s-1); padding-bottom: var(--s-1); }
+}
+@media (forced-colors: active) { .cv-row:focus-within { outline: 2px solid Highlight; } }
+
+/* ---- r3: keys hint, list skeleton, one primary action in the block */
+.cv-keys { margin: calc(-1 * var(--s-1)) 0 var(--s-3); }
+.cv-keys kbd { font: inherit; font-weight: var(--w-strong); padding: 0 var(--s-1); border: 1px solid var(--border-strong); border-radius: var(--r-1); background: var(--panel); }
+.cv-tools[hidden], .cv-keys[hidden], .cv-skel[hidden] { display: none; }
+.cv-skel { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: var(--r-2); overflow: hidden; }
+.cv-skel-row { min-height: 6rem; background: var(--panel); }
+.cv-skel-row + .cv-skel-row { border-top: 1px solid var(--border); }
+.cv-skel-row::after { content: ""; display: block; height: 100%; min-height: 6rem; background: linear-gradient(90deg, transparent, var(--hover), transparent); background-size: 200% 100%; animation: cv-skel 1.4s ease-in-out infinite; }
+@keyframes cv-skel { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (prefers-reduced-motion: reduce) { .cv-skel-row::after { animation: none; } }
+/* while Do this first is shown it is the one primary action; Start review goes to the same item, in plainer clothes (hidden on a phone) */
+.co[data-do-first] .todo-strip .btn--primary { background: var(--panel); border-color: var(--border-strong); color: var(--text); }
+.co[data-do-first] .todo-strip .btn--primary:hover { background: var(--hover); }
+.co[data-done] .zs-nextline { display: none; }        /* nothing is waiting: no leftover "What you need to do" */
+.co-first-item { font-weight: var(--w-strong); }
+@media (max-width: 768px) { .cv-keys { display: none; } }
+
+/* ---- r3, the phone: the block keeps progress, Do this first and the status chips at the top; the jump strip and the two closed check rows move under the entries, so the first entry's
+   buttons are on (or just past) the first screen. The Timeline heading shares a row with Order. */
+@media (max-width: 768px) {
+  #review-body > [data-testid=timeline] { display: flex; flex-direction: column; }
+  #review-body > [data-testid=timeline] > .co, #review-body > [data-testid=timeline] > .co > .co-slot { display: contents; }
+  #review-body > [data-testid=timeline] > * { order: 3; }
+  #review-body > [data-testid=timeline] > .co > .co-main { order: 0; margin: var(--s-2) 0; background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-2); }
+  #review-body > [data-testid=timeline] > .toolbar, #review-body > [data-testid=timeline] > [data-testid=export-blocked] { order: 1; }
+  #review-body > [data-testid=timeline] > [data-testid=queue] { order: 2; }
+  .co-slot > .todo-strip, .co-slot > .checks { order: 3; border: 1px solid var(--border); border-radius: var(--r-2); background: var(--panel); margin: var(--s-2) 0; }
+  .co-slot > .checks { overflow: hidden; }
+  .co [data-testid=co-chip-tray] { display: none; }
+  .toolbar-sort { order: 1; width: auto; margin-left: auto; }
+  .toolbar .toolbar-counts { order: 2; flex: 1 1 100%; }
+  .toolbar .rv-batchbar { order: 3; }
+}
+
+/* New case button, right of the count */
+.cv-head-r { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4); }
+#view-input { scroll-margin-top: 7rem; }
+@media (max-width: 768px) { .co[data-do-first] .todo-strip .btn--primary { display: none; } .cv-head-r { width: 100%; justify-content: space-between; } }
+
+/* ---- T-174 F13: the sticky section nav under the case header (Overview, Timeline, Flags, Charges, Export). It sits at --head-h, and app.js adds its height to --chrome-h, so every scrolled-to item and the source pane clear it. */
+/* It takes no room in the page flow (height 0, the bar hangs from the sticky line), so the first screen keeps its budget; it shows once she has scrolled past the first screen or when focus is in it. */
+.section-nav { position: sticky; top: var(--head-h); height: 0; z-index: 19; }
+.section-nav-bar { position: absolute; left: 0; right: 0; top: 0; background: var(--panel); border-bottom: 1px solid var(--border); box-shadow: var(--elev-1); }
+.section-nav:not(.is-on):not(:focus-within) .section-nav-bar { visibility: hidden; }
+.section-nav[hidden] { display: none; }
+.section-nav-row { box-sizing: border-box; width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 var(--gutter); display: flex; gap: var(--s-1); overflow-x: auto; scrollbar-width: none; }
+.section-nav-row::-webkit-scrollbar { display: none; }
+.nav-btn { flex: none; display: inline-flex; align-items: center; gap: var(--s-2); min-height: var(--control-h); padding: 0 var(--s-3); border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; color: var(--text-muted);
+  font: var(--w-strong) var(--t-md)/var(--lh-md) var(--font); cursor: pointer; white-space: nowrap; }
+.nav-btn:hover { background: var(--hover); color: var(--text); }
+.nav-btn:focus-visible { outline: var(--focus-ring); outline-offset: calc(-1 * var(--focus-offset)); }
+.nav-btn[aria-current="location"] { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-n { min-width: 1.25rem; padding: 0 var(--s-1); border-radius: var(--r-1); background: var(--warn-bg); color: var(--warn); font-size: var(--t-xs); line-height: var(--lh-xs); text-align: center; font-variant-numeric: tabular-nums; }
+.nav-n[hidden] { display: none; }
+.nav-short { display: none; }
+@media (max-width: 768px) { .nav-btn { min-height: var(--touch-h); padding: 0 var(--s-2); gap: var(--s-1); } .section-nav-row { padding: 0 var(--s-2); gap: 0; } }
+@media (max-width: 480px) { .nav-long { display: none; } .nav-short { display: inline; } .nav-btn { padding: 0 var(--s-1); } }
+@media (forced-colors: active) { .nav-btn[aria-current="location"] { border-bottom-color: Highlight; } }
+
+/* the Back to review control that opens the Export view */
+.ex-back { margin: 0 0 var(--s-3); }

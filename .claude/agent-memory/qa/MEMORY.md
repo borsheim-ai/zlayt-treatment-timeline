@@ -1,0 +1,4 @@
+- [Library packets v2 conventions](project_library_packets.md) — how lib08..15 are built, golden-schema limits, fixture recording recipe
+- [Judge controls matched pairs](project_judge_controls.md) — J3/J4 control sets: matched pairs, fixed labels, held-out split, 3 repeats, stable J3W11 finding
+- [Calibration route and regen](project_calibration_route.md) — stale flag vs HEAD hashes, clean-worktree regen recipe, score_unsplit fixture-dir pitfall
+- [Prompt-log privacy rules](project_prompt_log_privacy_rules.md) — finalize_prompt_log gapped matching, derived terms, outside-name switch, D-072 one final build

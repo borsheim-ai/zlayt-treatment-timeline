@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: right shoulder contusion. X-ray negative. Sling provided. ED charge: $2,880.",
+  "summary": "Diagnosis of right shoulder contusion; X-ray negative; sling provided; ED charge $2,880."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:26:17Z"
+ }
+}

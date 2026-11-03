@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 4/10, improving. Patient reports missing 3 days of work.",
+  "summary": "Pain 4/10, improving. Patient reports missing 3 days of work."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:04Z"
+ }
+}

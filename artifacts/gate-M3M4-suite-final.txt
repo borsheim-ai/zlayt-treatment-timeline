@@ -1,0 +1,14 @@
+GATE M3+M4 FULL SUITE (D-075), FINAL, on commit 43ce6eb682746e185787de808597312ddce8b0fb
+Tree: fresh `git archive 43ce6eb` extracted to an empty scratch dir (no .git, no data/, no .env); repo .venv python, ANTHROPIC_API_KEY unset, fixture backend. 2026-11-03.
+Nothing was fixed. Unit and e2e ran in parallel in one archive; letter_check and --check-spec ran in a second archive of the same commit, because
+`python -m evals.run --check-spec` rewrites evals/reports/latest.json and would make test_t045_r2 fail if it shared the unit run's tree.
+The earlier red run on f6d5c19 is kept in artifacts/gate-M3M4-suite-f6d5c19.txt.
+
+RESULTS
+  unit     pytest tests/unit                          5945 passed, 0 failed, 12 skipped  (418 s)  exit 0
+  e2e      E2E_REQUIRE_DB=1 pytest tests/e2e           614 passed, 0 failed,  1 skipped  (841 s)  exit 0
+  letter   python -m evals.letter_check               {"value": 0, "cases": 25, "held_out_entries": 11, "backend": "fixture"}  exit 0
+  spec     python -m evals.run --check-spec           {"spec_matches_golden": true, "letter_equal": true, "internal_notes_equal": true}  exit 0
+
+Compared with f6d5c19 (10 unit + 6 e2e failed): Cause A, the D-073 date-of-service blank missing from spec/REQUIREMENTS.md section 6, is fixed; every
+failure listed in that file now passes.

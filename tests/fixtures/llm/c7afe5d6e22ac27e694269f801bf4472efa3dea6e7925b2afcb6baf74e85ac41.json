@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Cervical range of motion reduced approx. 30%. Plan of care: 8 visits. Charge per visit $140.",
+  "summary": "Cervical range of motion reduced approx. 30%. Plan of care: 8 visits. Charge per visit $140."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:39Z"
+ }
+}

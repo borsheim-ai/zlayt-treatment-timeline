@@ -1,0 +1,279 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_04_duplicates_no_amounts",
+  "synthetic": true,
+  "input_file": "case_04_duplicates_no_amounts.txt",
+  "description": "Exact duplicate (records 1,2) and near-duplicate differing only in whitespace and a capital letter (records 3,4): each pair collapses to one timeline entry citing both records. No dollar amounts anywhere: totals say none found.",
+  "stress_types": [
+    "duplicate_records",
+    "near_duplicate_whitespace",
+    "no_amounts",
+    "same_day_different_provider_not_duplicate"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-05-04",
+      "date": "2026-05-04",
+      "kind": "encounter",
+      "source": "Pottsworth Emergency Department"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-05-04",
+      "date": "2026-05-04",
+      "kind": "encounter",
+      "source": "Pottsworth Emergency Department"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-05-11",
+      "date": "2026-05-11",
+      "kind": "encounter",
+      "source": "Dr. Tabitha Wrenfield, orthopedics"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-05-11",
+      "date": "2026-05-11",
+      "kind": "encounter",
+      "source": "Dr. Tabitha Wrenfield, Orthopedics"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-05-25",
+      "date": "2026-05-25",
+      "kind": "encounter",
+      "source": "Dr. Tabitha Wrenfield, orthopedics"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-05-26",
+      "date": "2026-05-26",
+      "kind": "encounter",
+      "source": "Nimblewick Hand Therapy, intake"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1,
+        2
+      ],
+      "date": "2026-05-04",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Pottsworth Emergency Department",
+      "must_contain_excerpt": "distal radius fracture",
+      "required_terms": [
+        "distal radius fracture",
+        "splint"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        3,
+        4
+      ],
+      "date": "2026-05-11",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Tabitha Wrenfield, orthopedics",
+      "must_contain_excerpt": "Continue splint 3 weeks",
+      "required_terms": [
+        "splint"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-05-25",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Tabitha Wrenfield, orthopedics",
+      "must_contain_excerpt": "Splint removed",
+      "required_terms": [
+        "hand therapy"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-05-26",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Nimblewick Hand Therapy, intake",
+      "must_contain_excerpt": "Grip strength reduced",
+      "required_terms": []
+    }
+  ],
+  "expected_entry_count": 4,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-05-04",
+      "to_date": "2026-05-11",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3,
+        4
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-11",
+      "to_date": "2026-05-25",
+      "from_records": [
+        3,
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-25",
+      "to_date": "2026-05-26",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 1,
+      "flag": false
+    }
+  ],
+  "amounts": [],
+  "totals": {
+    "explicit_charges_total": 0,
+    "counted_amount_ids": [],
+    "amounts_found": 0,
+    "status": "none_found",
+    "unclear_items": [],
+    "letter_line": null,
+    "ui_line": "No dollar amounts found in these records.",
+    "notes_lines": []
+  },
+  "flags": [],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "conflict",
+      "record_nos": [
+        1,
+        2
+      ],
+      "statement": "Identical records are not a conflict."
+    },
+    {
+      "id": "N2",
+      "type": "conflict",
+      "record_nos": [
+        3,
+        4
+      ],
+      "statement": "Whitespace/case differences are not a conflict."
+    },
+    {
+      "id": "N3",
+      "type": "gap",
+      "statement": "No gap flags (7, 14, 1 days)."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Shows 6 entries (duplicates not collapsed), or merges without telling the paralegal which records were merged.",
+      "check": "judge",
+      "bad_examples": [
+        "May 4, 2026 — Pottsworth Emergency Department (record 1). May 4, 2026 — Pottsworth Emergency Department (record 2).",
+        "May 11, 2026 — Dr. Tabitha Wrenfield (record 3) and May 11, 2026 — Dr. Tabitha Wrenfield (record 4), listed separately.",
+        "Six timeline entries for six records."
+      ],
+      "good_examples": [
+        "May 4, 2026 — Pottsworth Emergency Department (records 1 and 2, identical).",
+        "May 11, 2026 — Dr. Tabitha Wrenfield (records 3 and 4 differ only in spacing and capitalization; merged).",
+        "Four timeline entries; two pairs of duplicate records merged and cited."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Invents any dollar amount or presents a $0 total as if a charge were found.",
+      "check": "amount_count_max",
+      "bad_examples": [
+        {
+          "amount_count": 1
+        },
+        {
+          "amount_count": 2
+        },
+        {
+          "amount_count": 3
+        }
+      ],
+      "good_examples": [
+        {
+          "amount_count": 0
+        },
+        {
+          "amount_count": 0,
+          "note": "no dollar amounts found"
+        },
+        {
+          "amount_count": 0,
+          "note": "none"
+        }
+      ],
+      "max": 0
+    },
+    {
+      "id": "M3",
+      "statement": "Treats the 2026-05-25 and 2026-05-26 entries as duplicates (different providers, different content).",
+      "check": "judge",
+      "bad_examples": [
+        "The 05-26 hand therapy intake duplicates the 05-25 splint-removal note.",
+        "Records 5 and 6 are the same visit.",
+        "Merged: splint removed and hand therapy intake (one entry)."
+      ],
+      "good_examples": [
+        "May 25, 2026 — Dr. Tabitha Wrenfield: splint removed; begin hand therapy 2x/week.",
+        "May 26, 2026 — Nimblewick Hand Therapy intake: grip strength reduced; pain 3/10.",
+        "Records 5 and 6 are different providers on consecutive days."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Adds work-injury / workers' compensation / employer conclusions not in the records.",
+      "check": "regex",
+      "bad_examples": [
+        "Work-related fall from a ladder.",
+        "Workers' compensation claim likely.",
+        "Injured on the job at an employer's site."
+      ],
+      "good_examples": [
+        "Fell from a ladder at a worksite.",
+        "Right wrist swelling; X-ray: distal radius fracture; splint applied.",
+        "Fracture alignment satisfactory; continue splint 3 weeks; no driving."
+      ],
+      "pattern": "(?i)workers'? ?comp|work[- ]related|on the job|employer|workplace injury"
+    }
+  ],
+  "notes": [
+    "Merged entry must cite BOTH source records so the paralegal can verify the dedupe."
+  ]
+}

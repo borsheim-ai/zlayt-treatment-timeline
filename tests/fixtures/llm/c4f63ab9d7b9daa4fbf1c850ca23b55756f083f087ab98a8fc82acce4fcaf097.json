@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 4/10. Grip strength improving.",
+  "summary": "Pain 4/10. Grip strength improving."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:49:34Z"
+ }
+}

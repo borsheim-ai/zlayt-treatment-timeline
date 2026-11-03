@@ -1,0 +1,24 @@
+- [Backend conventions and pitfalls](project_backend_conventions.md) — codepaths, commit rule, sqlite thread pitfall, fixture re-record, review findings
+- [T-110 overlap + failure tray](project_t110_overlap_tray.md) — lib09 4/7 is the matcher; failed-extract tray placeholders; POSSIBLE_OVERLAP
+- [T-112 summary trim](project_t112_summary_trim.md) — D-054 clause trimming rule, wiring, fixture pitfalls (abbreviations, J1 fill-missing)
+- [T-113 conflict candidate rules](project_t113_conflict_rules.md) — other-person/paperwork filters, v6 judge, tray routes, id-stability pitfall
+- [T-120 / T-105 single source](project_t120_t105_single_source.md) — strip-attribution rule; lexicon views in grounding; structural guard; calibration regen
+- [T-141 form denial + checks](project_t141_form_denial_checks.md) — form-field No as denial, accident-date corroboration, GET case checks
+- [T-139 charge text in entries](project_t139_charge_text.md) — CHARGE_TEXT_IN_ENTRY: wiring, why no generation-time trim, reshaped tests, stale calibration
+- [T-141 accident-date + checks](project_t141_accident_date_checks.md) — r3 negation/history rule, read-time notes, temp-index commit recipe
+- [T-146 re-run decided rule](project_t146_rerun_decided_rule.md) — _persist kept/empty, rerun_note, _disagrees/_degrades tables, step names
+- [T-140 D-060 default-deny charges](project_t140_d060_default_deny.md) — charge_basis, merge dups, promotion flags, commit/fixture pitfalls
+- [T-140 D-062 fix-up](project_t140_d062_fixup.md) — same-provider note rule, per-figure rule, norm_code, overlay-test and commit pitfalls
+- [T-139 r4 money module](project_t139_r4_money_module.md) — one detector (money.py), gate on final letter text, true-cause hints, clean-tree verification recipe
+- [T-171 D-064 count a held-back charge](project_t171_d064_count_charge.md) — not_counted_reason/countable, action count, Spanish-saldo overcount found by library scan
+- [T-171 r2 countable rules](project_t171_r2_countable_rules.md) — service-description + cue words, undated duplicate confirm (CountPool/count_flag)
+- [T-171 r3 payer + normalize](project_t171_r3_payer_normalize.md) — cue lists widened, alias/code-description dup match, fee-line debt, commit pitfalls
+- [T-177 prepared-answer provenance](project_t177_prepared_provenance.md) — D-065: curated = prepared; audit model, health answers, tag, private recorded-set e2e
+- [T-178 chaos fixes](project_t178_chaos_fixes.md) — interrupted-run recovery, stale-tab 409, clean_chars; pitfalls
+- [T-179 D-066/D-067](project_t179_d066_d067.md) — COMPARE_REQUIRED in set_review after code checks; narrative gate env; blanket-accept tests; HEAD-moves commit pitfall
+- [T-177 r3 prepared sentences](project_t177_r3_prepared_sentences.md) — why.to_prepared swap table, flags via record flags call, missing curated = FAIL, /classic gate, sharded test + patch-commit recipe
+- [T-177 r4 templates by provenance](project_t177_r4_templates_by_provenance.md) — D-069 twin templates, malformed=missing, fault-injection property test, where twins live
+- [T-177 r5 twin guard](project_t177_r5_twin_guard.md) — real leak was edit/manual-entry warning without prep; action pass, static twin test, mutant recipe
+- [T-202 r2 service date](project_t202_r2_service_date.md) — service_date.py certain-or-not-stated, impossibility rule, API field, mutant/fixture pitfalls
+- [T-202 r4 encounter table](project_t202_r4_encounter_table.md) — D-071 amend. 2: record_kind from encounter_types.json, 4 prose labels, leader mask, mutant-runner pitfalls
+- [T-202 r5 D-073](project_t202_r5_d073.md) — two date sources only, document-type encounter table, leader mask in amounts.py, corpus diff, test pitfalls

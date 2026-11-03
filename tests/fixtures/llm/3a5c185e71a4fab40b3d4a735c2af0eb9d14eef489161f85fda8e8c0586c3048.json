@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: cervical strain. X-ray cervical spine negative for fracture. Rx ibuprofen 600 mg. Follow up with primary care in 1 week. ED charge: $3,915.",
+  "summary": "Diagnosis of cervical strain; cervical spine X-ray negative for fracture; ibuprofen 600 mg prescribed; follow up with primary care in 1 week; ED charge $3,915."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:38Z"
+ }
+}

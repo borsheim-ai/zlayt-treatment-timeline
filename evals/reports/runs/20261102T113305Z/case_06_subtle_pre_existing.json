@@ -1,0 +1,411 @@
+{
+ "backend": "claude-cli",
+ "case": "case_06_subtle_pre_existing",
+ "errors": [],
+ "items": [
+  {
+   "date": "2026-09-14",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Snickerwood ER",
+   "reasons": [],
+   "record_ids": [
+    "r1"
+   ],
+   "state": "verified",
+   "summary_sha": "111e0489cd653dc0"
+  },
+  {
+   "date": "2026-09-21",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e2",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Ophelia Marchbanks, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "summary_sha": "cde42a5c0ceb4d5c"
+  },
+  {
+   "date": "2026-10-05",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e3",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Plumtree Physical Therapy, evaluation",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "summary_sha": "865dec7594d1ee76"
+  },
+  {
+   "date": "2026-10-19",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e4",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Ophelia Marchbanks, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r4"
+   ],
+   "state": "verified",
+   "summary_sha": "fa99adec21da3d24"
+  },
+  {
+   "date": "2026-11-16",
+   "date_status": "parsed",
+   "generator_prompt_version": "extract_v1",
+   "id": "e5",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_faithfulness_v1",
+    "reason_code": "NONE",
+    "verdict": "supported"
+   },
+   "kind": "entry",
+   "provider": "Dr. Ophelia Marchbanks, primary care",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "summary_sha": "e8b455f0c9951710"
+  },
+  {
+   "category": "other_fact_mismatch",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Patient denies prior neck problems.",
+     "record_id": "r1"
+    },
+    {
+     "excerpt": "Has been seeing a chiropractor off and on since a lifting injury several years ago.",
+     "record_id": "r2"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_cx1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_conflict_v6",
+    "reason_code": "FACT_MISMATCH",
+    "verdict": "conflict"
+   },
+   "kind": "flag",
+   "origin": "code",
+   "reasons": [],
+   "record_ids": [
+    "r1",
+    "r2"
+   ],
+   "state": "verified",
+   "type": "conflict"
+  },
+  {
+   "category": "pre_existing",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Has been seeing a chiropractor off and on since a lifting injury several years ago.",
+     "record_id": "r2"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r2_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r2"
+   ],
+   "state": "verified",
+   "type": "pre_existing"
+  },
+  {
+   "category": "pre_existing",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "History: occasional stiffness in the mornings at baseline.",
+     "record_id": "r3"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r3_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r3"
+   ],
+   "state": "verified",
+   "type": "pre_existing"
+  },
+  {
+   "category": "pre_existing",
+   "computed": null,
+   "evidence": [
+    {
+     "excerpt": "Patient notes the old shoulder problem is acting up again.",
+     "record_id": "r5"
+    }
+   ],
+   "generator_prompt_version": null,
+   "id": "f_r5_1",
+   "judge": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "judge_flag_v3",
+    "reason_code": "NONE",
+    "verdict": "agree"
+   },
+   "kind": "flag",
+   "origin": "lexicon+llm",
+   "reasons": [],
+   "record_ids": [
+    "r5"
+   ],
+   "state": "verified",
+   "type": "pre_existing"
+  }
+ ],
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "run": null,
+ "schema": "evals.run.artifact/1",
+ "signature_parts": {
+  "amounts": [],
+  "entries": [
+   [
+    [
+     "r1"
+    ],
+    "2026-09-14",
+    "parsed",
+    "Snickerwood ER",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r2"
+    ],
+    "2026-09-21",
+    "parsed",
+    "Dr. Ophelia Marchbanks, primary care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r3"
+    ],
+    "2026-10-05",
+    "parsed",
+    "Plumtree Physical Therapy, evaluation",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r4"
+    ],
+    "2026-10-19",
+    "parsed",
+    "Dr. Ophelia Marchbanks, primary care",
+    "verified",
+    []
+   ],
+   [
+    [
+     "r5"
+    ],
+    "2026-11-16",
+    "parsed",
+    "Dr. Ophelia Marchbanks, primary care",
+    "verified",
+    []
+   ]
+  ],
+  "entry_ids": [
+   "e1",
+   "e2",
+   "e3",
+   "e4",
+   "e5"
+  ],
+  "flags": [
+   [
+    "conflict",
+    "other_fact_mismatch",
+    [
+     "r1",
+     "r2"
+    ],
+    [
+     "Has been seeing a chiropractor off and on since a lifting injury several years ago.",
+     "Patient denies prior neck problems."
+    ],
+    "verified"
+   ],
+   [
+    "pre_existing",
+    "pre_existing",
+    [
+     "r2"
+    ],
+    [
+     "Has been seeing a chiropractor off and on since a lifting injury several years ago."
+    ],
+    "verified"
+   ],
+   [
+    "pre_existing",
+    "pre_existing",
+    [
+     "r3"
+    ],
+    [
+     "History: occasional stiffness in the mornings at baseline."
+    ],
+    "verified"
+   ],
+   [
+    "pre_existing",
+    "pre_existing",
+    [
+     "r5"
+    ],
+    [
+     "Patient notes the old shoulder problem is acting up again."
+    ],
+    "verified"
+   ]
+  ],
+  "gap_flags": [],
+  "parsed_dates": [
+   [
+    "r1",
+    "2026-09-14",
+    "parsed"
+   ],
+   [
+    "r2",
+    "2026-09-21",
+    "parsed"
+   ],
+   [
+    "r3",
+    "2026-10-05",
+    "parsed"
+   ],
+   [
+    "r4",
+    "2026-10-19",
+    "parsed"
+   ],
+   [
+    "r5",
+    "2026-11-16",
+    "parsed"
+   ]
+  ],
+  "record_split": [
+   [
+    "r1",
+    "Snickerwood ER",
+    "23707ac9e7cd7c2a",
+    "2026-09-14",
+    "parsed"
+   ],
+   [
+    "r2",
+    "Dr. Ophelia Marchbanks, primary care",
+    "d0a7d2f27461a68e",
+    "2026-09-21",
+    "parsed"
+   ],
+   [
+    "r3",
+    "Plumtree Physical Therapy, evaluation",
+    "059da5f4ab316485",
+    "2026-10-05",
+    "parsed"
+   ],
+   [
+    "r4",
+    "Dr. Ophelia Marchbanks, primary care",
+    "fa99adec21da3d24",
+    "2026-10-19",
+    "parsed"
+   ],
+   [
+    "r5",
+    "Dr. Ophelia Marchbanks, primary care",
+    "e8b455f0c9951710",
+    "2026-11-16",
+    "parsed"
+   ]
+  ],
+  "totals": {
+   "accepted_cents": 0,
+   "amounts_found": 0,
+   "detected_label": "Detected, not yet accepted (not a total)",
+   "detected_pending_cents": 0,
+   "letter_line": null,
+   "status": "none_found",
+   "ui_line": "No accepted charges yet.",
+   "unclear_items": []
+  },
+  "tray": []
+ },
+ "status": "done",
+ "tray_flag_count": 0,
+ "warning_codes": []
+}

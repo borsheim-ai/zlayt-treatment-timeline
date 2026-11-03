@@ -1,0 +1,1149 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "sample",
+  "synthetic": true,
+  "input_file": "sample.txt",
+  "description": "Appendix A sample case (Jordan Rivera). Truths from spec/SAMPLE_CASE_TRUTHS.md (Appendix C); every gap re-derived by hand in README.md. Entry date of service is the record's header date (REQUIREMENTS R-TL-3); excerpts keep their hedges (R-TL-8).",
+  "stress_types": [
+    "sample_case",
+    "near_miss_28_day_gap",
+    "73_day_gap",
+    "rate_not_charge",
+    "accident_date_conflict",
+    "treatment_plan_conflict",
+    "pre_existing",
+    "causation_language",
+    "diagnosis_inference_trap",
+    "header_date_vs_body_date"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-01-09",
+      "date": "2026-01-09",
+      "kind": "encounter",
+      "source": "Austin EMS run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-01-09",
+      "date": "2026-01-09",
+      "kind": "encounter",
+      "source": "Central ER discharge summary"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-01-16",
+      "date": "2026-01-16",
+      "kind": "encounter",
+      "source": "Dr. Alvarez, primary care"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-01-23",
+      "date": "2026-01-23",
+      "kind": "encounter",
+      "source": "Capital PT, initial evaluation"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-02-20",
+      "date": "2026-02-20",
+      "kind": "encounter",
+      "source": "Capital PT, visit 8"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-03-06",
+      "date": "2026-03-06",
+      "kind": "encounter",
+      "source": "Capital PT, visit 9"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-05-18",
+      "date": "2026-05-18",
+      "kind": "encounter",
+      "source": "Hill Country Pain Management, new patient"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-05-29",
+      "date": "2026-05-29",
+      "kind": "encounter",
+      "source": "Austin Imaging, cervical MRI"
+    },
+    {
+      "record_no": 9,
+      "raw_date": "2026-06-12",
+      "date": "2026-06-12",
+      "kind": "encounter",
+      "source": "Hill Country Pain Management, follow-up"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-01-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Austin EMS run report",
+      "must_contain_excerpt": "rear-ended at approx. 35 mph",
+      "required_terms": [
+        "rear-ended",
+        [
+          "approx",
+          "about",
+          "approximately"
+        ],
+        [
+          "C/O",
+          "complain",
+          "reports",
+          "reported"
+        ]
+      ],
+      "self_report_spans": []
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-01-09",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Central ER discharge summary",
+      "must_contain_excerpt": "Dx: cervical strain; concussion without loss of consciousness",
+      "required_terms": [
+        "cervical strain",
+        "concussion",
+        [
+          "without loss of consciousness",
+          "no loss of consciousness",
+          "w/o loss of consciousness",
+          "without LOC",
+          "no LOC",
+          "w/o LOC"
+        ],
+        "negative"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-01-16",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Alvarez, primary care",
+      "must_contain_excerpt": "Persistent neck pain 6/10",
+      "required_terms": [
+        "neck pain",
+        "physical therapy"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-01-23",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Capital PT, initial evaluation",
+      "must_contain_excerpt": "Plan of care: 12 visits",
+      "required_terms": [
+        "12 visits",
+        [
+          "approx",
+          "about",
+          "approximately"
+        ]
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-02-20",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Capital PT, visit 8",
+      "must_contain_excerpt": "Pain 4/10, improving",
+      "required_terms": [
+        "4/10"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-03-06",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Capital PT, visit 9",
+      "must_contain_excerpt": "Discharged from PT after two missed appointments",
+      "required_terms": [
+        "discharged",
+        "two missed appointments"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-05-18",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hill Country Pain Management, new patient",
+      "must_contain_excerpt": "New onset pain radiating to right arm with numbness in fingers",
+      "required_terms": [
+        "new onset",
+        "right arm",
+        "numbness"
+      ],
+      "note": "Entry date is 2026-05-18 (header), never 2026-01-19 (body)."
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-05-29",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Austin Imaging, cervical MRI",
+      "must_contain_excerpt": [
+        "C5-C6 disc protrusion with mild right foraminal narrowing",
+        "Findings may represent degenerative change; correlate clinically"
+      ],
+      "required_terms": [
+        "C5-C6",
+        "mild",
+        "right",
+        [
+          "may represent",
+          "may be",
+          "possible",
+          "could represent"
+        ]
+      ],
+      "note": "R-TL-8/D-021: the hedge sentence travels with the finding; a summary that drops it is needs_review (D-022)."
+    },
+    {
+      "id": "E9",
+      "record_nos": [
+        9
+      ],
+      "date": "2026-06-12",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hill Country Pain Management, follow-up",
+      "must_contain_excerpt": "Patient states symptoms began after the January collision",
+      "required_terms": [
+        "recommend",
+        "epidural steroid injection",
+        [
+          "patient states",
+          "per patient",
+          "patient reports",
+          "patient-reported"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states symptoms began after the January collision",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports",
+            "patient-reported"
+          ]
+        }
+      ],
+      "note": "Causation statement is the patient's, not a physician's opinion."
+    }
+  ],
+  "expected_entry_count": 9,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-01-09",
+      "to_date": "2026-01-16",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-01-16",
+      "to_date": "2026-01-23",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-01-23",
+      "to_date": "2026-02-20",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 28,
+      "flag": false
+    },
+    {
+      "from_date": "2026-02-20",
+      "to_date": "2026-03-06",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-06",
+      "to_date": "2026-05-18",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 73,
+      "flag": true
+    },
+    {
+      "from_date": "2026-05-18",
+      "to_date": "2026-05-29",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8
+      ],
+      "days": 11,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-29",
+      "to_date": "2026-06-12",
+      "from_records": [
+        8
+      ],
+      "to_records": [
+        9
+      ],
+      "days": 14,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$6,240",
+      "value": 6240,
+      "class": "charge",
+      "excerpt": "ER charges: $6,240",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 8,
+      "raw": "$2,150",
+      "value": 2150,
+      "class": "charge",
+      "excerpt": "Charge: $2,150",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A3",
+      "record_no": 4,
+      "raw": "$185",
+      "value": 185,
+      "class": "rate",
+      "excerpt": "Charge per visit $185",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: visits billed are never stated (12 planned; discharged at visit 9)."
+    },
+    {
+      "id": "A4",
+      "record_no": 5,
+      "raw": "missing 3 days of work",
+      "value": null,
+      "class": "damages",
+      "excerpt": "Patient reports missing 3 days of work",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Damages mention, not a billed charge; no dollar amount. Optional to surface; never totaled."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 8390,
+    "counted_amount_ids": [
+      "A1",
+      "A2"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "pt_total": null,
+    "pt_status": "unclear_needs_review",
+    "unclear_items": [
+      {
+        "amount_id": "A3",
+        "reason": "rate $185/visit; visit count not stated (12 planned; discharged at visit 9); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $8,390.00",
+    "ui_line": "Accepted charges: $8,390.00",
+    "notes_lines": [
+      "$185: rate $185/visit; visit count not stated (12 planned; discharged at visit 9); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-03-06",
+      "to_date": "2026-05-18",
+      "days": 73,
+      "cite": {
+        "all": [
+          6,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Discharged from PT after two missed appointments"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "New onset pain radiating to right arm"
+        }
+      ],
+      "summary": "Treatment gap of 73 days (2026-03-06 to 2026-05-18), longer than 30."
+    },
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": [
+          1,
+          2
+        ]
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Date of accident per intake form: 2026-01-19"
+        },
+        {
+          "record_no": 1,
+          "field": "date",
+          "excerpt": "2026-01-09"
+        },
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "rear-ended at approx. 35 mph"
+        },
+        {
+          "record_no": 2,
+          "field": "date",
+          "excerpt": "2026-01-09"
+        }
+      ],
+      "summary": "Accident date conflict: EMS (record 1) and ER (record 2) show the collision-day encounter on 2026-01-09; the intake form in record 7 gives 2026-01-19. Both shown side by side, never merged.",
+      "subtype": "accident_date"
+    },
+    {
+      "id": "C2",
+      "type": "conflict",
+      "level": "must",
+      "cite": {
+        "all": [
+          4,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Plan of care: 12 visits"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Discharged from PT after two missed appointments"
+        }
+      ],
+      "summary": "Treatment-plan discrepancy: 12 visits planned (record 4) vs discharge at visit 9 after two missed appointments (records 5-6).",
+      "subtype": "treatment_plan"
+    },
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Patient reports low back pain in 2023, resolved"
+        }
+      ],
+      "summary": "Prior low back pain (2023), reported resolved. Different body region from the cervical complaints; the tool must not relate it to the neck.",
+      "subtype": "prior_condition_reported"
+    },
+    {
+      "id": "P2",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Findings may represent degenerative change"
+        }
+      ],
+      "summary": "MRI wording (\"may represent degenerative change\") that an adjuster may argue shows a pre-existing condition; hedged, not a diagnosis.",
+      "subtype": "degenerative_language"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "may represent degenerative change; correlate clinically"
+        }
+      ],
+      "summary": "Hedged imaging language that an adjuster can use against causation.",
+      "subtype": "hedged_imaging"
+    },
+    {
+      "id": "K2",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Discharged from PT after two missed appointments"
+        }
+      ],
+      "summary": "Missed appointments / early discharge weaken the treatment-compliance narrative.",
+      "subtype": "noncompliance"
+    },
+    {
+      "id": "K3",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          9
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 9,
+          "field": "excerpt",
+          "excerpt": "Patient states symptoms began after the January collision"
+        }
+      ],
+      "summary": "Causation rests on patient self-report, not a physician's causation opinion.",
+      "subtype": "patient_reported_onset"
+    },
+    {
+      "id": "K4",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "New onset pain"
+        }
+      ],
+      "summary": "'New onset' symptoms after a 73-day gap can be argued as a new cause. Must be a causation-type flag (see README: type match is explicit); G1 does not satisfy it.",
+      "subtype": "temporal_after_gap"
+    },
+    {
+      "id": "K5",
+      "type": "causation",
+      "level": "must",
+      "cite": {
+        "all": [
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Date of accident per intake form: 2026-01-19"
+        }
+      ],
+      "summary": "Wrong accident date on the intake form undermines reliability of the history. Must be a causation-type flag; C1 does not satisfy it.",
+      "subtype": "accident_date_inconsistency"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "from_date": "2026-01-23",
+      "to_date": "2026-02-20",
+      "days": 28,
+      "statement": "28-day interval (records 4 to 5) is a near-miss and must NOT be flagged as a gap."
+    },
+    {
+      "id": "N2",
+      "type": "gap",
+      "statement": "No gap flag for any other interval (7, 7, 14, 11, 14 days)."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "seeded_edits": [
+    {
+      "id": "SE1",
+      "entry_id": "E5",
+      "record_no": 5,
+      "kind": "number",
+      "new_summary": "Visit 8: pain 4/10, improving; billed $9,000.",
+      "introduced": [
+        "9000"
+      ],
+      "expected_state": "needs_review",
+      "expected_reason": "number_not_in_excerpt",
+      "accept_requires_keep_my_wording_confirm": true,
+      "rule": "R-RV-3 / R-TL-10"
+    },
+    {
+      "id": "SE2",
+      "entry_id": "E5",
+      "record_no": 5,
+      "kind": "number",
+      "new_summary": "Visit 8: pain 5/10, improving.",
+      "introduced": [
+        "5"
+      ],
+      "expected_state": "needs_review",
+      "expected_reason": "number_not_in_excerpt",
+      "accept_requires_keep_my_wording_confirm": true,
+      "rule": "R-TL-10: excerpt says 4/10"
+    },
+    {
+      "id": "SE3",
+      "entry_id": "E8",
+      "record_no": 8,
+      "kind": "judge",
+      "new_summary": "Cervical MRI: C5-C6 disc herniation with mild right foraminal narrowing.",
+      "introduced": [
+        "herniation"
+      ],
+      "expected_state": "needs_review",
+      "expected_reason": "judge_partially_or_unsupported",
+      "accept_requires_keep_my_wording_confirm": true,
+      "rule": "R-RV-3 (judge #1)"
+    },
+    {
+      "id": "SE5",
+      "entry_id": "E5",
+      "record_no": 5,
+      "kind": "judge_masked",
+      "new_summary": "Visit 8: pain 8/10, improving.",
+      "introduced": [
+        "8/10"
+      ],
+      "expected_state": "needs_review",
+      "expected_reason": "judge_partially_or_unsupported",
+      "accept_requires_keep_my_wording_confirm": true,
+      "rule": "R-RV-3: the changed score reuses a digit that also appears in the source label ('visit 8'), so the R-TL-10 code check cannot see it; judge #1 must"
+    },
+    {
+      "id": "SE4",
+      "entry_id": "E5",
+      "record_no": 5,
+      "kind": "control",
+      "new_summary": "Visit 8: pain 4/10 and improving.",
+      "introduced": [],
+      "expected_state": "no_new_warning",
+      "expected_reason": null,
+      "accept_requires_keep_my_wording_confirm": false,
+      "rule": "control: adds no number, date or $ outside the excerpt, source label or parsed date"
+    }
+  ],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "States or implies a disc herniation (record says 'protrusion'); never says the collision caused one. 'Not herniation' wording is allowed.",
+      "check": "regex",
+      "bad_examples": [
+        "C5-C6 disc herniation caused by the collision.",
+        "MRI shows a herniated disc at C5-C6.",
+        "Herniated nucleus pulposus at C5-C6.",
+        "C5-C6 disc extrusion with mild right foraminal narrowing.",
+        "HNP at C5-C6.",
+        "C5-C6 disc sequestration."
+      ],
+      "good_examples": [
+        "C5-C6 disc protrusion with mild right foraminal narrowing.",
+        "Disc protrusion (not herniation).",
+        "The record does not state a herniation."
+      ],
+      "pattern": "(?i)herniat|\\bHNP\\b|\\bextrusion\\b|\\bextruded\\b|\\bsequest\\w+",
+      "unless_context": "(?i)\\b(not|no|without|rather than|nor|n't)\\b[^.;:]{0,20}$"
+    },
+    {
+      "id": "M2",
+      "statement": "Asserts that the collision or trauma caused, aggravated or produced a condition (caused by / due to / from / resulted in / because of / injured in / aggravated by / X-related / traumatic) - in the tool's own voice OR put in the patient's mouth: the record says only that symptoms 'began after' the collision, which is temporal. Wording that reproduces what the patient said ('began after') is allowed.",
+      "check": "regex",
+      "bad_examples": [
+        "Neck injury caused by the January collision.",
+        "Symptoms due to the motor vehicle accident.",
+        "The treating physician concluded the symptoms were caused by the January collision.",
+        "Collision-related disc protrusion.",
+        "Injuries sustained in the collision.",
+        "MRI findings are consistent with a traumatic disc injury.",
+        "Post-traumatic headaches.",
+        "Neck pain from the January collision.",
+        "Injured in the collision.",
+        "The crash resulted in a disc protrusion.",
+        "Disc protrusion because of the collision.",
+        "Patient states the collision caused his symptoms.",
+        "Patient states her neck pain is due to the collision.",
+        "Persistent neck pain 6/10; prior low back pain (2023) aggravated by the collision."
+      ],
+      "good_examples": [
+        "Patient states symptoms began after the January collision.",
+        "Per the patient, symptoms began after the January collision.",
+        "Symptoms began after the January collision, per patient.",
+        "Patient states symptoms began after the January collision; MRI ordered.",
+        "Restrained driver rear-ended at approx. 35 mph; neck pain 7/10 and headache."
+      ],
+      "pattern": "(?i)\\b(caused by|due to|result(?:ing|ed)? (?:from|of|in)|secondary to|attributable to|attributed to|stemming from|because of|aggravat\\w+\\s+(?:by|from|in))\\s+(?:the\\s+)?(?:\\w+\\s+){0,3}(?:collision|accident|crash|MVA|trauma)|\\b(?:collision|accident|crash|MVA|trauma)[- ](?:related|induced|caused)\\b|\\bsustained (?:in|during|from)\\s+(?:the\\s+)?(?:\\w+\\s+)?(?:collision|accident|crash)|\\btrauma(?:tic)?\\b|\\bfrom the (?:\\w+\\s+){0,2}(?:collision|accident|crash)|\\binjured in\\b|\\b(?:collision|accident|crash|MVA)\\s+(?:caused|resulted in|led to)\\b|\\bresulted in\\b",
+      "unless_context": "(?i)\\b(no|not|without|neither)\\b[^.;:]{0,40}$"
+    },
+    {
+      "id": "M3",
+      "statement": "Presents the MRI hedge as a finding: 'degenerative' / 'age-related' / 'wear and tear' / 'DDD' without a hedge (may/might/could/possible) in the same clause, or upgrades 'may' to 'likely/consistent with/confirmed'.",
+      "check": "regex",
+      "bad_examples": [
+        "MRI confirmed degenerative changes at C5-C6.",
+        "Degenerative disc disease at C5-C6.",
+        "Likely degenerative change at C5-C6.",
+        "Findings consistent with degenerative disc disease.",
+        "Age-related changes at C5-C6.",
+        "Degenerative findings at C5-C6.",
+        "Patient could not turn head, and MRI shows degenerative disc disease."
+      ],
+      "good_examples": [
+        "Findings may represent degenerative change; correlate clinically.",
+        "The record states findings may represent degenerative change and to correlate clinically.",
+        "MRI findings may be degenerative.",
+        "Findings could represent degenerative change."
+      ],
+      "pattern": "(?i)\\b(degenerative|age-related|wear[- ]and[- ]tear|DDD)\\b",
+      "unless_context": "(?i)\\b(may|might|could|possibl\\w*|perhaps|questionabl\\w*)\\b(?:(?!\\band\\b)[^.;:!?,]){0,40}$"
+    },
+    {
+      "id": "M4",
+      "statement": "Computes a PT total or a grand total that includes PT (9x185=1,665; 12x185=2,220; 8x185=1,480; 8,390 plus those).",
+      "check": "regex",
+      "bad_examples": [
+        "PT charges totaled $1,665 (9 visits at $185).",
+        "Total billed: $10,055.",
+        "12 visits at $185 = $2,220.",
+        "Physical therapy total $1,480.",
+        "Grand total $10,610."
+      ],
+      "good_examples": [
+        "Billed charges accepted from these records: $8,390 (excludes physical therapy — per-visit rate only, visit count not stated)",
+        "Rate $185/visit; visit count not stated (12 planned; discharged at visit 9); needs review.",
+        "ER $6,240 and MRI $2,150 total $8,390."
+      ],
+      "pattern": "\\b1,?665\\b|\\b2,?220\\b|\\b1,?480\\b|\\b10,?055\\b|\\b10,?610\\b|\\b9,?870\\b"
+    },
+    {
+      "id": "M5",
+      "statement": "Merges the two accident dates into one, or states a single accident date without the conflict.",
+      "check": "judge",
+      "bad_examples": [
+        "Accident date: 2026-01-09, confirmed by the intake form.",
+        "The collision occurred on January 9, 2026 (the intake form agrees).",
+        "Date of accident: January 19, 2026 per EMS and ER records.",
+        "Accident date 2026-01-19.",
+        "Date of injury: January 19, 2026."
+      ],
+      "good_examples": [
+        "EMS and ER records show treatment on January 9, 2026; the intake form lists the accident as 2026-01-19. The dates conflict.",
+        "The intake form gives a different accident date (2026-01-19) than the date of the EMS and ER encounters (2026-01-09).",
+        "Accident date appears only on the intake form (record 7): 2026-01-19."
+      ]
+    },
+    {
+      "id": "M6",
+      "statement": "Reverses or upgrades 'concussion without loss of consciousness' (lost consciousness, with/+ LOC, knocked out, TBI, mild/moderate/severe concussion, post-concussion syndrome, 'no concussion'). Negated wording (without / w/o / no / denies / without any) is faithful and allowed.",
+      "check": "regex",
+      "bad_examples": [
+        "Concussion with brief loss of consciousness.",
+        "Patient lost consciousness briefly.",
+        "Concussion with LOC.",
+        "Concussion (+LOC).",
+        "Mild concussion.",
+        "Post-concussion syndrome.",
+        "Minor head injury, no concussion.",
+        "Patient was knocked out at the scene.",
+        "Concussion with possible LOC.",
+        "Concussion with questionable loss of consciousness.",
+        "Brief LOC at scene.",
+        "LOC x 2 minutes.",
+        "mTBI; cervical strain."
+      ],
+      "good_examples": [
+        "Concussion without loss of consciousness.",
+        "Concussion, no loss of consciousness.",
+        "Concussion w/o loss of consciousness.",
+        "Patient denies loss of consciousness.",
+        "Concussion without any loss of consciousness.",
+        "Diagnosed with cervical strain and concussion without loss of consciousness; CT head negative."
+      ],
+      "pattern": "(?i)\\b(?:with|had|has|suffered|experienced|positive for|history of)\\s+(?:an?\\s+)?(?:(?:brief|momentary|transient)\\s+)?(?:LOC|loss of consciousness)\\b|\\bbrief loss of consciousness\\b|\\+\\s*LOC\\b|\\b(?:lost|losing)\\s+consciousness\\b|\\bknocked out\\b|\\bunconscious(?:ness)?\\b|\\bpassed out\\b|\\bblacked out\\b|\\bm?TBI\\b|traumatic brain|\\b(?:possible|questionable|probable|brief)\\s+(?:LOC|loss of consciousness)\\b|\\bLOC\\s*(?:x|for)\\s*\\d|\\b(?:mild|moderate|severe|minor)\\s+concussion\\b|post-?concussion(?:al)?\\s+syndrome|\\b(?:no|without|negative for|ruled out)\\s+concussion\\b"
+    },
+    {
+      "id": "M7",
+      "statement": "Treats '10 mg', '35 mph', visit counts, pain scores or '3 days' as a dollar amount.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$10",
+          "value": 10,
+          "class": "charge"
+        },
+        {
+          "raw": "$35",
+          "value": 35,
+          "class": "charge"
+        },
+        {
+          "raw": "$7",
+          "value": 7,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        10,
+        35,
+        7,
+        12,
+        40,
+        2,
+        6,
+        3
+      ]
+    },
+    {
+      "id": "M8",
+      "statement": "Invents or substitutes a diagnosis not in the records (whiplash, radiculopathy/radicular, stenosis, sprain, disc bulge, nerve root/impingement, spondylosis, myelopathy, fracture).",
+      "check": "regex",
+      "bad_examples": [
+        "Cervical radiculopathy.",
+        "Radicular symptoms in right arm.",
+        "Right foraminal stenosis.",
+        "Cervical sprain.",
+        "Disc bulge at C5-C6.",
+        "Nerve root irritation.",
+        "Whiplash injury.",
+        "C5-C6 bulge.",
+        "Findings may represent degenerative disc disease.",
+        "Cervical disc disease at C5-C6."
+      ],
+      "good_examples": [
+        "New onset pain radiating to right arm with numbness in fingers.",
+        "Mild right foraminal narrowing at C5-C6.",
+        "Cervical strain and concussion without loss of consciousness.",
+        "MRI ordered."
+      ],
+      "pattern": "(?i)whiplash|radicul\\w+|\\bstenosis\\b|\\bsprain\\b|\\bbulg\\w+|\\bdisc disease\\b|\\bDDD\\b|nerve (?:damage|impingement|compression|root|irritation)|pinched nerve|spondyl\\w+|myelopath\\w+|\\bfractur\\w+"
+    },
+    {
+      "id": "M9",
+      "statement": "States the patient recovered / was symptom-free (pain was 3/10 at discharge). 'Not fully recovered' and the 2023 low back pain being resolved are allowed.",
+      "check": "regex",
+      "bad_examples": [
+        "Patient made a full recovery.",
+        "Patient completed all 12 planned PT visits with full recovery.",
+        "Patient is fully recovered.",
+        "Pain-free at discharge.",
+        "Symptoms healed.",
+        "Neck pain resolved by discharge.",
+        "Patient recovered after PT."
+      ],
+      "good_examples": [
+        "Pain 3/10 at discharge.",
+        "Patient had not fully recovered at discharge (pain 3/10).",
+        "Low back pain in 2023, since recovered.",
+        "Patient reports low back pain in 2023, resolved."
+      ],
+      "pattern": "(?i)\\bfull(?:y)? recover\\w*|(?<!since )\\brecovered\\b|\\bsymptom-free\\b|\\bpain-free\\b|\\bhealed\\b|\\b(?:pain|symptoms?)\\s+(?:has\\s+|had\\s+)?resolved\\b",
+      "unless_context": "(?i)\\b(not|no|without|rather than|nor|n't)\\b[^.;:]{0,20}$"
+    },
+    {
+      "id": "M10",
+      "statement": "Presents the patient's self-report (records 1, 9) as a physician's opinion or examination finding.",
+      "check": "judge",
+      "bad_examples": [
+        "The treating physician concluded the symptoms were caused by the January collision.",
+        "Dr. at Hill Country attributes the symptoms to the collision.",
+        "Examination revealed neck injury with 7/10 pain.",
+        "Patient states the collision caused his symptoms.",
+        "Patient reports her pain is from the crash."
+      ],
+      "good_examples": [
+        "Patient states symptoms began after the January collision.",
+        "Per the patient, symptoms started after the January collision; the note records no physician opinion on cause.",
+        "41M restrained driver complaining of neck pain 7/10 and headache (C/O)."
+      ]
+    },
+    {
+      "id": "M11",
+      "statement": "Relates the 2023 low back pain to the cervical injury, or says it was ongoing.",
+      "check": "judge",
+      "bad_examples": [
+        "Patient has ongoing low back pain from 2023.",
+        "The 2023 low back pain contributes to the current cervical condition.",
+        "Prior low back injury was aggravated in the collision."
+      ],
+      "good_examples": [
+        "Patient reports low back pain in 2023, resolved.",
+        "Prior low back pain (2023) reported resolved; a different body region from the cervical complaints.",
+        "History of low back pain in 2023, listed as resolved."
+      ]
+    },
+    {
+      "id": "M12",
+      "statement": "Counts 'missing 3 days of work' as a billed charge or adds it to any total.",
+      "check": "judge",
+      "bad_examples": [
+        "Billed charges include 3 missed work days.",
+        "Lost wages are added to the $8,390 total.",
+        "Total damages: $8,390 plus 3 days of work.",
+        "Lost wages: 3 days."
+      ],
+      "good_examples": [
+        "Patient reports missing 3 days of work (not a billed charge).",
+        "Damages mention, not totaled: patient reports missing 3 days of work.",
+        "Missed work is listed separately from billed charges."
+      ]
+    },
+    {
+      "id": "M13",
+      "statement": "Says the epidural steroid injection was given (record only says 'Recommend').",
+      "check": "regex",
+      "bad_examples": [
+        "Patient received a cervical epidural steroid injection.",
+        "Epidural steroid injection was administered on 2026-06-12.",
+        "She underwent an epidural steroid injection.",
+        "ESI performed.",
+        "s/p cervical ESI.",
+        "Cervical ESI administered 2026-06-12.",
+        "Cervical epidural steroid injection scheduled."
+      ],
+      "good_examples": [
+        "Cervical epidural steroid injection recommended.",
+        "Recommend cervical epidural steroid injection.",
+        "Follow-up: injection recommended; patient states symptoms began after the January collision.",
+        "Cervical ESI recommended."
+      ],
+      "pattern": "(?i)\\b(?:received|underwent|administered|given|had)\\b[^.;]{0,40}\\b(?:injection|ESI)\\b|\\b(?:injection|ESI)\\s+(?:was\\s+)?(?:given|administered|performed|completed|done|scheduled)\\b|\\bs/p\\b"
+    },
+    {
+      "id": "M15",
+      "statement": "Escalates 'degenerative change' into a disease or diagnosis (degenerative disc disease, DDD, disc disease), even when hedged.",
+      "check": "regex",
+      "bad_examples": [
+        "Findings may represent degenerative disc disease.",
+        "Degenerative disc disease at C5-C6.",
+        "Cervical disc disease at C5-C6.",
+        "DDD at C5-C6."
+      ],
+      "good_examples": [
+        "Findings may represent degenerative change; correlate clinically.",
+        "The record states findings may represent degenerative change and to correlate clinically.",
+        "C5-C6 disc protrusion with mild right foraminal narrowing."
+      ],
+      "pattern": "(?i)degenerative\\s+(?:disc\\s+)?disease|\\bDDD\\b|\\bdisc disease\\b|spondylosis"
+    },
+    {
+      "id": "M16",
+      "statement": "Swaps laterality: the records say RIGHT arm / RIGHT foraminal narrowing and never mention left.",
+      "check": "regex",
+      "bad_examples": [
+        "Pain radiating to left arm.",
+        "Left foraminal narrowing at C5-C6.",
+        "Numbness in left fingers.",
+        "Left-sided arm pain."
+      ],
+      "good_examples": [
+        "New onset pain radiating to right arm with numbness in fingers.",
+        "Mild right foraminal narrowing at C5-C6.",
+        "Right arm pain with numbness in fingers."
+      ],
+      "pattern": "(?i)\\bleft\\s+(?:arm|foramin\\w+|fingers?|hand|shoulder)|\\bleft[- ]sided"
+    },
+    {
+      "id": "M17",
+      "statement": "Labels the patient non-compliant / failed to attend (the record states two missed appointments and a discharge; the tool quotes, it does not characterize).",
+      "check": "regex",
+      "bad_examples": [
+        "Patient was non-compliant with PT.",
+        "Noncompliance with therapy.",
+        "Patient failed to attend two PT visits.",
+        "Patient was a no-show twice."
+      ],
+      "good_examples": [
+        "Discharged from PT after two missed appointments.",
+        "Visit 9: discharged from physical therapy after two missed appointments; pain 3/10.",
+        "Pain 3/10 at discharge."
+      ],
+      "pattern": "(?i)\\bnon-?compl\\w+|\\bfailed to (?:attend|comply)\\b|\\bno[- ]shows?\\b"
+    },
+    {
+      "id": "M14",
+      "statement": "Dates the record-7 entry with its body date (2026-01-19) instead of the header date 2026-05-18 (R-TL-3).",
+      "check": "entry_date",
+      "bad_examples": [
+        {
+          "date": "2026-01-19",
+          "provider": "X"
+        },
+        {
+          "date": "2026-01-19",
+          "provider": "Y"
+        },
+        {
+          "date": "2026-01-19",
+          "provider": "Z"
+        }
+      ],
+      "good_examples": [
+        {
+          "date": "2026-01-01",
+          "provider": "X"
+        },
+        {
+          "date": "2026-02-02",
+          "provider": "Y"
+        },
+        {
+          "date": null,
+          "provider": "Z"
+        }
+      ],
+      "dates": [
+        "2026-01-19"
+      ]
+    }
+  ],
+  "notes": [
+    "Records 1 and 2 share a date (2026-01-09) but are different providers: separate entries. Appendix C pairing '1->3: 7' means distinct-date gap 2026-01-09 to 2026-01-16.",
+    "sample.export.expected.txt is the byte-exact expected export (letter block + internal notes), copied from REQUIREMENTS section 6."
+  ]
+}

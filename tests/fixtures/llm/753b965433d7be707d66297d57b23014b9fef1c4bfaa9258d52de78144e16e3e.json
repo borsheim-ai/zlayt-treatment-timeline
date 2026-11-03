@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "X-ray right knee: no acute fracture; prior arthroscopic changes noted. Dx: knee contusion. Knee immobilizer provided.",
+  "summary": "X-ray of right knee showed no acute fracture, with prior arthroscopic changes noted; diagnosis knee contusion; knee immobilizer provided."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:29:11Z"
+ }
+}

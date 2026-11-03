@@ -1,0 +1,42 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-02-03
+Source: Quillfeather Urgent Care
+Excerpt: "Right ankle swelling after twisting on stairs. X-ray negative for fracture. Urgent care charge: $310.00."
+
+=== Record 2 ===
+Date: 02/17/2026
+Source: Dr. Orla Pennywhistle, primary care
+Excerpt: "Ankle swelling improved. Refer to physical therapy 1x/week for 4 weeks."
+
+=== Record 3 ===
+Date: Feb 24, 2026
+Source: Pemberwick Physical Therapy, visit 1
+Excerpt: "Gait mildly antalgic. Pain 4/10."
+
+=== Record 4 ===
+Date: 3 March 2026
+Source: Pemberwick Physical Therapy, visit 2
+Excerpt: "Pain 3/10. Balance exercises added."
+
+=== Record 5 ===
+Date: March 10th, 2026
+Source: Pemberwick Physical Therapy, visit 3
+Excerpt: "Pain 2/10. Walking without a limp."
+
+=== Record 6 ===
+Date: 03-17-26
+Source: Pemberwick Physical Therapy, visit 4
+Excerpt: "Pain 1/10. Discharged to home exercise program."
+
+=== Record 7 ===
+Date: 3/25/26
+Source: Dr. Orla Pennywhistle, primary care
+Excerpt: "Ankle exam normal. Optional recheck on 04/14/2026 if symptoms return."
+
+=== Record 8 ===
+Date: 04/05/2026
+Source: Dr. Orla Pennywhistle, phone note
+Excerpt: "Patient reports no new symptoms."
+

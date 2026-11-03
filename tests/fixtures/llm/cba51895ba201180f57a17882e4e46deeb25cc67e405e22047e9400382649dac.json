@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Right ankle swelling after twisting on stairs. X-ray negative for fracture. Urgent care charge: $310.00.",
+  "summary": "Right ankle swelling after twisting on stairs; X-ray negative for fracture; urgent care charge $310.00."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:48:36Z"
+ }
+}

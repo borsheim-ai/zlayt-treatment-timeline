@@ -1,0 +1,558 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib05_pedestrian_orif_hardware",
+  "synthetic": true,
+  "input_file": "case_lib05_pedestrian_orif_hardware.txt",
+  "description": "Library L5 (mirrors S5). Pedestrian struck in a crosswalk; tibial plateau fracture with ORIF, PT, persistent pain, hardware removal seven months later and a hedged future knee replacement. A prior arthroscopy appears in the history. Two gaps (49 and 119 days).",
+  "stress_types": [
+    "operative_report",
+    "hardware_removal_second_surgery",
+    "two_gaps",
+    "prior_surgery_in_history",
+    "hedged_future_care"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-01-22",
+      "date": "2026-01-22",
+      "kind": "encounter",
+      "source": "Brightwater EMS run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-01-22",
+      "date": "2026-01-22",
+      "kind": "encounter",
+      "source": "Coldharbor Trauma Center ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-01-24",
+      "date": "2026-01-24",
+      "kind": "encounter",
+      "source": "Dr. Casimir Voss, orthopedic surgery, operative report"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-02-19",
+      "date": "2026-02-19",
+      "kind": "encounter",
+      "source": "Dr. Casimir Voss, orthopedic surgery, clinic"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-03-05",
+      "date": "2026-03-05",
+      "kind": "encounter",
+      "source": "Mosswood Physical Therapy, initial evaluation"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-04-23",
+      "date": "2026-04-23",
+      "kind": "encounter",
+      "source": "Mosswood Physical Therapy, visit 12"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-08-20",
+      "date": "2026-08-20",
+      "kind": "encounter",
+      "source": "Dr. Casimir Voss, orthopedic surgery, clinic"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-09-10",
+      "date": "2026-09-10",
+      "kind": "encounter",
+      "source": "Dr. Casimir Voss, orthopedic surgery, operative report"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-01-22",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Brightwater EMS run report",
+      "must_contain_excerpt": "Pedestrian struck by a vehicle in a crosswalk",
+      "required_terms": [
+        "left knee",
+        "unable to bear weight"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-01-22",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Coldharbor Trauma Center ED",
+      "must_contain_excerpt": "Dx: left tibial plateau fracture and left fibular fracture",
+      "required_terms": [
+        "left tibial plateau fracture",
+        "left fibular fracture"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-01-24",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Casimir Voss, orthopedic surgery, operative report",
+      "must_contain_excerpt": "Open reduction and internal fixation, left tibial plateau, two screws",
+      "required_terms": [
+        "open reduction and internal fixation",
+        "two screws",
+        "8 weeks"
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-02-19",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Casimir Voss, orthopedic surgery, clinic",
+      "must_contain_excerpt": "Radiographs show hardware in good position",
+      "required_terms": [
+        "physical therapy",
+        [
+          "patient reports",
+          "per patient",
+          "patient states"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient reports a prior left knee arthroscopy in 2019.",
+          "attribution_any": [
+            "patient reports",
+            "per patient",
+            "patient states",
+            "patient-reported"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-03-05",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Mosswood Physical Therapy, initial evaluation",
+      "must_contain_excerpt": "Left knee flexion limited to 80 degrees",
+      "required_terms": [
+        "80 degrees"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-04-23",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Mosswood Physical Therapy, visit 12",
+      "must_contain_excerpt": "Flexion 115 degrees",
+      "required_terms": [
+        "115 degrees"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-08-20",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Casimir Voss, orthopedic surgery, clinic",
+      "must_contain_excerpt": "Persistent knee pain 5/10 with atrophy of left thigh",
+      "required_terms": [
+        "5/10",
+        "hardware removal"
+      ]
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-09-10",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Casimir Voss, orthopedic surgery, operative report",
+      "must_contain_excerpt": "Total knee replacement may be needed in the future",
+      "required_terms": [
+        "removal of hardware",
+        "subchondral cyst",
+        "may be needed"
+      ]
+    }
+  ],
+  "expected_entry_count": 8,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-01-22",
+      "to_date": "2026-01-24",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 2,
+      "flag": false
+    },
+    {
+      "from_date": "2026-01-24",
+      "to_date": "2026-02-19",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 26,
+      "flag": false
+    },
+    {
+      "from_date": "2026-02-19",
+      "to_date": "2026-03-05",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-03-05",
+      "to_date": "2026-04-23",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 49,
+      "flag": true
+    },
+    {
+      "from_date": "2026-04-23",
+      "to_date": "2026-08-20",
+      "from_records": [
+        6
+      ],
+      "to_records": [
+        7
+      ],
+      "days": 119,
+      "flag": true
+    },
+    {
+      "from_date": "2026-08-20",
+      "to_date": "2026-09-10",
+      "from_records": [
+        7
+      ],
+      "to_records": [
+        8
+      ],
+      "days": 21,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$38,420",
+      "value": 38420,
+      "class": "charge",
+      "excerpt": "ED charges: $38,420",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 5,
+      "raw": "$175",
+      "value": 175,
+      "class": "rate",
+      "excerpt": "Charge per visit $175",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: visits billed are never stated (16 planned; visit 12 note present)."
+    },
+    {
+      "id": "A3",
+      "record_no": 8,
+      "raw": "$6,150",
+      "value": 6150,
+      "class": "charge",
+      "excerpt": "Surgeon fee: $6,150",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 44570,
+    "counted_amount_ids": [
+      "A1",
+      "A3"
+    ],
+    "amounts_found": 3,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "rate $175/visit; visit count not stated (16 planned); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $44,570.00",
+    "ui_line": "Accepted charges: $44,570.00",
+    "notes_lines": [
+      "$175: rate $175/visit; visit count not stated (16 planned); needs review"
+    ],
+    "accept_all_total": 38420,
+    "accept_all_reason": "Hand-verified against the records: ED charges $38,420 + surgeon fee $6,150 = $44,570. The $175 per visit is a rate and is not a charge. 'Surgeon fee' carries no charge word, so the tool lists the $6,150 as unclear; accepting the acceptable lines one at a time gives $38,420.00, and $44,570.00 is reached after the paralegal reclassifies the surgeon fee."
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-03-05",
+      "to_date": "2026-04-23",
+      "days": 49,
+      "cite": {
+        "all": [
+          5,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Plan of care: 16 visits"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Flexion 115 degrees"
+        }
+      ],
+      "summary": "Treatment gap of 49 days (2026-03-05 to 2026-04-23), longer than 30."
+    },
+    {
+      "id": "G2",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-04-23",
+      "to_date": "2026-08-20",
+      "days": 119,
+      "cite": {
+        "all": [
+          6,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Flexion 115 degrees. Pain 4/10"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "Persistent knee pain 5/10"
+        }
+      ],
+      "summary": "Treatment gap of 119 days (2026-04-23 to 2026-08-20), longer than 30."
+    },
+    {
+      "id": "P1",
+      "type": "pre_existing",
+      "level": "must",
+      "cite": {
+        "all": [
+          4
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 4,
+          "field": "excerpt",
+          "excerpt": "Patient reports a prior left knee arthroscopy in 2019"
+        }
+      ],
+      "summary": "Prior left knee arthroscopy (2019), reported by the patient. Same knee as the fracture.",
+      "subtype": "prior_surgery_reported"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          8
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 8,
+          "field": "excerpt",
+          "excerpt": "Total knee replacement may be needed in the future"
+        }
+      ],
+      "summary": "Future care stated only as possible; the tool does not predict it.",
+      "subtype": "speculative_language"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 2, 26, 14 and 21-day intervals."
+    },
+    {
+      "id": "N2",
+      "type": "causation",
+      "statement": "'Pedestrian struck by a vehicle' is mechanism of injury, not weakening language."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "States a future knee replacement or permanent impairment as certain or probable.",
+      "check": "judge",
+      "bad_examples": [
+        "She will need a total knee replacement.",
+        "Permanent knee impairment.",
+        "Knee replacement is inevitable."
+      ],
+      "good_examples": [
+        "Total knee replacement may be needed in the future.",
+        "Persistent knee pain 5/10 with atrophy of left thigh.",
+        "Hardware removal discussed."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Attributes the persistent pain or the atrophy to the prior arthroscopy or to the collision.",
+      "check": "judge",
+      "bad_examples": [
+        "Pain is from the 2019 arthroscopy.",
+        "Persistent pain caused by the crash.",
+        "Atrophy due to the prior knee condition."
+      ],
+      "good_examples": [
+        "Persistent knee pain 5/10 with atrophy of left thigh.",
+        "Patient reports a prior left knee arthroscopy in 2019.",
+        "Subchondral cyst repaired."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Changes the side, bone or procedure (right knee, femur fracture, knee replacement performed).",
+      "check": "judge",
+      "bad_examples": [
+        "Right tibial plateau fracture.",
+        "Femur fracture repaired.",
+        "Total knee replacement performed on 2026-09-10."
+      ],
+      "good_examples": [
+        "Left tibial plateau fracture and left fibular fracture.",
+        "Open reduction and internal fixation, left tibial plateau, two screws.",
+        "Removal of hardware, left tibial plateau."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Treats degrees, weeks, visits or years as dollars, or totals the per-visit rate (16 x 175 = 2,800).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$8",
+          "value": 8,
+          "class": "charge"
+        },
+        {
+          "raw": "$12",
+          "value": 12,
+          "class": "charge"
+        },
+        {
+          "raw": "$16",
+          "value": 16,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        8,
+        12,
+        16,
+        80,
+        115,
+        2019,
+        2800,
+        47370
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S5 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: 01-22 to 01-24 = 2; 01-24 to 02-19 = 7 (to Jan 31) + 19 = 26; 02-19 to 03-05 = 9 (to Feb 28) + 5 = 14; 03-05 to 04-23 = 26 (to Mar 31) + 23 = 49 (flag); 04-23 to 08-20 = 119 (flag); 08-20 to 09-10 = 21.",
+    "Charges counted: $38,420 + $6,150 = $44,570. Forbidden: 44,570 + 2,800 = 47,370."
+  ]
+}

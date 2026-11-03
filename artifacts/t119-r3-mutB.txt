@@ -1,0 +1,8 @@
+E         
+E         - BODY:
+E         + DIV:sbs-body
+
+tests/e2e/test_polish_r3.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED tests/e2e/test_polish_r3.py::test_p_focuses_the_record_pane_only_from_an_item_row
+1 failed, 18 passed in 24.92s

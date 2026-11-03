@@ -1,0 +1,11 @@
+{
+ "output": {
+  "reason_code": "NONE",
+  "verdict": "supported"
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-haiku-5-5",
+  "recorded_at": "2026-11-02T04:12:52Z"
+ }
+}

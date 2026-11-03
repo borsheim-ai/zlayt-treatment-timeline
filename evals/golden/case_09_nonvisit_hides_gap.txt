@@ -1,0 +1,27 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-02-02
+Source: Hobbleton Family Clinic, visit
+Excerpt: "Left wrist pain 4/10. Splint applied. Return in 2 weeks."
+
+=== Record 2 ===
+Date: 2026-03-01
+Source: Hobbleton Family Clinic, billing statement
+Excerpt: "Statement for visit of 2026-02-02: $275."
+
+=== Record 3 ===
+Date: 2026-03-12
+Source: Hobbleton Family Clinic, phone note
+Excerpt: "Patient called to request a work note. Work note provided."
+
+=== Record 4 ===
+Date: 2026-03-30
+Source: Hobbleton Family Clinic, visit
+Excerpt: "Left wrist pain 3/10. Splint removed."
+
+=== Record 5 ===
+Date: 2026-04-13
+Source: Hobbleton Family Clinic, visit
+Excerpt: "Pain 1/10. Released from care."
+

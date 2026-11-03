@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "pre_existing",
+    "excerpt": "Has been seeing a chiropractor off and on since a lifting injury several years ago.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:52:49Z"
+ }
+}

@@ -1,0 +1,634 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib14_handwritten_chiro_scans",
+  "synthetic": true,
+  "input_file": "case_lib14_handwritten_chiro_scans.txt",
+  "description": "Library L14 (P12+P15). Rear-end collision, EMS run report, ED, then faxed chiropractic daily notes as OCR text (checkbox treatment marks, a pain number circled, one handwritten header date with no year), a typed re-examination whose pain score disagrees with the handwritten pages, a CMS-1500 OCR copy that groups three days on one line (decimal-less money boxes), and an ambulance invoice with a base line plus per-mile mileage. The undated handwritten page is excluded from gap arithmetic and goes to review.",
+  "stress_types": [
+    "ocr_noise_text",
+    "handwritten_date_no_year",
+    "checkbox_treatment_marks",
+    "typed_page_disagrees_with_handwritten",
+    "cms1500_grouped_line_days_equal_units",
+    "cms1500_ocr_decimal_less",
+    "ambulance_base_plus_mileage",
+    "ems_run_report",
+    "rate_not_charge"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-09-14",
+      "date": "2026-09-14",
+      "kind": "encounter",
+      "source": "Tarnwick Fire-Rescue run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-09-14",
+      "date": "2026-09-14",
+      "kind": "encounter",
+      "source": "Orrin Mere Regional ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-09-21",
+      "date": "2026-09-21",
+      "kind": "encounter",
+      "source": "Hollowbrook Chiropractic, daily note visit 1 (scanned, OCR text)"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-10-06",
+      "date": "2026-10-06",
+      "kind": "encounter",
+      "source": "Hollowbrook Chiropractic, daily note visit 9 (scanned, OCR text)"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "10/20",
+      "date": null,
+      "kind": "encounter",
+      "source": "Hollowbrook Chiropractic, daily note visit 12 (handwritten, OCR text)"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-11-03",
+      "date": "2026-11-03",
+      "kind": "encounter",
+      "source": "Hollowbrook Chiropractic, re-examination (typed)"
+    },
+    {
+      "record_no": 7,
+      "raw_date": "2026-11-10",
+      "date": "2026-11-10",
+      "kind": "billing_statement",
+      "source": "Hollowbrook Chiropractic, CMS-1500 (OCR of scanned claim)"
+    },
+    {
+      "record_no": 8,
+      "raw_date": "2026-11-12",
+      "date": "2026-11-12",
+      "kind": "billing_statement",
+      "source": "Tarnwick Fire-Rescue, ambulance invoice"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-09-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Tarnwick Fire-Rescue run report",
+      "must_contain_excerpt": "Driver of a sedan struck from behind",
+      "required_terms": [
+        "collar"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck pain 6/10 and tingling in the right hand.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-09-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Orrin Mere Regional ED",
+      "must_contain_excerpt": "X-ray cervical spine negative for fracture",
+      "required_terms": [
+        "cervical strain",
+        "negative for fracture"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-09-21",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hollowbrook Chiropractic, daily note visit 1 (scanned, OCR text)",
+      "must_contain_excerpt": "Tenderness at C4-C6",
+      "required_terms": [
+        "c4-c6"
+      ],
+      "note": "Fax-quality scan as OCR text: the written date reads 9/2l/26 (letter l for 1); the header date is the packet's production date for the visit."
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-10-06",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hollowbrook Chiropractic, daily note visit 9 (scanned, OCR text)",
+      "must_contain_excerpt": "Tenderness at C4-C5, improved",
+      "required_terms": [
+        "c4-c5"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": null,
+      "date_status": "missing",
+      "encounter": true,
+      "provider": "Hollowbrook Chiropractic, daily note visit 12 (handwritten, OCR text)",
+      "must_contain_excerpt": "Adjusted C4-C6",
+      "required_terms": [
+        "c4-c6"
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Pt states neck feels better.",
+          "attribution_any": [
+            "pt states",
+            "patient states",
+            "per patient",
+            "patient reports",
+            "reports"
+          ]
+        }
+      ],
+      "needs_review": true,
+      "note": "Handwritten header date '10/20' has no year: date_status missing, never guessed, excluded from gap arithmetic, sorts to the needs-review group."
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-11-03",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Hollowbrook Chiropractic, re-examination (typed)",
+      "must_contain_excerpt": "Pain 6/10, unchanged from the initial visit",
+      "required_terms": [
+        "6/10"
+      ]
+    },
+    {
+      "id": "E7",
+      "record_nos": [
+        7
+      ],
+      "date": "2026-11-10",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Hollowbrook Chiropractic, CMS-1500 (OCR of scanned claim)",
+      "must_contain_excerpt": "OCR of scanned CMS-1500",
+      "required_terms": [
+        [
+          "cms-1500",
+          "claim"
+        ]
+      ],
+      "note": "Grouped lines: one line covers three consecutive days (24G 3 = days). Money boxes have no decimal point: truth 255.00, 75.00 and 330.00 (255 + 75). Item 14 (091426) is the injury date and Item 31 (110926) the signature date; neither is a visit."
+    },
+    {
+      "id": "E8",
+      "record_nos": [
+        8
+      ],
+      "date": "2026-11-12",
+      "date_status": "parsed",
+      "encounter": false,
+      "provider": "Tarnwick Fire-Rescue, ambulance invoice",
+      "must_contain_excerpt": "ground mileage, loaded, 8.7 miles at $21.50 per mile",
+      "required_terms": [
+        [
+          "ambulance",
+          "als emergency transport",
+          "transport"
+        ]
+      ]
+    }
+  ],
+  "expected_entry_count": 8,
+  "gap_excluded_records": [
+    5,
+    7,
+    8
+  ],
+  "gap_table": [
+    {
+      "from_date": "2026-09-14",
+      "to_date": "2026-09-21",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 7,
+      "flag": false
+    },
+    {
+      "from_date": "2026-09-21",
+      "to_date": "2026-10-06",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 15,
+      "flag": false
+    },
+    {
+      "from_date": "2026-10-06",
+      "to_date": "2026-11-03",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 28,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$2,960",
+      "value": 2960,
+      "class": "charge",
+      "excerpt": "ED charge: $2,960",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 7,
+      "raw": "25500",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "24F 25500",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Decimal-less CMS-1500 box; truth 255.00 for 3 days; OCR-derived, needs review."
+    },
+    {
+      "id": "A3",
+      "record_no": 7,
+      "raw": "7500",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "24F 7500",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Decimal-less box; truth 75.00."
+    },
+    {
+      "id": "A4",
+      "record_no": 7,
+      "raw": "33000",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "TOTAL CHARGE 33000",
+      "in_total": false,
+      "required": false,
+      "needs_review": true,
+      "note": "Item 28; truth 330.00."
+    },
+    {
+      "id": "A5",
+      "record_no": 8,
+      "raw": "$1,380.00",
+      "value": 1380,
+      "class": "charge",
+      "excerpt": "charge $1,380.00",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A6",
+      "record_no": 8,
+      "raw": "$21.50",
+      "value": 21.5,
+      "class": "rate",
+      "excerpt": "8.7 miles at $21.50 per mile",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Per-mile rate; only the extended line charge ($187.05 = 8.7 x 21.50) is a charge."
+    },
+    {
+      "id": "A7",
+      "record_no": 8,
+      "raw": "$187.05",
+      "value": 187.05,
+      "class": "charge",
+      "excerpt": "charge $187.05",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A8",
+      "record_no": 8,
+      "raw": "$1,567.05",
+      "value": null,
+      "class": "unclear",
+      "excerpt": "Total charges $1,567.05",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Invoice total repeats the two lines above; counting it double counts."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 4527.05,
+    "counted_amount_ids": [
+      "A1",
+      "A5",
+      "A7"
+    ],
+    "amounts_found": 8,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "Decimal-less CMS-1500 box; truth 255.00 for 3 days; OCR-derived, needs review; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A3",
+        "reason": "Decimal-less box; truth 75.00; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A4",
+        "reason": "Item 28; truth 330.00; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A6",
+        "reason": "Per-mile rate; only the extended line charge ($187.05 = 8.7 x 21.50) is a charge; needs review",
+        "total_computed": false
+      },
+      {
+        "amount_id": "A8",
+        "reason": "Invoice total repeats the two lines above; counting it double counts; needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $4,527.05",
+    "ui_line": "Accepted charges: $4,527.05",
+    "notes_lines": [
+      "25500: Decimal-less CMS-1500 box; truth 255.00 for 3 days; OCR-derived, needs review; needs review",
+      "7500: Decimal-less box; truth 75.00; needs review",
+      "33000: Item 28; truth 330.00; needs review",
+      "$21.50: Per-mile rate; only the extended line charge ($187.05 = 8.7 x 21.50) is a charge; needs review",
+      "$1,567.05: Invoice total repeats the two lines above; counting it double counts; needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "C1",
+      "type": "conflict",
+      "level": "should",
+      "cite": {
+        "all": [
+          5,
+          6
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 5,
+          "field": "excerpt",
+          "excerpt": "Pain 4 circled"
+        },
+        {
+          "record_no": 6,
+          "field": "excerpt",
+          "excerpt": "Pain 6/10, unchanged from the initial visit"
+        }
+      ],
+      "summary": "The undated handwritten page records pain 4 circled; the typed re-examination of 2026-11-03 records pain 6/10 'unchanged from the initial visit'. Both cited; the tool does not pick.",
+      "subtype": "pain_score_differs"
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          1
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 1,
+          "field": "excerpt",
+          "excerpt": "Moderate damage to the rear of the vehicle"
+        }
+      ],
+      "summary": "Scene fact in the EMS record; dismissable.",
+      "subtype": "scene_facts"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 7, 15 and 28-day intervals; the undated handwritten page (record 5), the CMS-1500 (record 7) and the invoice (record 8) are not gap endpoints."
+    }
+  ],
+  "tolerated": [
+    {
+      "id": "T1",
+      "type": "conflict",
+      "level": "tolerated",
+      "cite": {
+        "all": [
+          3,
+          7
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Date written 9/2l/26"
+        },
+        {
+          "record_no": 7,
+          "field": "excerpt",
+          "excerpt": "092126 to 092326"
+        }
+      ],
+      "summary": "The CMS-1500 line groups 2026-09-21 to 2026-09-23 (3 units) while the packet holds a daily note for 2026-09-21 only; a billing-analysis notice may be raised for review but is not required as a flag.",
+      "subtype": "billed_dates_without_notes"
+    }
+  ],
+  "record_warnings": [
+    {
+      "id": "W1",
+      "type": "record_warning",
+      "category": "date_ambiguous",
+      "record_no": 5,
+      "field": "date",
+      "level": "must",
+      "excerpt": "10/20",
+      "expected_state": "needs_review"
+    }
+  ],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Reads decimal-less CMS-1500 boxes as whole dollars (25500 -> $25,500) (values 25,500 / 7,500 / 33,000).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$25,500",
+          "value": 25500,
+          "class": "charge"
+        },
+        {
+          "raw": "$7,500",
+          "value": 7500,
+          "class": "charge"
+        },
+        {
+          "raw": "$33,000",
+          "value": 33000,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        25500,
+        7500,
+        33000
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Treats the mileage count as dollars, counts the invoice total with its lines, or sums them (values 8.7 / 1,567.05 / 6,094.10).",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$8.7",
+          "value": 8.7,
+          "class": "charge"
+        },
+        {
+          "raw": "$1,567.05",
+          "value": 1567.05,
+          "class": "charge"
+        },
+        {
+          "raw": "$6,094.1",
+          "value": 6094.1,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        8.7,
+        1567.05,
+        6094.1
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Supplies a year or a full date for the undated handwritten page (for example 2026-10-20), or places it in a visit sequence as if dated.",
+      "check": "judge",
+      "bad_examples": [
+        "Chiropractic visit on 2026-10-20.",
+        "Visit dated October 20, 2026.",
+        "Handwritten note from 10/20/2026."
+      ],
+      "good_examples": [
+        "Handwritten note dated '10/20' with no year; date needs confirmation.",
+        "Undated handwritten daily note (visit 12).",
+        "Pain 4 circled. Adjusted C4-C6."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Reads a scan or OCR glitch as a clinical fact (for example turns 'Next visit 1O/2O' into a stated date of service, or the circled pain number into a /10 score the note does not state).",
+      "check": "judge",
+      "bad_examples": [
+        "Next visit on 2026-10-20 was completed.",
+        "Pain 5/10 was charted on 2026-10-06.",
+        "Patient was seen on 9/21/26 and 9/22/26."
+      ],
+      "good_examples": [
+        "Pain 5 circled.",
+        "Next visit 1O/2O (OCR text).",
+        "Date written 9/2l/26 (OCR text)."
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet (T-079); scenario shapes: P12 + P15 in research/case-library-sources-v2.md; layouts in research/record-formats.md. All names, providers, places, dates and amounts are invented.",
+    "Hand arithmetic (dated encounters): 09-14 to 09-21 = 7; 09-21 to 10-06 = 9 + 6 = 15; 10-06 to 11-03 = 25 + 3 = 28. Record 5 (date missing), 7 and 8 are excluded; no interval exceeds 30, so this packet has no gap flag.",
+    "Charges counted: 2,960 + 1,380.00 + 187.05 = 4,527.05. Mileage: 8.7 x 21.50 = 187.05; 1,380.00 + 187.05 = 1,567.05 (the invoice total, not counted). Forbidden: 4,527.05 + 1,567.05 = 6,094.10.",
+    "Not representable in a text packet: the hidden text layer that differs from the page image (P12, T-087 builds that check on PDFs). Record 3 and 4 stand in for scanned pages; the page image itself belongs to the OCR feature (T-086).",
+    "Pre-suit: the chiropractic records were faxed by the provider; the ambulance invoice is the agency's."
+  ]
+}

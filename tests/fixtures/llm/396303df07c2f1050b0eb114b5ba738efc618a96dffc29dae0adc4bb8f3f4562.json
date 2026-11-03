@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pt states neck and low back pain. Ambulatory at scene. Transported to Vessel Grove Medical Center ED.",
+  "summary": "Patient states neck and low back pain; ambulatory at scene and transported to Vessel Grove Medical Center ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:01Z"
+ }
+}

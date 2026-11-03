@@ -1,0 +1,8 @@
+- [Spec review patterns](feedback_spec_review_patterns.md) — recurring REQUIREMENTS defects: phantom IDs, fix-induced contradictions, vocab drift, stale golden counts, scope creep
+- [Calibration vs red flags](feedback_calibration_vs_redflags.md) — dossier calibration severities softer than dealbreakers; cross-check
+- [Source fetching](reference_source_fetching.md) — curl+UA fallback when WebFetch is missing; blocked hosts
+- [NEEDS_CHRIS drift](feedback_needs_chris_drift.md) — rows added without cards, non-Chris questions, vague actions; ADR facts vs live system
+- [Reviewer sandbox](reference_reviewer_sandbox.md) — hooks block shell writes to scratchpad/memory and backtick python -c; scripts go in artifacts/review-evidence
+- [Plan/contract review patterns](feedback_plan_review_patterns.md) — mention-coverage, unowned tests, wrong critical path, fixture-replay ship bar; apply-check defects (appended-not-edited, either/or, stale text); probe scripts
+- [T-013/T-025 review history](project_t013_review_history.md) — r1-r3 + T-025 verdicts; open: false §8 'aligned' claims, circular authority, must_not M1–M14 vs M17
+- [T-017/T-018 review history](project_t017_t018_review_history.md) — r1, r2, and r3 apply-check verdicts (all changes); open: owner rows, self-check claim, cut-order claim, T-018 AC2 evidence

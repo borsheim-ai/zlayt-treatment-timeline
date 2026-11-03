@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "degenerative_language",
+    "excerpt": "Mild disc desiccation.",
+    "type": "pre_existing"
+   },
+   {
+    "category": "degenerative_language",
+    "excerpt": "Radiology: findings likely chronic.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:35Z"
+ }
+}

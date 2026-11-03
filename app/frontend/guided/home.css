@@ -1,0 +1,26 @@
+/* home: rules for this module only (T-181 Builder A). Shell tokens and base classes live in styles.css. */
+.home-h .hh-main { flex: 1; min-width: 0; }
+.home-h h1:focus { outline: none; }
+.ccard { min-height: 244px; }
+.ccard .cc-meta.bad { color: var(--bad); font-weight: 600; }
+.ccard .cc-top input.rename { flex: 1; min-width: 0; height: 40px; border-radius: 10px; border: 2px solid var(--accent); background: var(--panel); color: var(--text); font: 650 1.0625rem var(--font); padding: 0 12px; }
+.ccard .cc-top .btn { height: 40px; }
+.ccard .cc-ask { flex: 1; font-weight: 600; min-width: 0; }
+.ccard .next.warn { font-weight: 600; }
+.ccard.skeleton { min-height: 244px; }
+.ccard.skeleton .sk-title { height: 28px; width: 60%; }
+.ccard.skeleton .sk-meta { height: 18px; width: 40%; }
+.ccard.skeleton .sk-track { height: 24px; }
+.ccard.skeleton .sk-next { height: 44px; }
+.ccard.skeleton .sk-btn { height: 56px; }
+.ccard.gone { background: var(--sunken); }
+.ccard.gone .cc-bottom .btn { flex: 1; }
+.empty .em-ic.bad { background: var(--bad-bg); color: var(--bad); }
+.empty .err-slot { min-height: 28px; }
+.lists section + section { margin-top: 8px; }
+@media (max-width: 760px) {
+  .home-h .btn { width: 100%; }
+  .ccard .cc-bottom { flex-wrap: wrap; }
+  .ccard .cc-ask { flex-basis: 100%; }
+}
+.ccard .cc-bottom { min-height: 56px; }

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Signal change in the supraspinatus tendon. Clinical correlation recommended. Charge: $1,875.",
+  "summary": "Shoulder MRI shows signal change in the supraspinatus tendon; clinical correlation recommended. Charge: $1,875."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:05Z"
+ }
+}

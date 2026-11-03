@@ -1,0 +1,11 @@
+---
+title: Treatment Timeline (synthetic demo)
+emoji: 🗂️
+colorFrom: blue
+colorTo: gray
+sdk: docker
+app_port: 7860
+short_description: Medical records to a verified treatment chronology. Synthetic data only.
+pinned: false
+---
+

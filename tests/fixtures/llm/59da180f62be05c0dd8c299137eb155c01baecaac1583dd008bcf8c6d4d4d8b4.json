@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Statement for initial exam and x-ray: $1,2OO.",
+  "summary": "Statement for initial exam and x-ray: $1,2OO."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:50:27Z"
+ }
+}

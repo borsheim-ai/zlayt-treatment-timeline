@@ -1,0 +1,69 @@
+# T-207 staff-engineer review, r3 (final round)
+
+Reviewer: staff-engineer-reviewer (Marcus Lee persona), fresh context, read-only on product code. Model running: claude-sonnet-5-5.
+
+Scope: `docs/LLM_VS_CODE.md` rows 2 and 3 as fixed in 6b0724a, checked against the code in `git archive 6b0724a` (scratch directory; the product tree was not edited). `git diff --stat f9c0faf 6b0724a` shows only `docs/LLM_VS_CODE.md | 4 ++--`, so the code and tests are the same at f9c0faf and 6b0724a. The working-copy doc has the same md5 as `git show 6b0724a:docs/LLM_VS_CODE.md` (2accc4e6d4ad008fefd990843b942b8e). The working tree has unrelated staged and modified app files (`git status`: `MM app/backend/service_date.py` and others); I did not use them.
+
+## Verdict: changes (no blocker, one major, two minors, one nit)
+
+## The three checks you asked for
+
+1. Every named test exists at f9c0faf: yes. The rows name 47 distinct tests (58 mentions). `git show f9c0faf:<file>` finds a `def` for each, and for 6b0724a too (script output in the evidence directory is reproducible with `names.py` logic; all 47 print `True True`). The six date files give `736 passed` on the archive, which is the number the doc states, and `python -m evals.letter_check` gives `value 0, cases 25`, run twice with identical output (same md5).
+2. Mutating each rule: the r2 gap is closed for the bound. All eight mutants of the 1,830-day rule (365 per year, `>=` to `>`, 4 or 6 years, +1 day, -1 day, record date `<=` to `<`, day after the record date read) fail the named (q) test, `R5::test_the_five_year_bound_is_1830_days_edges_included`. The two-orders rule (o), the on-or-before rule (n), the ten headings (c), the five non-service headings (d), UB-04 (g), From/To (f), the blank and both note forms, the counted-charge rule (y), the hand-built-dict branch (z) and the unlocated-figure branch (u) are also killed by their named tests. Totals: 126 mutants, 100 killed by the named tests, 26 survive the named tests.
+3. Claims and unclaimed items: the unclaimed list is absent from the claims (details below), but 21 of the 26 survivors touch a statement the rows make, and 13 of those survive all six date test files. That is the major finding.
+
+## Unclaimed items: really absent from the claims?
+
+Present only in the "Not pinned ... not claimed here" sentence (positions after the sentence start in row 2; none in row 3): pipe cells, the billing view `dos_iso`, `04/05/2026 - 13/05/2026`, no bound without a record date. Mutant controls agree for two: pipe not a split (b3) and a 2021-06-30 floor for a record with no date (`r/p no-date floor`) survive the named tests and all six files, so they are really unpinned and the doc does not claim them. Two of the four are over-modest: see F3.
+
+## Findings summary
+
+F1 (major): four statements are claimed as pinned and no test fails when they break. F2 (minor): eight more survive their named test and are killed only by tests the doc does not name. F3 (nit): "Not pinned by any test" is false for two items. F4 (minor): the heading list is narrower than the code.
+
+## What I exercised
+
+See the JSON `exercised` list. Harness: `artifacts/review-evidence/T-207-r3/mutants_t207_r3.py`, outputs `mutants_t207_r3_A.out` to `_E.out`, probes `probe_t207_r3.py`, `probe2_t207_r3.py`, `probe3_t207_r3.py` with `.out` files. The harness parses the pinned tests per letter from the doc itself, applies one exact-string mutant (count asserted), runs only the named tests for that letter, restores the file in `finally`, and re-runs survivors over the six date files. Control: all 45 named test ids pass unmutated (`479 passed`). After the runs `diff -rq -x __pycache__` of the mutated copy against a fresh `git archive 6b0724a` is empty.
+
+Outside my lens: the legal weight of the blank and whether the Step 3 wording helps a paralegal.
+
+```json
+{"card": "T-207", "persona": "staff-engineer-reviewer", "model": "claude-sonnet-5-5",
+ "scope": "docs/LLM_VS_CODE.md rows 2-3 at 6b0724a vs code and tests at f9c0faf (identical to 6b0724a except the doc); git archive 6b0724a in scratch; app/backend/service_date.py, amounts.py, store.py, export.py, present.py, encounter_types.json, evals/letter_check.py; no app URL exercised",
+ "exercised": ["git log, git cat-file, git diff --stat f9c0faf 6b0724a (docs only, 2 lines); md5 of working-copy doc equals git show 6b0724a:docs/LLM_VS_CODE.md",
+               "names.py logic: parsed 58 test mentions (47 distinct) from rows 2-3 and checked each def exists in git show f9c0faf:<file> and 6b0724a:<file>: all True",
+               "git archive 6b0724a into scratch; pytest on the six date test files: 736 passed (the doc's number); python -m evals.letter_check twice: value 0, cases 25, identical md5",
+               "read service_date.py (391 lines), store.py:105-200, export.py:212-226 and 600-625, amounts.py _segments/_cells/mask_leaders, encounter_types.json, evals/letter_check.py:186-520, present.py:152, the r2 review and its memory note",
+               "mutation harness artifacts/review-evidence/T-207-r3/mutants_t207_r3.py: 126 mutants in groups A-E (a-z letters plus the independent check), each run against only the tests the doc names for that letter; 100 killed, 26 survived; survivors re-run over the six date files (mutants_t207_r3_A.out .. _E.out)",
+               "control: 45 named test ids unmutated: 479 passed; archive restored (diff -rq -x __pycache__ against a fresh archive is empty)",
+               "probes: probe_t207_r3.py (04/05-13/05 period reads May 4 to 13; Telehealth note is an encounter; 'to date', '2 x', '9 visits', 'six sessions' all block the lent date in production; 40-character opening), probe2_t207_r3.py (billing_document lexicon vs declared financial table), probe3_t207_r3.py (headings Service To, Service Thru, Svc To, Thru DOS, To Service are read)",
+               "killers.py: the determined-order mutant is killed by R2::test_a_stated_period_prints_whole_with_its_own_year[06/28/2026-07/02/2026 ...]",
+               "grep: no llm import and no float( in service_date.py or evals/letter_check.py; grep tests/unit for dos_iso (test_billing.py:122, :491); ls reviews | grep T-207"],
+ "verdict": "changes",
+ "scores": {"named_tests_exist": 5, "rows_match_code": 4, "named_tests_kill_rule_mutants": 3, "unclaimed_list_accuracy": 4, "date_is_code_only": 5, "bound_pinned": 5},
+ "findings": [
+  {"severity": "major", "title": "Four statements in rows 2 and 3 are claimed as pinned, and no test in the six date files fails when they break",
+   "evidence": "mutants_t207_r3_B.out: 'k 'to date' not counted [k, 4 named tests] -> SURVIVED | 243 passed ... six date files: ALSO PASS' and 'k '2 x' not counted ... SURVIVED ... ALSO PASS' (doc row 2 (k) lists 'to date' and '2 x' as visit counts that block the lent date; probe_t207_r3.out P4 shows production does block them, so the code is right and only the test is missing); 'j opening 40 -> 400 chars ... SURVIVED ... ALSO PASS' (doc row 2 (j) says 'the first 40 characters'; letter_check mutant 'lc check ignores the shared table opening_chars' (400) also ALSO PASS); mutants_t207_r3_D.out/E.out: 'w written reasons shortened ... SURVIVED ... ALSO PASS' and 'w 'implausible' / 'invalid' / 'several_dates' / 'no_year' / 'two_digit_year' gets the request-a-bill ask ... SURVIVED ... ALSO PASS' (doc row 3 (w): for a cell the code cannot read the note 'asks her to confirm it from the quote and fill the blank'; the only test that asserts 'Confirm the date from the quote' is test_the_confirm_note_never_promises... at tests/unit/test_t202_r3_allow_list.py:234-237, which calls confirm_note with 'ambiguous_numeric' only); 'h table term dropped: note ... SURVIVED ... ALSO PASS' (row 2 lists 'note' as an example document-type word; probe P2 shows 'Telehealth note' is an encounter only through the bare term). Harness: artifacts/review-evidence/T-207-r3/mutants_t207_r3.py",
+   "why_it_matters": "The rows now say each rule is pinned by a named test. For these four the claim is false: the code can change and the suite stays green. 'to date' and '2 x' decide whether a multi-visit charge prints one visit's header date; the 40-character window decides whether a bill is taken for an encounter; the wrong ask in a Step 3 note sends the paralegal to request a bill when the quote already has the date. This is the same class as r2 F1/F2 (a documented number or rule that no test holds). Persona calibration: a bound or rule with no test is major.",
+   "fix": "Either add tests or drop the claims. Tests: an encounter record with 'Charges to date $185.00' and one with 'Charged 2 x $185.00' print the blank; a record whose text has a financial word at character 30 is a bill and one with it at character 100 is not (same for letter_check); confirm_note for each of two_digit_year, no_year, invalid, several_dates and implausible contains 'Confirm the date from the quote'; a label 'Telehealth note' is an encounter. Or move 'to date', '2 x', 'the first 40 characters', the five reasons and the bare 'note' to the Not pinned sentence.",
+   "acceptance_test": "Mutants 'k 'to date' not counted', 'k '2 x' not counted', 'j opening 40 -> 400', 'lc check ignores ... opening_chars', the five 'w ... gets the request-a-bill ask' mutants, 'w written reasons shortened' and 'h table term dropped: note' each fail at least one test the doc names for that letter (python3 -I mutants_t207_r3.py <archive> docs/LLM_VS_CODE.md B|D|E <out>), or the doc no longer claims them."},
+  {"severity": "minor", "title": "Eight rules survive the tests the doc names for them; other tests in the suite pin them, so the attribution is incomplete",
+   "evidence": "mutants_t207_r3_B.out/C.out/D.out, each '... SURVIVED | N passed ... six date files: killed by': 'j bill by opening text off' (killed only by R5::test_every_reviewer_probe_prints_the_blank_or_the_right_date[r4 C3 ER charges opening]); 'j opening 40 -> 10 chars' (R4::test_the_check_and_production_agree_on_every_lexicon_billing_example_and_opening); 'j opening not cut at colon/full stop' (two R4 tests); 'n all ends -> any end' (R3::test_the_all_in_the_reference_rule_is_pinned_by_a_period_with_one_end_after_the_statement and two parametrized cases); 'p no-year date borrows 2026' (one unnamed test; the named (p) test passes); 'lc UB-04 statement period dropped in the check' (7 tests in R2, e.g. test_letter_check_fails_a_dropped_period_end_and_a_wrong_year); 'lc blank exactness off in the check' (R4::test_letter_check_accepts_the_blank_only_in_its_exact_form); 'o determined end no longer fixes the order' (R2::test_a_stated_period_prints_whole_with_its_own_year)",
+   "why_it_matters": "A reader who follows the named test to verify a rule will find it passes with the rule broken. The rules are held, but only if the reader finds the unnamed test.",
+   "fix": "Add the killing test to the letter: (j) the R5 probe and the two R4 tests, (n) the R3 'all in the reference' test, (p) the killing test for a numeric no-year cell, and the R2 and R4 letter_check tests to the Independent check sentence.",
+   "acceptance_test": "Each listed mutant fails at least one test the doc names for its letter, or the sentence lists the test that fails."},
+  {"severity": "minor", "title": "The heading list in rule (c) is narrower than the code, which also reads Service To, Service Thru, Svc To, Thru DOS and To Service",
+   "evidence": "probe3_t207_r3.out: 'P7 heading Service To -> stated 2026-01-09', 'Service Thru', 'Svc To', 'Thru DOS', 'To Service' all stated; service_date.py:107-108 (_H_SVC) '\\b(?:service|svc)\\s+(?:from|to|thru|through)\\b|\\b(?:from|to|thru|through)\\s+(?:dos|service|svc)\\b'; docs/LLM_VS_CODE.md row 2 (c) lists 'Service From, From Service or 24A' and says a heading must name the service",
+   "why_it_matters": "The list reads as the complete set of headings that give a date; the code reads five more. r2 F4 made the same point about the old allow-list.",
+   "fix": "Add 'Service To, Service Thru, Svc To, Thru DOS and To Service' to (c), or say the list is examples.",
+   "acceptance_test": "Each alternative in _H_SVC appears in the (c) sentence, read side by side."},
+  {"severity": "nit", "title": "'Not pinned by any test' is false for two items; the doc under-claims",
+   "evidence": "tests/unit/test_billing.py:122 'first[\"dos_iso\"] == \"2026-05-27\"' and :491 'l[\"dos_iso\"] is None' pin the billing view's dos_iso that row 2 lists as unpinned; killers.py: mutant 'determined end no longer fixes the order' is killed by tests/unit/test_t202_r2_service_date_layouts.py::test_a_stated_period_prints_whole_with_its_own_year[06/28/2026-07/02/2026-June 28-July 2, 2026-2026-07-10] while row 2 lists 'a period end which reads only one way fixes the order of the other end' as unpinned",
+   "why_it_matters": "Harmless to correctness, but the sentence is refutable and a reader may trust it less.",
+   "fix": "Reword to 'not pinned by a test named here' or cite the two tests.",
+   "acceptance_test": "Each item in the Not pinned sentence has no test, or the sentence names the test."}
+ ],
+ "whats_right": ["The bound is now pinned: all eight mutants of the 1,830-day rule, its edges and the record-date edge fail R5::test_the_five_year_bound_is_1830_days_edges_included, and the letter check agrees at the edges.",
+                 "All 47 named tests exist at f9c0faf, the six date files give the stated 736 passed, and evals.letter_check gives value 0 over 25 cases twice with identical output.",
+                 "r2 F3 and F6 are fixed in code and doc: an unlocated encounter figure prints the blank (mutant killed), and the 131-test and 'round 4' claims are gone."],
+ "questions_for_chris": ["Q1 (F4): Is Service To / Service Thru / Svc To a heading the paralegal should rely on for a printed date, or should the code accept only the headings the doc lists?"]}
+```

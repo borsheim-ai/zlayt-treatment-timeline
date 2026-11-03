@@ -1,0 +1,36 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-03-03
+Source: Quillmere Regional ED
+Excerpt: "Hx obtained via patient's son, who interpreted. Patient states she was struck by a car while walking in a parking lot. Left shoulder pain 7/10. X-ray left shoulder negative for fracture. Dx: left shoulder contusion. ED charge: $2,940."
+
+=== Record 2 ===
+Date: 14/04/2026
+Source: Consultorio Médico Aguaclara, nota de consulta
+Excerpt: "Motivo de consulta: dolor de espalda y hombro derecho desde el atropello del 3 de marzo. Refiere dolor 6/10 que empeora al levantar el brazo. Niega pérdida del conocimiento. Exploración: dolor a la palpación del hombro derecho. Plan: fisioterapia y control en 4 semanas. Consulta: $650.00. Costo por sesión de terapia física: $400.00."
+
+=== Record 3 ===
+Date: 2026-04-21
+Source: Dr. Lucan Ostrowe, orthopedics, new patient
+Excerpt: "Interpreter: patient's daughter. Patient states she fell in the parking lot after a car brushed her. Right shoulder pain 6/10. MRI right shoulder ordered."
+
+=== Record 4 ===
+Date: 03/05/2026
+Source: Consultorio Médico Aguaclara, formulario de admisión (OCR)
+Excerpt: "Fecha de ingreso: 03/O5/2026. Motivo de la visita: dolor de espaIda y hombro derecho. Accidentes anteriores? Si [ ] No [X]. Firma de la paciente: illegible."
+
+=== Record 5 ===
+Date: 2026-05-05
+Source: Cinder Valley Imaging, right shoulder MRI
+Excerpt: "Partial-thickness supraspinatus tear. MRI charge: $2,150."
+
+=== Record 6 ===
+Date: 2026-05-12
+Source: Dr. Lucan Ostrowe, orthopedics, follow-up
+Excerpt: "Interpreter: patient's daughter. MRI reviewed. Recommend physical therapy and subacromial injection. Pain 5/10."
+
+=== Record 7 ===
+Date: 2026-05-20
+Source: Consultorio Médico Aguaclara, estado de cuenta (billing statement)
+Excerpt: "Estado de cuenta: consultas $1,300.00; terapia física, 4 sesiones a $400.00 por sesión. Saldo: $2,900.00."

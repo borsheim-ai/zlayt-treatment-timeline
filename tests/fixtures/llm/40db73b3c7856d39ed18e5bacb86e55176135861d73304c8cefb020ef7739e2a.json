@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Statement for visit of 2026-02-02: $275.",
+  "summary": "Billing statement for the visit lists a charge of $275."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:44Z"
+ }
+}

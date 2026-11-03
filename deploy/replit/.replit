@@ -1,0 +1,20 @@
+# Copy this file to the repo root as `.replit` after importing the repo into Replit (see deploy/REPLIT.md).
+# Format per https://docs.replit.com/replit-workspace/configuring-repl (run, modules, [[ports]], [deployment]).
+# The python module name is NOT listed on that page (its example is python-3.10): pick Python 3.12 in the Replit UI if this line is rejected.
+modules = ["python-3.12"]
+run = "./run.sh"
+
+[run.env]
+HOST = "0.0.0.0"
+PORT = "7860"
+LLM_BACKEND = "fixture"
+FIXTURE_SET = "curated"
+
+[[ports]]
+localPort = 7860
+externalPort = 80
+
+[deployment]
+build = ["./run.sh", "setup"]
+run = ["./run.sh"]
+deploymentTarget = "cloudrun"

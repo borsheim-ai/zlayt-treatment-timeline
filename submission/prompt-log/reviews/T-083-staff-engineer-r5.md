@@ -1,0 +1,97 @@
+# T-083 r5 review: final §7.4 pass on billing, pinned at 690a0e3 (staff-engineer-reviewer)
+
+**Verdict: fail.** Two blockers stand. The r4 blocker, the r4 skipped-record finding and the balance-forward convention are closed for the same-family cases the brief names. Two new paths lose a printed figure while the provider reads complete: true, and I could not clear either by reading the written rule.
+
+Model note: this review was run as claude-haiku-5-5. CLAUDE.md §6 and D-024 call for Sonnet on engineering reviewers. This is the same dispatch mismatch flagged in r1; the orchestrator should decide whether r5 counts.
+
+Pin: the brief names 690a0e3, so I pinned it with `git archive 690a0e3` into the scratchpad. HEAD has moved to 9f2811f during the review. The billing files (app/backend/billing.py, app/backend/amounts.py, tests/unit/test_billing.py) are byte-identical between 690a0e3 and HEAD (`git diff --stat 690a0e3 HEAD -- <billing files>` is empty). The worktree billing files are cmp-identical to the pin. The worktree itself has other agents' uncommitted changes, so I used the pin for every probe.
+
+## Answers to the brief
+
+1. **Repeated TOTAL CHARGES or summary row is listed and makes the provider incomplete.** PASS within one form family: second TOTAL CHARGES, BALANCE DUE and forwards in one record or across records are listed and complete is false (M2 to M5, E3, B6, and Y1 with two CMS-1500 claims at 85.00 and 170.00). **FAIL across a ledger and a CMS-1500 of the same provider**: one printed total is overwritten and complete stays true (F1).
+2. **A skipped billing record makes totals.complete false.** PASS: S2 (unrecognised ambulance invoice) and S3 (injection-tagged ledger) both give totals.complete false, status partial_unclear.
+3. **Bare whole numbers count only in an amount column.** PARTLY. The code counts them only within TOL = 8 of a money header. That is the source of F2 (a dated charge dropped with complete true) and of F5 (a description number read as a charge).
+4. **BALANCE DUE either-way convention.** PASS: B1 (excludes the forward) gives without_forward, B2 (includes it) gives with_forward, B3 (neither) gives LEDGER_BALANCE_MISMATCH with computed_with_forward and convention null.
+5. **Worker call: a ledger and a CMS form of one provider are not a repeat.** The classification is right for the repeat rule, and CLAIM_LEDGER_BILLED_MISMATCH is the designed comparison. The implementation does not deliver it: the two forms share one stated slot (F1), and a claim's own Item 28 is never checked against its lines when a ledger exists.
+6. **Worker call: no balance verdict with two or more forwards.** Accepted. B4 and B5 give complete false with both forward rows listed in unreconciled. Only a reason field is missing (F6, nit).
+
+## Severity
+
+- **F1 blocker** is the r4 blocker's pattern in a new place. The §7.4 rule written at 05:29:40Z says "any second statement or summary row for a provider -> all listed, complete false", so this is a spec violation, not a definition question.
+- **F2 blocker.** The §7.4 ruling (api.md:706) excludes bare numbers outside every amount column. api.md:705 says a figure far from every header is `unclear`, never guessed, and that nothing is dropped while complete is true. The code applies the ruling with the same 8-character column test that rejected the figure, so the ruling hides exactly the dated-row case. **If Chris rules that the §7.4 definition overrides api.md:705 for dated rows, F2 becomes major** (a definition gap, as in r4 F3). F1 alone keeps the verdict at fail.
+- **F3 major.** Visible checks only, so not silent, but the complete badge sits next to a failed reconciliation.
+- F4 to F6: minor, minor, nit.
+
+Per the §7.4 rule, a fail means totals get cut. This is round 5, past the three-round cap, so the decision is the orchestrator's and Chris's. My recommendation: cut to the cited listing with no provider totals, unless F1 and F2 are fixed and re-reviewed.
+
+## Evidence
+
+Logs are in artifacts/review-evidence/T-083-r5/ (index: RUN_ORDER.txt). The key ones are probes_r5_cross_690a0e3.log (X1, P1), probes_r5_cross2_690a0e3.log (X4), probes_r5_figure_fields_690a0e3.log, probes_r5_boundary_690a0e3.log, probes_r5_collapsed_690a0e3.log (C2), probes_r5_balance_690a0e3.log, probes_r5_k1_690a0e3.log, probes_fuzz_690a0e3.log and probes_fuzz_690a0e3_run2.log (byte-identical), pytest_worktree.log and pytest_pin_690a0e3.log.
+
+Note on my own oracle: the first X1 check matched "340.00" as a figure, but that text is the BALANCE DUE figure, which is identical. I rewrote the check to compare roles (stated billed, unreconciled, figure fields with cents), and F1 cites the role-based result.
+
+```json
+{"card": "T-083", "persona": "staff-engineer-reviewer", "model": "claude-haiku-5-5",
+ "scope": "git archive 690a0e3 (card commit; HEAD 9f2811f, billing files identical 690a0e3..HEAD): app/backend/billing.py, app/backend/amounts.py, tests/unit/test_billing.py, memory/contracts/api.md lines 663-706; D-049 (memory/ORCHESTRATOR_DECISIONS.md:57); T-083 card notes incl. the 05:29:40Z section 7.4 round-5 rules and the 05:32:43Z handoff. No app URL: billing exercised by direct analyze() probes on the pin. Sample CLI not on the billing path. All probe fixtures are SYNTHETIC.",
+ "exercised": [
+  "personas/staff-engineer.md read in full; reviewer memory (project_t083_billing_review_patterns.md, project_t083_r4_accounting_patterns.md) read; reviews/T-083-staff-engineer-r4.md read in full",
+  "python3 tools/board.py show T-083 (status in_review, rounds 4, commits to 690a0e3); memory/ORCHESTRATOR_DECISIONS.md:57 D-049 read",
+  "git rev-parse --short 690a0e3 (690a0e3); git archive 690a0e3 | tar -x into the scratchpad as pin-690a0e3-r5; cmp of billing.py and test_billing.py against the worktree (identical); git diff --stat 690a0e3 HEAD over the three billing files (empty; HEAD 9f2811f)",
+  ".venv/bin/python -m pytest -q tests/unit/test_billing.py in the worktree: 157 passed (pytest_worktree.log); .venv/bin/python -I -m pytest -q -p no:cacheprovider tests/unit/test_billing.py on the pin: 157 passed (pytest_pin_690a0e3.log)",
+  "red-flag grep for float(, except, sleep(, retry in billing.py, amounts.py, test_billing.py: no matches",
+  "r4 probe scripts rerun on the pin: probes_r4_copy_rerun.py explicit, multi, fuzz (probes_explicit_690a0e3.log, probes_multi_690a0e3.log, probes_fuzz_690a0e3.log); fuzz run twice and byte-identical (probes_fuzz_690a0e3_run2.log); probes_r4_skipped_copy_rerun.py (probes_skipped_690a0e3.log)",
+  "r5 probes: probes_r5.py cross (X0 baseline, X1, X2, X3, P1), balance (B0 to B6), bare (K1, K2); probes_r5_x4.py (X4, X5, X6, K3); probes_r5_figure_fields.py (role check of printed figures); probes_r5_collapsed.py (C1 to C5: dated rows with collapsed spacing and bare, two-decimal, $ figures); probes_r5_boundary2.py (bare '35' at column offsets 30 to 48: distance 8 kept, 9 and above dropped); probes_r5_cms_repeat.py (Y1); probes_r5_k1_description_dump.py (K1 line dump)",
+  "read billing.py 12-19 (docstring), 53, 59-64, 88-110, 127-175, 176-200, 205-240, 283-300, 315-330, 386-412, 586-655, 690-735, 738-955; memory/contracts/api.md 663-706; test_claim_form_and_ledger_for_the_same_provider_are_not_double_counted (tests/unit/test_billing.py:260) read",
+  "not exercised: the frontend billing panel; the app URL; the sample CLI (not on the billing path); the UB-04 family in the seeded sweep (not re-run in r5); r3 mutants N05 and N10; no mutation run on the code this round (the acceptance tests below are the mutant checks for the worker)"
+ ],
+ "verdict": "fail",
+ "scores": {"integer_cents_no_llm": 5, "repeated_summary_rows": 2, "bare_figure_accounting": 2, "balance_reconciliation": 4, "skipped_records_complete": 5, "honest_failure_visible": 2, "test_quality": 2, "determinism_and_reproducibility": 5},
+ "findings": [
+  {"severity": "blocker",
+   "title": "Ledger and CMS-1500 of one provider: printed totals are chosen across forms by record order; one printed total is dropped and the provider reads complete true",
+   "evidence": "app/backend/billing.py:844 stated.setdefault(k, []).append(v) collects every record of the provider whatever its form; :856 comp[kind] = stated.get(kind, [None])[-1]; :850 applies the form-family filter only to the repeat check; :624 and :641 (_account) count a stated total as placed from its own cite. Repro: artifacts/review-evidence/T-083-r5/probes_r5_cross_690a0e3.log X1 (ledger TOTAL CHARGES 340.00 rec 1, CMS-1500 box 28 85.00 rec 2): stated_totals billed 8500; checks LEDGER_TOTAL_MISMATCH 8500 vs 34000 and CLAIM_LEDGER_BILLED_MISMATCH 8500 vs 34000; totals.complete=True. probes_r5_cross2_690a0e3.log X4 (CMS-1500 rec 1 with Item 28 170 against its only line 85; ledger 340 rec 2): checks [CLAIM_LEDGER_BILLED_MISMATCH 8500 vs 34000]; totals.complete=True; probes_r5_figure_fields_690a0e3.log X4: '170.00' absent as a figure field, while the control X4b (CMS alone) shows '170 |00'. X2 (CMS first) in probes_r5_cross_690a0e3.log: the box 28 total is not in stated_totals and the claim's own total is not listed.",
+   "why_it_matters": "A printed summary row of this provider is lost while the provider reads complete true. The §7.4 rule written at 05:29:40Z says any second statement or summary row for a provider is listed and complete is false; api.md:706 says repeated summary rows are never overwritten. The card's ruling that a ledger and a claim are not a repeat is right for the repeat rule, and CLAIM_LEDGER_BILLED_MISMATCH is the designed comparison, but the code then overwrites one total with the other, labels the claim's Item 28 as the ledger's own stated total (X1: the paralegal is told the ledger says 85.00), and never checks a claim's Item 28 against its own lines when a ledger exists (X4). Two forms for one provider are an ordinary input.",
+   "fix": "Keep stated totals per form family. Compare the ledger's totals only with ledger lines. Compare each claim's Item 28 with that claim's own lines (CLAIM_TOTAL_MISMATCH) and list it with its cite. Remove the [-1] across families at :856. When a claim total and a ledger total of the same kind both print, list both in unreconciled (or stated_totals_repeated) and set complete false when they differ. In _account (:624, :641) test the output field, not the stated list (the r4 lesson).",
+   "acceptance_test": "Fixture X1 (ledger TOTAL CHARGES 340.00 in rec 1, CMS box 28 85.00 in rec 2): the printed 340.00 is the stated billed or sits in unreconciled, and the provider is complete false. Fixture X2 (CMS first): box 28 '85 |00' is listed. Fixture X4 (Item 28 170 against line 85, ledger 340 second): CLAIM_TOTAL_MISMATCH or an unreconciled entry carrying '170 |00', and complete false. Mutant: restore [-1] across families; the fixture must fail."},
+  {"severity": "blocker",
+   "title": "A bare whole-number charge on a dated ledger row is dropped with complete true once it sits more than TOL = 8 characters from every money header",
+   "evidence": "app/backend/billing.py:64 TOL = 8; :53 _BARE is read only under a money column; :172 _tokens keeps a bare number only when _column(m.span(), cols) is not None; :586 _unit_tokens uses the same test for the accounting pass (:611 to :655), so the pass cannot see a figure the column test rejected. Repro: artifacts/review-evidence/T-083-r5/probes_r5_boundary_690a0e3.log: '35' at columns 46-48 (distance 10 from CHARGES): 'row billed=None unclear=[] checks=[] | totals.complete=True'; at 48-50 (distance 8): 'unclear=['35'] | totals.complete=False'. probes_r5_collapsed_690a0e3.log C2 (verbatim row '06/12/26 06/13/26 97014 Misc fee 35', single spaces): 'totals.complete=True provider.complete=True ... checks=['LEDGER_TOTAL_MISMATCH', 'LEDGER_BALANCE_MISMATCH']'; line b2 'billed=None unclear=[] unparsed=False checks=[]'. The same row with 35.00 (C1) or $35 (C3) is listed unclear with complete false. api.md:705 (verbatim): 'two equally near columns or a figure far from every header is `unclear`, never guessed'; and 'nothing is dropped while a provider reads `complete: true`'.",
+   "why_it_matters": "A charge line vanishes while the provider and totals read complete true. The only sign is LEDGER_TOTAL_MISMATCH (C2: 245.00 stated against 210.00 computed), and that check does not change complete (F3). This is the r2 and r3 blocker class that D-049 was written to end. The §7.4 ruling (api.md:706, billing.py docstring) excludes bare numbers outside every amount column, but the code decides 'in a column' with the same 8-character test that rejected the figure, so for dated rows the exclusion is circular. Under api.md:705 the figure is far from every header and must be unclear. Pasted statements lose their fixed-width alignment, so this is a realistic layout. Blast radius: the per-provider billed and paid figures in the internal billing view. The letter's total line is unaffected (D-019).",
+   "fix": "On a dated or undated ledger row (a DOS or a code present), a bare whole number that _column cannot place is emitted as ROW_NOT_PARSED with unclear=[figure] and the provider made incomplete, the same handling C1 and C3 already receive. Apply the same rule in _account so the accounting pass sees it. If Chris rules that a bare number on a dated row is not money, restate api.md:705 and D-049 in one place and say so in the test docstring.",
+   "acceptance_test": "boundary2 at distance 9 and 10 and C2 and C5: the '35' is in unclear or unreconciled and totals.complete is False; the distance-8 case stays unclear. Mutant: widen the dated-row path to ignore _column (or set TOL to 0 on that path); the fixture must fail on the zero-distance case."},
+  {"severity": "major",
+   "title": "A failed reconciliation (LEDGER_TOTAL_MISMATCH, LEDGER_BALANCE_MISMATCH, claim checks) leaves the provider and totals complete true",
+   "evidence": "app/backend/billing.py:897 complete = not unclear and not unparsed_all and not bad_steps and not repeated and all forwards readable; the pchecks built at :863 to :881 are not an input. Repro: probes_r5_cross_690a0e3.log P1 (TOTAL CHARGES 999.00 against lines 340.00, one statement, no repeat): 'totals.complete=True ... checks=[('LEDGER_TOTAL_MISMATCH', 99900, 34000, None), ('LEDGER_BALANCE_MISMATCH', 99900, 34000, None)]'. probes_r5_balance_690a0e3.log B3 (balance 999.00, neither reading): 'totals.complete=True ... checks=[('LEDGER_BALANCE_MISMATCH', 99900, 34000, 44000)]'. The r3 minor 'complete ignores line checks' was closed only for BALANCE_STEP_MISMATCH (api.md:706).",
+   "why_it_matters": "A printed total that does not reconcile appears only as a check while the badge says complete. This is the amplifier for F1 and F2: the dropped $35 in C2 reads complete, with a check as the only trace. The check is raised, so nothing is silent, which keeps this at major and not blocker.",
+   "fix": "Either count LEDGER_TOTAL_MISMATCH, LEDGER_BALANCE_MISMATCH, CLAIM_TOTAL_MISMATCH and CLAIM_LEDGER_BILLED_MISMATCH in complete (preferred), or write the rule into api.md:706 and show a separate 'complete, with mismatches' state to the paralegal.",
+   "acceptance_test": "P1 and B3 each assert totals.complete False and provider complete False. Mutant: remove the reconciliation codes from complete; P1 must fail."},
+  {"severity": "minor",
+   "title": "Stray-line bare whole numbers outside every column still drop with complete true (12 of 360 seeded cases), a scope cut under the §7.4 ruling",
+   "evidence": "artifacts/review-evidence/T-083-r5/probes_fuzz_690a0e3.log: VIOLATION_LOST_COMPLETE_TRUE 12, all table/stray_line/* and table/stray_line_above_rows/* (bare and comma whole numbers); probes_fuzz_690a0e3_run2.log is byte-identical. Rule: billing.py:12-16 docstring; api.md:706 'A bare whole number outside every amount column is not a money token'.",
+   "why_it_matters": "This is the r4 finding 3, unchanged. It is inside the ruled definition, so it does not break the written rule. It does fail the bar 'nothing silent while complete', because a stray '208' could be a count or a charge. The residual is real and Chris should see it.",
+   "fix": "Record the scope cut in memory/SCOPE_CUTS.md with the 12 seeded cases. If Chris rules the stray figure money-shaped, extend the F2 fix to undated stray lines.",
+   "acceptance_test": "Either a SCOPE_CUTS row exists and api.md:706 names stray lines as a limit, or probes_r4.py fuzz reports 0 lost-with-complete-true."},
+  {"severity": "minor",
+   "title": "A bare number inside a description that runs into the CHARGES span is read as a charge figure: the description is cut and the row is flagged",
+   "evidence": "artifacts/review-evidence/T-083-r5/probes_r5_k1_690a0e3.log: row '06/01/26  06/02/26  97162  PT eval 2 of 3, visit 4       210.00' gives description 'PT eval 2 of 3, visit', unclear ['4'], checks ['LINE_UNCLEAR'], totals.complete False. probes_r5_cross2_690a0e3.log K3 with a short description ('Eval 2 of 3') stays complete True.",
+   "why_it_matters": "False incompleteness and an altered description. No money is lost, so minor.",
+   "fix": "Treat a bare number as a column figure only when it is the last token of the row and sits within TOL of the header; keep the description text whole.",
+   "acceptance_test": "The K1 row keeps the description 'PT eval 2 of 3, visit 4' and the provider reads complete true."},
+  {"severity": "nit",
+   "title": "With two or more balance forwards the balance check is skipped; the provider is incomplete but gives no convention or reason",
+   "evidence": "artifacts/review-evidence/T-083-r5/probes_r5_balance_690a0e3.log B4 and B5: 'balance_convention=None', checks [], totals.complete False, both forwards listed in unreconciled (100.00 and 50.00).",
+   "why_it_matters": "The worker's call (no verdict with two forwards) is accepted: the forward rows are unclear, so the provider is incomplete. A reason would tell the paralegal why the balance was not checked.",
+   "fix": "Add a provider note 'balance not checked: two balance forwards', or a check code.",
+   "acceptance_test": "B5 asserts the reason is present."}
+ ],
+ "whats_right": [
+  "Repeated summary rows within one form family are listed and make the provider incomplete (M2 to M5, E3, B6; two CMS-1500 claims at 85.00 and 170.00 both listed, Y1), and skipped billing records make totals.complete false with status partial_unclear (S2, S3).",
+  "The BALANCE DUE either-way convention works and reports which reading matched (B1 without_forward, B2 with_forward; B3 neither gives LEDGER_BALANCE_MISMATCH with computed_with_forward), with integer cents and no float, except, sleep or retry in the billing files.",
+  "The seeded sweep is reproducible: probes_fuzz_690a0e3_run2.log is byte-identical to the first run, and the 157 unit tests pass on both the worktree and the pin."
+ ],
+ "questions_for_chris": [
+  "F2: is a bare whole number at the end of a dated ledger row whose figure sits more than 8 characters from every money header a money token? The code and the §7.4 definition say no, and that row then reads complete. api.md:705 says it must be unclear. The answer decides whether F2 stays a blocker or drops to major.",
+  "F3: should LEDGER_TOTAL_MISMATCH, LEDGER_BALANCE_MISMATCH and the claim checks make a provider complete false? I recommend yes.",
+  "F4: is a bare whole number on a stray line money-shaped? If yes, it joins the F2 fix. If no, it becomes a SCOPE_CUTS row."
+ ]}
+```

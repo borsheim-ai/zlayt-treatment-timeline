@@ -1,0 +1,36 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-02-10
+Source: Quarry Hill Occupational Health, intake
+Excerpt: "Employee slipped on ice in the employer parking lot before the shift and fell on the right wrist and low back. Reported to supervisor. Not on duty at the time per patient."
+
+=== Record 2 ===
+Date: 2026-02-10
+Source: Cobblestone Imaging
+Excerpt: "X-ray right wrist: nondisplaced distal radius fracture. X-ray lumbar spine: mild degenerative changes. Charge: $640."
+
+=== Record 3 ===
+Date: 2026-02-17
+Source: Dr. Eudora Fennimore, orthopedics
+Excerpt: "Casted right distal radius fracture. Patient states she had prior low back surgery in another state and outside records have been requested. Low back pain 6/10."
+
+=== Record 4 ===
+Date: 2026-03-17
+Source: Dr. Eudora Fennimore, orthopedics
+Excerpt: "Wrist healing in cast. Outside records not yet received. Low back pain persists."
+
+=== Record 5 ===
+Date: 2026-04-14
+Source: Dr. Eudora Fennimore, orthopedics
+Excerpt: "Cast removed. Wrist range of motion improving. Low back pain 5/10; lumbar MRI ordered."
+
+=== Record 6 ===
+Date: 2026-05-12
+Source: Cobblestone Imaging, lumbar MRI
+Excerpt: "L4-L5 disc protrusion with mild canal narrowing. Postoperative changes at L4-L5. Possible aggravation of a pre-existing condition cannot be excluded. MRI charge: $1,980."
+
+=== Record 7 ===
+Date: 2026-06-09
+Source: Dr. Eudora Fennimore, orthopedics
+Excerpt: "Surgeon cannot state to a reasonable degree of medical probability whether the fall aggravated the low back condition. Recommend epidural steroid injection at L4-L5."

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Total amount charged: $2,910.00. Amount paid: $250.00. Amount unpaid that the provider has a right to be paid: $2,660.00.",
+  "summary": "Affidavit states total amount charged $2,910.00, amount paid $250.00, and amount unpaid that the provider has a right to be paid $2,660.00."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:51Z"
+ }
+}

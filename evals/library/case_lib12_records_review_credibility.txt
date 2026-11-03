@@ -1,0 +1,51 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-02-09
+Source: Tallowby Fire-Rescue run report
+Excerpt: "Restrained driver of a pickup struck at an intersection. Minor damage to the rear bumper. Pt states low back pain 6/10. Transported to Orrin Vale Community ED."
+
+=== Record 2 ===
+Date: 2026-02-09
+Source: Orrin Vale Community ED
+Excerpt: "Dx: lumbar strain. X-ray lumbar spine negative for fracture. Discharged on ibuprofen. ED charge: $2,780."
+
+=== Record 3 ===
+Date: 2026-02-23
+Source: Dr. Marisol Dunmore, primary care
+Excerpt: "Low back pain 6/10, likely a strain superimposed on mild degenerative changes. Referred to physical therapy."
+
+=== Record 4 ===
+Date: 2026-03-09
+Source: Harrowmere Physical Therapy, initial evaluation
+Excerpt: "Lumbar flexion limited. 0/5 Waddell signs. Pain 6/10. Plan of care: 12 visits."
+
+=== Record 5 ===
+Date: 2026-03-30
+Source: Harrowmere Physical Therapy, visit 8
+Excerpt: "Pain 5/10. No Waddell signs. Good effort. Core strengthening progressed."
+
+=== Record 6 ===
+Date: 2026-04-20
+Source: Harrowmere Physical Therapy, functional capacity evaluation
+Excerpt: "Pain 6/10. Waddell 3/5 positive; effort inconsistent. Lifting tolerance 25 pounds."
+
+=== Record 7 ===
+Date: 2026-05-04
+Source: Harrowmere Physical Therapy, visit 16
+Excerpt: "Pain 5/10. Waddell signs negative on the left and positive on the right. Full effort, but symptom magnification noted with light touch."
+
+=== Record 8 ===
+Date: 2026-06-22
+Source: Dr. Marisol Dunmore, primary care, follow-up
+Excerpt: "Low back pain 4/10. Patient states she missed two physical therapy visits in May. Refer to pain management."
+
+=== Record 9 ===
+Date: 2026-07-15
+Source: Marlowe Assurance Group, correspondence, records review letter
+Excerpt: "Records review requested by the carrier after the demand; the reviewer did not examine the claimant. The PT note of 03/09/2026 documents 0/5 Waddell signs. The functional capacity evaluation of 04/20/2026 documents Waddell 3/5 and inconsistent effort. The PT note of 05/04/2026 documents full effort but symptom magnification with light touch. Opinion: findings are consistent with a self-limited lumbar strain; treatment after 04/20/2026 was not reasonable or necessary."
+
+=== Record 10 ===
+Date: 2026-07-31
+Source: Harrowmere Physical Therapy, itemized statement
+Excerpt: "Itemized statement: initial evaluation charge $210.00; treatment visits 1 through 16 charge $2,320.00; functional capacity evaluation charge $480.00. Fee schedule $145.00 per visit."

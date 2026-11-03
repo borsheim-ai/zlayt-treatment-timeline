@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "pre_existing",
+    "excerpt": "History: occasional stiffness in the mornings at baseline.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:52:49Z"
+ }
+}

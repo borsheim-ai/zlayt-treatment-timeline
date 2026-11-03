@@ -1,0 +1,27 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-08-03
+Source: Gloamwood Chiropractic, initial evaluation
+Excerpt: "Low back pain 5/10. Treatment plan: 8 visits. Fee schedule: $95 per adjustment."
+
+=== Record 2 ===
+Date: 2026-08-10
+Source: Gloamwood Chiropractic, billing statement
+Excerpt: "Statement for initial exam and x-ray: $1,2OO."
+
+=== Record 3 ===
+Date: 2026-08-17
+Source: Gloamwood Chiropractic, visit 2
+Excerpt: "Adjustment performed. Pain 4/10. Charge: $95.00."
+
+=== Record 4 ===
+Date: 2026-08-24
+Source: Gloamwood Chiropractic, visit 3
+Excerpt: "Adjustment performed. Pain 3/10. Charge: $9S.00."
+
+=== Record 5 ===
+Date: 2026-09-02
+Source: Dr. Hobart Wimbleton, radiology
+Excerpt: "Lumbar spine X-ray, 2 views. Radiology charge: $240."
+

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Splint removed. Begin hand therapy 2x/week.",
+  "summary": "Splint removed. Begin hand therapy 2x/week."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:18Z"
+ }
+}

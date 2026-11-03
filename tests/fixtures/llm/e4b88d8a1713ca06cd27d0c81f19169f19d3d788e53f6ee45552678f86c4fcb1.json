@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "How did it happen: rear ended at red Iight, neck and back hurt. Prior accidents? Yes [ ] No [X]. Prior injuries? Yes [ ] No IX]. Pain today: 7.",
+  "summary": "Intake form: rear ended at red light, neck and back hurt; prior accidents and prior injuries marked No; pain today 7."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:42Z"
+ }
+}

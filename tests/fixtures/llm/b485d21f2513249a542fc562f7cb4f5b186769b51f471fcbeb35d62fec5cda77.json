@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: lumbar and cervical sprain. CT cervical spine negative. Rx naproxen. Refer to chiropractic or primary care. ED charge: $5,260.",
+  "summary": "Diagnosed with lumbar and cervical sprain; CT cervical spine negative; naproxen prescribed; referred to chiropractic or primary care; ED charge $5,260."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:23:56Z"
+ }
+}

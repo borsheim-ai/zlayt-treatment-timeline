@@ -1,0 +1,16 @@
+---
+name: t136-edit-to-check
+description: T-136 hooks: item.edit_to_check source of truth, ZL.editCount, a-key prompt, Dismissed groups for flags/amounts, ZLAYT_DB test recipe
+metadata:
+  type: project
+---
+`ZL.editToCheck(i)` is now `i.edit_to_check === true` (server flag, T-134); `ZL.editCount(c)` reads `c.review.counts.edit_to_check` (fallback: count of items) and feeds progressOf.edits, the strip (clamped to open entries), copy-confirm. Header: "N items need review, including K edits to check". Mock API sets edit_to_check too.
+`a` on an edit row never records "I compared it with the quote": `askCompare` (review.js) shows `edit-compare-prompt` and focuses btn-accept; Enter/click records. Start review then `a` is the same path.
+Gate warning EDIT_NOT_CONFIRMED: stepper.js warningNode (heading "Edit to check (n)", jump `gotoFirstEdit`); caseCopy "review" step names the edit when counts.pending is 0.
+Dismissed flags/amounts: `RV.dismissedBox(kind, n, body)` (kinds "flags"/"amounts", open state `ZL.dismissedOpenBy`), testids dismissed-group-flags/-amounts. Dismissed rows are outside `[data-group]`.
+**Test recipe:** the curated fixture verifies every entry, so e2e needs ZLAYT_DB and `DB.update_item(conn, id, case=tok, state="needs_review")` to force Needs review (reasons cannot be written; the edit response adds JUDGE_UNAVAILABLE). That also makes the case-checks active step "judges"; stub /trace to pass it when testing the review step text.
+**Round 2 (T-136 r2, D-058):** `ZL.comparedEdit(i)` (accepted + needs_review + edited) -> chip "Compared by you" + reason "Compared by you with the quote..." (timeline.js chips/comparedReason). `ZL.secondCheckPending(i)` = ai_drafted, no edited.summary, reasons has JUDGE_UNAVAILABLE (one place; swap for a server flag if the backend adds one). For such an edit the hint/prompt/rail warning use the server's words (item trace `human` step why; warning why from the gate) with a same-meaning fallback in review.js (AI_HELD); after compare the row shows `compare-export-note` (case-trace blocker why) with `btn-write-summary` (NOT a rerun), and gate blocker rows get `btn-gate-write-summary`.
+**Test infra:** tests/e2e/conftest.py `pytest_configure` starts a private app (fixture, curated, ZLAYT_MODE=local, temp ZLAYT_DB) when neither E2E_BASE_URL nor ZLAYT_DB is set, so plain `pytest tests/e2e` runs the DB specs; `needs_db()` skips or, with E2E_REQUIRE_DB=1, fails. Mutant guards: header follows a stubbed server count (route stub on GET case AND the review POST), three `a` presses never record.
+**Pitfall:** a "clean worktree" of HEAD is not clean enough when other agents have uncommitted fixtures/backend; rsync the working tree (minus .git/.venv/artifacts/board) into the scratchpad instead and symlink .venv.
+
+**T-142 (conflict coverage):** flags.js `coverage(c, open)` renders a `conflict-coverage` details in the Conflicts group (open when empty) from `case.checks` {conflict_types, labels, not_checked[{type,label}]} (backend conflict_candidates.checks()), fixed fallback + `conflict-coverage-note` without it; empty state `conflict-empty` never says the bare "No conflicts found." Tests stub GET case via route (tests/e2e/test_conflict_coverage.py).

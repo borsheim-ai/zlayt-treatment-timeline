@@ -1,0 +1,202 @@
+WEBVTT
+
+1
+00:00:00.104 --> 00:00:03.950
+This is Your cases, the home page. The yellow bar
+
+2
+00:00:03.950 --> 00:00:07.796
+says the data is synthetic, and the blue label says
+
+3
+00:00:07.796 --> 00:00:10.873
+the sample answers were prepared by our team.
+
+4
+00:00:10.873 --> 00:00:14.720
+I have no cases yet, so I open the sample.
+
+5
+00:00:14.723 --> 00:00:17.800
+Step 1 found the nine records in the
+
+6
+00:00:17.800 --> 00:00:20.493
+sample case. I press Draft the timeline.
+
+7
+00:00:20.497 --> 00:00:24.343
+In this demo the summaries and warnings were prepared by
+
+8
+00:00:24.343 --> 00:00:28.189
+our team ahead of time. They were not written by
+
+9
+00:00:28.189 --> 00:00:32.035
+an AI just now, and nothing is sent to an
+
+10
+00:00:32.035 --> 00:00:35.881
+AI while this demo runs. Nineteen timeline items and four
+
+11
+00:00:35.881 --> 00:00:38.959
+bill amounts are ready for me to check.
+
+12
+00:00:38.959 --> 00:00:42.036
+Step 2 shows one item at a time.
+
+13
+00:00:42.036 --> 00:00:45.498
+On the left is the record, with the quoted
+
+14
+00:00:45.498 --> 00:00:48.959
+words highlighted. On the right is the line to
+
+15
+00:00:48.959 --> 00:00:49.344
+check.
+
+16
+00:00:49.346 --> 00:00:53.192
+Three checks stand between a line and the letter. First,
+
+17
+00:00:53.192 --> 00:00:57.038
+code checks that the quote is in the record word
+
+18
+00:00:57.038 --> 00:01:00.115
+for word, and that every number matches. Second,
+
+19
+00:01:00.115 --> 00:01:03.961
+a different AI model checks the line against its quote.
+
+20
+00:01:03.961 --> 00:01:07.040
+Third, me. Nothing moves on until I answer.
+
+21
+00:01:07.040 --> 00:01:10.501
+Under the line, a panel shows how it was
+
+22
+00:01:10.501 --> 00:01:13.963
+checked: what the code found, the second AI check's
+
+23
+00:01:13.963 --> 00:01:17.039
+verdict and why, and then my own decision.
+
+24
+00:01:17.039 --> 00:01:20.501
+This page, linked at the top of every screen,
+
+25
+00:01:20.501 --> 00:01:24.731
+explains how each answer is checked. Code first, then the second
+
+26
+00:01:24.731 --> 00:01:28.963
+AI check, then me. The AI never has the last word.
+
+27
+00:01:29.041 --> 00:01:32.887
+I read the highlighted words, then say Yes, this matches.
+
+28
+00:01:32.887 --> 00:01:37.118
+The next item opens in the same boxes, and I can
+
+29
+00:01:37.118 --> 00:01:37.503
+undo.
+
+30
+00:01:37.503 --> 00:01:41.734
+This warning is tagged Found by code: a program counted the
+
+31
+00:01:41.734 --> 00:01:45.195
+days. It goes in the notes for the attorney,
+
+32
+00:01:45.195 --> 00:01:49.428
+never in the letter. I decide whether she should be told.
+
+33
+00:01:49.428 --> 00:01:52.889
+To save time I will say yes to the
+
+34
+00:01:52.889 --> 00:01:57.928
+rest. In real use I would read each one.
+
+35
+00:01:57.928 --> 00:02:01.390
+Step 2 is done. Every item has an answer.
+
+36
+00:02:01.390 --> 00:02:05.621
+Step 3 is the bill amounts. Code finds them and adds
+
+37
+00:02:05.621 --> 00:02:09.853
+them up. I decide whether each charge counts toward the total.
+
+38
+00:02:09.853 --> 00:02:12.930
+Some amounts, like this rate, are never added
+
+39
+00:02:12.930 --> 00:02:15.624
+to the total. The page says so.
+
+40
+00:02:17.595 --> 00:02:20.672
+Step 3 is done. The total is added
+
+41
+00:02:20.672 --> 00:02:23.365
+up by code, not by an AI.
+
+42
+00:02:23.365 --> 00:02:26.442
+Step 4. The letter is on the left.
+
+43
+00:02:26.442 --> 00:02:29.903
+The notes for the attorney, marked do not send,
+
+44
+00:02:29.903 --> 00:02:32.980
+are on the right. I copy the letter,
+
+45
+00:02:32.980 --> 00:02:34.134
+then download it.
+
+46
+00:02:34.134 --> 00:02:38.365
+This is the file I downloaded, plain text, ready to paste.
+
+47
+00:02:38.365 --> 00:02:42.598
+Each charge line has a blank for the date of service.
+
+48
+00:02:42.598 --> 00:02:46.059
+Back on Your cases, this one now says Letter
+
+49
+00:02:46.059 --> 00:02:48.752
+ready. Everything here was a prepared answer.
+
+50
+00:02:48.752 --> 00:02:52.214
+The AI's own results are in the evaluation report.
+

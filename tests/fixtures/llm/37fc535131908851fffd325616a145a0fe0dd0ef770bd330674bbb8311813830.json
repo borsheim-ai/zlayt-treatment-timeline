@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Left clavicle fracture, nonoperative management. Sling 4 more weeks.",
+  "summary": "Left clavicle fracture, managed nonoperatively, with sling for 4 more weeks."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:52Z"
+ }
+}

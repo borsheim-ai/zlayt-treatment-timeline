@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "MRI reviewed. Low back pain 8/10. Recommend microdiscectomy. Estimated surgical cost $38,500.",
+  "summary": "MRI reviewed. Low back pain 8/10. Microdiscectomy recommended. Estimated surgical cost $38,500."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:14:05Z"
+ }
+}

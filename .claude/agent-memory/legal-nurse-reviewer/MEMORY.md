@@ -1,0 +1,3 @@
+- [Probe must_not regexes both ways](feedback_probe_must_not_regexes.md) — probe faithful+violating+abbreviations; read good_examples against the record (T-015 r1/r2)
+- [Golden entries lack summary requirements](project_golden_entries_no_summary.md) — T-015 r2: required_terms on summary+excerpt, omissions still pass; source_kind entry-level
+- [Lexicon recall + negation probes](feedback_lexicon_recall_and_negation.md) — T-009 r1/r2: authors absorb probes into examples; always add held-out probes, grade strictly

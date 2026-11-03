@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Cyclist struck by a car at low speed. Left shoulder pain. Transported to Thornapple Valley Hospital ED.",
+  "summary": "Cyclist struck by a car at low speed; left shoulder pain; transported to Thornapple Valley Hospital ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:52Z"
+ }
+}

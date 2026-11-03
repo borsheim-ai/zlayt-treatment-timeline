@@ -1,0 +1,25 @@
+SYNTHETIC — invented by claims-adjuster-reviewer for T-140; not real patient data
+
+=== Record 1 ===
+Date: 2026-04-01
+Source: Larkspur Regional ED
+Excerpt: "Dx: cervical strain. X-ray cervical spine negative for fracture. ED charge: $1,000."
+
+=== Record 2 ===
+Date: 2026-05-01
+Source: Brindlewood Physical Therapy, patient statement
+Excerpt: "Patient statement, statement date 05/01/2026. 04/02/2026 PT evaluation charge $200.00; running total $200.00. 04/09/2026 therapeutic exercise charge $150.00; running total $350.00. 04/16/2026 manual therapy charge $150.00; cumulative charges $500.00. Insurance remit applied to evaluation charge -$120.00. Statement total $500.00. Balance due $380.00."
+
+=== Record 3 ===
+Date: 2026-06-01
+Source: Brindlewood Physical Therapy, patient statement
+Excerpt: "Patient statement, statement date 06/01/2026. Previous statement $380.00. Prior balance carried forward $380.00. 04/16/2026 manual therapy charge $150.00. 05/07/2026 therapeutic exercise charge $150.00. Reversal of 05/07/2026 exercise charge -$150.00. Payment - thank you -$100.00. New charges $300.00. Statement total $300.00. Total amount due $580.00."
+
+=== Record 4 ===
+Date: 2026-07-01
+Source: Brindlewood Physical Therapy, account ledger
+Excerpt: "Date  Description  Charges  Payments  Balance
+06/10/2026  Manual therapy  $150.00  $0.00  $730.00
+06/17/2026  Ins pmt Acme Mutual  $0.00  -$90.00  $640.00
+06/24/2026  Manual therapy  $150.00  $0.00  $790.00
+Year-to-date charges $1,100.00"

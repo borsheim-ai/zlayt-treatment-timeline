@@ -1,0 +1,26 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "prior_surgery",
+    "excerpt": "Postoperative changes at L4-L5.",
+    "type": "pre_existing"
+   },
+   {
+    "category": "speculative_language",
+    "excerpt": "Possible aggravation of a pre-existing condition cannot be excluded.",
+    "type": "causation"
+   },
+   {
+    "category": "pre_existing",
+    "excerpt": "Possible aggravation of a pre-existing condition cannot be excluded.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:48Z"
+ }
+}

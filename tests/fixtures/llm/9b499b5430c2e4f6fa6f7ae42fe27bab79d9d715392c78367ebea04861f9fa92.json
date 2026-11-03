@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "pre_existing",
+    "excerpt": "History per patient: car accidents in 2019 and 2022 with neck and low back pain, treated with physical therapy.",
+    "type": "pre_existing"
+   },
+   {
+    "category": "degenerative_language",
+    "excerpt": "Problem list: hypertension, type 2 diabetes, chronic low back pain.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:13:34Z"
+ }
+}

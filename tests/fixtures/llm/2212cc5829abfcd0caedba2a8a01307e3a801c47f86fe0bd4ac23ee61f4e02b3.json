@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Flexion 115 degrees. Pain 4/10.",
+  "summary": "Flexion 115 degrees. Pain 4/10."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:19Z"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "History per patient: car accidents in 2019 and 2022 with neck and low back pain, treated with physical therapy.",
+  "summary": "Annual visit; history per patient of car accidents in 2019 and 2022 with neck and low back pain, treated with physical therapy."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:35Z"
+ }
+}

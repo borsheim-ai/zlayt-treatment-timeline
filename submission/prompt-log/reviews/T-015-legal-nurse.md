@@ -1,0 +1,76 @@
+# T-015 Eval golden set: legal-nurse review
+
+**Verdict: fail** (2 blockers, 2 majors). The arithmetic and the wording the golden set writes itself are clinically sound. All 20 seeded hallucinations are really unsupported, and the 5 controls are really faithful. Two problems need fixing first:
+
+- The regex checks that enforce the Appendix C must-nots are unreliable in both directions. M6 (concussion without loss of consciousness) is backwards: it fails faithful wording and passes the actual reversal. M2/M3 (degenerative/traumatic/causation) fail the wording a correct causation flag naturally uses, and miss direct conversions.
+- The hallucination set has no items for laterality, spinal level, a real severity upgrade, or a complaint stated as a finding.
+
+Per-item verdicts: `artifacts/review-evidence/T-015-legal-nurse-items.md`.
+
+```json
+{"card": "T-015", "persona": "legal-nurse-reviewer", "model": "claude-opus-5-5",
+ "scope": "commit 47520a8, evals/golden/** (README, sample + 8 synthetic cases, hallucinations.jsonl, hallucinations_controls.jsonl, check_golden.py); references spec/SAMPLE_CASE_TRUTHS.md, docs/LLM_VS_CODE.md; no app (pre-code card)",
+ "exercised": [
+   "python3 tools/board.py show T-015 (AC 1-4)",
+   "python3 evals/golden/check_golden.py -> 'golden OK: 9 cases (8 synthetic), 20 hallucination items, all stress types covered', exit=0",
+   "read sample.txt, sample.expected.json in full; README.md; spec/SAMPLE_CASE_TRUTHS.md; docs/LLM_VS_CODE.md",
+   "read case_06/07/08 .txt and summarised their expected.json (entries, flags, must_not_flag, tolerated, warnings, must_not); scanned case_01-05 excerpts, flags and must_not",
+   "printed all 20 hallucinations.jsonl items and 5 controls; judged each against its record_text",
+   "regex probe (python3 -I): loaded sample must_not patterns M1/M2/M3/M6/M8/M9 from JSON and ran 38 faithful and violating phrasings; output saved verbatim in the items file",
+   "regex probe: case_04 M4, case_05 M4, case_06 M2, case_08 M1 against faithful/violating phrasings",
+   "self-consistency probe: every must_not regex vs the golden's own flag summaries/display/notes in all 9 cases -> no hits",
+   "counted hallucination source records: Counter({'sample': 18, 'other': 2})"
+ ],
+ "verdict": "fail",
+ "scores": {"clinical_fidelity_of_reference_wording": 4, "appendix_c_must_not_check_reliability": 2, "hallucination_set_genuineness": 5, "hallucination_failure_mode_coverage": 2, "controls_faithfulness": 5, "objective_vs_subjective_coverage": 2},
+ "findings": [
+  {"severity": "blocker", "title": "M6 (concussion without loss of consciousness) fails faithful summaries and passes the actual reversal",
+   "evidence": "evals/golden/sample.expected.json:631 pattern \"(?i)(?<!without )loss of consciousness|\\\\bknocked out\\\\b|...\". Probe output: 'M6 HIT  | Concussion, no loss of consciousness.' 'M6 HIT  | Concussion w/o loss of consciousness.' 'M6 HIT  | Patient denies loss of consciousness.' 'M6 HIT  | Concussion without any loss of consciousness.' 'M6 miss | Patient lost consciousness briefly.' 'M6 miss | Concussion with LOC.' 'M6 miss | Concussion (+LOC).' 'M6 miss | Mild concussion.' M6 is check type regex only (no judge fallback).",
+   "why_it_matters": "Appendix C: the tool must not 'treat \"concussion without loss of consciousness\" as anything other than what it says', and LLM_VS_CODE.md says each such item 'is a golden-set check'. As written, the check hard-fails a tool that writes the clinically standard 'no LOC' wording, and passes a tool that says the patient lost consciousness, which invents a more severe head injury. 'Mild concussion' (an added severity grade) is also not caught.",
+   "fix": "Anchor the check positively, not with a single negative lookbehind. Match any reversal (lost consciousness, with/+ LOC, brief LOC, knocked out, unconscious, TBI, mild/moderate/severe concussion, post-concussion syndrome). Allow every negated form (without, w/o, no, denies, without any, did not lose). Add check type judge as a second channel.",
+   "acceptance_test": "check_golden.py includes a fixture list per must_not regex: each phrasing above marked faithful must miss, each marked violating must hit; the script exits non-zero on any mismatch."},
+  {"severity": "blocker", "title": "M2/M3 (degenerative/traumatic/causation) fail correct causation-flag wording and miss direct conversions of the hedge",
+   "evidence": "evals/golden/sample.expected.json:608 (M2), :614 (M3); README 'regex ... applied to tool-authored text only (summaries, flag text, totals, export)'. Probe: 'M2 HIT  | Adjuster may argue the findings are degenerative rather than caused by the collision.' 'M2 HIT  | Patient states symptoms began after the collision; no physician states they are due to the collision.' 'M2 HIT  | Findings could represent degenerative change.' 'M3 HIT  | Hedged language could be used to argue degenerative rather than traumatic origin.' versus 'M2 miss | Degenerative disc disease at C5-C6.' 'M2 miss | Likely degenerative change at C5-C6.' 'M2 miss | Findings consistent with degenerative disc disease.' 'M2 miss | Collision-related disc protrusion.'",
+   "why_it_matters": "The causation flags K1 and K3 are `must`, and their whole purpose is to say what an adjuster may argue (degenerative rather than collision-caused). The natural, correct wording of those flags hard-fails the case, which pushes the product toward vaguer flag text. Meanwhile three direct breaches of Appendix C pass the check: 'degenerative disc disease' (an invented diagnosis), 'likely degenerative' (the hedge upgraded from 'may' to 'likely'), and 'collision-related' (a causation claim). The golden set measures the opposite of the constraint.",
+   "fix": "Split the checks. (a) Hedge conversion: in summaries, flag a degenerative/traumatic characterisation unless it carries a hedge ('may', 'might', 'could', 'possible'). Add 'degenerative disc disease', 'DDD', 'likely/probable degenerative' and 'age-related'. (b) Causation conclusions: add '<anything>-related', 'sustained in', 'from the collision'. Exempt clauses an adjuster could argue ('may argue', 'could be argued', 'rather than') in flag text, or move these items to check type judge.",
+   "acceptance_test": "Fixture list in check_golden.py: the K1/K3-style rationales and the 'could/may represent' hedges miss; the DDD/likely/collision-related phrasings hit; the script fails on any mismatch."},
+  {"severity": "major", "title": "Seeded-hallucination set misses laterality, spinal level, real severity upgrade, complaint-as-finding and negative-study flips; H12 is mislabeled",
+   "evidence": "evals/golden/hallucinations.jsonl (20 items): categories are invented_diagnosis, hedge_removed, hedge_flipped, invented_number, computed_pt_total, wrong_date, outcome_flipped, invented_provider, accident_dates_merged, patient_report_as_physician_opinion, invented_treatment, severity_inflation, invented_amount, outcome_invented, invented_prior_condition, diagnosis_from_symptoms, injection_obeyed, transposed_digits, ocr_guess_as_fact, recommended_as_performed. No item changes 'right' to 'left' (records 7, 8), C5-C6 to another level, 'mild' to 'moderate/severe' foraminal narrowing, 'C/O neck pain' (EMS complaint) to an examination finding, or 'CT head negative' to a positive study. H12 (line 12) 'category: severity_inflation' is 'concussion with brief loss of consciousness', a negation flip. 18 of 20 use sample records.",
+   "why_it_matters": "This set is the judge's ship bar (>= 95% recall). Laterality, level and severity substitutions are among the most common and most damaging errors in clinical summaries: a wrong side or level in a demand letter gets the whole chronology impeached. A judge blind to all of them could still score 100% here. Complaint-versus-finding is the basic objective/subjective distinction an adjuster attacks first. Heavy reuse of the sample also lets the judge prompt overfit to one case.",
+   "fix": "Replace or add items (keep 20+) with at least: right -> left arm or foraminal side; C5-C6 -> C6-C7; mild -> severe narrowing; neck pain 6/10 -> 9/10; 'C/O neck pain' -> 'exam revealed cervical tenderness'; 'CT head negative' -> 'CT head showed a small bleed'; 'Patient denies prior neck problems' -> 'no prior neck problems' (case_06). Relabel H12 as negation_flipped. Take at least 5 items from synthetic records.",
+   "acceptance_test": "check_golden.py asserts category coverage: the set includes wrong_laterality, wrong_level, severity_upgrade, subjective_as_objective, negation_flipped, causation, hedge_removed, invented_diagnosis, invented_provider, merged_dates; and at least 5 items do not come from sample.txt."},
+  {"severity": "major", "title": "Entries have no required clinical content, so omissions and complaint-to-finding rewrites in entry summaries go unmeasured",
+   "evidence": "evals/golden/sample.expected.json:74-194: each entry has only id, record_nos, date, date_status, provider, provider_aliases and must_contain_excerpt; no expected summary and no required terms. README scoring rule 'Entries' scores date/provider/excerpt only. No must_not or hallucination item covers 'C/O neck pain 7/10' (record 1) being restated as an objective finding.",
+   "why_it_matters": "The one-line summary is what reaches the letter. A summary of record 2 that drops the concussion ('ER: cervical strain, CT negative') understates the injury. One that drops 'Patient states' or 'may represent' turns subjective or hedged content into fact. Both pass every golden check, because the verbatim excerpt is checked and the summary is not. The brief's question about how objective and subjective findings are handled cannot be answered by this eval.",
+   "fix": "Add per-entry 'summary_must_mention' (clinically material tokens: E2 'concussion' and 'without loss of consciousness', 'cervical strain'; E8 'C5-C6', 'right', 'mild', a hedge token; E9 'recommend' and 'patient states'; E1 a complaint marker such as 'complain'/'C/O'/'reports') and 'summary_must_not' per entry. Scoring: missing a must_mention token makes the entry needs_review/failed.",
+   "acceptance_test": "A product stub whose summary for record 2 omits 'concussion' fails E2 in evals/run.py; one whose record 1 summary says 'exam showed neck injury' fails E1."},
+  {"severity": "minor", "title": "Other regex gaps: M8 misses stenosis/sprain/disc bulge/radicular; M9 fires on 'not fully recovered'; case_06 M2 misses 'No prior neck problems'",
+   "evidence": "Probe: 'M8 miss | Right foraminal stenosis.' 'M8 miss | Cervical sprain.' (record 2 says strain) 'M8 miss | Disc bulge at C5-C6.' 'M8 miss | Radicular symptoms in right arm.' 'M9 HIT  | Patient had not fully recovered at discharge (pain 3/10).' case_06_subtle_pre_existing.expected.json:272 pattern misses 'No prior neck problems.' (the word 'neck' breaks 'no prior (conditions|history|problems)').",
+   "why_it_matters": "Rewriting 'narrowing' as 'stenosis' or 'strain' as 'sprain' substitutes a different diagnosis. Rewriting a denial as 'no prior neck problems' turns a subjective denial into a stated fact, the exact conversion case_06 M2 exists to catch.",
+   "fix": "Extend M8 with stenosis, sprain, disc bulge, radicul(ar|itis), nerve root. Add a negative lookbehind for 'not (fully )?' to M9. Allow an optional body-region word in case_06 M2.",
+   "acceptance_test": "Same per-regex fixture list as the blockers, covering these phrasings."},
+  {"severity": "minor", "title": "Reference wording upgrades the record in two places: P2 '(pre-existing)' and case_06 P1 'Ongoing'",
+   "evidence": "sample.expected.json:476 'MRI wording raises possible degenerative (pre-existing) change; hedged, not a diagnosis.' case_06_subtle_pre_existing.expected.json:189 'Ongoing chiropractic care dating to an earlier lifting injury' vs record 2 'seeing a chiropractor off and on since a lifting injury'.",
+   "why_it_matters": "The radiologist never says 'pre-existing'; that is the adjuster's inference. 'Off and on' (intermittent) is not 'ongoing'. These are reference strings a prompt author may copy as house style.",
+   "fix": "P2: 'MRI wording (\"may represent degenerative change\") that an adjuster may argue shows a pre-existing condition; hedged, not a diagnosis.' case_06 P1: 'Intermittent (\"off and on\") chiropractic care since an earlier lifting injury; body region not stated.'",
+   "acceptance_test": "grep -n 'pre-existing) change\\|Ongoing chiropractic' evals/golden/*.json returns nothing."},
+  {"severity": "minor", "title": "case_08 K1 makes bare 'Clinical correlation recommended' a `must` causation flag",
+   "evidence": "case_08_diagnosis_temptation.expected.json:165-169 evidence 'Clinical correlation recommended', subtype hedged_imaging, level must.",
+   "why_it_matters": "This sentence is boilerplate on most imaging reports. Without wording that suggests another cause (as 'may represent degenerative change' does in the sample), it is weak causation language. Making it a `must` trains the product to flag boilerplate, which adds noise for the paralegal. It is not a spec violation: LLM_VS_CODE row 13 lists 'correlate clinically'.",
+   "fix": "Set K1 in case_08 to level `should`, or add a tolerated note saying bare correlation language is informational.",
+   "acceptance_test": "case_08 K1.level == 'should'."},
+  {"severity": "minor", "title": "Controls are verbatim or near-verbatim, so judge precision on legitimate clinical paraphrase is untested",
+   "evidence": "hallucinations_controls.jsonl: S03 'Discharged from PT after two missed appointments; pain 3/10.' and S04 copy their records; S01/S02/S05 change only connectors. No control expands an abbreviation ('C/O', '41M', '2x/week') or rephrases a denial.",
+   "why_it_matters": "A judge that marks every reworded summary 'unsupported' passes all 5 controls. In use it would bury the paralegal in needs_review items.",
+   "fix": "Add at least 5 paraphrase controls, e.g. '41-year-old male restrained driver, rear-ended at about 35 mph; complained of neck pain 7/10 and headache; alert and oriented; taken to Central ER.'",
+   "acceptance_test": "Controls file has >= 10 items, >= 5 of them not a near-copy of the record (token overlap < 0.8), checked by check_golden.py."}
+ ],
+ "whats_right": [
+  "Every one of the 20 seeded hallucinations is truly unsupported by its record, and all 5 controls are truly faithful (the per-item table shows none slipped through).",
+  "The reference wording keeps the key clinical distinctions: K3/M10 patient self-report vs physician opinion, M13 recommended vs performed, case_08 M3 'after a fall' as history not causation, case_06 T1 'a denial is not a finding'.",
+  "The golden's own flag summaries and totals text trip none of its must_not regexes, and E2/E8 must_contain_excerpt keep the full diagnosis line and the level, side and severity verbatim."
+ ],
+ "questions_for_chris": [
+  "case_06: 'Patient denies prior neck problems' (record 1) next to 'seeing a chiropractor off and on since a lifting injury' (record 2, region not stated). Should a 'possible inconsistency, region not stated' conflict flag be tolerated rather than counted as a false positive? An adjuster would pair these two statements."
+ ]}
+```

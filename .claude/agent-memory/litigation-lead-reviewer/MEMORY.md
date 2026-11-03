@@ -1,0 +1,1 @@
+- [Texas law checks](feedback_texas_law_checks.md) — Rule 1.05/Op. 705/4.01/Haygood/§181.154 pitfalls; how to fetch primaries; accident-date and export-strategy traps; r2: stale compiled agents, letter-vs-notes; r3: D-019 total line, prompt lag

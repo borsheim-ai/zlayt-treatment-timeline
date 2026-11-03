@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Knee sprain. History: prior ACL repair of the same knee in 2019. Physical therapy recommended.",
+  "summary": "Knee sprain; history of prior ACL repair of the same knee in 2019; physical therapy recommended."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:53:21Z"
+ }
+}

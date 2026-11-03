@@ -1,0 +1,6 @@
+- [Hook/guard review patterns](project_hook_guard_review_patterns.md) — recurring bypass classes in git-guard/board-guard/check_secrets and reviewer-workflow gotchas
+- [Round-2 review workflow](feedback_round2_review_workflow.md) — pin with git archive, HEAD moves 6+ times, reviewer-write-guard makes first Write final, probe capture bugs
+- [Demo live-call gate](project_demo_live_gate.md) — r1 blocker fixed in provider.backend_name (T-053 r2 verified); residual ENABLE_LIVE/RECORD_FIXTURES paths
+- [Config gate patterns](project_config_gate_patterns.md) — env-var gates vs the real bind/peer (uvicorn --host bypass), second toggles, label mismatch, spec amendments in card notes only
+- [PDF upload review patterns](project_pdf_upload_review_patterns.md) — pypdf logs record text to stderr, unpinned parser, demo-gate ordering, parse-time DoS (T-054, r2: fixed; pypdf 75 MB array cap)
+- [Batch and export_config patterns](project_batch_export_review_patterns.md) — regex `$` lets a trailing newline through; per-case ids; sample has no needs_review; untracked LLM fixtures break archive pins (T-055/T-058)

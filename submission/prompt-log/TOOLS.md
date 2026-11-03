@@ -1,0 +1,30 @@
+# Tools, models and team organization
+
+This package is the prompt log for the Zlayt AI Product Manager candidate project. Everything in the repository was produced by an AI product team that Chris set up and supervised from a phone-readable kanban board; the team's behaviour is the second thing being graded, so this file says exactly what was used.
+
+## AI tools and models
+
+| What | Used for |
+|---|---|
+| **Claude Code** (Anthropic's CLI/Desktop agent, running on the Claude Agent SDK) | The whole build. One interactive orchestrator session plus subagents spawned from it, with agent teams enabled (`.claude/settings.json`: `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`, spawn depth 2, up to 12 concurrent subagents) and the session started with permission prompts skipped. Guard rails came from hooks, not prompts (see below). |
+| **Claude Opus 5.5** (`claude-opus-5-5`) | The orchestrator (plans, dispatches, triages reviews, owns the board and `memory/STATE.md`), the researcher, and the judgment reviewers (paralegal, claims adjuster, legal nurse, litigation lead, privacy/compliance, product manager, UX designer, hiring panel) at milestone gates and the final panel. |
+| **Claude Sonnet 5.5** (`claude-sonnet-5-5`) | The workers (architect, backend, db, frontend, qa, release, writer) and the engineering reviewers (staff engineer, security, chaos tester, accessibility, installer). Also the product's own generator model in live mode (`GENERATOR_MODEL`). |
+| **Claude Haiku 5.5** (`claude-haiku-5-5`) | Mechanical checks (re-verify one fix, one-line state checks, "does the file still say X") and the product's own judge model in live mode (`JUDGE_MODEL`). |
+| Playwright (Python, `.venv`), pytest | Browser end-to-end tests, screenshots, reviewer sessions that drive the real app, unit tests. |
+| `pandoc` | Document exports. The Mermaid CLI was not installed in this environment, so any rendered diagram is a hand-written SVG. |
+| Local scripts in `tools/` | `board.py` (the board CLI and its validation), `board_server.py` + `board_ui.html` (the phone view), `check_secrets.py`, `compile_agents.py`, `export_prompt_log.py`, `check_stale_index.py`. |
+
+The per-model counts in the transcripts (assistant turns, all sessions): Opus about 8,700 (orchestrator about 4,100 plus about 4,600 across subagents), Sonnet about 30,400, Haiku about 16,300. The model that actually ran any given subagent is the `model` shown on its transcript's index row and on each assistant turn; it can differ from the default in `.claude/agents/<name>.md` because the orchestrator downshifted routine reviews to cheaper models (decision D-024 in `decisions-and-lessons/ORCHESTRATOR_DECISIONS.md`: one Sonnet reviewer per card, Opus only at gates and the final panel, after the first milestone used about 10% of the weekly plan on review churn).
+
+The product itself calls a model only in opt-in live mode. The default public demo (`LLM_BACKEND=fixture`) replays prepared answers and cannot make a model call. In live mode the generator, the independent judge and the human accept/edit/dismiss step form the validation ladder in `docs/LLM_VS_CODE.md`; dates, gaps, substring verification, currency, totals, sorting, dedupe, schema and export are code, not model output.
+
+## How the team was organized
+
+- **Orchestrator (Opus).** Plans from `docs/CONTRACT.md`, writes cards, dispatches workers and reviewers, triages findings, runs the milestone gates, keeps `memory/STATE.md`. It writes no product code after Milestone 0.
+- **Workers (Sonnet; researcher Opus).** Each owns a disjoint set of paths (architect: docs/ADRs; backend: `app/backend`, `app/llm`; db: `app/db`; frontend: `app/frontend`; qa: `tests`, `evals`, `artifacts`; release: Docker/README/deploy; writer: `submission/`; researcher: `research`, `personas`, lexicon). A write to someone else's path goes through a card for its owner. Up to several backend and frontend workers ran in parallel.
+- **Reviewers (13 personas).** Defined in `.claude/agents/*-reviewer.md` with dossiers in `personas/`: staff engineer, security, chaos tester, accessibility, installer, paralegal, claims adjuster, legal nurse, litigation lead, privacy/compliance, product manager, UX designer, hiring panel. A reviewer starts in a fresh context, sees the artifact and not the worker's claims, may write only under `reviews/`, and files a D.2 verdict (blocker = fail, major = changes requested, otherwise pass). A worker never marks its own card done; the board enforces it.
+- **The board is the single source of truth.** `board/cards/T-###.md` (190 cards), `board/activity.jsonl` (4,403 events, copied here as `board-activity.jsonl`), `board/milestones.md`. Cards move only through `tools/board.py`, which validates transitions and rejects thin evidence on acceptance criteria.
+- **Deterministic sensors before opinions.** Unit tests, the schema and grounding verifiers, and the golden-set eval runner (`evals/`) run before any persona reviews. Persona reviews are the second layer, the milestone gate panel the third.
+- **Hooks.** `.claude/hooks/`: `git-guard` (denies destructive git and commits with secrets), `board-guard` / `board-validate` (cards change only via the CLI), `reviewer-write-guard` (reviewers write only under `reviews/` and never overwrite an existing review), `stop-guard` (the orchestrator cannot stop until the Definition of Done is met), `teammate-idle`.
+- **Memory and lessons.** `memory/` holds state, decisions, assumptions, scope cuts and lessons; each agent also keeps its own memory under `.claude/agent-memory/<name>/`. Every failure was meant to upgrade the harness (a rule, hook, test or checklist item) and be logged with `board.py lesson`; `decisions-and-lessons/LESSONS.md` is that record.
+- **Human in the loop.** Chris did not answer questions during the run. Anything needing him went to `submission/NEEDS_CHRIS.md` with a stated assumption, and the team proceeded. Parts that must be in his own voice or history (his story of a miss, personal numbers) are marked `[CHRIS: ...]` placeholders, not invented.

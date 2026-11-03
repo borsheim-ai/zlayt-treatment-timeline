@@ -1,0 +1,93 @@
+/* Design tokens (T-060). The ONE source of values for every stylesheet: palette, type scale, spacing, radii, elevation and interaction states.
+   Nothing outside this file defines a colour, a font size, a radius or a shadow. Values and contrast ratios: docs/UI_DESIGN_BRIEF.md section 4 and appendix A.
+   Themes: light is the default; dark follows the OS (prefers-color-scheme) unless the header toggle set data-theme on <html>. */
+:root {
+  color-scheme: light;
+
+  /* ---- palette, light. Text pairs >= 4.5:1, control boundaries >= 3:1. */
+  --page: #F5F6F8;            /* app background */
+  --panel: #FFFFFF;           /* cards, rows, dialogs */
+  --sunken: #EDEFF3;          /* table header, quote blocks, hover wash */
+  --border: #D5DAE2;          /* decorative separators only */
+  --border-strong: #6F7B8B;   /* inputs, buttons, checkboxes: a boundary that carries meaning (4.3:1 on panel) */
+  --text: #14181F;
+  --text-muted: #4A5565;
+  --text-subtle: #5B6676;
+  --accent: #0B57D0;          /* the one primary blue: links, primary button, focus ring */
+  --accent-hover: #0948A8;
+  --accent-active: #083C8C;
+  --on-accent: #FFFFFF;
+  --accent-soft: #E6EFFD;     /* selected row, info wash */
+  --ok: #13613A;     --ok-bg: #E3F3E9;
+  --warn: #6B4400;   --warn-bg: #FFF1CC;
+  --bad: #8C1D1D;    --bad-bg: #FCE9E8;
+  --info: #0B4F9E;   --info-bg: #E6EFFD;
+  --mark: #FFE27A;   --on-mark: #14181F;
+  --hover: rgb(20 24 31 / 0.06);     /* wash on any quiet control under the pointer */
+  --pressed: rgb(20 24 31 / 0.12);
+  --scrim: rgb(14 17 22 / 0.5);
+
+  /* ---- type: 7 sizes (rem against a 16px root so browser zoom works), one family. Line heights are paired. */
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --t-xs: 0.75rem;     --lh-xs: 1rem;        /* 12/16 caption, chips, record numbers */
+  --t-sm: 0.8125rem;   --lh-sm: 1.125rem;    /* 13/18 dense table cells, secondary lines */
+  --t-md: 0.875rem;    --lh-md: 1.25rem;     /* 14/20 default UI text, summaries, buttons */
+  --t-read: 0.9375rem; --lh-read: 1.5rem;    /* 15/24 verbatim quotes and the source record */
+  --t-lg: 1rem;        --lh-lg: 1.375rem;    /* 16/22 group and card titles */
+  --t-xl: 1.25rem;     --lh-xl: 1.625rem;    /* 20/26 section titles, one big figure */
+  --t-2xl: 1.5rem;     --lh-2xl: 2rem;       /* 24/32 the case title */
+  --w-regular: 400;    --w-strong: 600;
+
+  /* ---- spacing: a 4px grid */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem; --s-6: 2rem; --s-7: 3rem;
+  --gutter: var(--s-4);
+
+  /* ---- shape: two radii (4 controls, chips and inputs; 6 cards, dialogs and the header). Round markers use 50%. */
+  --r-1: 4px; --r-2: 6px;
+
+  /* ---- elevation: borders first; one shadow for things that float (header, menus, dialogs, the source pane) */
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.08);
+  --elev-2: 0 4px 16px rgb(0 0 0 / 0.16);
+
+  /* ---- controls and layout */
+  --control-h: 2.25rem;          /* 36px */
+  --control-h-sm: 1.75rem;       /* 28px */
+  --touch-h: 2.75rem;            /* 44px, used at <= 768px */
+  --focus-ring: 2px solid var(--accent);
+  --focus-offset: 2px;
+  --banner-h: 2rem;              /* the sticky synthetic-data banner */
+  --header-h: 3.5rem;            /* the sticky case header */
+  --head-h: calc(var(--banner-h) + var(--header-h));   /* banner + header: where the sticky section nav sits (app.js writes the measured value) */
+  --chrome-h: calc(var(--banner-h) + var(--header-h));   /* the sticky banner plus the sticky header; app.js writes the measured height here, so a header that grows never covers what sits under it */
+  --sticky: calc(var(--chrome-h) + var(--s-2));   /* what a scrolled-to item must clear */
+  --measure: 80ch;
+  --motion: 120ms;
+}
+
+/* ---- palette, dark: the same tokens, nothing else changes. Pairs verified in the brief (appendix A). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; --dark: 1;
+    --page: #0E1116; --panel: #151A21; --sunken: #1C222B; --border: #2B3340; --border-strong: #7A8696;
+    --text: #E7EAEF; --text-muted: #B0B9C6; --text-subtle: #9AA5B4;
+    --accent: #8AB4FF; --accent-hover: #A5C4FF; --accent-active: #BBD3FF; --on-accent: #0E1116; --accent-soft: #16284A;
+    --ok: #7BD6A0; --ok-bg: #12301F; --warn: #F2C265; --warn-bg: #3A2A0A; --bad: #FF9A92; --bad-bg: #401A19; --info: #9CC2FF; --info-bg: #16284A;
+    --mark: #6B5800; --on-mark: #FFFFFF;
+    --hover: rgb(231 234 239 / 0.08); --pressed: rgb(231 234 239 / 0.16); --scrim: rgb(0 0 0 / 0.6);
+    --elev-1: 0 1px 2px rgb(0 0 0 / 0.5); --elev-2: 0 4px 16px rgb(0 0 0 / 0.6); }
+}
+:root[data-theme="dark"] { color-scheme: dark; --dark: 1;
+  --page: #0E1116; --panel: #151A21; --sunken: #1C222B; --border: #2B3340; --border-strong: #7A8696;
+  --text: #E7EAEF; --text-muted: #B0B9C6; --text-subtle: #9AA5B4;
+  --accent: #8AB4FF; --accent-hover: #A5C4FF; --accent-active: #BBD3FF; --on-accent: #0E1116; --accent-soft: #16284A;
+  --ok: #7BD6A0; --ok-bg: #12301F; --warn: #F2C265; --warn-bg: #3A2A0A; --bad: #FF9A92; --bad-bg: #401A19; --info: #9CC2FF; --info-bg: #16284A;
+  --mark: #6B5800; --on-mark: #FFFFFF;
+  --hover: rgb(231 234 239 / 0.08); --pressed: rgb(231 234 239 / 0.16); --scrim: rgb(0 0 0 / 0.6);
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.5); --elev-2: 0 4px 16px rgb(0 0 0 / 0.6);
+}
+
+/* touch: 44px targets at phone and small-tablet widths regardless of density (brief section 3) */
+@media (max-width: 768px) { :root { --control-h: var(--touch-h); --control-h-sm: var(--touch-h); --gutter: var(--s-3); } }
+@media (min-width: 769px) { :root { --gutter: var(--s-5); } }
+@media (prefers-reduced-motion: reduce) { :root { --motion: 0ms; } }

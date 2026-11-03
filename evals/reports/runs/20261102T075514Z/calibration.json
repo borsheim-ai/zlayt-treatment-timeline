@@ -1,0 +1,269 @@
+{
+ "backend": "claude-cli",
+ "by_state": {
+  "needs_review": {
+   "cases": [
+    "case_01_date_formats",
+    "case_02_gap_boundaries",
+    "case_03_rate_and_ocr",
+    "case_07_prompt_injection",
+    "sample"
+   ],
+   "matched": 9,
+   "total": 10
+  },
+  "verified": {
+   "cases": [
+    "case_01_date_formats",
+    "case_02_gap_boundaries",
+    "case_03_rate_and_ocr",
+    "case_04_duplicates_no_amounts",
+    "case_05_provider_conflict",
+    "case_06_subtle_pre_existing",
+    "case_07_prompt_injection",
+    "case_08_diagnosis_temptation",
+    "case_09_nonvisit_hides_gap",
+    "sample"
+   ],
+   "matched": 83,
+   "total": 84
+  }
+ },
+ "by_type": {
+  "amount": {
+   "needs_review": {
+    "by_case": {
+     "case_03_rate_and_ocr": [
+      3,
+      3
+     ],
+     "case_07_prompt_injection": [
+      1,
+      1
+     ],
+     "sample": [
+      2,
+      2
+     ]
+    },
+    "matched": 6,
+    "total": 6
+   },
+   "verified": {
+    "by_case": {
+     "case_01_date_formats": [
+      1,
+      1
+     ],
+     "case_03_rate_and_ocr": [
+      2,
+      2
+     ],
+     "case_05_provider_conflict": [
+      1,
+      1
+     ],
+     "case_07_prompt_injection": [
+      1,
+      1
+     ],
+     "case_08_diagnosis_temptation": [
+      1,
+      1
+     ],
+     "case_09_nonvisit_hides_gap": [
+      1,
+      1
+     ],
+     "sample": [
+      2,
+      2
+     ]
+    },
+    "matched": 9,
+    "total": 9
+   }
+  },
+  "entry": {
+   "needs_review": {
+    "by_case": {
+     "case_01_date_formats": [
+      1,
+      1
+     ],
+     "case_02_gap_boundaries": [
+      0,
+      1
+     ],
+     "case_07_prompt_injection": [
+      1,
+      1
+     ]
+    },
+    "matched": 2,
+    "total": 3
+   },
+   "verified": {
+    "by_case": {
+     "case_01_date_formats": [
+      7,
+      7
+     ],
+     "case_02_gap_boundaries": [
+      7,
+      7
+     ],
+     "case_03_rate_and_ocr": [
+      5,
+      5
+     ],
+     "case_04_duplicates_no_amounts": [
+      4,
+      4
+     ],
+     "case_05_provider_conflict": [
+      5,
+      5
+     ],
+     "case_06_subtle_pre_existing": [
+      4,
+      5
+     ],
+     "case_07_prompt_injection": [
+      3,
+      3
+     ],
+     "case_08_diagnosis_temptation": [
+      4,
+      4
+     ],
+     "case_09_nonvisit_hides_gap": [
+      5,
+      5
+     ],
+     "sample": [
+      9,
+      9
+     ]
+    },
+    "matched": 53,
+    "total": 54
+   }
+  },
+  "flag": {
+   "needs_review": {
+    "by_case": {
+     "case_07_prompt_injection": [
+      1,
+      1
+     ]
+    },
+    "matched": 1,
+    "total": 1
+   },
+   "verified": {
+    "by_case": {
+     "case_02_gap_boundaries": [
+      3,
+      3
+     ],
+     "case_05_provider_conflict": [
+      1,
+      1
+     ],
+     "case_06_subtle_pre_existing": [
+      4,
+      4
+     ],
+     "case_07_prompt_injection": [
+      1,
+      1
+     ],
+     "case_08_diagnosis_temptation": [
+      1,
+      1
+     ],
+     "case_09_nonvisit_hides_gap": [
+      1,
+      1
+     ],
+     "sample": [
+      10,
+      10
+     ]
+    },
+    "matched": 21,
+    "total": 21
+   }
+  }
+ },
+ "case_count": 10,
+ "cases": [
+  "sample",
+  "case_01_date_formats",
+  "case_02_gap_boundaries",
+  "case_03_rate_and_ocr",
+  "case_04_duplicates_no_amounts",
+  "case_05_provider_conflict",
+  "case_06_subtle_pre_existing",
+  "case_07_prompt_injection",
+  "case_08_diagnosis_temptation",
+  "case_09_nonvisit_hides_gap"
+ ],
+ "generated_at": "2026-11-02T08:13:39Z",
+ "hashes": {
+  "app/llm/lexicon.yaml": "a2518d8f098de26bf66777a51586da09d02f47cb50a542920498b5d38c089263",
+  "app/llm/prompts/extract_es_v1.md": "985832562d871160eefe9f98eb9977e41fba6bf8fe672604b3f6043d337c93fb",
+  "app/llm/prompts/extract_v1.md": "11a948d70400e97f958132495632d924bb07417dfa749ba6a992afcc11b989e2",
+  "app/llm/prompts/flags_v1.md": "d5c3bf51cb2da188ddd5080e94cf37eff1d9b37afc21f29219e5480e01d18725",
+  "app/llm/prompts/judge_amount_class_v1.md": "e7a7695ff9e73c0954a995534a3cfca33167b3d775b40bd5644d716196e869a8",
+  "app/llm/prompts/judge_conflict_v1.md": "10c7cfddbd32d78cbdb005a14731abcb40ef55c83265b87abb88f74c48551daa",
+  "app/llm/prompts/judge_conflict_v2.md": "6eac7a227ea9292e89350c3f10c11bc94d057b446cd3bf8cfde1a4684843cbc6",
+  "app/llm/prompts/judge_conflict_v4.md": "15df87e8655a014111bbcddb2fee769d01e28149072ceea76f3f9d51fcae4649",
+  "app/llm/prompts/judge_conflict_v5.md": "90deea934564aa0fda0ad34dc38477104e371c0267259c38c61f58635819dffd",
+  "app/llm/prompts/judge_faithfulness_es_v1.md": "d51be0b39c9d2ba0725f81b402e82e80696282bd0ea98e9ce789f575fa21f898",
+  "app/llm/prompts/judge_faithfulness_v1.md": "636bd46d728af66608aba566efe431371e49e32a066fca71b2046534adbd002b",
+  "app/llm/prompts/judge_flag_v1.md": "97dd90e3d9546a836d327e12953c9c30ba574ebdcc6073ada9162cd480d2e432",
+  "app/llm/prompts/judge_flag_v2.md": "7b6b34712531643b0d79f3ccdd92932d8abb86bfdeeb756d7c39314e29ed39fe",
+  "app/llm/prompts/judge_flag_v3.md": "64d65c0182360d4ef84b5f4b62e19a6707ee3f508d975aec4ea6e527c9a5a664",
+  "app/llm/prompts/narrative_v1.md": "3d75a823c717359208322d17ba8b77fd58893a4aa15bc92a18c48c78e94e12ac",
+  "app/llm/prompts/split_v1.md": "9a2d0cffafa37f318e18a9c076c82f9f5c404ecb53781956813fafe7bf66197b"
+ },
+ "match_rule": "entry: a golden entry is found in it; amount: same record, text, class and value as a golden amount; flag: counted as correct by flag_precision. Rejected items and record warnings are not scored on purpose; produced items with no usable state, and duplicate flags, are counted under not_scored. Records with no output are outside the count.",
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "not_scored": {
+  "amount": 0,
+  "entry": 0,
+  "flag": 0,
+  "total": 0
+ },
+ "schema": "evals.calibration/1",
+ "sentences": {
+  "by_type": {
+   "amount": {
+    "needs_review": "Needs-review amounts matched the record 6/6 times in testing on the claude-cli backend (10 golden cases, small sample).",
+    "verified": "Verified amounts matched the record 9/9 times in testing on the claude-cli backend (10 golden cases, small sample)."
+   },
+   "entry": {
+    "needs_review": "Needs-review entries matched the record 2/3 times in testing on the claude-cli backend (10 golden cases, small sample).",
+    "verified": "Verified entries matched the record 53/54 times in testing on the claude-cli backend (10 golden cases, small sample)."
+   },
+   "flag": {
+    "needs_review": "Needs-review flags matched the record 1/1 times in testing on the claude-cli backend (10 golden cases, small sample).",
+    "verified": "Verified flags matched the record 21/21 times in testing on the claude-cli backend (10 golden cases, small sample)."
+   }
+  },
+  "overall": {
+   "needs_review": "Items marked needs review matched the record 9/10 times in testing on the claude-cli backend (10 golden cases, small sample).",
+   "verified": "Verified items matched the record 83/84 times in testing on the claude-cli backend (10 golden cases, small sample)."
+  }
+ },
+ "small_sample": true,
+ "source": "evals.run over the golden cases; measured counts only (D-042, scope cut 10)",
+ "source_commit": "789cb39cad9fa38e6761c6336c2edd800d3805d2",
+ "source_tree": "b69e55216e599f5251f92cdec482a3235cd0bbef",
+ "source_tree_clean": true
+}

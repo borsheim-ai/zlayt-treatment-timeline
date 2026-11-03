@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Cheek scar 4 cm, raised and erythematous. Silicone sheeting and massage started.",
+  "summary": "Cheek scar 4 cm, raised and erythematous; silicone sheeting and massage started."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:48Z"
+ }
+}

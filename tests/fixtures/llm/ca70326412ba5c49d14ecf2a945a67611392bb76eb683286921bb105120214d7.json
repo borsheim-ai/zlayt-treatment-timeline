@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Shoulder pain after a fall. Limited overhead reach. Tenderness over the anterior shoulder. MRI recommended.",
+  "summary": "Shoulder pain after a fall; limited overhead reach; tenderness over the anterior shoulder; MRI recommended."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:04Z"
+ }
+}

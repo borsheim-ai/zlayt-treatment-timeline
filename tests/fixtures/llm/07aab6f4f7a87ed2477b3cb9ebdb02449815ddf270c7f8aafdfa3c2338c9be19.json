@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Fracture alignment satisfactory. Continue splint 3 weeks. No driving.",
+  "summary": "Fracture alignment satisfactory. Continue splint 3 weeks. No driving."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:19Z"
+ }
+}

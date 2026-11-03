@@ -1,0 +1,46 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-03-04
+Source: Dr. Hesper Alderton, primary care
+Excerpt: "Annual visit. History per patient: car accidents in 2019 and 2022 with neck and low back pain, treated with physical therapy. Problem list: hypertension, type 2 diabetes, chronic low back pain. Low back pain 3/10 today."
+
+=== Record 2 ===
+Date: 2026-03-18
+Source: Ashgrove Fire-Rescue run report
+Excerpt: "Passenger vehicle struck from behind. Pt states neck and low back pain 7/10. Ambulatory at scene. Transported to Wexcombe Memorial ED."
+
+=== Record 3 ===
+Date: 2026-03-18
+Source: Wexcombe Memorial ED
+Excerpt: "Dx: cervical strain, lumbar strain. X-ray cervical and lumbar spine negative for fracture. ED charge: $3,260."
+
+=== Record 4 ===
+Date: 2026-03-26
+Source: Pellingham and Rook PLLC, correspondence (letter of protection)
+Excerpt: "Letter of protection to Fennimoor Spine Clinic. This firm represents the client for injuries from a collision on 2026-03-18. We ask that you defer collection while the claim is pending. Please send complete records and an itemized statement."
+
+=== Record 5 ===
+Date: 2026-03-27
+Source: Fennimoor Spine Clinic, new patient
+Excerpt: "Patient referred by attorney. Neck pain 7/10, low back pain 7/10. Treating under a letter of protection. Plan: chiropractic care three times weekly."
+
+=== Record 6 ===
+Date: 3/27/26
+Source: Fennimoor Spine Clinic, new patient intake form (OCR text)
+Excerpt: "Date of injury: 3/l8/26. How did it happen: rear ended at red Iight, neck and back hurt. Prior accidents? Yes [ ] No [X]. Prior injuries? Yes [ ] No IX]. Pain today: 7. Signed 3/27/2G."
+
+=== Record 7 ===
+Date: 2026-04-24
+Source: Fennimoor Spine Clinic, visit 8
+Excerpt: "Neck pain 5/10, low back pain 6/10. Manual therapy and exercises continued."
+
+=== Record 8 ===
+Date: 2026-05-29
+Source: Fennimoor Spine Clinic, visit 14
+Excerpt: "Neck pain 4/10, low back pain 5/10. Care continues."
+
+=== Record 9 ===
+Date: 2026-06-15
+Source: Fennimoor Spine Clinic, itemized ledger
+Excerpt: "Itemized ledger, statement date 06/15/2026. New patient exam charge $250.00; x-ray charge $180.00; treatment visits 1 through 14 charge $2,310.00; total charges $2,740.00. Payment received $300.00. Adjustment (courtesy discount) -$274.00. Balance due $2,166.00. Account held under letter of protection."

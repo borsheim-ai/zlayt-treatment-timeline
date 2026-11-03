@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "speculative_language",
+    "excerpt": "Findings may represent degenerative change; correlate clinically.",
+    "type": "causation"
+   },
+   {
+    "category": "degenerative_language",
+    "excerpt": "Findings may represent degenerative change; correlate clinically.",
+    "type": "pre_existing"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:47:42Z"
+ }
+}

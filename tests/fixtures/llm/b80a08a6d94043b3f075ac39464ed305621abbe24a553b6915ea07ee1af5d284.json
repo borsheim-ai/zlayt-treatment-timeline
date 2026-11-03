@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Neck pain 5/10 with new left arm tingling.\nRefer to physical therapy.",
+  "summary": "Neck pain 5/10 with new left arm tingling; referred to physical therapy."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:09Z"
+ }
+}

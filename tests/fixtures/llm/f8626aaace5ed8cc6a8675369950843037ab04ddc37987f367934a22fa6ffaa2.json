@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Casted right distal radius fracture. Patient states she had prior low back surgery in another state and outside records have been requested. Low back pain 6/10.",
+  "summary": "Right distal radius fracture casted. Patient states she had prior low back surgery in another state and outside records have been requested. Low back pain 6/10."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:27:15Z"
+ }
+}

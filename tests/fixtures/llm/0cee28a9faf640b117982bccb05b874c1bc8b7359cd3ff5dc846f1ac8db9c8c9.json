@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Fell from a ladder at a worksite. Right wrist swelling. X-ray: distal radius fracture. Splint applied.",
+  "summary": "Fell from a ladder at a worksite; right wrist swelling; X-ray showed distal radius fracture; splint applied."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:19Z"
+ }
+}

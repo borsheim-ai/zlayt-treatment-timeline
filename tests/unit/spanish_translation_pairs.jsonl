@@ -1,0 +1,54 @@
+{"id": "ST-001", "kind": "control", "quote": "Refiere dolor 6/10 que empeora al levantar el brazo.", "summary": "Patient reports pain 6/10, worse when raising the arm.", "faithful": true, "code_flags": false}
+{"id": "ST-002", "kind": "control", "quote": "Niega pérdida del conocimiento.", "summary": "Denies loss of consciousness.", "faithful": true, "code_flags": false}
+{"id": "ST-003", "kind": "control", "quote": "RM cervical: protrusión discal C5-C6, posible estenosis foraminal derecha.", "summary": "Cervical MRI: disc protrusion at C5-C6, possible right foraminal stenosis.", "faithful": true, "code_flags": false}
+{"id": "ST-004", "kind": "control", "quote": "No se descarta fractura.", "summary": "Fracture cannot be excluded.", "faithful": true, "code_flags": false}
+{"id": "ST-005", "kind": "control", "quote": "Se descarta fractura.", "summary": "Fracture ruled out.", "faithful": true, "code_flags": false}
+{"id": "ST-006", "kind": "control", "quote": "Sin embargo, el dolor persiste.", "summary": "However, pain persists.", "faithful": true, "code_flags": false}
+{"id": "ST-007", "kind": "control", "quote": "Aqueja dolor cervical 7/10.", "summary": "Complains of neck pain 7/10.", "faithful": true, "code_flags": false}
+{"id": "ST-008", "kind": "control", "quote": "Alega dolor lumbar desde el accidente.", "summary": "Alleges low back pain since the accident.", "faithful": true, "code_flags": false}
+{"id": "ST-009", "kind": "control", "quote": "Quizás exista lesión meniscal.", "summary": "Perhaps a meniscal injury.", "faithful": true, "code_flags": false}
+{"id": "ST-010", "kind": "control", "quote": "Impresiona como hernia discal.", "summary": "Appears to be a disc herniation.", "faithful": true, "code_flags": false}
+{"id": "ST-011", "kind": "control", "quote": "Jamás había tenido dolor de rodilla.", "summary": "Never had knee pain before.", "faithful": true, "code_flags": false}
+{"id": "ST-012", "kind": "control", "quote": "Carece de antecedentes de cirugía lumbar.", "summary": "Lacks a history of lumbar surgery.", "faithful": true, "code_flags": false}
+{"id": "ST-013", "kind": "control", "quote": "Paciente libre de síntomas neurológicos.", "summary": "Patient free of neurological symptoms.", "faithful": true, "code_flags": false}
+{"id": "ST-014", "kind": "control", "quote": "Consulta: $1.250,00.", "summary": "Consultation fee $1,250.00.", "faithful": true, "code_flags": false}
+{"id": "ST-015", "kind": "control", "quote": "Fecha de ingreso: 14 de mayo de 2026.", "summary": "Admission date May 14, 2026.", "faithful": true, "code_flags": false}
+{"id": "ST-016", "kind": "control", "quote": "Dolor en rodilla izquierda, ROM reducido aprox. 40%.", "summary": "Left knee pain, reduced range of motion approx. 40%.", "faithful": true, "code_flags": false}
+{"id": "ST-017", "kind": "negation", "quote": "Niega pérdida del conocimiento.", "summary": "Loss of consciousness.", "faithful": false, "code_flags": true}
+{"id": "ST-018", "kind": "negation", "quote": "Rx de tobillo: sin fractura.", "summary": "Ankle X-ray: fracture.", "faithful": false, "code_flags": true}
+{"id": "ST-019", "kind": "negation", "quote": "Sin fractura.", "summary": "With fracture.", "faithful": false, "code_flags": true}
+{"id": "ST-020", "kind": "negation", "quote": "Tomografía negativa para hemorragia.", "summary": "CT shows hemorrhage.", "faithful": false, "code_flags": true}
+{"id": "ST-021", "kind": "negation", "quote": "Nunca había tenido dolor lumbar.", "summary": "Had low back pain.", "faithful": false, "code_flags": true}
+{"id": "ST-022", "kind": "negation", "quote": "Jamás había tenido dolor de rodilla.", "summary": "Knee pain.", "faithful": false, "code_flags": true}
+{"id": "ST-023", "kind": "negation", "quote": "Carece de antecedentes de cirugía lumbar.", "summary": "History of lumbar surgery.", "faithful": false, "code_flags": true}
+{"id": "ST-024", "kind": "negation", "quote": "Paciente libre de síntomas neurológicos.", "summary": "Patient has neurological symptoms.", "faithful": false, "code_flags": true}
+{"id": "ST-025", "kind": "negation", "quote": "Ni fiebre ni escalofríos.", "summary": "Fever and chills.", "faithful": false, "code_flags": true}
+{"id": "ST-026", "kind": "negation", "quote": "Nada de dolor al caminar.", "summary": "Pain when walking.", "faithful": false, "code_flags": true}
+{"id": "ST-027", "kind": "laterality", "quote": "Dolor en hombro derecho.", "summary": "Left shoulder pain.", "faithful": false, "code_flags": true}
+{"id": "ST-028", "kind": "laterality", "quote": "Hernia discal izquierda.", "summary": "Right disc herniation.", "faithful": false, "code_flags": true}
+{"id": "ST-029", "kind": "laterality", "quote": "Esguince de tobillo derecho.", "summary": "Ankle sprain.", "faithful": false, "code_flags": true}
+{"id": "ST-030", "kind": "hedge", "quote": "Posible desgarro del menisco.", "summary": "Meniscal tear.", "faithful": false, "code_flags": true}
+{"id": "ST-031", "kind": "hedge", "quote": "Probable contractura muscular.", "summary": "Muscle contracture.", "faithful": false, "code_flags": true}
+{"id": "ST-032", "kind": "hedge", "quote": "Quizás exista lesión meniscal.", "summary": "Meniscal injury.", "faithful": false, "code_flags": true}
+{"id": "ST-033", "kind": "hedge", "quote": "Tal vez haya fractura.", "summary": "Fracture.", "faithful": false, "code_flags": true}
+{"id": "ST-034", "kind": "hedge", "quote": "Impresiona como hernia discal.", "summary": "Disc herniation.", "faithful": false, "code_flags": true}
+{"id": "ST-035", "kind": "hedge", "quote": "Eventual compromiso radicular.", "summary": "Radicular compromise.", "faithful": false, "code_flags": true}
+{"id": "ST-036", "kind": "hedge", "quote": "Compatible con contractura.", "summary": "Muscle contracture.", "faithful": false, "code_flags": true}
+{"id": "ST-037", "kind": "hedge", "quote": "No se descarta fractura.", "summary": "Fracture ruled out.", "faithful": false, "code_flags": true}
+{"id": "ST-038", "kind": "hedge", "quote": "No se descarta fractura.", "summary": "No fracture.", "faithful": false, "code_flags": true}
+{"id": "ST-039", "kind": "hedge", "quote": "No se descarta fractura.", "summary": "Fracture excluded.", "faithful": false, "code_flags": true}
+{"id": "ST-040", "kind": "hedge", "quote": "No se puede descartar fractura.", "summary": "Fracture ruled out.", "faithful": false, "code_flags": true}
+{"id": "ST-041", "kind": "hedge", "quote": "Se descarta fractura.", "summary": "Fracture cannot be excluded.", "faithful": false, "code_flags": true}
+{"id": "ST-042", "kind": "self_report", "quote": "Aqueja dolor cervical 7/10.", "summary": "Neck pain 7/10.", "faithful": false, "code_flags": true}
+{"id": "ST-043", "kind": "self_report", "quote": "Alega dolor lumbar desde el accidente.", "summary": "Low back pain since the accident.", "faithful": false, "code_flags": true}
+{"id": "ST-044", "kind": "self_report", "quote": "Señala dolor en rodilla izquierda.", "summary": "Left knee pain.", "faithful": false, "code_flags": true}
+{"id": "ST-045", "kind": "self_report", "quote": "Expresa mareo al ponerse de pie.", "summary": "Dizziness on standing.", "faithful": false, "code_flags": true}
+{"id": "ST-046", "kind": "number", "quote": "Refiere dolor 6/10.", "summary": "Patient reports pain 9/10.", "faithful": false, "code_flags": true}
+{"id": "ST-047", "kind": "number", "quote": "Consulta: $650.00.", "summary": "Consultation fee $560.00.", "faithful": false, "code_flags": true}
+{"id": "ST-048", "kind": "number", "quote": "Fecha: 14 de mayo de 2026.", "summary": "Visit March 14, 2026.", "faithful": false, "code_flags": true}
+{"id": "ST-049", "kind": "number", "quote": "Consulta: $1.250,00.", "summary": "Consultation fee $125.00.", "faithful": false, "code_flags": true}
+{"id": "ST-050", "kind": "judge_only", "quote": "Ciclobenzaprina 10 mg.", "summary": "Cyclobenzaprine 10 g.", "faithful": false, "code_flags": false}
+{"id": "ST-051", "kind": "judge_only", "quote": "Ibuprofeno 400 mg tres veces al día.", "summary": "Ibuprofen 400 mg once daily.", "faithful": false, "code_flags": false}
+{"id": "ST-052", "kind": "judge_only", "quote": "Se ordenó resonancia magnética.", "summary": "MRI was done.", "faithful": false, "code_flags": false}
+{"id": "ST-053", "kind": "judge_only", "quote": "Fisioterapia por tres semanas.", "summary": "Physical therapy for two weeks.", "faithful": false, "code_flags": false}
+{"id": "ST-054", "kind": "laterality", "quote": "El paciente es diestro.", "summary": "Patient is left-handed.", "faithful": false, "code_flags": true}

@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On March 2, 2026, Bumblethorpe Urgent Care documented a fall on ice, left knee pain 6/10, and an X-ray negative for fracture."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On March 9, 2026, Dr. Ambrose Thistlewaite, orthopedics, documented a knee sprain and recommended physical therapy."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On March 16, 2026, Bumblethorpe Physical Therapy documented pain 5/10 at visit 1."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On May 4, 2026, Bumblethorpe Physical Therapy documented pain 4/10 at visit 2."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:53:51Z"
+ }
+}

@@ -1,0 +1,47 @@
+SYNTHETIC — Appendix A sample records (fictional case: Jordan Rivera, 41, Austin); not real patient data
+
+=== Record 1 ===
+Date: 2026-01-09
+Source: Austin EMS run report
+Excerpt: "41M restrained driver, rear-ended at approx. 35 mph. C/O neck pain 7/10 and headache. Alert and oriented. Transported to Central ER."
+
+=== Record 2 ===
+Date: 2026-01-09
+Source: Central ER discharge summary
+Excerpt: "Dx: cervical strain; concussion without loss of consciousness. CT head negative. Rx cyclobenzaprine 10 mg. Follow up with PCP in 1 week. ER charges: $6,240."
+
+=== Record 3 ===
+Date: 2026-01-16
+Source: Dr. Alvarez, primary care
+Excerpt: "Persistent neck pain 6/10, daily headaches. Refer to physical therapy 2x/week for 6 weeks. Patient reports low back pain in 2023, resolved."
+
+=== Record 4 ===
+Date: 2026-01-23
+Source: Capital PT, initial evaluation
+Excerpt: "Cervical range of motion reduced approx. 40%. Plan of care: 12 visits. Charge per visit $185."
+
+=== Record 5 ===
+Date: 2026-02-20
+Source: Capital PT, visit 8
+Excerpt: "Pain 4/10, improving. Patient reports missing 3 days of work."
+
+=== Record 6 ===
+Date: 2026-03-06
+Source: Capital PT, visit 9
+Excerpt: "Discharged from PT after two missed appointments. Pain 3/10."
+
+=== Record 7 ===
+Date: 2026-05-18
+Source: Hill Country Pain Management, new patient
+Excerpt: "New onset pain radiating to right arm with numbness in fingers. Pain 7/10. MRI ordered. Date of accident per intake form: 2026-01-19."
+
+=== Record 8 ===
+Date: 2026-05-29
+Source: Austin Imaging, cervical MRI
+Excerpt: "C5-C6 disc protrusion with mild right foraminal narrowing. Findings may represent degenerative change; correlate clinically. Charge: $2,150."
+
+=== Record 9 ===
+Date: 2026-06-12
+Source: Hill Country Pain Management, follow-up
+Excerpt: "Recommend cervical epidural steroid injection. Patient states symptoms began after the January collision."
+

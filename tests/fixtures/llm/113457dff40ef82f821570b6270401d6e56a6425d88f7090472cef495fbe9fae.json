@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On August 3, 2026, Gloamwood Chiropractic documented low back pain 5/10 at the initial evaluation and a treatment plan of 8 visits."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On August 17, 2026, Gloamwood Chiropractic documented that an adjustment was performed and recorded pain at 4/10 at visit 2."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On August 24, 2026, Gloamwood Chiropractic documented that an adjustment was performed and recorded pain at 3/10 at visit 3."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On September 2, 2026, Dr. Hobart Wimbleton documented a lumbar spine X-ray with 2 views."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:40:30Z"
+ }
+}

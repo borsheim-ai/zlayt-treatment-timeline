@@ -1,0 +1,244 @@
+{"label": "es", "kind": "es_noaccent_short", "text": "Escoliosis leve.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Artrosis facetaria L4-L5.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Contractura trapecio.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Vertigo postural.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Cirugia programada.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Ibuprofeno 400 mg.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Hernia L5-S1.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "TAC normal.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Neumonia basal.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Reduccion cerrada.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Velocidad aproximada 35 mph.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Dudoso edema oseo.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Hallazgo incierto en menisco.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Lesion presuntamente traumatica.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Dolor lumbar sin irradiacion.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Sin fractura.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "No se descarta fractura.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Radiografia de torax normal.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Esguince de tobillo grado II.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Fisioterapia tres veces por semana.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Paciente refiere cefalea.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Control en dos semanas.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Alta hospitalaria.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Resonancia de rodilla izquierda.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Edema leve en region lumbar.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Cicatriz de 4 cm en antebrazo.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Tratamiento conservador.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Se indica reposo por cinco dias.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Niega mareo o nauseas.", "source": "authored"}
+{"label": "es", "kind": "es_noaccent_short", "text": "Aqueja dolor cervical desde el choque.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "RM cervical: protrusión discal C5-C6.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Pérdida de conocimiento: niega.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Fractura de clavícula derecha.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Dolor torácico, ECG normal.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Evolución favorable.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Se recomienda cirugía artroscópica.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Lumbalgia crónica, sin déficit neurológico.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Cefalea postraumática.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Tomografía de cráneo sin hallazgos.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Calificó el dolor como 7/10.", "source": "reviewer_probe"}
+{"label": "es", "kind": "es_accent_short", "text": "A decir del paciente, cayó de la escalera.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Esguince cervical, collarín blando.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Radiografía de mano izquierda: sin fractura.", "source": "authored"}
+{"label": "es", "kind": "es_accent_short", "text": "Dolor en la región sacroilíaca.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "El paciente acude a urgencias tras un accidente de tráfico ocurrido el 14 de marzo. Refiere dolor cervical y lumbar de 7/10, sin pérdida de conocimiento. A la exploración presenta limitación de la movilidad cervical y contractura paravertebral. Se solicita radiografía y se pauta ibuprofeno cada ocho horas.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "Paciente femenina de 42 años que refiere dolor en hombro derecho desde hace tres semanas. La resonancia magnética muestra desgarro parcial del supraespinoso. Se recomienda fisioterapia dos veces por semana y control en un mes.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "La paciente fue atendida en consulta por dolor lumbar con irradiación a la pierna izquierda. Niega traumatismo previo. No se descarta hernia discal; se solicita resonancia magnética de columna lumbar y se indica reposo relativo durante una semana.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "Evolucion: el paciente mejora con fisioterapia, persiste dolor leve en rodilla derecha al subir escaleras. Se mantiene tratamiento con antiinflamatorios y se programa cita de control para dentro de cuatro semanas.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "Motivo de consulta: dolor de cuello tras colision por alcance. Antecedentes: ninguno de importancia. Exploracion: espasmo del trapecio izquierdo, movilidad reducida. Diagnostico: cervicalgia postraumatica. Plan: analgesicos y fisioterapia.", "source": "authored"}
+{"label": "es", "kind": "es_long", "text": "Se realiza reduccion cerrada de fractura de radio distal izquierdo bajo anestesia local. Se coloca yeso antebraquial. El paciente tolera el procedimiento sin complicaciones y se da de alta con indicaciones.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Left knee pain 6/10.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "No fracture.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Possible meniscal tear.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "CT head negative.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Follow-up in 4 weeks.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Physical therapy 2x/week.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Patient denies loss of consciousness.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "X-ray right shoulder: no fracture.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Balance due $450.00", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Pt c/o neck pain.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Rx cyclobenzaprine 10 mg qhs. RTC 2 wks.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Discharged home with ibuprofen.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Plan: continue PT and follow up in six weeks.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "MRI lumbar spine: L4-L5 disc bulge.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Mild swelling over the right ankle.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Patient reports headache since the accident.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Range of motion limited by pain.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Surgery scheduled for next month.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Neck pain improved with treatment.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Seen in the emergency department after a fall.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Referred to orthopedics for evaluation.", "source": "authored"}
+{"label": "en", "kind": "en_short", "text": "Pain 7/10, worse with sitting.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Patient presented to the emergency department after a rear-end collision on March 14. She reports neck and low back pain 7/10 and denies loss of consciousness. Examination shows limited cervical range of motion and paraspinal tenderness. X-rays were negative for fracture. She was discharged home with ibuprofen.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Follow-up visit. The patient states the right shoulder pain has improved since starting physical therapy but persists with overhead reaching. MRI of the right shoulder showed a partial-thickness supraspinatus tear. Plan is to continue therapy twice weekly and return in one month.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Chiropractic note. Patient attended three visits this month for low back pain. Adjustment and electrical stimulation were performed. Pain decreased from 7/10 to 4/10. Next visit scheduled in one week.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Orthopedic consultation for left knee pain after a fall at work. Examination reveals mild effusion and tenderness along the medial joint line. An MRI was ordered to evaluate for a meniscal tear. The patient was advised to avoid heavy lifting.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Operative report: closed reduction of a distal radius fracture under local anesthesia. A short arm cast was applied. The patient tolerated the procedure well and was discharged with instructions to follow up in two weeks.", "source": "authored"}
+{"label": "en", "kind": "en_long", "text": "Billing statement for services rendered. Total charges $4,250.00. Insurance payments $1,800.00. Adjustments $450.00. Balance due $2,000.00.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "MRI lumbar: protrusión L4-L5, posible compresión radicular.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Pt refiere neck pain 7/10 desde el accidente.", "source": "reviewer_probe"}
+{"label": "mixed", "kind": "mixed", "text": "Patient reports dolor 7/10 en hombro derecho.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Dolor de low back, MRI solicitada.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Pt c/o dolor cervical, no loss of consciousness.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "X-ray de rodilla izquierda: no fracture.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Physical therapy 2x/semana, dolor lumbar mejorado.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Patient niega pérdida de conocimiento.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Follow-up en cuatro semanas, sin complicaciones.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Referred a ortopedia por dolor de hombro derecho.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Rx ibuprofeno 400 mg cada 8 horas por 5 días.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Seen en urgencias after a fall, refiere dolor lumbar.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Right knee: derrame leve, no se descarta meniscal tear.", "source": "authored"}
+{"label": "mixed", "kind": "mixed", "text": "Discharged a casa, control en 2 semanas.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Nessuna frattura.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it", "text": "Possibile frattura dello scafoide.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it", "text": "Ricetta: ibuprofene 400 mg.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it", "text": "Intervento programmato.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it", "text": "Nessuna frattura alla radiografia.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it", "text": "Dolore alla spalla destra da tre giorni.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Il paziente non ha perso conoscenza.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Controllo tra due settimane.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Risonanza magnetica del ginocchio sinistro.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Il paziente riferisce dolore lombare dopo la caduta.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Dimesso dal pronto soccorso con terapia antidolorifica.", "source": "authored"}
+{"label": "it", "kind": "it", "text": "Distorsione della caviglia di secondo grado.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Receita: ibuprofeno 400 mg.", "source": "reviewer_probe"}
+{"label": "pt", "kind": "pt", "text": "Cirurgia agendada.", "source": "reviewer_probe"}
+{"label": "pt", "kind": "pt", "text": "Dor cervical 7/10. Nega perda de consciência. Fisioterapia.", "source": "reviewer_probe"}
+{"label": "pt", "kind": "pt", "text": "Paciente refere dor no ombro direito.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Ressonância magnética: sem fratura.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Dor lombar há duas semanas.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Joelho esquerdo com dor.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Retorno em quatro semanas.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "A paciente caiu da escada e bateu a cabeça.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Exame de raio-x sem alterações.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Alta hospitalar com orientações.", "source": "authored"}
+{"label": "pt", "kind": "pt", "text": "Entorse do tornozelo direito, repouso por sete dias.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Douleur cervicale 7/10, pas de perte de conscience.", "source": "reviewer_probe"}
+{"label": "fr", "kind": "fr", "text": "La patiente se plaint de douleur à l'épaule droite depuis trois jours.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Radiographie du genou: pas de fracture.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Le patient nie toute douleur.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Douleur lombaire depuis deux semaines.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "IRM cervicale: hernie discale C5-C6.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Ordonnance: ibuprofène 400 mg.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Sortie avec arrêt de travail de dix jours.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Entorse de la cheville droite, repos.", "source": "authored"}
+{"label": "fr", "kind": "fr", "text": "Consultation de contrôle dans quatre semaines.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Kontrolle in vier Wochen.", "source": "reviewer_probe"}
+{"label": "de", "kind": "de", "text": "Rezept: Ibuprofen 400 mg.", "source": "reviewer_probe"}
+{"label": "de", "kind": "de", "text": "Operation geplant.", "source": "reviewer_probe"}
+{"label": "de", "kind": "de", "text": "Schmerzen im rechten Knie seit drei Tagen.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Der Patient hat keine Schmerzen.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Kein Bewusstseinsverlust.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Röntgen der linken Schulter ohne Bruch.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Entlassung nach Hause mit Schmerzmitteln.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Verdacht auf Bandscheibenvorfall.", "source": "authored"}
+{"label": "de", "kind": "de", "text": "Die Patientin stürzte von der Treppe und klagt über Nackenschmerzen.", "source": "authored"}
+{"label": "es", "kind": "es_batch2", "text": "Tendinitis del supraespinoso.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Bursitis subacromial.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Gonartrosis bilateral.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Radiculopatia L5 derecha.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Lumbago agudo.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Cervicobraquialgia.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Cuadro compatible con contractura muscular.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Trauma craneoencefalico leve.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Politraumatizado.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Dolor a la palpacion.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Test de Lasegue negativo.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Infiltracion de corticoides.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Se pauta paracetamol 1 g.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Collarin cervical por dos semanas.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Alta voluntaria.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Edema de partes blandas.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Hematoma en muslo izquierdo.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Rotura parcial del ligamento cruzado anterior.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Sobrepeso, hipertension arterial.", "source": "authored_batch2"}
+{"label": "es", "kind": "es_batch2", "text": "Seguimiento por traumatologia.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Frattura del polso destro.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Dolore al collo.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Paziente alla visita di controllo.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Terapia fisica due volte alla settimana.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Lesione del menisco.", "source": "tuned_after_miss"}
+{"label": "it", "kind": "it_batch2", "text": "Trauma cranico lieve.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Gonfiore alla caviglia sinistra.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Rx torace nella norma.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Esami del sangue regolari.", "source": "authored_batch2"}
+{"label": "it", "kind": "it_batch2", "text": "Infiltrazione di cortisone.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Fratura do punho direito.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Dor no pescoço.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Paciente em consulta de retorno.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Fisioterapia duas vezes por semana.", "source": "tuned_after_miss"}
+{"label": "pt", "kind": "pt_batch2", "text": "Lesão do menisco.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Trauma craniano leve.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Inchaço no tornozelo esquerdo.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Raio-x do tórax normal.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Exames de sangue normais.", "source": "authored_batch2"}
+{"label": "pt", "kind": "pt_batch2", "text": "Infiltração de corticoide.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Fracture du poignet droit.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Douleur au cou.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Patient en consultation de suivi.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Kinésithérapie deux fois par semaine.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Lésion du ménisque.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Traumatisme crânien léger.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Gonflement de la cheville gauche.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Radiographie du thorax normale.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Prise de sang normale.", "source": "authored_batch2"}
+{"label": "fr", "kind": "fr_batch2", "text": "Infiltration de cortisone.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Bruch des rechten Handgelenks.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Nackenschmerzen.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Patient zur Kontrolle.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Krankengymnastik zweimal pro Woche.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Meniskusverletzung.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Leichtes Schädel-Hirn-Trauma.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Schwellung am linken Knöchel.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Röntgen Thorax unauffällig.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Blutuntersuchung normal.", "source": "authored_batch2"}
+{"label": "de", "kind": "de_batch2", "text": "Cortison-Spritze.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Rotator cuff tendinitis.", "source": "authored_batch2", "ambiguous": true}
+{"label": "en", "kind": "en_batch2", "text": "Subacromial bursitis.", "source": "authored_batch2", "ambiguous": true}
+{"label": "en", "kind": "en_batch2", "text": "Lumbar strain, acute.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Negative straight leg raise.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Cervical collar for two weeks.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Soft tissue swelling of the thigh.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Partial tear of the anterior cruciate ligament.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Hypertension, overweight.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Corticosteroid injection performed.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_batch2", "text": "Mild traumatic brain injury.", "source": "authored_batch2"}
+{"label": "en", "kind": "en_collision", "text": "Hx obtained via patient's son, who interpreted. Patient states she was struck by a car while walking in a parking lot. Left shoulder pain 7/10. X-ray left shoulder negative for fracture.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient tolerated the operation well and was discharged home.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Pain plus numbness in the right hand. Follow up in four weeks.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "MRI: small hernia at L5-S1, mild vertebral body edema, no radicular signs.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient was walking solo when struck by a vehicle. Complains of left hip pain.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Radiology: eventual follow-up recommended. Findings: no acute fracture.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Her son drove her to the clinic. She reports neck pain and headache since the accident.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient's son states the patient was not wearing a seatbelt at the time of the collision.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "The operation was scheduled for next week; patient denies fever or chills.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Operation note: arthroscopic repair of the right knee, no complications.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Plus sign on the left side; strength 4/5 in the left leg.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Pain was worse on walking, plus swelling of the left ankle noted on exam.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient reports she was driving solo when the other vehicle struck her door.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Solo practitioner; patient seen for follow-up of neck pain, improving with therapy.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Eventual return to work is expected after physical therapy, per the physician.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "An eventual surgical consult may be needed if pain persists beyond three months.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Disc hernia at L4-L5 with mild stenosis; patient reports leg pain 5/10.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Small hernia noted at C5-C6, no cord compression, patient neurologically intact.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "MRI of the lumbar spine shows vertebral body height maintained, no fracture.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Vertebral artery normal in appearance; the patient reports dizziness since the crash.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "No radicular symptoms in the right arm; reflexes are normal and symmetric.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Radicular pain down the left leg to the foot, worse with sitting, per the patient.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Basal pain level 4/10 at rest, rising to 8/10 with lifting, the patient states.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Discal bulge at L5-S1 on MRI; patient was advised to continue physical therapy.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient has vertigo when turning her head, started two days after the collision.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Her son reported that the patient fell from the stairs at home last week.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "The patient's son, who lives with her, noted she has had trouble sleeping since the accident.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Operation: right shoulder arthroscopy. Patient tolerated the procedure well and went home.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Neuralgia in the left arm after the accident, patient takes ibuprofen as needed.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Plus ibuprofen 600 mg three times daily with food, per the plan.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Par for this visit: follow up with physical therapy twice a week for six weeks.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Patient reports her son took her to the emergency room on the day of the accident.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "CT of the head: no acute findings. Patient reports a mild headache and nausea.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Hernia repair in 2019. No prior neck or back injury per the patient.", "source": "r4_collision"}
+{"label": "en", "kind": "en_collision", "text": "Solo driver, rear-ended at a stop light, reports neck stiffness and back pain.", "source": "r4_collision"}
+{"label": "pt", "kind": "pt_r3", "text": "Suspeita de hernia discal L4-L5.", "source": "reviewer_probe"}
+{"label": "pt", "kind": "pt_r3", "text": "Hernia discal L5-S1 com compressao radicular.", "source": "reviewer_probe"}
+{"label": "it", "kind": "it_r3", "text": "Cervicalgia post-traumatica.", "source": "reviewer_probe", "d050_only": true}

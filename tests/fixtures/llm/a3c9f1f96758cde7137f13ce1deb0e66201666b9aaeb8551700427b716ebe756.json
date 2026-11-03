@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: dog bite, left cheek laceration 4 cm and chin laceration 2 cm. Wounds irrigated and sutured. Amoxicillin-clavulanate prescribed. ED charge: $4,730.",
+  "summary": "Dx dog bite with left cheek laceration 4 cm and chin laceration 2 cm; wounds irrigated and sutured; amoxicillin-clavulanate prescribed; ED charge $4,730."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:44Z"
+ }
+}

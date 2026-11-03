@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pedestrian struck by a vehicle in a crosswalk. Left knee deformity, unable to bear weight. Transported to Coldharbor Trauma Center.",
+  "summary": "Pedestrian struck by a vehicle in a crosswalk; left knee deformity, unable to bear weight; transported to Coldharbor Trauma Center."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:25:16Z"
+ }
+}

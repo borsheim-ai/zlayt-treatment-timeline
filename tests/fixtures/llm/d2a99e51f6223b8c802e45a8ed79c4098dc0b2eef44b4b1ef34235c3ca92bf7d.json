@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Clinical union. Released to light duty.",
+  "summary": "Clinical union. Released to light duty."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:51:55Z"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "treatment_plan_vs_actual",
+    "excerpt": "Plan: 3 visits per week for 12 weeks.",
+    "excerpt_b": "Discharged at maximum chiropractic benefit after 31 visits.",
+    "type": "conflict"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:23Z"
+ }
+}

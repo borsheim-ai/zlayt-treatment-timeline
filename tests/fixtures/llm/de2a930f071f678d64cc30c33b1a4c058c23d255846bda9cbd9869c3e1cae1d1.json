@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Refiere dolor 6/10 que empeora al levantar el brazo. Niega p\u00e9rdida del conocimiento. Exploraci\u00f3n: dolor a la palpaci\u00f3n del hombro derecho. Plan: fisioterapia y control en 4 semanas.",
+  "summary": "Patient reports pain 6/10 that worsens when raising the arm. Denies loss of consciousness. Exam: pain on palpation of the right shoulder. Plan: physical therapy and follow-up in 4 weeks."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:30:59Z"
+ }
+}

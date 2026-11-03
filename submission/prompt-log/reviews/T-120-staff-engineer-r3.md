@@ -1,0 +1,54 @@
+# T-120 staff-engineer review, round 3 (fix commit f7829c1, archive of HEAD f7829c1)
+
+Verdict: pass, with minors. The r3 design (strip the attribution phrase, scan what is left, keep the hit on any remaining word) removes the condition-guessing proxy that failed in r1 and r2. All 32 r2 probes, the paralegal forms S4/S6/S11/S15, the r1 colon forms, and 38 fresh sentences behave as intended on the archive, with one exception: `Hx per MS history` loses its flag (minor 1, below). The two gaps the worker left (bare "History" has no lexicon entry; S16 over-flags) are not worse than the parent build, so they are minors per the brief.
+
+Exercised (git archive of HEAD f7829c1 in the scratchpad `T120_r3_head`, the parent 1cb8707^ in `T120_r3_parent`; python is `.venv/bin/python`):
+- `pytest tests/unit -q` on the archive: 3120 passed, 4 skipped, 183 s. (The handoff says 3123 passed; the archive has no untracked files, so I did not chase the 3-test difference.)
+- `pytest tests/unit/test_t120_history_source_sentence.py`: 95 passed.
+- Probe `artifacts/review-evidence/t120r3_probe.py`: 78 sentences through `lexicon_scan.scan` on HEAD and on the parent. These are the 32 r2 phrasings, 9 paralegal forms, 37 fresh ones; 18 of the fresh ones are history-source sentences with no condition, 25 name a condition or probe an edge. Result on HEAD: 1 row off expectation (`Hx obtained via interpreter and EMS records.` over-flags; safe direction, the parent flags it too). Parent: 25 off. Every sentence that names a condition (diabetes, wrist fracture, neck pain, "who reports", "(lumbar strain)", newline, Dr. colon form, "recurring back problem", "PHx obtained via ... :") keeps the Hx hit on HEAD.
+- Mutants `artifacts/review-evidence/t120r3_mutants.py`: 20 mutants of `lexicon_scan.py` against the T-120 test file. 16 killed; 4 survived (B, F, I, T). F is non-equivalent (finding 2). B is a digit-only remainder (nit). I and T are equivalent or untestable from this file.
+- `python -m evals.run --backend fixture` on HEAD and on the parent: flag precision and recall 1.000 for gap, conflict, pre_existing and causation on both; grounding 1.000; entry_recall 0.982 on both.
+- `python -m app.pipeline evals/golden/sample.txt` twice on HEAD (fixture backend): exit 0 both times, outputs byte-identical (`cmp`), one pre-existing flag line.
+- Read `git show HEAD` in full; grep of the diff for `except`, `float(`, `sleep(`, `retry`, network: no matches. The change is deterministic code only (no LLM call, no clock).
+
+Probe evidence, verbatim from `t120r3_probe.py` on HEAD: `Hx obtained via patient's son, who reports neck pain.` -> ['Hx']; `Hx per patient's son; patient fractured her wrist before.` -> ['Hx']; `Hx per patient's son, significant for diabetes.` -> ['Hx']; `Hx obtained from Dr. Lee: lumbar strain` -> ['Hx']; `Hx per patient's son, who interpreted.` -> []; `Hx per Ms. Alvarez, the patient's wife.` -> []; `HX PER PATIENT’S SON, WHO INTERPRETED.` -> []. Bare-"History" rows (`History provided by wife, notable for lumbar strain.`) return [] on HEAD and on the parent alike.
+
+## Findings
+
+Minor 1 is the only place where HEAD loses a flag the parent raised, and it needs an unusual phrasing. Minors 2 and 3 are test gaps and safe-direction misses.
+
+```json
+{"card": "T-120", "persona": "staff-engineer-reviewer", "model": "claude-sonnet-5-5",
+ "scope": "git archive HEAD f7829c1 (T-120 r3): app/backend/lexicon_scan.py:17-28, :115-124, :161; tests/unit/test_t120_history_source_sentence.py; parent 1cb8707^ for regression comparison; no app URL",
+ "exercised": ["pytest tests/unit -q on archive of HEAD: 3120 passed, 4 skipped", "pytest tests/unit/test_t120_history_source_sentence.py: 95 passed", "artifacts/review-evidence/t120r3_probe.py: 78 sentences on HEAD and parent 1cb8707^ (32 r2 phrasings, 9 paralegal forms, 37 fresh incl. interpreter-only and condition-bearing)", "artifacts/review-evidence/t120r3_mutants.py: 20 mutants of lexicon_scan.py, 16 killed, 4 survived", "python -m evals.run --backend fixture on HEAD and parent: flag precision/recall 1.000 on both", "python -m app.pipeline evals/golden/sample.txt twice: byte-identical", "read git show HEAD in full; grep for except/float/sleep/retry/network in the diff: none"],
+ "verdict": "pass",
+ "scores": {"correctness": 4, "determinism": 5, "llm_code_boundary": 5, "test_quality": 4},
+ "findings": [
+  {"severity": "minor",
+   "title": "The 'Dr/Mr/Mrs/Ms + any word' source alternative reads the abbreviation MS as 'Ms.', so 'Hx per MS history' and 'Hx per patient, MS diagnosis.' lose their Hx flag (the parent flagged both)",
+   "evidence": "app/backend/lexicon_scan.py:20 `(?:dr|mr|mrs|ms)\\.?\\s+[\\w'-]+` is compiled with re.I and the period is optional, so `MS history` is consumed as a person name. Repro (.venv/bin/python -I, sys.path = archive): `Hx per MS history` -> [] on HEAD, ['Hx'] on the parent; `Hx per patient, MS diagnosis.` -> [] on HEAD, ['Hx'] on the parent (artifacts/review-evidence/t120r3_probe.py shows the first; the second came from a one-off probe in the scratchpad). `Hx per MS` alone still flags, so only the two-word form is lost. This is the only HEAD-loses-flag-the-parent-raised row among the ~110 phrasings I ran.",
+   "why_it_matters": "It is the r1/r2 defect class (a named condition silently loses its flag), at very low incidence: it needs an all-caps MS (multiple sclerosis) followed by exactly one word at the end of the clause, right after a history-source verb or per/via. I rate it minor for that reason, not because the fix is inconvenient; the fix is one line.",
+   "fix": "Require the period for the abbreviation, or require a capitalised name: replace the alternative with `(?:dr|mr|mrs|ms)\\.\\s+[\\w'-]+|(?-i:(?:Dr|Mr|Mrs|Ms)\\s+[A-Z][\\w'-]+)`. I applied this to a scratch copy: `Hx per MS history` and `Hx per patient, MS diagnosis.` flag; `Hx obtained from Dr. Lee.`, `Hx per Ms. Alvarez, the patient's wife.`, `Hx per Dr Lee.` stay quiet; the 95 T-120 tests still pass.",
+   "acceptance_test": "Add `Hx per MS history` and `Hx per patient, MS diagnosis.` to STAFF_FLAG/PARENT_REGRESSION and assert the Hx hit; keep `Hx obtained from Dr. Lee.` in STAFF_NONE."},
+  {"severity": "minor",
+   "title": "The history-word gate in scan() is not pinned by any test (mutant F survives)",
+   "evidence": "app/backend/lexicon_scan.py:161 `... and _HISTORY_WORD.match(m.group(0)) and _is_source_sentence(text, m.end())`. Mutant F (delete the `_HISTORY_WORD.match(m.group(0)) and` clause) -> `SURVIVED F drop _HISTORY_WORD gate in scan | 95 passed` (artifacts/review-evidence/t120r3_mutants.py). With the mutant applied, `Degenerative per patient's son.`, `Chronic per EMS.`, `Pre-existing per interpreter.` and `Previous knee surgery per patient.` all return [] (HEAD and the parent return the hit for each). The mutant is not equivalent.",
+   "why_it_matters": "The gate is what keeps the source-phrase skip from reaching real condition words that happen to sit before 'per patient/EMS/interpreter'. Today the code is right; a later edit could drop the gate and nothing would fail. Same class as the r2 M2/M8 survivors.",
+   "fix": "Add rows where a lexicon condition word, not the history word, directly precedes an attribution phrase.",
+   "acceptance_test": "Rows `Degenerative per patient's son.`, `Chronic per EMS.`, `Pre-existing per interpreter.`, `Previous knee surgery per patient.` in REAL assert a pre_existing hit; mutant F in t120r3_mutants.py is then killed."},
+  {"severity": "minor",
+   "title": "Two safe-direction misses left open by the worker: bare 'History' has no lexicon entry, and attribution followed by a patient statement still flags (S16); not worse than the parent",
+   "evidence": "app/llm/lexicon.yaml:137-138 `hx_abbrev` pattern is `\\b(?:hx|h/o|PHx)\\b(?!\\s+of\\s+present)`, so 'History' alone is never a hit; `History provided by wife, notable for lumbar strain.` -> [] on HEAD and on the parent. Over-flag: `Hx obtained via patient's son, who interpreted, denies neck pain.` -> ['Hx'] and `Hx obtained via interpreter and EMS records.` -> ['Hx'] on HEAD; the parent flags both. Lexicon is researcher-owned.",
+   "why_it_matters": "Neither loses a flag compared with the build before T-120 (the first never fired; the others fire on both builds), so they are not a regression. A paralegal dismisses the over-flags; the bare-History gap is a recall gap that predates this card and needs a lexicon entry plus an eval row.",
+   "fix": "Researcher card for a 'History (provided|obtained) ... notable for' entry; optionally add 'records' to _PERSON_TAIL and a negation exception for the over-flag. No change needed for this card.",
+   "acceptance_test": "Out of scope here; a future card's test would assert `History provided by wife, notable for lumbar strain.` raises a pre_existing hit."},
+  {"severity": "nit",
+   "title": "One guard test greps the source text instead of asserting behaviour; a digit-only remainder (mutant B) and the eval evidence provenance are also loose",
+   "evidence": "tests/unit/test_t120_history_source_sentence.py:125-128 `test_r3_no_condition_guessing_left_in_the_guard` reads lexicon_scan.py and asserts `\"\\\\d\" not in body` (an implementation-detail test; it would fail on a harmless refactor and say nothing about behaviour). Mutant B (`\\w` -> `[A-Za-z]` at lexicon_scan.py:124) survives with 95 passed; `Hx per patient 2019` flags on HEAD today but no row covers a digits-only remainder. The report the handoff cites (evals/reports/20261102T114138Z.md) states `Source commit 93de5f2..., tree DIRTY, not reproducible from the commit`; I re-ran the fixture eval on the committed archive and got the same flag metrics.",
+   "why_it_matters": "Optional hygiene; behaviour is correct and verified on the committed tree.",
+   "fix": "Replace the grep test with a behaviour row (`Hx per patient's son 2019.` keeps the hit); re-run the fixture eval from a clean tree when convenient.",
+   "acceptance_test": "Mutant B is killed; `evals/reports/<ts>.md` for the fix cites f7829c1 with a clean tree."}
+ ],
+ "whats_right": ["The attribution-strip-then-scan design removes the condition-guessing proxy: every sentence naming a condition I tried (including the 'who reports', ';', parenthesis, newline and Dr. colon forms) keeps its Hx hit, and unknown source nouns fail safe to flagged.", "95 tests include a named PARENT_REGRESSION list that asserts the Hx hit itself (not a separate lexicon phrase), so the rule that fired is pinned; 16 of my 20 mutants die, including never-skip, widen-via, newline-ends-sentence and the Dr. abbreviation sentence-end.", "Deterministic code only in lexicon_scan.py; sample CLI output byte-identical across two runs and fixture eval flag metrics identical to the parent."],
+ "questions_for_chris": []}
+```

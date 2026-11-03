@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Lumbar spine X-ray, 2 views. Radiology charge: $240.",
+  "summary": "Lumbar spine X-ray, 2 views. Radiology charge: $240."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:50:30Z"
+ }
+}

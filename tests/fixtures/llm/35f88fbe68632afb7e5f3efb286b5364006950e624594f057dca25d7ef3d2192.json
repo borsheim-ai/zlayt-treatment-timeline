@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Driver of a sedan struck from behind while stopped at a light. C/O neck stiffness. Transported to Marrowgate General ED.",
+  "summary": "Driver of a sedan struck from behind while stopped at a light; complained of neck stiffness; transported to Marrowgate General ED."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:36Z"
+ }
+}

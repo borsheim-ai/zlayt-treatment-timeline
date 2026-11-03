@@ -1,0 +1,35 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On January 9, 2026, Austin EMS documented a 41-year-old male restrained driver who was rear-ended at approx. 35 mph, complained of neck pain 7/10 and headache, was alert and oriented, and was transported to Central ER."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On January 16, 2026, Dr. Alvarez documented persistent neck pain 6/10 and daily headaches and referred the patient to physical therapy 2x/week for 6 weeks."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On February 20, 2026, Capital PT documented pain 4/10, improving, and that the patient reports missing 3 days of work."
+   },
+   {
+    "entry_id": "e7",
+    "text": "On May 18, 2026, Hill Country Pain Management documented new onset pain radiating to the right arm with numbness in fingers, pain 7/10, and that an MRI was ordered."
+   },
+   {
+    "entry_id": "e8",
+    "text": "On May 29, 2026, Austin Imaging documented C5-C6 disc protrusion with mild right foraminal narrowing, and stated that findings may represent degenerative change and to correlate clinically."
+   },
+   {
+    "entry_id": "e9",
+    "text": "On June 12, 2026, Hill Country Pain Management documented a recommendation for cervical epidural steroid injection and that the patient states symptoms began after the January collision."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T13:22:15Z"
+ }
+}

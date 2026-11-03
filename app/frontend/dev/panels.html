@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T-043 panels harness (dev only, SYNTHETIC data)</title>
+<link rel="stylesheet" href="../review.css">
+<style>body{font-family:system-ui,sans-serif;margin:0 auto;max-width:960px;padding:0 16px;} ul.q{padding-left:1rem} .ent{border-bottom:1px solid #ccc;padding:.4rem 0}</style>
+</head><body>
+<p><strong>Synthetic data only — never paste real records.</strong> (dev harness: ?case=sample|01|03|07)</p>
+<h2>Review queue</h2><ul class="q" data-testid="queue" id="queue"></ul>
+<h2>Entries</h2><div id="entries" data-testid="timeline"></div>
+<div id="side-panels"></div><div id="modal" data-testid="record-modal" hidden></div>
+<script src="../dom.js"></script><script src="../state.js"></script>
+<script src="mock-data.js"></script><script src="mock-review.js"></script>
+<script src="../review.js"></script><script src="../flags.js"></script><script src="../charges.js"></script>
+<script src="harness.js"></script>
+</body></html>

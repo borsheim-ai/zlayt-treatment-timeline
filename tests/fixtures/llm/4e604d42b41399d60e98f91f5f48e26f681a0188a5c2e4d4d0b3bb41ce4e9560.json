@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On October 6, 2026, Tumblebrook Urgent Care documented shoulder pain after a fall, limited overhead reach, tenderness over the anterior shoulder, and that an MRI was recommended."
+   },
+   {
+    "entry_id": "e2",
+    "text": "On October 20, 2026, Tumblebrook Imaging documented signal change in the supraspinatus tendon on shoulder MRI and recommended clinical correlation."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On November 3, 2026, Dr. Lysander Quibble documented pain with abduction of 6/10 and a plan of injection versus surgical consult, with the patient to decide."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On November 24, 2026, Tumblebrook Physical Therapy documented strength of 4/5 and pain of 5/10."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:54:28Z"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "output": {
+  "sentences": [
+   {
+    "entry_id": "e1",
+    "text": "On September 14, 2026, Snickerwood ER documented a rear-end collision, cervical strain, neck pain 5/10, and a prescription for ibuprofen 800 mg."
+   },
+   {
+    "entry_id": "e3",
+    "text": "On October 5, 2026, Plumtree Physical Therapy documented reduced cervical ROM and pain 5/10 at evaluation."
+   },
+   {
+    "entry_id": "e4",
+    "text": "On October 19, 2026, Dr. Ophelia Marchbanks documented pain 4/10 and a return visit in 4 weeks."
+   },
+   {
+    "entry_id": "e5",
+    "text": "On November 16, 2026, Dr. Ophelia Marchbanks documented pain 2/10."
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:53:07Z"
+ }
+}

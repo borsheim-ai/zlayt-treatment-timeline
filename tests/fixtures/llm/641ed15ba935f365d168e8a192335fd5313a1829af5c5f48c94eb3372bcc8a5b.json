@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "MRI reviewed. Recommend physical therapy and subacromial injection.",
+  "summary": "MRI reviewed. Physical therapy and subacromial injection recommended."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:18:46Z"
+ }
+}

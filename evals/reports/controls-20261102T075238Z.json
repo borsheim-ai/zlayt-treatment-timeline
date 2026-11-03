@@ -1,0 +1,1274 @@
+{
+ "backend": "claude-cli",
+ "controls_ok": true,
+ "generated_at": "20261102T075238Z",
+ "hashes": {
+  "app/llm/lexicon.yaml": "a2518d8f098de26bf66777a51586da09d02f47cb50a542920498b5d38c089263",
+  "app/llm/prompts/extract_es_v1.md": "985832562d871160eefe9f98eb9977e41fba6bf8fe672604b3f6043d337c93fb",
+  "app/llm/prompts/extract_v1.md": "11a948d70400e97f958132495632d924bb07417dfa749ba6a992afcc11b989e2",
+  "app/llm/prompts/flags_v1.md": "d5c3bf51cb2da188ddd5080e94cf37eff1d9b37afc21f29219e5480e01d18725",
+  "app/llm/prompts/judge_amount_class_v1.md": "e7a7695ff9e73c0954a995534a3cfca33167b3d775b40bd5644d716196e869a8",
+  "app/llm/prompts/judge_conflict_v1.md": "10c7cfddbd32d78cbdb005a14731abcb40ef55c83265b87abb88f74c48551daa",
+  "app/llm/prompts/judge_conflict_v2.md": "6eac7a227ea9292e89350c3f10c11bc94d057b446cd3bf8cfde1a4684843cbc6",
+  "app/llm/prompts/judge_conflict_v4.md": "15df87e8655a014111bbcddb2fee769d01e28149072ceea76f3f9d51fcae4649",
+  "app/llm/prompts/judge_conflict_v5.md": "90deea934564aa0fda0ad34dc38477104e371c0267259c38c61f58635819dffd",
+  "app/llm/prompts/judge_faithfulness_es_v1.md": "d51be0b39c9d2ba0725f81b402e82e80696282bd0ea98e9ce789f575fa21f898",
+  "app/llm/prompts/judge_faithfulness_v1.md": "636bd46d728af66608aba566efe431371e49e32a066fca71b2046534adbd002b",
+  "app/llm/prompts/judge_flag_v1.md": "97dd90e3d9546a836d327e12953c9c30ba574ebdcc6073ada9162cd480d2e432",
+  "app/llm/prompts/judge_flag_v2.md": "7b6b34712531643b0d79f3ccdd92932d8abb86bfdeeb756d7c39314e29ed39fe",
+  "app/llm/prompts/judge_flag_v3.md": "64d65c0182360d4ef84b5f4b62e19a6707ee3f508d975aec4ea6e527c9a5a664",
+  "app/llm/prompts/narrative_v1.md": "3d75a823c717359208322d17ba8b77fd58893a4aa15bc92a18c48c78e94e12ac",
+  "app/llm/prompts/split_v1.md": "9a2d0cffafa37f318e18a9c076c82f9f5c404ecb53781956813fafe7bf66197b"
+ },
+ "judge_controls": {
+  "j3": {
+   "by_split": {
+    "held_out": {
+     "catch_rate": 1.0,
+     "correct_accepted": 3,
+     "correct_total": 3,
+     "false_agree": [],
+     "wrong_caught": 3,
+     "wrong_total": 3
+    },
+    "in_sample": {
+     "catch_rate": 1.0,
+     "correct_accepted": 9,
+     "correct_total": 9,
+     "false_agree": [],
+     "wrong_caught": 14,
+     "wrong_total": 14
+    }
+   },
+   "catch_rate": 1.0,
+   "correct_accepted": 12,
+   "correct_total": 12,
+   "false_agree": [],
+   "judge_unavailable_ids": [],
+   "prompt": "judge_conflict_v5",
+   "repeats": 3,
+   "unstable": [],
+   "wrong_caught": 17,
+   "wrong_total": 17
+  },
+  "j4": {
+   "by_split": {
+    "held_out": {
+     "catch_rate": 1.0,
+     "correct_accepted": 4,
+     "correct_total": 4,
+     "false_agree": [],
+     "wrong_caught": 3,
+     "wrong_total": 3
+    },
+    "in_sample": {
+     "catch_rate": 1.0,
+     "correct_accepted": 11,
+     "correct_total": 11,
+     "false_agree": [],
+     "wrong_caught": 9,
+     "wrong_total": 9
+    }
+   },
+   "catch_rate": 1.0,
+   "correct_accepted": 15,
+   "correct_total": 15,
+   "false_agree": [],
+   "judge_unavailable_ids": [],
+   "prompt": "judge_flag_v3",
+   "repeats": 3,
+   "unstable": [],
+   "wrong_caught": 12,
+   "wrong_total": 12
+  },
+  "r_ids": [
+   "R-CO-2",
+   "R-CO-3"
+  ],
+  "repeats": 3,
+  "rows": [
+   {
+    "expected": "benign",
+    "id": "J3W11",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-plan-outcome",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C1",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-plan-outcome",
+    "reason_code": "PLAN_VS_ACTUAL",
+    "reason_codes": [
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C7",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-plan-outcome",
+    "reason_code": "PLAN_VS_ACTUAL",
+    "reason_codes": [
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C2",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-plan-outcome",
+    "reason_code": "PLAN_VS_ACTUAL",
+    "reason_codes": [
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C3",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-denial",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W12",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-denial",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W13",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-denial",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C4",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-laterality",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W14",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-laterality",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C8",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-laterality-2",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W15",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-laterality-2",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C5",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-date",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W16",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-date",
+    "reason_code": "DIFFERENT_VISITS",
+    "reason_codes": [
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W17",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-date",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C9",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-dosage",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W18",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-dosage",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W19",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-dosage",
+    "reason_code": "DIFFERENT_VISITS",
+    "reason_codes": [
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "J3C10",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "P3-pain",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W1",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-pain",
+    "reason_code": "DIFFERENT_VISITS",
+    "reason_codes": [
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W2",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-unrelated",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W3",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-unrelated",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W4",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-unrelated",
+    "reason_code": "DIFFERENT_VISITS",
+    "reason_codes": [
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "J3W5",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "P3-unrelated",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "H3W2",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "H3-bp",
+    "reason_code": "DIFFERENT_VISITS",
+    "reason_codes": [
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS",
+     "DIFFERENT_VISITS"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "H3C2",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "H3-allergy",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "H3W3",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "H3-allergy",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "H3C3",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "H3-loc",
+    "reason_code": "FACT_MISMATCH",
+    "reason_codes": [
+     "FACT_MISMATCH",
+     "FACT_MISMATCH",
+     "FACT_MISMATCH"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "benign",
+    "id": "H3W4",
+    "judge": "j3",
+    "kind": "wrong",
+    "pair": "H3-ankle",
+    "reason_code": "CAN_BOTH_BE_TRUE",
+    "reason_codes": [
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE",
+     "CAN_BOTH_BE_TRUE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "benign",
+    "verdicts": [
+     "benign",
+     "benign",
+     "benign"
+    ]
+   },
+   {
+    "expected": "conflict",
+    "id": "H3C4",
+    "judge": "j3",
+    "kind": "correct",
+    "pair": "H3-plan",
+    "reason_code": "PLAN_VS_ACTUAL",
+    "reason_codes": [
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL",
+     "PLAN_VS_ACTUAL"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "conflict",
+    "verdicts": [
+     "conflict",
+     "conflict",
+     "conflict"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W1",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-neck-history",
+    "reason_code": "NEGATED",
+    "reason_codes": [
+     "NEGATED",
+     "NEGATED",
+     "NEGATED"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C10",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-neck-history",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W6",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-back-history",
+    "reason_code": "NEGATED",
+    "reason_codes": [
+     "NEGATED",
+     "NEGATED",
+     "NEGATED"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C1",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-back-history",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W2",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-hedged-findings",
+    "reason_code": "WRONG_CATEGORY",
+    "reason_codes": [
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C2",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-hedged-findings",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C6",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-hedged-findings",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W3",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-missed-care",
+    "reason_code": "WRONG_TYPE",
+    "reason_codes": [
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C3",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-missed-care",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W9",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-missed-care",
+    "reason_code": "NEGATED",
+    "reason_codes": [
+     "NEGATED",
+     "NEGATED",
+     "NEGATED"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W4",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-referral",
+    "reason_code": "NOT_SUPPORTED_BY_QUOTE",
+    "reason_codes": [
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C11",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-referral",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C8",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-referral",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W8",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-mri",
+    "reason_code": "NOT_SUPPORTED_BY_QUOTE",
+    "reason_codes": [
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C9",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-mri",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W7",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-scene",
+    "reason_code": "WRONG_CATEGORY",
+    "reason_codes": [
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C7",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-scene",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "J4W5",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "P4-ct",
+    "reason_code": "WRONG_CATEGORY",
+    "reason_codes": [
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY",
+     "WRONG_CATEGORY"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C4",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-onset",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "J4C5",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "P4-surgery",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "in_sample",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "H4W1",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "H4-attendance",
+    "reason_code": "NEGATED",
+    "reason_codes": [
+     "NEGATED",
+     "NEGATED",
+     "NEGATED"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "H4C1",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "H4-attendance",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "H4W2",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "H4-prior",
+    "reason_code": "NEGATED",
+    "reason_codes": [
+     "NEGATED",
+     "NEGATED",
+     "NEGATED"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "H4C2",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "H4-prior",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "disagree",
+    "id": "H4W3",
+    "judge": "j4",
+    "kind": "wrong",
+    "pair": "H4-hedge",
+    "reason_code": "NOT_SUPPORTED_BY_QUOTE",
+    "reason_codes": [
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE",
+     "NOT_SUPPORTED_BY_QUOTE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "disagree",
+    "verdicts": [
+     "disagree",
+     "disagree",
+     "disagree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "H4C3",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "H4-hedge",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   },
+   {
+    "expected": "agree",
+    "id": "H4C4",
+    "judge": "j4",
+    "kind": "correct",
+    "pair": "H4-onset",
+    "reason_code": "NONE",
+    "reason_codes": [
+     "NONE",
+     "NONE",
+     "NONE"
+    ],
+    "split": "held_out",
+    "stable": true,
+    "verdict": "agree",
+    "verdicts": [
+     "agree",
+     "agree",
+     "agree"
+    ]
+   }
+  ],
+  "status": "measured",
+  "value": 1.0
+ },
+ "schema": "evals.controls/1",
+ "source_commit": "789cb39cad9fa38e6761c6336c2edd800d3805d2",
+ "source_tree": "b69e55216e599f5251f92cdec482a3235cd0bbef",
+ "source_tree_clean": true
+}

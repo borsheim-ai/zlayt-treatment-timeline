@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Dx: cervical strain. X-ray cervical spine negative for fracture. Discharged with a muscle relaxant. ED charge: $2,960.",
+  "summary": "Diagnosis of cervical strain; cervical spine x-ray negative for fracture; discharged with a muscle relaxant; ED charge $2,960."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:02Z"
+ }
+}

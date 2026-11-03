@@ -1,0 +1,21 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "patient_report",
+    "excerpt": "Patient states she was struck by a car while walking in a parking lot.",
+    "type": "causation"
+   },
+   {
+    "category": "objective_negative",
+    "excerpt": "X-ray left shoulder negative for fracture.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:18:13Z"
+ }
+}

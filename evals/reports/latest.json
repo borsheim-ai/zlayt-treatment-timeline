@@ -1,0 +1,44 @@
+{
+ "backend": "claude-cli",
+ "blockers": [],
+ "generated_at": "2026-11-02T16:40:38Z",
+ "hashes": {
+  "app/llm/lexicon.yaml": "fbefe801fb3d582c48e93bfbe54ccb1e34e9640a5b6cbf800e42a5aa7f612a8b",
+  "app/llm/prompts/extract_es_v1.md": "985832562d871160eefe9f98eb9977e41fba6bf8fe672604b3f6043d337c93fb",
+  "app/llm/prompts/extract_v1.md": "11a948d70400e97f958132495632d924bb07417dfa749ba6a992afcc11b989e2",
+  "app/llm/prompts/flags_v1.md": "d5c3bf51cb2da188ddd5080e94cf37eff1d9b37afc21f29219e5480e01d18725",
+  "app/llm/prompts/judge_amount_class_v1.md": "e7a7695ff9e73c0954a995534a3cfca33167b3d775b40bd5644d716196e869a8",
+  "app/llm/prompts/judge_conflict_v1.md": "10c7cfddbd32d78cbdb005a14731abcb40ef55c83265b87abb88f74c48551daa",
+  "app/llm/prompts/judge_conflict_v2.md": "6eac7a227ea9292e89350c3f10c11bc94d057b446cd3bf8cfde1a4684843cbc6",
+  "app/llm/prompts/judge_conflict_v4.md": "15df87e8655a014111bbcddb2fee769d01e28149072ceea76f3f9d51fcae4649",
+  "app/llm/prompts/judge_conflict_v5.md": "90deea934564aa0fda0ad34dc38477104e371c0267259c38c61f58635819dffd",
+  "app/llm/prompts/judge_conflict_v6.md": "8a09702a5c12a9f08a162cad574374827d3a367cbcca7080e1331c76406318b5",
+  "app/llm/prompts/judge_faithfulness_es_v1.md": "d51be0b39c9d2ba0725f81b402e82e80696282bd0ea98e9ce789f575fa21f898",
+  "app/llm/prompts/judge_faithfulness_v1.md": "636bd46d728af66608aba566efe431371e49e32a066fca71b2046534adbd002b",
+  "app/llm/prompts/judge_flag_v1.md": "97dd90e3d9546a836d327e12953c9c30ba574ebdcc6073ada9162cd480d2e432",
+  "app/llm/prompts/judge_flag_v2.md": "7b6b34712531643b0d79f3ccdd92932d8abb86bfdeeb756d7c39314e29ed39fe",
+  "app/llm/prompts/judge_flag_v3.md": "64d65c0182360d4ef84b5f4b62e19a6707ee3f508d975aec4ea6e527c9a5a664",
+  "app/llm/prompts/narrative_v1.md": "3d75a823c717359208322d17ba8b77fd58893a4aa15bc92a18c48c78e94e12ac",
+  "app/llm/prompts/split_v1.md": "9a2d0cffafa37f318e18a9c076c82f9f5c404ecb53781956813fafe7bf66197b"
+ },
+ "models": {
+  "generator": "claude-sonnet-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "recorded_from": {
+  "note": "pointer parsed from the report; ship_bar_met recomputed from its body and per-run directory (T-045 r3), not a run",
+  "recorded_at": "2026-11-03T13:49:08Z",
+  "report": "20261102T164038Z.md",
+  "run_artifacts": "evals/reports/runs/20261102T161327Z",
+  "sha256": "03eafb83f90c3d46cf8b9bc009dbab0ef17fc7056d7ab4e453e12117036bb5e3",
+  "ship_bar_recomputed": true,
+  "source_commit": "312efe663327539df1b712832e23bf1d2c495d42"
+ },
+ "schema": "evals.run/1",
+ "ship_bar_met": true,
+ "source": {
+  "clean": true,
+  "commit": "312efe663327539df1b712832e23bf1d2c495d42"
+ },
+ "spec_matches_golden": true
+}

@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Suture removal. Wounds healing with erythema along the cheek scar. Patient states she is self-conscious about the scar.",
+  "summary": "Suture removal; wounds healing with erythema along the cheek scar; patient states she is self-conscious about the scar."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:24:44Z"
+ }
+}

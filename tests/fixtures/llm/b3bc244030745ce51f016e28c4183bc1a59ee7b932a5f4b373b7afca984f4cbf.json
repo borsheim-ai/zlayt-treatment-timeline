@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Pain 7 circled on a 0-10 scale. Tenderness at C4-C6. [X] adjustment [X] e-stim [X] hot pack.",
+  "summary": "Pain 7 circled on a 0-10 scale; tenderness at C4-C6; adjustment, e-stim and hot pack marked."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:15:02Z"
+ }
+}

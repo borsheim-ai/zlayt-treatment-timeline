@@ -1,0 +1,443 @@
+{
+  "schema_version": "golden/1",
+  "case_id": "case_lib01_er_only_then_gap",
+  "synthetic": true,
+  "input_file": "case_lib01_er_only_then_gap.txt",
+  "description": "Library L1 (mirrors S1). Rear-end collision, ED visit and a negative x-ray, then the first primary-care visit 44 days later with a new arm symptom and a patient-stated reason for the delay. The gap is flagged; the reason is shown as the patient's statement, never as the tool's explanation.",
+  "stress_types": [
+    "er_only_then_long_gap",
+    "patient_stated_gap_reason",
+    "new_symptom_after_gap",
+    "rate_not_charge",
+    "negative_xray_not_no_injury"
+  ],
+  "records": [
+    {
+      "record_no": 1,
+      "raw_date": "2026-02-14",
+      "date": "2026-02-14",
+      "kind": "encounter",
+      "source": "Dunmarrow Fire-Rescue run report"
+    },
+    {
+      "record_no": 2,
+      "raw_date": "2026-02-14",
+      "date": "2026-02-14",
+      "kind": "encounter",
+      "source": "Marrowgate General ED"
+    },
+    {
+      "record_no": 3,
+      "raw_date": "2026-03-30",
+      "date": "2026-03-30",
+      "kind": "encounter",
+      "source": "Dr. Imelda Quarrington, primary care"
+    },
+    {
+      "record_no": 4,
+      "raw_date": "2026-04-13",
+      "date": "2026-04-13",
+      "kind": "encounter",
+      "source": "Plumtree Physical Therapy, initial evaluation"
+    },
+    {
+      "record_no": 5,
+      "raw_date": "2026-05-04",
+      "date": "2026-05-04",
+      "kind": "encounter",
+      "source": "Plumtree Physical Therapy, visit 6"
+    },
+    {
+      "record_no": 6,
+      "raw_date": "2026-05-18",
+      "date": "2026-05-18",
+      "kind": "encounter",
+      "source": "Plumtree Physical Therapy, discharge"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "record_nos": [
+        1
+      ],
+      "date": "2026-02-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dunmarrow Fire-Rescue run report",
+      "must_contain_excerpt": "Driver of a sedan struck from behind",
+      "required_terms": [
+        "neck stiffness"
+      ]
+    },
+    {
+      "id": "E2",
+      "record_nos": [
+        2
+      ],
+      "date": "2026-02-14",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Marrowgate General ED",
+      "must_contain_excerpt": "X-ray cervical spine negative for fracture",
+      "required_terms": [
+        "cervical strain",
+        "negative for fracture"
+      ]
+    },
+    {
+      "id": "E3",
+      "record_nos": [
+        3
+      ],
+      "date": "2026-03-30",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Dr. Imelda Quarrington, primary care",
+      "must_contain_excerpt": "Neck pain 5/10 with new left arm tingling",
+      "required_terms": [
+        "neck pain",
+        "left arm tingling",
+        "physical therapy",
+        [
+          "patient states",
+          "per patient",
+          "patient reports"
+        ]
+      ],
+      "self_report_spans": [
+        {
+          "excerpt": "Patient states she could not get an earlier appointment because the clinic was closed.",
+          "attribution_any": [
+            "patient states",
+            "per patient",
+            "patient reports"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "record_nos": [
+        4
+      ],
+      "date": "2026-04-13",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Plumtree Physical Therapy, initial evaluation",
+      "must_contain_excerpt": "Cervical range of motion reduced approx. 30%",
+      "required_terms": [
+        "approx. 30%"
+      ]
+    },
+    {
+      "id": "E5",
+      "record_nos": [
+        5
+      ],
+      "date": "2026-05-04",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Plumtree Physical Therapy, visit 6",
+      "must_contain_excerpt": "Pain 3/10, improving",
+      "required_terms": [
+        "3/10"
+      ]
+    },
+    {
+      "id": "E6",
+      "record_nos": [
+        6
+      ],
+      "date": "2026-05-18",
+      "date_status": "parsed",
+      "encounter": true,
+      "provider": "Plumtree Physical Therapy, discharge",
+      "must_contain_excerpt": "Discharged from PT, goals met",
+      "required_terms": [
+        "goals met"
+      ]
+    }
+  ],
+  "expected_entry_count": 6,
+  "gap_excluded_records": [],
+  "gap_table": [
+    {
+      "from_date": "2026-02-14",
+      "to_date": "2026-03-30",
+      "from_records": [
+        1,
+        2
+      ],
+      "to_records": [
+        3
+      ],
+      "days": 44,
+      "flag": true
+    },
+    {
+      "from_date": "2026-03-30",
+      "to_date": "2026-04-13",
+      "from_records": [
+        3
+      ],
+      "to_records": [
+        4
+      ],
+      "days": 14,
+      "flag": false
+    },
+    {
+      "from_date": "2026-04-13",
+      "to_date": "2026-05-04",
+      "from_records": [
+        4
+      ],
+      "to_records": [
+        5
+      ],
+      "days": 21,
+      "flag": false
+    },
+    {
+      "from_date": "2026-05-04",
+      "to_date": "2026-05-18",
+      "from_records": [
+        5
+      ],
+      "to_records": [
+        6
+      ],
+      "days": 14,
+      "flag": false
+    }
+  ],
+  "amounts": [
+    {
+      "id": "A1",
+      "record_no": 2,
+      "raw": "$3,915",
+      "value": 3915,
+      "class": "charge",
+      "excerpt": "ED charge: $3,915",
+      "in_total": true,
+      "required": true,
+      "needs_review": false
+    },
+    {
+      "id": "A2",
+      "record_no": 4,
+      "raw": "$140",
+      "value": 140,
+      "class": "rate",
+      "excerpt": "Charge per visit $140",
+      "in_total": false,
+      "required": true,
+      "needs_review": true,
+      "note": "Rate, not a charge: visits billed are never stated (8 planned)."
+    }
+  ],
+  "totals": {
+    "explicit_charges_total": 3915,
+    "counted_amount_ids": [
+      "A1"
+    ],
+    "amounts_found": 2,
+    "status": "partial_unclear",
+    "unclear_items": [
+      {
+        "amount_id": "A2",
+        "reason": "rate $140/visit; visit count not stated (8 planned); needs review",
+        "total_computed": false
+      }
+    ],
+    "letter_line": "Billed charges accepted from these records: $3,915.00",
+    "ui_line": "Accepted charges: $3,915.00",
+    "notes_lines": [
+      "$140: rate $140/visit; visit count not stated (8 planned); needs review"
+    ]
+  },
+  "flags": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "level": "must",
+      "from_date": "2026-02-14",
+      "to_date": "2026-03-30",
+      "days": 44,
+      "cite": {
+        "all": [
+          2,
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 2,
+          "field": "excerpt",
+          "excerpt": "Follow up with primary care in 1 week"
+        },
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "Neck pain 5/10 with new left arm tingling"
+        }
+      ],
+      "summary": "Treatment gap of 44 days (2026-02-14 to 2026-03-30), longer than 30."
+    },
+    {
+      "id": "K1",
+      "type": "causation",
+      "level": "should",
+      "cite": {
+        "all": [
+          3
+        ],
+        "any": []
+      },
+      "evidence": [
+        {
+          "record_no": 3,
+          "field": "excerpt",
+          "excerpt": "new left arm tingling"
+        }
+      ],
+      "summary": "New symptom first recorded after a 44-day gap; an adjuster can argue a new cause. Raised as causation, not as a gap.",
+      "subtype": "new_onset_after_gap"
+    }
+  ],
+  "must_not_flag": [
+    {
+      "id": "N1",
+      "type": "gap",
+      "statement": "No gap flag for the 14, 21 and 14-day intervals (records 3-4, 4-5, 5-6)."
+    },
+    {
+      "id": "N2",
+      "type": "pre_existing",
+      "statement": "No prior-condition flag: the record names none."
+    }
+  ],
+  "tolerated": [],
+  "record_warnings": [],
+  "must_not": [
+    {
+      "id": "M1",
+      "statement": "Explains the 44-day gap in the tool's own words (motive, choice, severity). The only reason shown is the patient's own statement, attributed.",
+      "check": "judge",
+      "bad_examples": [
+        "She delayed care because the injury was minor.",
+        "Patient chose not to follow up for six weeks.",
+        "The gap shows the neck pain was not serious."
+      ],
+      "good_examples": [
+        "Patient states she could not get an earlier appointment because the clinic was closed.",
+        "44 days between the ED visit (2026-02-14) and the primary-care visit (2026-03-30).",
+        "Follow up with primary care in 1 week was advised in the ED record."
+      ]
+    },
+    {
+      "id": "M2",
+      "statement": "Turns the gap into a conclusion about injury severity or recovery.",
+      "check": "regex",
+      "pattern": "(?i)\\b(gap|delay)\\b[^.]{0,40}\\b(shows?|proves?|means|indicates?)\\b[^.]{0,30}\\b(minor|not serious|no injury|recovered)",
+      "bad_examples": [
+        "The 44-day gap shows the injury was minor.",
+        "Delay proves she had recovered.",
+        "The gap means no injury."
+      ],
+      "good_examples": [
+        "Gap of 44 days between 2026-02-14 and 2026-03-30.",
+        "Patient states she could not get an earlier appointment.",
+        "Treatment gap flagged for review."
+      ]
+    },
+    {
+      "id": "M3",
+      "statement": "Summarises the negative x-ray as 'no injury' or drops the Dx; the record shows a cervical strain diagnosis and a negative fracture study only.",
+      "check": "judge",
+      "bad_examples": [
+        "No injury found on x-ray.",
+        "X-ray was normal so there was no injury.",
+        "ED found nothing wrong with her neck."
+      ],
+      "good_examples": [
+        "Dx: cervical strain; x-ray cervical spine negative for fracture.",
+        "X-ray negative for fracture.",
+        "ED diagnosis was cervical strain."
+      ]
+    },
+    {
+      "id": "M4",
+      "statement": "Turns 'new left arm tingling' into a diagnosis (radiculopathy, nerve compression) not in the record.",
+      "check": "judge",
+      "bad_examples": [
+        "Cervical radiculopathy developed.",
+        "Nerve compression causing arm tingling.",
+        "Left arm radiculopathy after the gap."
+      ],
+      "good_examples": [
+        "New left arm tingling.",
+        "Neck pain 5/10 with new left arm tingling.",
+        "Referred to physical therapy."
+      ]
+    },
+    {
+      "id": "M5",
+      "statement": "Treats days, percentages, doses or visit counts as dollar amounts, or totals the per-visit rate.",
+      "check": "amount_value",
+      "bad_examples": [
+        {
+          "raw": "$1",
+          "value": 1,
+          "class": "charge"
+        },
+        {
+          "raw": "$6",
+          "value": 6,
+          "class": "charge"
+        },
+        {
+          "raw": "$8",
+          "value": 8,
+          "class": "charge"
+        }
+      ],
+      "good_examples": [
+        {
+          "raw": "$6,240",
+          "value": 6240,
+          "class": "charge"
+        },
+        {
+          "raw": "$185",
+          "value": 185,
+          "class": "rate"
+        },
+        {
+          "raw": "$1,2OO",
+          "value": null,
+          "class": "unclear"
+        }
+      ],
+      "values": [
+        1,
+        6,
+        8,
+        14,
+        30,
+        44,
+        600,
+        1120,
+        5035
+      ]
+    }
+  ],
+  "notes": [
+    "Library packet; real-world scenario source: S1 (research/case-library-sources.md). All names invented.",
+    "Hand arithmetic: 02-14 to 03-30 = 14 (to Feb 28) + 30 = 44 days (flag). 03-30 to 04-13 = 14; 04-13 to 05-04 = 21; 05-04 to 05-18 = 14.",
+    "Forbidden guess-sums: 8 x 140 = 1,120; 3,915 + 1,120 = 5,035.",
+    "Gap evidence quotes the last excerpt before the gap and the first after it (same convention as the sample)."
+  ]
+}

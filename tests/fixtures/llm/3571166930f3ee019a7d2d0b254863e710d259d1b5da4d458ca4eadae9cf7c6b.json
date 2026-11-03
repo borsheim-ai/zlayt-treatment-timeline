@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Discharged from PT, goals met. Pain 2/10.",
+  "summary": "Discharged from PT, goals met; pain 2/10."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T02:34:42Z"
+ }
+}

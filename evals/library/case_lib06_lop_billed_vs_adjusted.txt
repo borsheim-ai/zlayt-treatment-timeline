@@ -1,0 +1,36 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-05-02
+Source: Eastvale Fire-Rescue run report
+Excerpt: "Car struck on the passenger side at an intersection. Driver C/O shoulder pain. Transported to Larchmont Ridge ED."
+
+=== Record 2 ===
+Date: 2026-05-02
+Source: Larchmont Ridge ED
+Excerpt: "Dx: right shoulder contusion. X-ray negative. Sling provided. ED charge: $2,880."
+
+=== Record 3 ===
+Date: 2026-05-13
+Source: Gannet and Moor Injury Clinic, new patient
+Excerpt: "Patient referred by attorney. Right shoulder pain 6/10. Treating under a letter of protection. Plan: MRI and injections."
+
+=== Record 4 ===
+Date: 2026-06-03
+Source: Gannet and Moor Injury Clinic, billing statement
+Excerpt: "Statement of charges: office visits $1,100; MRI referral fee $450. Balance under letter of protection: $1,550."
+
+=== Record 5 ===
+Date: 2026-06-17
+Source: Larchmont Ridge Imaging, right shoulder MRI
+Excerpt: "Mild supraspinatus tendinosis; no full-thickness tear. Charge: $2,400. Insurance adjustment: -$1,250. Amount due: $1,150."
+
+=== Record 6 ===
+Date: 2026-07-08
+Source: Gannet and Moor Injury Clinic, injection visit
+Excerpt: "Subacromial injection performed. Pain 4/10."
+
+=== Record 7 ===
+Date: 2026-09-02
+Source: Gannet and Moor Injury Clinic, follow-up
+Excerpt: "Pain 3/10. Continue home exercises."

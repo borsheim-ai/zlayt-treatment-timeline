@@ -1,0 +1,11 @@
+{
+ "output": {
+  "excerpt": "Patient states brief loss of consciousness at the second collision. Headaches and word-finding difficulty since. Referred for neuropsychological testing.",
+  "summary": "Patient states brief loss of consciousness at the second collision, with headaches and word-finding difficulty since; referred for neuropsychological testing."
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:11:38Z"
+ }
+}

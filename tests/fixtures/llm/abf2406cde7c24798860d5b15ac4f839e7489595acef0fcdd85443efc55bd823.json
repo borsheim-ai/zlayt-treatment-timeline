@@ -1,0 +1,16 @@
+{
+ "output": {
+  "flags": [
+   {
+    "category": "patient_report",
+    "excerpt": "Neck pain 7/10 with left arm numbness since the rear-end collision of 2026-01-12.",
+    "type": "causation"
+   }
+  ]
+ },
+ "recorded_from": {
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "recorded_at": "2026-11-02T04:12:26Z"
+ }
+}

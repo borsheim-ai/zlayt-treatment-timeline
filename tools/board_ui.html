@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zlayt Team Board</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--ink:#16181d;--muted:#5d6472;--line:#dfe3ea;--accent:#2f5bd3;--ok:#1d7a46;--warn:#a86400;--bad:#b42318;--chip:#eef1f6;--stall:#fff4e5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1115;--panel:#171a21;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a2f3a;--accent:#7aa2ff;--ok:#4cc38a;--warn:#f0b04a;--bad:#ff7a6e;--chip:#222734;--stall:#2b2214}}
+:root[data-theme="dark"]{--bg:#0f1115;--panel:#171a21;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a2f3a;--accent:#7aa2ff;--ok:#4cc38a;--warn:#f0b04a;--bad:#ff7a6e;--chip:#222734;--stall:#2b2214}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 16px}
+@media (max-width:819px){header{position:static}}
+h1{font-size:16px;margin:0 0 6px}
+nav{display:flex;gap:6px;overflow-x:auto}
+nav button{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap;cursor:pointer}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.health{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);margin-top:6px}
+.health b{color:var(--ink);font-weight:600}
+main{padding:12px 16px 80px;max-width:1500px;margin:0 auto}
+.alert{background:var(--bad);color:#fff;padding:10px;border-radius:8px;margin-bottom:10px;white-space:pre-wrap}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+select,input,textarea{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px;min-height:60px}
+.col h3{margin:2px 4px 8px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);display:flex;justify-content:space-between}
+.card{border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:6px;cursor:pointer;background:var(--panel)}
+.card:hover{border-color:var(--accent)}
+.card.stalled{background:var(--stall);border-color:var(--warn)}
+.card .t{font-weight:600;font-size:13px;margin:2px 0}
+.meta{display:flex;flex-wrap:wrap;gap:4px;font-size:11px;color:var(--muted)}
+.chip{background:var(--chip);border-radius:4px;padding:1px 6px}
+.P0{color:var(--bad);font-weight:700}.pass{color:var(--ok)}.changes{color:var(--warn)}.fail{color:var(--bad)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.bar{height:8px;background:var(--chip);border-radius:4px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--ok)}
+.feed li{overflow-wrap:anywhere;list-style:none;border-bottom:1px solid var(--line);padding:6px 0;font-size:13px}
+.feed{padding:0;margin:0}
+.muted{color:var(--muted)}
+.md{overflow-wrap:anywhere}.md pre{white-space:pre-wrap;background:var(--chip);padding:8px;border-radius:6px;font-size:12px}
+.md table{border-collapse:collapse;font-size:12px;display:block;overflow-x:auto}.md td,.md th{border:1px solid var(--line);padding:3px 6px}
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);width:min(900px,96vw);max-height:90vh;padding:0}
+dialog .hd{position:sticky;top:0;background:var(--panel);padding:10px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
+dialog .bd{padding:12px 14px}
+button.act{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:6px;padding:6px 10px;cursor:pointer}
+button.danger{background:var(--bad);color:#fff;border-color:var(--bad)}
+.ac li{margin:3px 0}
+
+a{color:var(--accent)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>Zlayt PM project — team board <span id="pct" class="muted"></span></h1>
+  <nav id="tabs">
+    <button data-v="board" class="on">Board</button><button data-v="milestones">Milestones</button>
+    <button data-v="personas">Personas</button><button data-v="feed">Activity</button>
+    <button data-v="inbox">Inbox</button><button data-v="state">State</button>
+  </nav>
+  <div class="health" id="health"></div>
+</header>
+<main>
+  <div id="alert"></div>
+  <section id="v-board">
+    <div class="filters">
+      <select id="f-ms"><option value="">All milestones</option></select>
+      <select id="f-role"><option value="">All roles</option></select>
+      <select id="f-pri"><option value="">All priorities</option><option>P0</option><option>P1</option><option>P2</option></select>
+      <label class="muted"><input type="checkbox" id="f-hidedone"> hide done</label>
+    </div>
+    <div class="cols" id="cols"></div>
+  </section>
+  <section id="v-milestones" class="hide"></section>
+  <section id="v-personas" class="hide"></section>
+  <section id="v-feed" class="hide">
+    <div class="filters"><select id="f-persona"><option value="">All agents</option></select></div>
+    <ul class="feed panel" id="feed"></ul>
+  </section>
+  <section id="v-inbox" class="hide">
+    <div class="panel">
+      <b>Send a note to the orchestrator</b>
+      <p class="muted">Written to <code>board/inbox/</code>; read every cycle. Use it to steer, reprioritize or answer a needs_chris item.</p>
+      <textarea id="note" rows="5" style="width:100%" placeholder="e.g. Prioritize the export format over the stretch item."></textarea>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="act" id="send">Send note</button><span id="sent" class="muted"></span></div>
+    </div>
+    <div class="panel"><b>Stop the run</b><p class="muted">Creates <code>board/STOP</code>; the orchestrator finishes its current handoff and stops.</p>
+      <button class="act danger" id="stop">STOP</button></div>
+    <div class="panel"><b>Unread</b><div id="unread" class="md"></div><b>Recently acknowledged</b><div id="archived" class="md"></div></div>
+  </section>
+  <section id="v-state" class="hide">
+    <div class="filters"><select id="f-file">
+      <option>memory/STATE.md</option><option>submission/NEEDS_CHRIS.md</option><option>memory/PROGRESS.md</option>
+      <option>memory/DECISIONS.md</option><option>memory/ASSUMPTIONS.md</option><option>memory/SCOPE_CUTS.md</option>
+      <option>memory/LESSONS.md</option><option>docs/RUNBOOK.md</option><option>docs/LLM_VS_CODE.md</option><option>spec/REQUIREMENTS.md</option>
+    </select></div>
+    <div class="panel md" id="filebody"></div>
+  </section>
+</main>
+<dialog id="dlg"><div class="hd"><b id="dlg-t"></b><button class="act" onclick="dlg.close()">Close</button></div><div class="bd md" id="dlg-b"></div></dialog>
+<script>
+const STATUSES=["backlog","ready","in_progress","in_review","changes_requested","blocked","needs_chris","done","cancelled"];
+const $=s=>document.querySelector(s), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// markdown is rendered only through DOMPurify; without it we fall back to escaped text
+const md=t=>(window.marked&&window.DOMPurify)?DOMPurify.sanitize(marked.parse(t||"")):"<pre>"+esc(t)+"</pre>";
+let view="board", CARDS=[], timer;
+const ago=ts=>{if(!ts)return"–";const s=(Date.now()-Date.parse(ts))/1000;return s<90?Math.round(s)+"s ago":s<5400?Math.round(s/60)+"m ago":Math.round(s/3600)+"h ago"};
+async function j(u,o){const r=await fetch(u,o);return r.json()}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hide",s.id!=="v-"+view));refresh()});
+["#f-ms","#f-role","#f-pri","#f-hidedone"].forEach(s=>$(s).onchange=renderBoard);
+$("#f-persona").onchange=refresh;$("#f-file").onchange=refresh;
+async function health(){const h=await j("/api/health"),s=await j("/api/status");
+  $("#pct").textContent=`· ${s.progress_pct}% · active ${s.active_milestones.join(",")||"–"}`;
+  const teams=h.teams.map(t=>t.members.join(", ")).join("; ");
+  const seen=Object.entries(h.agents_seen).slice(0,12).map(([a,t])=>`${a} ${ago(t)}`).join(" · ");
+  $("#health").innerHTML=`<span>orchestrator: <b>${ago(h.last_orchestrator_event)}</b></span><span>ready ${s.ready_unclaimed} · in progress ${s.in_progress} · in review ${s.in_review} · changes ${s.changes_requested} · needs_chris ${s.needs_chris} · inbox ${s.inbox_unread}</span>`+
+   `<span>board: <a href="${esc(h.urls.board_tailnet||h.urls.board)}">${esc(h.urls.board_tailnet||h.urls.board)}</a></span><span>app: <a href="${esc(h.urls.app_tailnet||h.urls.app)}">${esc(h.urls.app_tailnet||h.urls.app)}</a></span>`+
+   (teams?`<span>teammates: ${esc(teams)}</span>`:"")+`<span>seen: ${esc(seen)}</span>`+(h.stop_requested?`<span class="fail"><b>STOP requested</b></span>`:"");
+  $("#alert").innerHTML=h.alert?`<div class="alert">${esc(h.alert)}</div>`:"";}
+function fillSel(sel,vals){const cur=$(sel).value;const first=$(sel).options[0].outerHTML;$(sel).innerHTML=first+[...new Set(vals)].sort().map(v=>`<option ${v===cur?"selected":""}>${esc(v)}</option>`).join("")}
+function renderBoard(){const ms=$("#f-ms").value,role=$("#f-role").value,pri=$("#f-pri").value,hd=$("#f-hidedone").checked;
+  const cs=CARDS.filter(c=>(!ms||c.milestone===ms)&&(!role||c.role===role)&&(!pri||c.priority===pri));
+  $("#cols").innerHTML=STATUSES.filter(s=>!(hd&&(s==="done"||s==="cancelled"))).map(s=>{const list=cs.filter(c=>c.status===s);
+    return `<div class="col"><h3><span>${s.replace("_"," ")}</span><span>${list.length}</span></h3>`+list.map(c=>{const acd=(c.ac||[]).filter(a=>a.done).length;const rv=(c.reviews||[]).slice(-3).map(r=>`<span class="${r.verdict}">${esc(r.persona.replace("-reviewer",""))}:${r.verdict}</span>`).join(" ");
+      return `<div class="card ${c.stalled?"stalled":""}" data-card="${esc(c.id)}"><div class="meta"><span class="chip">${c.id}</span><span class="chip">${c.milestone}</span><span class="chip">${c.role}</span><span class="chip ${c.priority}">${c.priority}</span>${c.rounds?`<span class="chip changes">round ${c.rounds}</span>`:""}</div><div class="t">${esc(c.title)}</div><div class="meta"><span>AC ${acd}/${(c.ac||[]).length}</span>${c.claimed_by?`<span>@${esc(c.claimed_by)}</span>`:""}<span>${ago(c.last_activity)}</span>${c.stalled?'<span class="changes">stalled</span>':""}</div><div class="meta">${rv}</div></div>`}).join("")+"</div>"}).join("");}
+window.openCard=id=>{const c=CARDS.find(x=>x.id===id);if(!c)return;$("#dlg-t").textContent=`${c.id} · ${c.title}`;
+  const ac=(c.ac||[]).map(a=>`<li>${a.done?"✅":"⬜️"} <b>${a.n}.</b> ${esc(a.text)}${a.evidence?`<br><span class="muted">evidence: ${esc(a.evidence)}</span>`:""}</li>`).join("");
+  const rv=(c.reviews||[]).map(r=>`<li><span class="${r.verdict}"><b>${r.verdict}</b></span> — ${esc(r.persona)} (${esc(r.model)}) · ${esc(r.at)} · <a href="#" data-file="${esc(r.file)}">${esc(r.file)}</a></li>`).join("")||"<li class='muted'>none yet</li>";
+  $("#dlg-b").innerHTML=`<div class="meta"><span class="chip">${c.status}</span><span class="chip">${c.milestone}</span><span class="chip">${c.role}</span><span class="chip ${c.priority}">${c.priority}</span><span class="chip">rounds ${c.rounds||0}</span><span class="chip">by ${esc(c.created_by)}</span>${c.claimed_by?`<span class="chip">claimed ${esc(c.claimed_by)}</span>`:""}${(c.depends_on||[]).length?`<span class="chip">depends ${c.depends_on.join(", ")}</span>`:""}</div>
+   <h4>Acceptance criteria</h4><ul class="ac">${ac}</ul><h4>Reviews</h4><ul>${rv}</ul>${(c.commits||[]).length?`<h4>Commits</h4><p>${c.commits.map(esc).join(", ")}</p>`:""}<hr>${md(c.body)}`;dlg.showModal()};
+window.openFile=async p=>{const r=await j("/api/file?path="+encodeURIComponent(p));$("#dlg-t").textContent=p;$("#dlg-b").innerHTML=r.text!=null?md(r.text):"<p>not readable</p>";if(!dlg.open)dlg.showModal()};
+async function renderMilestones(){const d=await j("/api/milestones");
+  const checks=Object.entries(d.done_checks).map(([k,v])=>`<span class="chip ${v?"pass":"fail"}">${v?"✔":"✘"} ${k}</span>`).join(" ");
+  $("#v-milestones").innerHTML=`<div class="panel"><b>Definition of Done (§11)</b> — ${d.progress_pct}% of cards done<div class="meta" style="margin-top:6px">${checks}</div></div><div class="grid2">`+d.milestones.map(m=>{const pct=m.total?Math.round(100*m.done/m.total):0;
+   const spent=m.started_at?(((m.done_at?Date.parse(m.done_at):Date.now())-Date.parse(m.started_at))/3.6e6).toFixed(1):"–";
+   return `<div class="panel"><b>${m.id}</b> · ${esc(m.title)}<div class="meta" style="margin:6px 0"><span class="chip">${m.status}</span><span class="chip ${m.gate_result||""}">gate: ${m.gate_result||"–"}</span><span class="chip">${m.done}/${m.total} cards</span><span class="chip">time ${spent}h / budget ${m.budget_h}h</span></div><div class="bar"><i style="width:${pct}%"></i></div>${m.note?`<p class="muted">${esc(m.note)}</p>`:""}${m.gate_summary?`<details><summary>Gate summary</summary><div class="md">${md(m.gate_summary)}</div></details>`:""}</div>`}).join("")+`</div><div class="panel md"><b>Scope cuts</b>${md(d.scope_cuts)}</div>`;}
+async function renderPersonas(){const a=await j("/api/agents");fillSel("#f-persona",a.map(x=>x.name));
+  const block=k=>a.filter(x=>x.kind===k).map(x=>`<div class="panel"><b>${esc(x.name)}</b> <span class="chip">${esc(x.model)}</span> <span class="chip">${esc(x.status)}</span><p class="muted">${esc(x.description)}</p>${x.dossier_summary?`<p>${esc(x.dossier_summary)}</p><a href="#" data-file="${esc(x.dossier)}">dossier</a>`:""}${x.kind==="reviewer"?`<div class="meta"><span class="pass">pass ${x.review_counts.pass}</span><span class="changes">changes ${x.review_counts.changes}</span><span class="fail">fail ${x.review_counts.fail}</span></div>${x.last_findings.length?"<ul>"+x.last_findings.map(f=>`<li><span class="${f.severity==="blocker"?"fail":f.severity==="major"?"changes":"muted"}">[${esc(f.severity)}]</span> ${esc(f.card)}: <a href="#" data-file="${esc(f.file)}">${esc(f.title)}</a></li>`).join("")+"</ul>":""}`:""}</div>`).join("");
+  $("#v-personas").innerHTML=`<h3>Reviewer personas</h3><div class="grid2">${block("reviewer")}</div><h3>Workers</h3><div class="grid2">${block("worker")}</div>`;}
+async function renderFeed(){const p=$("#f-persona").value;const a=await j("/api/activity?limit=300"+(p?"&persona="+encodeURIComponent(p):""));
+  $("#feed").innerHTML=a.map(e=>`<li><span class="muted">${esc(e.ts)} · ${ago(e.ts)}</span> <b>${esc(e.agent)}</b> <span class="chip">${esc(e.event)}</span> ${e.card?`<a href="#" data-card="${esc(e.card)}">${esc(e.card)}</a>`:""} ${esc(e.text)}</li>`).join("")}
+async function renderInbox(){const d=await j("/api/inbox");$("#unread").innerHTML=d.unread.map(n=>md(n.text)).join("<hr>")||"<p class='muted'>none</p>";$("#archived").innerHTML=d.archived.map(n=>md(n.text)).join("<hr>")||"<p class='muted'>none</p>"}
+
+document.addEventListener("click",e=>{const c=e.target.closest("[data-card]"),f=e.target.closest("[data-file]");if(c){e.preventDefault();openCard(c.dataset.card)}else if(f){e.preventDefault();openFile(f.dataset.file)}});
+const POSTH={"Content-Type":"application/json","X-Board-Client":"1"};
+$("#send").onclick=async()=>{const t=$("#note").value.trim();if(!t)return;const r=await j("/api/inbox",{method:"POST",headers:POSTH,body:JSON.stringify({text:t})});$("#sent").textContent=r.ok?"Sent → "+r.file:"Error: "+r.error;if(r.ok)$("#note").value="";renderInbox()};
+$("#stop").onclick=async()=>{if(prompt("Type STOP to stop the run")!=="STOP")return;const r=await j("/api/stop",{method:"POST",headers:POSTH,body:JSON.stringify({confirm:"STOP"})});alert(r.ok?"STOP requested":"Error: "+r.error)};
+async function renderState(){const r=await j("/api/file?path="+encodeURIComponent($("#f-file").value));$("#filebody").innerHTML=r.text!=null?md(r.text):"<p class='muted'>not written yet</p>"}
+async function refresh(){try{await health();if(view==="board"||!CARDS.length){CARDS=await j("/api/cards");fillSel("#f-ms",CARDS.map(c=>c.milestone));fillSel("#f-role",CARDS.map(c=>c.role));}
+  if(view==="board")renderBoard();else if(view==="milestones")renderMilestones();else if(view==="personas")renderPersonas();else if(view==="feed"){if($("#f-persona").options.length<2)await renderPersonas();renderFeed()}else if(view==="inbox")renderInbox();else if(view==="state")renderState();}catch(e){console.error(e)}}
+refresh();timer=setInterval(()=>{if(!dlg.open&&document.visibilityState==="visible")refresh()},5000);
+</script>
+</body>
+</html>

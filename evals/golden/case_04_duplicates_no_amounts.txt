@@ -1,0 +1,32 @@
+SYNTHETIC — invented for evaluation; not real patient data
+
+=== Record 1 ===
+Date: 2026-05-04
+Source: Pottsworth Emergency Department
+Excerpt: "Fell from a ladder at a worksite. Right wrist swelling. X-ray: distal radius fracture. Splint applied."
+
+=== Record 2 ===
+Date: 2026-05-04
+Source: Pottsworth Emergency Department
+Excerpt: "Fell from a ladder at a worksite. Right wrist swelling. X-ray: distal radius fracture. Splint applied."
+
+=== Record 3 ===
+Date: 2026-05-11
+Source: Dr. Tabitha Wrenfield, orthopedics
+Excerpt: "Fracture alignment satisfactory. Continue splint 3 weeks. No driving."
+
+=== Record 4 ===
+Date: 2026-05-11
+Source: Dr. Tabitha Wrenfield, Orthopedics
+Excerpt: "Fracture alignment satisfactory.  Continue splint 3 weeks. No driving."
+
+=== Record 5 ===
+Date: 2026-05-25
+Source: Dr. Tabitha Wrenfield, orthopedics
+Excerpt: "Splint removed. Begin hand therapy 2x/week."
+
+=== Record 6 ===
+Date: 2026-05-26
+Source: Nimblewick Hand Therapy, intake
+Excerpt: "Grip strength reduced. Pain 3/10."
+
